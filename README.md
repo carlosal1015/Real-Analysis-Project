@@ -1,2 +1,6 @@
-# Real-Analysis-Project
-Projecto de Análisis Real 2019-1
+Projecto de análisis real
+===
+
+# Tema
+
+**Relaciones por recurrencia**
