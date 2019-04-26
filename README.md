@@ -20,10 +20,9 @@ me@linux:~$ git clone https://github.com/carlosal1015/Real-Analysis-Project.git
 
 ```bash
 me@linux:~$ cd Real-Analysis-Project
-me@linux:~/Real-Analysis-Project$ git clone https://github.com/carlosal1015/Real-Analysis-Project.git
 me@linux:~$ git checkout -b myFeature # Este nombre puede variar
 me@linux:~$ git commit -am "Your message"
-me@linux:~$ git push -u origin
+me@linux:~$ git push -u origin myFeature
 ```
 
 Muy bien, ahora debes crear un pull request, dirígite a la página del repositorio

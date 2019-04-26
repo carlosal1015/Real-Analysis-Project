@@ -1,0 +1,14 @@
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+\documentclass{article}
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\addbibresource{bib.bib}
+\bibliography{bib}
+
+\begin{document}
+
+\nocite{*}
+\printbibliography
+\bibliographystyle{spmpsci}
+\end{document}
