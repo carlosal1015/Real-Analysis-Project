@@ -20,6 +20,7 @@ me@linux:~$ git clone https://github.com/carlosal1015/Real-Analysis-Project.git
 
 ```bash
 me@linux:~$ cd Real-Analysis-Project
+me@linux:~$ git pull origin master
 me@linux:~$ git checkout -b myFeature # Este nombre puede variar
 me@linux:~$ git commit -am "Your message"
 me@linux:~$ git push -u origin myFeature
@@ -31,3 +32,16 @@ Muy bien, ahora debes crear un pull request, dirígite a la página del reposito
 Ya casi, finalmente en el recuadro derecho seleccionas el nombre de la rama que has creado, es decir, myFeature, en la imagen está `introduction`. Para finalizar, agrega un título y describe los cambios añadidos. Para finalizar, clic en el botón verde `submmit`.
 
 ![Bienvenida](/img/done.png)
+
+## Actualizando rama de trabajo
+
+Luego de haber realizado con éxito el `pull request`, es momento de regresar a nuestra rama principal y sincronizar
+
+```bash
+me@linux:~$ git checkout myFeature
+me@linux:~$ git pull origin master
+me@linux:~$ git commit -am "Your new message"
+me@linux:~$ git push -u origin myFeature
+```
+
+Y así sucesivamente. ¡Lo lograste!
