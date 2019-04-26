@@ -1,0 +1,48 @@
+\documentclass[a4,paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\begin{document}
+\section{Recurrencias Lineales con coeficientes constantes}
+Una relación de recurrencia lineal de orden $ r $ con coeficientes constantes es una recurrencia del tipo:
+\begin{align}\label{1}
+c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=h_{n}, \forall n \geq r,
+\end{align}
+donde $ c_{0},c_{1},\ldots,c_{r} $ son constantes reales o complejas,con $ c_{0} $ y $ c_{r} $ ambos diferentes de cero y $ (h_{n})_{n \geq r} $ es una sucesión de números reales o complejos llamado suecesión de términos no 
+homogéneos de la recurrencia.La recurrencia es llamada homogénea si la sucesión de términos no homogéneos es una sucesión nula,no homogénea si $ h\neg 0 $ para algún $ n $.
+La relación de recurrencia :
+\begin{align}\label{2}
+c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=0, \forall n \geq r,
+\end{align}
+es llamada la recurrencia homogénea asociada, o la parte homogénea de la recurrencia \ref{1}
+Como nosotros ya hemos notado ,la recurrencia:
+$$
+c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=h_{n}, \forall n\geq r,
+$$
+puede ser escriot equivalentemente como:
+$$
+c_{0}x_{n+r}+c_{1}x_{n+(r-1)}+\ldots+c_{r}x_{n}=h_{n+r}, \forall n\geq 0.
+$$
+Se peude utilizar cualquiera de las formas presentadas.
+\subsection*{Observación}%%%%%%ESTO ES UNA OBSERVACIÓN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Cada r-secuencia de valores asignados a las r incógnitas desconocidas de la
+relación de recurrencia 
+$$
+c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=h_{n}, \forall n\geq r,
+$$
+determina de forma única una solución.
+Al resolver una relación de recurrencia lineal, el siguiente principio es fundamental
+importancia.
+\subsection*{Proposición.(Principio de superposición)}
+Sea $ (u_{n})_n,(V_{n})_{n} $ serán respectivamente las soluciones de las relaciones de recurrencia lineal.
+\begin{tabular}{|c|c|c|}
+	\hline 
+	$c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=h_{n}$&$ n\geq r  $  & y \\ 
+	\hline 
+	$c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=k_{n}$& $  $  &  \\ 
+	\hline 
+\end{tabular} 
+\end{document}
+
