@@ -1,0 +1,15 @@
+% arara: clean: {extensions: ['log','aux','bbl','blg']}
+% arara: pdflatex
+% arara: bibtex
+% arara: pdflatex
+\documentclass{article}
+\usepackage[numbers,sort&compress]{natbib}
+
+\begin{document}
+
+\nocite{*}
+%\printbibliography
+\bibliography{bib}
+\bibliographystyle{spmpsci}
+
+\end{document}
