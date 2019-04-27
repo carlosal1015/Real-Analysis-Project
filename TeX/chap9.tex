@@ -1,0 +1,44 @@
+\documentclass{amsart}
+
+\begin{document}
+\section{Definiciones básicas y modelos}
+En esta sección presentamos a nuestros lectores las nociones básicas subyacentes de las relaciones de recurrencia, así como varios ejemplos de tales relaciones.
+\subsection{Primeras definiciones}
+Una relación de recurrencia es una familia numerable de ecuaciones que defina sucesiones en modo recursivo. Las sucesiones que así surgen se llaman \emph{soluciones de la recurrencia}, dependiendo de uno o más de los datos iniciales: cada término que sigue el dato inicial en tales sucesiones es definida como una función de los términos anteriores.
+
+\begin{definition}
+	Una \textbf{relación de recurrencia} en las incógnitas $x_{i}$, $i\in\mathbb{N}$, es una familia de ecuaciones \[ x_{n}=f_{n}\left(x_{0},\ldots,x_{n-1}\right),\quad n\geq r, \] donde $r\in\mathbb{N}_{\geq1}$, y ${\left(f_{n}\right)}_{n\geq r}$ son funciones \[ f_{n}\colon D_{n}\rightarrow\mathbb{R},\quad D_{n}\subseteq\mathbb{R}^{n},\text{ o }f_{n}\colon D_{n}\rightarrow\mathbb{C},\quad D_{n}\subseteq\mathbb{C}^{n}. \] Dependiendo en el caso encontrado, hablaremos de \textbf{recurrencias reales} o \textbf{recurrencias complejas}. Las incógnitas $x_{0},\ldots,x_{r-1}$ son llamadas \textbf{libres}. Su número $r$ es el \textbf{orden} de la relación.
+	
+	Al reemplazar $x$ con $y$, la relación de recurrencia de orden $r$ \[ x_{n}=f_{n}\left(x_{0},\ldots,x_{n-1}\right),\quad n\geq r, \] puede también escribirse como \[ x_{n+r}=f_{n+r}\left(x_{0},\ldots,x_{n+r-1}\right),\quad n\geq0. \]
+\end{definition}
+
+\begin{definition}
+	Una sucesión ${\left(a_{n}\right)}_{n}$ es una \textbf{solución} de la relación de recurrencia de orden $r$
+	\begin{equation}
+	x_{n}=f_{n}\left(x_{0},\ldots,x_{n-1}\right),\quad n\geq r,
+	\end{equation}
+	con $f_{n}\colon D_{n}\rightarrow\mathbb{R}$, $D_{n}\in\mathbb{R}^{n}$, si \[ \left(a_{0},\ldots,a_{n-1}\right)\in D_{n},\quad a_{n}=f_{n}\left(a_{0},a_{1},\ldots,a_{n-1}\right)\quad\forall\,n\geq r. \]
+\end{definition}
+
+La sucesión $\left(a_{0},\ldots,a_{n-1}\right)$
+\end{document}
+
+https://rajsain.files.wordpress.com/2013/11/randomized-algorithms-motwani-and-raghavan.pdf
+
+https://www.csie.ntu.edu.tw/~r97002/temp/Concrete%20Mathematics%202e.pdf
+
+https://link.springer.com/chapter/10.1007/978-3-642-61544-3_9
+
+https://link.springer.com/chapter/10.1007/978-94-011-1814-9_9
+
+https://link.springer.com/chapter/10.1007/978-3-319-15579-1_39
+
+https://link.springer.com/chapter/10.1007/978-94-011-2058-6_14
+
+https://link.springer.com/chapter/10.1007/BFb0120904
+
+https://link.springer.com/chapter/10.1007%2FBFb0120904
+
+https://link.springer.com/article/10.1007/BF00874886
+
+https://link.springer.com/search?date-facet-mode=between&showAll=true&query=recurrence+AND+relation&facet-discipline=%22Mathematics%22
