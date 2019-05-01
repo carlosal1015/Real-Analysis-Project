@@ -1,8 +1,10 @@
 \documentclass[a4,paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+
 \begin{document}
 \section{Recurrencias Lineales con coeficientes constantes}
 Una relación de recurrencia lineal de orden $ r $ con coeficientes constantes es una recurrencia del tipo:
@@ -36,13 +38,37 @@ determina de forma única una solución.
 Al resolver una relación de recurrencia lineal, el siguiente principio es fundamental
 importancia.
 \subsection*{Proposición.(Principio de superposición)}
-Sea $ (u_{n})_n,(V_{n})_{n} $ serán respectivamente las soluciones de las relaciones de recurrencia lineal.
-\begin{tabular}{|c|c|c|}
-	\hline 
+Sea $ (u_{n})_n,(V_{n})_{n} $ serán respectivamente las soluciones de las relaciones de recurrencia lineal.\\x
+\begin{tabular}{ccc}
+	
 	$c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=h_{n}$&$ n\geq r  $  & y \\ 
-	\hline 
-	$c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=k_{n}$& $  $  &  \\ 
-	\hline 
-\end{tabular} 
+	
+	$c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=k_{n}$& $ n\geq r $,  &  \\ 
+\end{tabular}\\
+con partes homogéneas iguales y secuencias de términos no homogéneos $ (h_{n})_{n} $ y $ (k_{n})_{n} $ Para cualquier par de constantes A y B, la secuencia $ (A v_{n}+ B v_{n})_{n} $  es una solución de la relación de recurrencia.
+$$
+c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=A h_{n}+ B k_{n}
+$$
+La solución general de la relación de recurrencia
+\begin{equation}\label{3}
+c_{0}x_{n}+c_{1}x_{n-1}+\ldots+c_{r}x_{n-r}=h_{n}, \quad n\geq r
+\end{equation}
+
+
+\begin{proof}\\
+\begin{enumerate}
+\item Uno tiene fácilmente\\ $c_{0}(Au_{n}+Bv_{n})+c_{1}(Au_{n-1}+Bv_{n-1})+\ldots+c_{r}(Au_{n-r}+Bv_{n-r})=
+A(c_{0}u_{n}+c_{1}u_{n-1}+\ldots+c_{r}u_{n-r})+B(c_{0}v_{n}+c_{1}v_{n-i}+\ldots+c_{r}v_{n-r})
+=Ah_{n}+Bk_{n}
+$
+\item Sea $ (u_{n})_{n} $ una solución particular de (\ref{3}).Por el punto previo nosotros conocemos que $ (v_{n})_{n}=(u_{n})_{n}+(v_{n}-u_{n})_{n} $ es una solución de \ref{3} si y solo si $ v_{n}-u_{n} $ es una solución de la recurrecncia homogenea asociada..Por lo tanto cada solución de \ref{3} es obtenida añadiendo una solución de la  recurrencia homogenea asociada para $ (u_{n})_{n} $
+\end{enumerate}
+\section{Relación de recurrencia lineal con homogénea con coeficientes constantes}
+\end{proof}
+
+
+	
 \end{document}
+
+
 
