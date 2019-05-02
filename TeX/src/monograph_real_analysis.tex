@@ -1,0 +1,67 @@
+% arara: clean: {extensions: ['log','out','aux']}
+% arara: pdflatex: { shell: yes }
+% arara: pdflatex: { synctex: yes }
+% arara: clean: {extensions: ['log','out','aux']}
+\documentclass[graybox,envcountchap,sectrefs]{svmono}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+%\usepackage{mathptmx}
+%\usepackage{helvet}
+%\usepackage{courier}
+%
+\usepackage{type1cm}
+\usepackage{makeidx}% allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+															% when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+\usepackage{newtxtext}       % 
+\usepackage{newtxmath}       % selects Times Roman as basic font
+\usepackage{mathrsfs}
+\usepackage[lite]{mtpro2}
+\date{2 de mayo del 2019}
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{Carlos A. Aznarán Laos\\
+Franss Cruz Ordoñez\\
+Junior Micha Velásquez\\
+Davis S. García Fernández}
+\title{Relación de recurrencia}
+\subtitle{-- Monografía de Análisis Real--}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{dedication}
+%\include{foreword}
+%\include{preface}
+%\include{acknowledgement}
+%
+%\tableofcontents
+%
+%%\include{acronym}
+%
+%\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{part}
+%\include{chapter}
+%%\include{appendix}
+%
+%\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\include{glossary}
+%%\include{solutions}
+%\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
