@@ -1,5 +1,5 @@
 \documentclass{amsart}
-
+\newtheorem{definition}{Definición}
 \begin{document}
 \section{Definiciones básicas y modelos}
 En esta sección presentamos a nuestros lectores las nociones básicas subyacentes de las relaciones de recurrencia, así como varios ejemplos de tales relaciones.
@@ -20,7 +20,26 @@ Una relación de recurrencia es una familia numerable de ecuaciones que defina s
 	con $f_{n}\colon D_{n}\rightarrow\mathbb{R}$, $D_{n}\in\mathbb{R}^{n}$, si \[ \left(a_{0},\ldots,a_{n-1}\right)\in D_{n},\quad a_{n}=f_{n}\left(a_{0},a_{1},\ldots,a_{n-1}\right)\quad\forall\,n\geq r. \]
 \end{definition}
 
-La sucesión $\left(a_{0},\ldots,a_{n-1}\right)$
+La sucesión $\left(a_{0},\ldots,a_{n-1}\right)$ de valores asignados para las $r$ incógnitas libres es llamado la $r$--sucesión de \textbf{valor inicial} o de las \textbf{condiciones iniciales} de la solución. Definimos la \textbf{solución general real} (\textbf{respectivamente compleja}) de la sucesión como la familia de todas las soluciones con elementos que están en $\mathds{R}$ (respectivamente, en $\mathds{C}$).
+
+\begin{example}
+	Considere la relación de recurrencia de primer orden definida por \[ x_{n}=\frac{1}{x_{n-1}-1},\quad n\geq1. \]
+\end{example}
+La $1$--sucesión (2) no es una sucesión de valor inicial de una solución, en efecto, $2$ pertenece al dominio de $f_{0}\left(x\right)=\frac{1}{x-1}$, pero $\left(2,f_{0}(2)\right)=\left(2,1\right)$ no pertenece al dominio de $f_{1}\left(x_{0},x_{1}\right)=\frac{1}{x-1}$. Por otra parte, la $1$--sucesión (3) es en efecto la sucesión de valor inicial de la solución (sucesión) \[ \left(a_{n}\right)_{n}\coloneqq\left(3,1/2,-2,-1/3,-3/4,-4/7,-7/11,\ldots\right). \]
+Note que para $n\geq2$ uno tiene $a_{n}<0$ y así $a_{n+1}=\frac{1}{a_{n}-1}<0$ es distinto de $1$.
+
+\begin{example}
+	En muchas ocasiones una relación de recurrencia de orden $r$ involucra solo los últimos $r$ términos y es de la forma \[ x_{n}=g_{n}\left(x_{n-r},\ldots,x_{n-1}\right),\quad n\geq r, \] donde ${\left(g_{n}\right)}_{n\geq r}$ son las funciones definidas en un subconjunto $E_{n}$ de $\mathds{R}^{r}$ o $\mathds{C}^{r}$. Este último es de hecho una relación de recurrencia: es suficiente para establecer $f_{n}\left(x_{0},\ldots,x_{n-1}\right)$$\coloneqq$ g_{n}$\left(x_{n-r},\ldots,x_{n-1}\right)$ para $\left(x_{0},\ldots,x_{n-1}\right)\in D_{n}\coloneqq\mathds{R}^{n-r}\times E_{n}$ (o $\mathds{C}^{n-r}\times E_{n}$) a fin de cumplir los requerimientos de la definición %9.2
+\end{example}
+\subsection{Algunos modelos de recurrencias lineales}
+Ahora damos una serie de ejemplos que ilustran cómo reducir la solución de un problema en el que la búsqueda de las soluciones de una relación de recurrencia apropiada.
+\begin{example}
+	Un niño decide escalar una escalera con $n\geq 1$ de tal manera que cada paso que él despeja uno o dos de los pasos de la escalera %(vea)
+	Encuentre la relación de recurrencia que sirva para calcular el número de diferentes maneras posibles de escalar la escalera.
+\end{example}
+\begin{proof}[Solución]
+	Usamos la variable desconocida $x_{n}$ para denotar el número de maneras en las cuales el niño puede escalar la escalera de $n\geq1$ pasos. Es fácil de observar que $x_{1}=1$ y $x_{2}=2$ (dos pasos cada uno de longitud uno, o un paso de longitud dos escalones). Ahora sea $n\geq3$: si con el primer paso el niño mueve solo el primer escalón; existen claramente $x_{n-1}$ posibles maneras de escalar los que quedan. Si en cambio con el primer lugar, se  suben dos peldaños de escalera.
+\end{proof}
 \end{document}
 
 https://rajsain.files.wordpress.com/2013/11/randomized-algorithms-motwani-and-raghavan.pdf
