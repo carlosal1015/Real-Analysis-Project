@@ -1,9 +1,12 @@
-% arara: clean: {extensions: ['log','out','aux']}
-% arara: pdflatex: { shell: yes }
-% arara: pdflatex: { synctex: yes }
-% arara: clean: {extensions: ['log','out','aux']}
+% arara: clean: {extensions: ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','pdf','synctex.gz','bcf','run.xml']}
+% arara: lualatex: { shell: yes }
+% arara: lualatex: { synctex: yes }
+% arara: biber
+% arara: lualatex: { synctex: yes }
+% arara: makeindex
+% arara: lualatex: { synctex: yes }
+% arara: clean: {extensions: ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','bcf','run.xml']}
 \documentclass[graybox,envcountchap,sectrefs]{svmono}
-
 % choose options for [] as required from the list
 % in the Reference Guide
 
@@ -18,50 +21,75 @@
 \usepackage{multicol}        % used for the two-column index
 \usepackage[bottom]{footmisc}% places footnotes at page bottom
 
+\usepackage[lite]{mtpro2}
 \usepackage{newtxtext}       % 
 \usepackage{newtxmath}       % selects Times Roman as basic font
+\usepackage{bm,dsfont}
 \usepackage{mathrsfs}
-\usepackage[lite]{mtpro2}
-\date{2 de mayo del 2019}
+
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\addbibresource{bib.bib}
+
+\usepackage{etoolbox,ifluatex}
+\ifluatex
+\makeatletter
+\patchcmd{\PEX@}{\dp\Pbox@>\dp\z@}{\ht\Pbox@>\dp\z@}{}{}
+\patchcmd{\SQEX@}{\dp\Sbox@>\dp0}{\ht\Sbox@>\dp0}{}{}
+\makeatother
+\fi
+
+\date{3 de mayo del 2019}
 % see the list of further useful packages
 % in the Reference Guide
 
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
                        % your makeindex program
-
+%\let\claim\relax
+%\renewcommand\claimname{Aa}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 
 \author{Carlos A. Aznarán Laos\\
 Franss Cruz Ordoñez\\
-Junior Micha Velásquez\\
+Junior Micha Velasque\\
+Gabriel Quiróz Gómez\\
 Davis S. García Fernández}
 \title{Relación de recurrencia}
-\subtitle{-- Monografía de Análisis Real--}
+\subtitle{-- Monografía de Análisis Real --}
 \maketitle
 
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\include{dedication}
+%\extrachap{A}
+%\Extrachap{B}
+\include{dedication}
 %\include{foreword}
-%\include{preface}
-%\include{acknowledgement}
-%
-%\tableofcontents
-%
-%%\include{acronym}
-%
-%\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\include{part}
+\include{preface}
+\include{acknowledgement}
+
+\tableofcontents
+
+%\include{acronym}
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{part}
+\include{conceptos_previos}
+\include{chap9}
+\include{definiciones}
+%\include{parcial}
+\include{micha2}
+\include{main}
+\include{exercises}
 %\include{chapter}
-%%\include{appendix}
-%
-%\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\include{glossary}
-%%\include{solutions}
-%\printindex
+\include{part}
+%\include{appendix}
+\include{references}
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{glossary}
+\include{solutions}
+
+\printindex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
