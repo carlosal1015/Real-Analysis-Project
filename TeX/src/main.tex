@@ -19,7 +19,7 @@ Si $I=2$, entonces $\bm{T}=\left(4,9,19,39,79,159,\ldots\right)$ \ $\bm{T_{n}}=2
 
 Si $I=4$, entonces $\bm{T}=\left(2,5,11,23,47,95,\ldots\right)$ \ $\bm{T_{n}}=2^{n}[4+1]-1=5\times2^n -1$.
 
-Si $I=-1$, entonces $\bm{T}=\left(-1,-1,-1,-1,-1,\ldots)$ \ $\bm{T_n}=2^{n}\left[-1+1\right]-1=-1$.
+Si $I=-1$, entonces $\bm{T}=\left(-1,-1,-1,-1,-1,\ldots\right)$ \ $\bm{T_n}=2^{n}\left[-1+1\right]-1=-1$.
 
 \subsection{Los tres piratas naufragados}
 
@@ -75,7 +75,7 @@ Supongamos que se le ofrecen dos planes de ahorro para la jubilación. En el pla
 	S_{n+1}&=S_{n}+11\%\text{ de }S_n+\$1000\\
 	S_{n+1}&=S_{n}(1+0.11)+\$1000.
 \end{align*}
-En esta RE, $a=1.11$, $c=1000$, entonces $\ffrac{c}{1-a}=\ffrac{1000}{-0.11}$ y
+En esta RE, $a=1.11$, $c=1000$, entonces $\tfrac{c}{1-a}=\tfrac{1000}{-0.11}$ y
 \begin{align*}
 	S_{n}&={\left(1.11\right)}^{n}\left[1000-\frac{1000}{-0.11}\right]+\frac{1000}{+0.11}\\
 	S_{n}&={\left(1.11\right)}^{n}\left[\frac{1110}{+0.11}\right]-\frac{1000}{+0.11}
@@ -209,7 +209,7 @@ Si $S_{n+2}=10S_{n+1}-21S_{n}$ para $\forall\, n\in\mathds{N}$, entonces $r_{1}=
 \begin{example}{}
 Si $S_{n+2}=3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, entonces $r_{1}=2$ y $r_{2}=1$. Tenemos, la solución general de la RE es $S_{n}= A2^{n}+B1^{n}=A2^{n}+B$.
 
-Caso 2. Si $\Delta=0$, entonces las raíces son (ambos) iguales a $r$ donde $r=a/2$. También, $b=-a^2/4=-r^2$. Si $a$ eran $0$, entonces $b=0$, pero asumimos que no tanto $a$ y $b$ son $0$. De ahí, $r\neq0$. Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizarían $T_{n}= A\left(r)\right^{n}+nB\left(r\right)^{n}$ cuando $n=0$ y $n=1$. Si
+Caso 2. Si $\Delta=0$, entonces las raíces son (ambos) iguales a $r$ donde $r=a/2$. También, $b=-a^2/4=-r^2$. Si $a$ eran $0$, entonces $b=0$, pero asumimos que no tanto $a$ y $b$ son $0$. De ahí, $r\neq0$. Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizarían $T_{n}=A{\left(r\right)}^{n}+nB{\left(r\right)}^{n}$ cuando $n=0$ y $n=1$. Si
 
 $T_{0}=A(r)^{0}+0B(r)^{0}=A$................(1)\\
 y $T_{1}= A(r)^{1}+1B(r)^{1}=Ar+Br$, ....................(2)\\
