@@ -1,113 +1,87 @@
-\documentclass[12pt, a4paper]{book}
-\usepackage[utf8]{inputenc}
-%\usepackage[spanish]{babel}
-\usepackage[spanish,es-lcroman]{babel}%Permite la enumeración con números romanos en minúsculas("Que no es usada en babel-spanish").
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsthm}
-\usepackage[margin=2cm]{geometry}
-\usepackage{graphicx}
-\usepackage{fancybox}
-\usepackage{enumitem}
-\usepackage{IEEEtrantools}
-
-\begin{document}
-
-\section{Ejercicios} %%pag 373
+\section{Ejercicios}
+%%pag 373
 \begin{enumerate}
-    \item Supongamos que $E_n$ es definido recursivamente en $\mathds{Z}^+$ por $$E_0=0,\, E_1=2\,\, \text{y} \,\,E_{n+1}=2n\{E_n+E_{n-1}\}\,\, \text{para} \,\, n\geq 1.$$ Determine el valor de $E_{10}$.
-    %%%%
-    \item Supongamos que la función $f$ es definida recursivamente en $\mathds{Z}^+$ por \[
-f(n)=\begin{cases} 
-1 & \text{si }n=2^k\text{ para algún }k \in \mathds{N}\\ f(n/2) & \text{si }n\text{ es par pero no una potencia de 2} \\ f(3n+1) & \text{si }n\text{ es impar.}
-\end{cases}
-\]
-Entonces 
-\begin{align*}
-  f(3)=&f(10)\quad \text{porque 3 es impar} \\
-  =&f(5)\quad \text{  porque 10 = 2} \times 5\\
-  =&f(16)\quad \text{porque 5 es impar}\\
-  =&1\quad\quad\text{ porque 16} = 2^4.
-\end{align*}
-
-\begin{enumerate}
-    \item Mostrar que $f(11)$ también es igual a 1.
-    \item Mostrar que $f(9)$, $f(14)$, Y $f(25)$ son todos iguales a $f(11)$ y, por lo tanto, todos iguales a 1.
-    \item Escriba un programa para hallar $f(27)$.
-\end{enumerate}
-
-// ¿Crees que esta función siempre dará el valor de 1, sin importar con qué $n$ comiences?\\// Busque la ''Conjetura de Collatz'' o el "Problema del granizo".
-    %%%%
-    \item Podríamos definir una degeneración como una $n-$permutación $S$ de $\{1..n\}$ donde cada $S_j\neq j$ y luego definir $\mathbf{D_n}$ como el número de degeneraciones de $\{1..n\}$. Entonces $\mathbf{D_n}$ es la única sucesión  que satisface la ecuación de recurrencia \begin{equation}\label{eq1}
-    \mathbf{D_n} =(n-1)\{\mathbf{D_{n-1}}+\mathbf{D_{n-2}}\}\quad\text{para }n=3,4,5,...    
-    \end{equation} con $\mathbf{D_1}=0$ y $\mathbf{D_2}=1$.
-    \begin{enumerate}
-        \item Mostar que $\mathbf{D_2}=(2)(\mathbf{D_1})+(-1)^2$.
-        \item Use la inducción matemática para probar que para todo entero $n\geq 2$, $$\mathbf{D_n}=(n)(\mathbf{D_{n-1}})+(-1)^n.$$
+	\item Supongamos que $E_n$ es definido recursivamente en $\mathds{Z}^+$ por \[ E_0=0,E_1=2,\text{ y },E_{n+1}=2n\{E_n+E_{n-1}\} \text{ para }n\geq 1. \] Determine el valor de $E_{10}$.
+	\item Supongamos que la función $f$ es definida recursivamente en $\mathds{Z}^+$ por \[ f(n)=\begin{cases}1 & \text{si }n=2^k\text{ para algún }k \in \mathds{N}\\ f(n/2) & \text{si }n\text{ es par pero no una potencia de 2} \\ f(3n+1) & \text{si }n\text{ es impar.}\end{cases}. \] Entonces 
+		\begin{align*}
+		f(3)=&f(10)\text{ porque }3\text{ es impar}\\
+				=&f(5)\text{ porque } 10=2\times 5\\
+				=&f(16)\text{ porque }5\text{ es impar}\\
+				=&1\text{ porque } 16=2^4.
+		\end{align*}
+		\begin{enumerate}
+	    \item Mostrar que $f(11)$ también es igual a $1$.
+	    \item Mostrar que $f(9)$, $f(14)$, y $f(25)$ son todos iguales a $f(11)$ y, por lo tanto, todos iguales a $1$.
+	    \item Escriba un programa para hallar $f(27)$.
+		\end{enumerate}
+	¿Crees que esta función siempre dará el valor de $1$, sin importar con qué $n$ comiences? Busque la ``Conjetura de Collatz'' o el ``Problema del granizo''.
+	\item Podríamos definir una degeneración como una $n$--permutación $S$ de $\left\{1.\ldots,n\right\}$ donde cada $S_j\neq j$ y luego definir $\bm{D_n}$ como el número de degeneraciones de $\left\{1,\ldots,n\}$. Entonces $\bm{D_n}$ es la única sucesión  que satisface la ecuación de recurrencia
+		\begin{equation}\label{eq1}
+			\bm{D_n}=\left(n-1\right)\left\{\bm{D_{n-1}}+\bm{D_{n-2}}\right\}\text{ para }n=3,4,5,\ldots    
+    \end{equation}
+    con $\bm{D_1}=0$ y $\bm{D_2}=1$.
+			\begin{enumerate}
+				\item Mostrar que $\bm{D_2}=(2)\left(\bm{D_1}\right)+(-1)^2$.
+				\item Use la inducción matemática para probar que para todo entero $n\geq 2$, \[ \bm{D_n}=(n)(\bm{D_{n-1}})+(-1)^n. \]
     \end{enumerate}
-    %%%%
-    \item Use la inducción matemática y la ecuación (\ref{eq1}) para probar que $$\text{para todo entero positivo }n,\,\, \mathbf{D_n}=n!\sum_{j=0}^n\frac{(-1)^j}{j!}.$$
-    %%%%
-    \item Supongamos que (o busque estos dos resultados de cálculo) $$\text{A. para todo número real }x,\,e^x=\sum_{j=0}^\infty\frac{x^j}{j!},\text{ y también }e^{-1}=\sum_{j=0}^\infty\frac{(-1)^j}{j!},$$ y B. para algún $n$ entero positivo, $$e^{-1}=\sum_{j=0}^n\frac{(-1)^j}{j!}+E_n \text{  donde }|E_n|<\left|\frac{(-1)^{n+1}}{(n+1)!}\right|=\frac{1}{(n+1)!}.$$
+    \item Use la inducción matemática y la ecuación \eqref{eq1} para probar que \[ \forall n\in\mathds{Z}^{+}\colon\bm{D_n}=n!\sum_{j=0}^n\frac{(-1)^j}{j!}. \]
+    \item Supongamos que (o busque estos dos resultados de cálculo)
     \begin{enumerate}
-        \item Use el resultado de la pregunta anterior para mostrar $$\frac{n!}{e}=\mathbf{D_n}+n!E_n\text{  donde }|n!E_n|<\frac{n!}{(n+1)!}=\frac{1}{n+1}\leq 1/2.$$
-        
-        \item Explique por qué $\mathbf{D_n}-\frac{1}{2}\leq n!/e\leq \mathbf{D_n}+\frac{1}{2}$.
-        \item ¿Es $\lceil n!/e\rfloor =\mathbf{D_n}$?
+    	\item \[ \forall x\in\mathds{R}\colon e^x=\sum_{j=0}^\infty\frac{x^j}{j!},\text{ y también }e^{-1}=\sum_{j=0}^\infty\frac{(-1)^j}{j!}, \]
+    	\item \[ \exists n\in\mathds{Z}^{+}\ni e^{-1}=\sum_{j=0}^n\frac{(-1)^j}{j!}+E_n \text{ donde }|E_n|<\left|\frac{(-1)^{n+1}}{(n+1)!}\right|=\frac{1}{(n+1)!}. \]
     \end{enumerate}
-    %%%%
-    \item La \textbf{función de Ackermann} a veces es definida recursivamente en una forma ligeramente diferente
-    %%%%
-    \item Supongamos que \textbf{A} es un conjunto de $2n$ objetos. Sea $\mathbf{P_n}$ el número de diferentes maneras que los objetos en \textbf{A} pueden ser 'emparejados'(el número de diferentes particiones de \textbf{A} en 2-subconjuntos).\hfill // Supongamos que $n$ es un entero positivo.\\[0.2cm]
-    Si $n=2$, entonces \text{A} tiene cuatro elementos, $\mathbf{A}=\{x_1,x_2,x_3,x_4\}$.\\[0.1cm]
-    Los tres posibles emparejamientos son\\
-    1. $x_1$ con $x_2$ y $x_3$ con $x_4$,\\
-    2. $x_1$ con $x_3$ y $x_2$ con $x_4$,\\
-    3. $x_1$ con $x_4$ y $x_2$ con $x_3$,\hspace{3cm} // Así $\mathbf{P_2}=3$
+  
     \begin{enumerate}
-        \item Mostrar que si $n=3$ y $\mathbf{A}=\{x_1,x_2,x_3,x_4,x_5,x_6\}$, hay 15 posibles emparejamientos enumerándolos todos:\\
-        1.$x_1$ con $x_2$ y $x_3$ con $x_4$ y $x_5$ con $x_6$\\
-        2. ... \hspace{5.3cm} // Así $\mathbf{P_3}=15$.
-        \item Mostrar que $\mathbf{P_n}$ debe satisfacer la ER $\mathbf{P_n}=(2n-1)\mathbf{P_{n-1}}$ para $\forall n\geq2$.
-        \item Use la ecuación de recurrencia y la inducción matemática para probar $$\mathbf{P_n}=(2n)!/[2^n\times n!]\text{ para }\forall n\geq 1.$$
+        \item Use el resultado de la pregunta anterior para mostrar \[ \frac{n!}{e}=\bm{D_n}+n!E_n\text{ donde }|n!E_n|<\frac{n!}{(n+1)!}=\frac{1}{n+1}\leq 1/2. \]
+        \item Explique por qué $\bm{D_n}-\tfrac{1}{2}\leq n!/e\leq\bm{D_n}+\tfrac{1}{2}$.
+        \item ¿Es $\lceil n!/e\rfloor=\bm{D_n}$?% TODO:
     \end{enumerate}
-    %%%%
-    \item Mostrar que $y_n=\frac{n(n-1)}{2}+c$ para $n>0$ es una solución de la relación de recurrencia $$y_{n+1}=y_n+n.$$
-    %%%%
-    \item Supongamos que una sucesión es definida por:$$f(0)=5\text{ y}$$ $$f(n+1)=2\times f(n)+1\text{ para } n=0,1,2,...$$
+    \item La \emph{función de Ackermann} a veces es definida recursivamente en una forma ligeramente diferente
+    \item Supongamos que $\bm{A}$ es un conjunto de $2n$ objetos. Sea $\bm{P_n}$ el número de diferentes maneras que los objetos en $\bm{A}$ pueden ser ``emparejados'' (el número de diferentes particiones de $\bm{A}$ en $2$--subconjuntos). Supongamos que $n\in\mathds{Z}^{+}$. Si $n=2$, entonces $\bm{A}$ tiene cuatro elementos, $\bm{A}=\left\{x_1,x_2,x_3,x_4\right\}$.
+    
+    Los tres posibles emparejamientos son:
     \begin{enumerate}
-        \item Halle el valor de $f(10).$ 
-        \item Probar que la sucesión no es una sucesión arimética ni una sucesión geométrica.
+    	\item $x_1$ con $x_2$ y $x_3$ con $x_4$,
+    	\item $x_1$ con $x_3$ y $x_2$ con $x_4$,
+    	\item $x_1$ con $x_4$ y $x_2$ con $x_3$.
     \end{enumerate}
-    %%%%
-    \item \begin{enumerate}
-        \item Encuentre la Solución General de la ecuación de recurrencia $$S_n=3S_{n-1}-10\text{  para }n=1,2,....$$
-        \item\label{b} Determine la solución particular donde $S_0=15$.
+		Así $\bm{P_2}=3$.
+    \begin{enumerate}
+        \item Mostrar que si $n=3$ y $\bm{A}=\left\{x_1,x_2,x_3,x_4,x_5,x_6\right\}$, hay $15$ posibles emparejamientos enumerándolos todos:
+        \begin{enumerate}
+        	\item $x_1$ con $x_2$ y $x_3$ con $x_4$ y $x_5$ con $x_6$
+        	\item Así $\bm{P_3}=15$.
+        \end{enumerate}
+        \item Mostrar que $\bm{P_n}$ debe satisfacer la ER $\bm{P_n}=(2n-1)\bm{P_{n-1}}$ para $\forall n\geq2$.
+        \item Use la ecuación de recurrencia y la inducción matemática para probar \[ \bm{P_n}=(2n)!/[2^n\times n!]\text{ para }\forall n\geq 1. \]
+    \end{enumerate}
+    \item Mostrar que $y_n=\frac{n(n-1)}{2}+c$ para $n>0$ es una solución de la relación de recurrencia \[ y_{n+1}=y_{n}+n. \]
+    \item Supongamos que una sucesión es definida por: \[ f(0)=5\text{ y }f(n+1)=2\times f(n)+1\text{ para } n=0,1,2,\ldots \]
+    \begin{enumerate}
+        \item Halle el valor de $f(10)$ .
+        \item Probar que la sucesión no es una sucesión aritmética ni una sucesión geométrica.
+    \end{enumerate}
+    \begin{enumerate}
+        \item Encuentre la solución general de la ecuación de recurrencia \[ S_n=3S_{n-1}-10\text{ para }n=1,2,\ldots \]
+        \item\label{b} Determine la solución particular donde $S_{0}=15$.
         \item Use la fórmula en (\ref{b}) para evaluar $S_6$ y verifique su respuesta usando la ecuación de recurrencia en sí.
     \end{enumerate}
-    %%%%
-    \item Suponga $s_0=60$ y $s_{n+1}=(1/5)s_n-8$ para $n=0,1,...$
+    \item Suponga $s_{0}=60$ y $s_{n+1}=(1/5)s_n-8$ para $n=0,1,\ldots$
     \begin{enumerate}
-        \item Halle $s_1$, $s_2$, y $s_3$.
-        \item Resuelva la relación de recurrencia para dar una fórmula para $s_n$.
-        \item ¿Es esa suceción convergente? Si es así, ¿Cuál es el límite?
-        \item ¿La serie correspondiente converge? Si es así, ¿Cuál es límite?
+        \item Halle $s_{1}$, $s_{2}$, y $s_{3}$.
+        \item Resuelva la relación de recurrencia para dar una fórmula para $s_{n}$.
+        \item ¿Es esa sucesión convergente? Si es así, ¿cuál es el límite?
+        \item ¿La serie correspondiente converge? Si es así, ¿cuál es límite?
     \end{enumerate}
-    %%%%
-    \item Supongamos $s_0=75$ y $s_{n+1}=(1/3)s_n - 6$ para $n=0,1, ....$
+    \item Supongamos $s_{0}=75$ y $s_{n+1}=(1/3)s_{n}-6$ para $n=0,1,\ldots$
     \begin{enumerate}
-        \item Halle $s_1$, $s_2$, y $s_3$.
-         \item Resuelva la relación de recurrencia para dar una fórmula para $s_n$.
-        \item ¿Es esa suceción convergente? Si es así, ¿Cuál es el límite?
-        \item ¿La serie correspondiente converge? Si es así, ¿Cuál es límite?
+        \item Halle $s_{1}$, $s_{2}$, y $s_{3}$.
+         \item Resuelva la relación de recurrencia para dar una fórmula para $s_{n}$.
+        \item ¿Es esa sucesión convergente? Si es así, ¿cuál es el límite?
+        \item ¿La serie correspondiente converge? Si es así, ¿cuál es límite?
     \end{enumerate}
-    %%%%
-    \item \begin{enumerate}
-        \item Mostrar que $f_n=A\times 3^n + B\times 2^n$ satisface la ecuación de recurrencia $$f_n=5f_{n-1}-6f_{n-2}\text{ para } n\geq 2.$$
-        \item Encuentre la solución particular (valores para $A$ y $B$) para que $$f_0=4\text{ y }f_1=17.$$
+    \begin{enumerate}
+        \item Mostrar que $f_{n}=A\times3^{n}+B\times2^{n}$ satisface la ecuación de recurrencia \[ f_{n}=5f_{n-1}-6f_{n-2}\text{ para }n\geq 2. \]
+        \item Encuentre la solución particular (valores para $A$ y $B$) para que \[ f_{0}=4\text{ y }f_{1}=17. \]
     \end{enumerate}
-
 \end{enumerate}
-
-\end{document}

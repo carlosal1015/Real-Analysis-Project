@@ -1,48 +1,47 @@
-\begin{prob}
-Una sucesión $\left\{x_{n}\right\}$ se dice que es \textbf{sucesión contractiva} si $\exists$ alguna constante $c$, $0<c<1\ni\forall\,n\in\mathbb{N}$, $|x_{n+2}-x_{n+1}|\leq c|x_{n+1}-x_{n}|$. Pruebe que una sucesión contractiva debe ser una sucesión de Cauchy, y por lo tanto converge.
+\begin{prob}{Sucesión contractiva}
+	Una sucesión $\left\{x_{n}\right\}$ se dice que \textbf{contractiva} si $\exists$ alguna constante $c$, $0<c<1\ni\forall\,n\in\mathds{N}$, $|x_{n+2}-x_{n+1}|\leq c|x_{n+1}-x_{n}|$. Pruebe que una sucesión contractiva debe ser una sucesión de Cauchy, y por lo tanto converge.
 \end{prob}
 
-\begin{prob}
-\textbf{Recursiva de la media aritmética} Sea $a\neq b$ números reales arbitrarios, y defina la sucesión $\left\{x_{n}\right\}$ por
-\[ x_{1}=a,x_{2}=b,\text{ y }\forall\,n\in\mathbb{N},x_{n+2}=\frac{x_{n+1}+x_{n}}{2}. \] Esto es, cada nuevo término está iniciando con el tercero que es el promedio de los dos términos previos.
-\begin{enumerate}
-	\item Pruebe que $\left\{x_{n}\right\}$ converge probando que este es una sucesión constructiva.
-	\item Pruebe que $\forall\,n\in\mathbb{N}$, $x_{n+1}+\frac{1}{2}x_{n}=b+\frac{1}{2}a$.\label{9b}
-	\item Use~\ref{9b} y el álgebra de límites para encontrar que  $\lim\limits_{n\to\infty}x_{n}$. ¿Está sorprendido por la respuesta? Note que si usted intercambia $a$ y $b$ la respuesta podría ser diferente.
-\end{enumerate}
+\begin{prob}{Media aritmética recursiva}
+Sea $a\neq b$ números reales arbitrarios, y defina la sucesión $\left\{x_{n}\right\}$ por \[ x_{1}=a,x_{2}=b,\text{ y }\forall\,n\in\mathds{N},x_{n+2}=\frac{x_{n+1}+x_{n}}{2}. \] Esto es, cada nuevo término está iniciando con el tercero que es el promedio de los dos términos previos.
+	\begin{enumerate}
+		\item Pruebe que $\left\{x_{n}\right\}$ converge probando que este es una sucesión constructiva.
+		\item Pruebe que $\forall\,n\in\mathds{N}$, $x_{n+1}+\frac{1}{2}x_{n}=b+\frac{1}{2}a$.\label{9b}
+		\item Use~\ref{9b} y el álgebra de límites para encontrar que  $\lim\limits_{n\to\infty}x_{n}$. ¿Está sorprendido por la respuesta? Note que si usted intercambia $a$ y $b$ la respuesta podría ser diferente.
+	\end{enumerate}
 \end{prob}
 
-\begin{prob}
-\textbf{Recursiva de la media aritmética ponderada} Sean $a\neq b$ dos números reales arbitrarios, sea $0<t<1$, y defina la sucesión $\left\{x_{n}\right\}$ por \[ x_{1}=a, x_{2}=b,\text{ z }\forall\,n\in\mathbb{N}, x_{n+2}=tx_{n}+\left(1-t\right)x_{n+1}. \] Esto es, cada nuevo término que inicia con el tercero que es el promedio ponderado de los términos previos. Geométricamente, $x_{n+2}$ es un punto en el intervalo entre $x_{n}$ y $x_{n+1}$ que corta el intervalo en dos segmentos cuyas longitudes están en la proporción $t$ a $1-t$. Pruebe que $\left\{x_{n}\right\}$ es contractiva, y encuentre su límite.
+\begin{prob}{Media aritmética ponderada recursiva}
+	Sean $a\neq b$ dos números reales arbitrarios, sea $0<t<1$, y defina la sucesión $\left\{x_{n}\right\}$ por \[ x_{1}=a,x_{2}=b,\text{ z }\forall\,n\in\mathds{N},x_{n+2}=tx_{n}+\left(1-t\right)x_{n+1}. \] Esto es, cada nuevo término que inicia con el tercero que es el promedio ponderado de los términos previos. Geométricamente, $x_{n+2}$ es un punto en el intervalo entre $x_{n}$ y $x_{n+1}$ que corta el intervalo en dos segmentos cuyas longitudes están en la proporción $t$ a $1-t$. Pruebe que $\left\{x_{n}\right\}$ es contractiva, y encuentre su límite.
 \end{prob}
 
-\begin{prob}
-\textbf{Mapeo contractivo} Sean $a<b$ e $I=\left[a,b\right]$. Una función $f\colon I\rightarrow I$ se dice que es un \textbf{mapeo contractivo} si $\exists c\ni0<c<1$ y $\forall\,x,y\in I$, $|f\left(x\right)-f\left(y\right)|\leq c|x-y|$. Pruebe que un mapeo contractivo debe tener por lo menos un ``punto fijo'', $x\in I\ni f\left(x\right)=x$. También pruebe que $f$ no puede tener más de un punto fijo en $I$.
+\begin{prob}{Aplicación contractiva}
+	Sean $a<b$ e $I=\left[a,b\right]$. Una función $f\colon I\rightarrow I$ se dice que es una \textbf{contracción} si $\exists c\ni0<c<1$ y $\forall\,x,y\in I$, $|f\left(x\right)-f\left(y\right)|\leq c|x-y|$. Pruebe que una aplicación contractiva debe tener por lo menos un ``punto fijo'', $x\in I\ni f\left(x\right)=x$. También pruebe que $f$ no puede tener más de un punto fijo en $I$.
 \end{prob}
 
-\begin{prob}
-\textbf{Números de Fibonacci} La sucesión de Fibonacci consiste de los números de Fibonacci, $1,1,2,3,5,8,13,21,\ldots$, y está definido recursivamente por $f_{1}=1$, $f_{2}=1$, y $\forall\,n\geq2$, $f_{n+2}=f_{n+1}+f_{n}$. Cada nuevo término después del segundo es la suma de los dos términos previos. Muchos resultados interesantes han sido probados acerca de los números de Fibonacci--lo suficiente para llenar un libro entero. Deberemos concentrarnos aquí con la sucesión de proporciones de los sucesivos números de Fibonacci. Empezamos definiendo la sucesión por $r_{n}=\frac{f_{n+1}}{f_{n}}$.
-\begin{enumerate}
-	\item Desarrolle una tabla que muestre los primeros diez términos de $\left\{r_{n}\right\}$. En la basa de esta tabla, conjeture las respuestas a las siguientes preguntas. ¿$\left\{r_{n}\right\}$ es convergente? ¿Es monótona? ¿Eventualmente monótona? ¿Puede encontrar una subsucesión estrictamente creciente? ¿Una subsucesión estrictamente decreciente? (No se requieren demostraciones).
-	\item Pruebe que $\forall\,n\in\mathbb{N}$, $r_{n+1}=1+\frac{1}{r_{n}}$.
-	\item Pruebe que $\forall\,n\geq2$, $\frac{3}{2}<r_{n}<2$.
-	\item Pruebe que $\left\{r_{n}\right\}$ es ``contractiva'', y por lo tanto es una sucesión de Cauchy.
-	\item Encuentre $\lim\limits_{n\to\infty}r_{n}$. [Tome nota de este límite; este reaparecerá.]
-	\item La ecuación cuadrática $x^{2}-x-1=0$ tiene dos soluciones, $\alpha=\frac{1+\sqrt{5}}{2}$ y $\beta=\frac{1-\sqrt{5}}{2}$. Muestre que $\alpha+\beta=1$, $\alpha^{2}=a+1$, y $\beta^{2}=\beta+1$, y desde estos hechos muestre que $\forall\,n\in\mathbb{N}$, $\alpha^{n+2}=\alpha^{n+1}+\alpha^{n}$ y $\beta^{n+2}=\beta^{n+1}+\beta^{n}$..\label{9f}
-	\item $\forall\,n\in\mathbb{N}$, defina $u_{n}=\frac{\alpha^{n}-\beta^{n}}{\alpha-\beta}$, donde $\alpha$ y $\beta$ están definidos en~\ref{9f}. Pruebe que $u_{1}=1$, $u_{2}=1$, y $\forall\,n\geq2$, $u_{n+2}=u_{n+1}+u_{n}$. Por lo tanto, $\left\{u_{n}\right\}$ debe ser la sucesión de Fibonacci. Tenemos encontrado una fórmula para los números de Fibonacci: $f_{n}=u_{n}$.
-	\item \textbf{Significado geométrico} de $\alpha$. Considere un rectángulo cuyo ancho $\alpha$ y $largo$ $a+b$ son así proporcionados que cuando un cuadrado de lado $a$ es removido, como se muestra aquí, el rectángulo restante tiene ancho y longitud en la misma proporción. Esto es, $\frac{a+b}{a}=\frac{a}{b}$.
+\begin{prob}{Números de Fibonacci}
+	La sucesión de Fibonacci consiste de los números de Fibonacci, $1,1,2,3,5,8,13,21,\ldots$, y está definido recursivamente por $f_{1}=1$, $f_{2}=1$, y $\forall\,n\geq2$, $f_{n+2}=f_{n+1}+f_{n}$. Cada nuevo término después del segundo es la suma de los dos términos previos. Muchos resultados interesantes han sido probados acerca de los números de Fibonacci--lo suficiente para llenar un libro entero. Deberemos concentrarnos aquí con la sucesión de proporciones de los sucesivos números de Fibonacci. Empezamos definiendo la sucesión por $r_{n}=\tfrac{f_{n+1}}{f_{n}}$.
+		\begin{enumerate}
+			\item Desarrolle una tabla que muestre los primeros diez términos de $\left\{r_{n}\right\}$. En la basa de esta tabla, conjeture las respuestas a las siguientes preguntas. ¿$\left\{r_{n}\right\}$ es convergente? ¿Es monótona? ¿Eventualmente monótona? ¿Puede encontrar una subsucesión estrictamente creciente? ¿Una subsucesión estrictamente decreciente? (No se requieren demostraciones).
+			\item Pruebe que $\forall\,n\in\mathds{N}$, $r_{n+1}=1+\tfrac{1}{r_{n}}$.
+			\item Pruebe que $\forall\,n\geq2$, $\tfrac{3}{2}<r_{n}<2$.
+			\item Pruebe que $\left\{r_{n}\right\}$ es ``contractiva'', y por lo tanto es una sucesión de Cauchy.
+			\item Encuentre $\lim\limits_{n\to\infty}r_{n}$. [Tome nota de este límite; este reaparecerá.]
+			\item La ecuación cuadrática $x^{2}-x-1=0$ tiene dos soluciones, $\alpha=\frac{1+\sqrt{5}}{2}$ y $\beta=\frac{1-\sqrt{5}}{2}$. Muestre que $\alpha+\beta=1$, $\alpha^{2}=a+1$, y $\beta^{2}=\beta+1$, y desde estos hechos muestre que $\forall\,n\in\mathbb{N}$, $\alpha^{n+2}=\alpha^{n+1}+\alpha^{n}$ y $\beta^{n+2}=\beta^{n+1}+\beta^{n}$..\label{9f}
+			\item $\forall\,n\in\mathds{N}$, defina $u_{n}=\frac{\alpha^{n}-\beta^{n}}{\alpha-\beta}$, donde $\alpha$ y $\beta$ están definidos en~\ref{9f}. Pruebe que $u_{1}=1$, $u_{2}=1$, y $\forall\,n\geq2$, $u_{n+2}=u_{n+1}+u_{n}$. Por lo tanto, $\left\{u_{n}\right\}$ debe ser la sucesión de Fibonacci. Tenemos encontrado una fórmula para los números de Fibonacci: $f_{n}=u_{n}$.
+			\item \textbf{Significado geométrico} de $\alpha$. Considere un rectángulo cuyo ancho $\alpha$ y largo $a+b$ son así proporcionados que cuando un cuadrado de lado $a$ es removido, como se muestra aquí, el rectángulo restante tiene ancho y longitud en la misma proporción. Esto es, $\tfrac{a+b}{a}=\tfrac{a}{b}$.
 	
-	Los matemáticos de la Grecia clásica llamaron esta proporción $R=\frac{a}{b}$ la ``\textbf{Proporción áurea}'' y cualquier rectángulo con lados en la proporción un ``\textbf{rectángulo áureo}''. Ellos consideraron esto como la más estéticamente agradable de todos los rectángulos, y se usó esto frecuentemente en su arte y arquitectura. Pruebe algebraicamente que $R=\alpha$, definida en~\ref{9f} arriba.
-	\item Pruebe que $\forall\,n\geq2$, $\forall\,n\geq2$, $f_{n+1}f_{n-1}-{\left(f_{n}\right)}^{2}={\left(-1\right)}^{n}$.
-	\item Pruebe que $\forall\,n\in\mathbb{N}$, $r_{n+1}-r_{n}=\frac{{\left(-1\right)}^{n+1}}{f_{n}f_{n+1}}$.\label{9j}
-	\item Use~\ref{9j} para probar que $\left\{r_{2n}\right\}$ es estrictamente decreciente y $\left\{r_{2n+1}\right\}$ es estrictamente creciente.
-\end{enumerate}
+			Los matemáticos de la Grecia clásica llamaron esta proporción $R=\frac{a}{b}$ la ``\textbf{Proporción áurea}'' y cualquier rectángulo con lados en la proporción un ``\textbf{rectángulo áureo}''. Ellos consideraron esto como la más estéticamente agradable de todos los rectángulos, y se usó esto frecuentemente en su arte y arquitectura. Pruebe algebraicamente que $R=\alpha$, definida en~\ref{9f} arriba.
+			\item Pruebe que $\forall\,n\geq2$, $\forall\,n\geq2$, $f_{n+1}f_{n-1}-{\left(f_{n}\right)}^{2}={\left(-1\right)}^{n}$.
+			\item Pruebe que $\forall\,n\in\mathds{N}$, $r_{n+1}-r_{n}=\frac{{\left(-1\right)}^{n+1}}{f_{n}f_{n+1}}$.\label{9j}
+			\item Use~\ref{9j} para probar que $\left\{r_{2n}\right\}$ es estrictamente decreciente y $\left\{r_{2n+1}\right\}$ es estrictamente creciente.
+	\end{enumerate}
 \end{prob}
 
-\begin{prob}
-Sea $a\geq1$. Defina la sucesión $\left\{x_{n}\right\}$ por $x_{1}=a$, y $x_{n+1}=a+\frac{1}{x_{m}}$. Pruebe que $\forall\,n\geq2$, $a+\frac{1}{2a}\leq x_{n}\leq 2a$, y use este resultado para probar que $x_{n}$ es contractiva. Encuentre $\lim\limits_{n\to\infty}x_{n}$.
+\begin{prob}{}
+	Sea $a\geq1$. Defina la sucesión $\left\{x_{n}\right\}$ por $x_{1}=a$, y $x_{n+1}=a+\frac{1}{x_{m}}$. Pruebe que $\forall\,n\geq2$, $a+\frac{1}{2a}\leq x_{n}\leq 2a$, y use este resultado para probar que $x_{n}$ es contractiva. Encuentre $\lim\limits_{n\to\infty}x_{n}$.
 \end{prob}
 
-\begin{prob}
-Sea $a>1$. Defina la sucesión $\left\{x_{n}\right\}$ por $x_{1}=a$ y $x_{n}=\frac{1}{a+x_{n}}$. Pruebe que $\forall\,n\in\mathbb{N}$, $\frac{1}{2a}\leq x_{n}\leq a$, y use este resultado para probar que $\left\{x_{n}\right\}$ es contractiva. Encuentre el $\lim\limits_{n\to\infty}x_{n}$. Compare este límite con el Ejercicio anterior.
+\begin{prob}{}
+	Sea $a>1$. Defina la sucesión $\left\{x_{n}\right\}$ por $x_{1}=a$ y $x_{n}=\frac{1}{a+x_{n}}$. Pruebe que $\forall\,n\in\mathds{N}$, $\frac{1}{2a}\leq x_{n}\leq a$, y use este resultado para probar que $\left\{x_{n}\right\}$ es contractiva. Encuentre el $\lim\limits_{n\to\infty}x_{n}$. Compare este límite con el ejercicio anterior.
 \end{prob}
