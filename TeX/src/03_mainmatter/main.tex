@@ -27,7 +27,7 @@ Un barco pirata es naufragado en una tormenta en la noche. Tres de los piratas s
 
 El tercero también duerme bien, preocupado por su parte de los cocos; despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones juntos, y se va a dormir profundamente.
 
-A la mañana siguiente, todos se despiertan y ven una pila algo más pequeña de cocos que se dividen en 3 montones iguales, pero encontrar uno sobrante que tiran en el arbusto para el mono. ¿Cuántos cocos recolectaron el primer día?
+A la mañana siguiente, todos se despiertan y ven una pila algo más pequeña de cocos que se dividen en 3 montones iguales, pero encontrar uno sobrante que tiran en el arbusto para el mono. ?`Cuántos cocos recolectaron el primer día?
 
 Sea $S_{j}$ el tamaño de la pila después del pirata $j^{4h}$ y sea $S_{0}$ el número que recogieron en el primer día. Entonces
 \begin{align*}
@@ -37,7 +37,7 @@ Sea $S_{j}$ el tamaño de la pila después del pirata $j^{4h}$ y sea $S_{0}$ el 
 	\intertext{y}
 	S_{3}&=3w+1\text{ para algún número entero }w.
 \end{align*}
-¿Hay una ecuación de recurrencia aquí?
+?`Hay una ecuación de recurrencia aquí?
 \begin{align*}
 	S_{1}&=2x\text{ donde }x=(S_{0}-1)/3\text{, entonces }S_{1}=(2/3)S_0-(2/3)\\
 	S_{2}&=2y\text{ donde }y=(S_{1}-1)/3\text{, entonces }S_{2}=(2/3)S_1-(2/3)\\
@@ -69,7 +69,7 @@ Necesitamos más información para determinar $S_0$. Si nos hubieran dicho que e
 
 \subsection{Interés Compuesto}
 
-Supongamos que se le ofrecen dos planes de ahorro para la jubilación. En el plan $A$, empiezas con $\$1,000$, y cada año (en el aniversario del plan), te pagan un $11\%$ de interés simple, y agregas $\$1,000$. En el plan $B$, empiezas con $\$100$, y cada mes, te pagan una-duodécima parte del $10\%$ de interés simple (anual), y agregas $\$100$. ¿Qué plan será más grande después de $40$ años?. ¿Podemos aplicar una ecuación de recurrencia? Considere el plan A y deje que $S_{n}$ denote el número de dólares en el plan después de (exactamente) $n$ años de operación. Entonces $S_{0}=\$1,000$ y
+Supongamos que se le ofrecen dos planes de ahorro para la jubilación. En el plan $A$, empiezas con $\$1,000$, y cada año (en el aniversario del plan), te pagan un $11\%$ de interés simple, y agregas $\$1,000$. En el plan $B$, empiezas con $\$100$, y cada mes, te pagan una-duodécima parte del $10\%$ de interés simple (anual), y agregas $\$100$. ?`Qué plan será más grande después de $40$ años?. ?`Podemos aplicar una ecuación de recurrencia? Considere el plan A y deje que $S_{n}$ denote el número de dólares en el plan después de (exactamente) $n$ años de operación. Entonces $S_{0}=\$1,000$ y
 \begin{align*}
 	S_{n+1}&= S_{n}+\text{ interés sobre }S_n+\$1000\\
 	S_{n+1}&=S_{n}+11\%\text{ de }S_n+\$1000\\
@@ -87,7 +87,7 @@ Por lo tanto,
 	S_{40}&=655917.842\ldots-(9090.909090\ldots)\\
 	S_{40}&\approxeq\$646826.
 \end{align*}
-¿Puede ser cierto? Pusiste $\$40,000$ y sacaste mayor que $\$600,000$ en intereses. Ahora considere el plan $B$ y sea $T_{n}$ denota el número de dólares en el plan después de (exactamente) $n$ meses de funcionamiento. Entonces $T_{0}=\$100$ y
+?`Puede ser cierto? Pusiste $\$40,000$ y sacaste mayor que $\$600,000$ en intereses. Ahora considere el plan $B$ y sea $T_{n}$ denota el número de dólares en el plan después de (exactamente) $n$ meses de funcionamiento. Entonces $T_{0}=\$100$ y
 \begin{align*}
 	T_{n+1}&=T_{n}+\text{ interés sobre }T_{n}+\$100\\
 	T_{n+1}&= T_{n}+(1/2)\text{ de }10\%\text{ de }T_{n}+\$100\\
@@ -115,7 +115,7 @@ Una ecuación de la recurrencia lineal de segundo orden relaciona entradas conse
 \end{equation}
 Pero vamos a asumir que el dominio de $S$ es $\mathds{N}$. Supongamos también que $ab\neq0$, de lo contrario, $S_{n}=c$ para $\forall\,n \in\left\{2\ldots\right\}$, y las soluciones para (2) no son muy interesantes.
 
-¿Qué es de ellos?
+?`Qué es de ellos?
 El primer orden RE son solo un caso especial de segundo orden RE’s cuando $b=0$.
 
 Cuando $c=0$, se dice que la RE es homogénea (todos los términos se ven igual–una constante veces una entrada de secuencia).
@@ -140,9 +140,7 @@ Sea $\Delta=\sqrt{a^2+4b}$, $r_1=\tfrac{a+\Delta}{2}$, y $r_2=\frac{a-\Delta}{2}
 
 Entonces $r_{1}+r_{2}=a$, $r_{1}xr_{2}=-b$, y $r_{1}-r_{2}=\Delta$.
 
-¿estos son derechos?
-The Greek capital letter delta denotes the “difference” in the roots.
-Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
+?`estos son derechos? La letra mayúscula griega delta denota la  ``diferencia'' en las raíces. Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
 
 \begin{example}{}
 Si $S_{n+2}=10S_{n+1}-21S_n$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-10x+21=0$ o $(x-7)(x-3)=0$ donde, $a=10$, $b=-21$, $a^2+4b=100-84=16$, $\Delta = 4$, entonces $r_{1}=7$ y $r_{2}=3$.
@@ -153,7 +151,7 @@ Si $S_{n+2} = 3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, la ecuación carac
 \end{example}
 
 \begin{example}{}
-Si $S_{n+2}=2S_{n+1}-S_{n}$ para $\forall\,n\in\mathds{N}$, la ecuación característica es $x^{2}-2x+1=0$ o $(x-1)(x-1)=0$ donde, $a=2$, $b=-1$, $a^2+4b=4-4=0$, $\Delta = 0$, entonces $r_{1}=1$ y $r_{2}=1$. ¿Pero qué hay de una fórmula que da la solución general?
+Si $S_{n+2}=2S_{n+1}-S_{n}$ para $\forall\,n\in\mathds{N}$, la ecuación característica es $x^{2}-2x+1=0$ o $(x-1)(x-1)=0$ donde, $a=2$, $b=-1$, $a^2+4b=4-4=0$, $\Delta = 0$, entonces $r_{1}=1$ y $r_{2}=1$. ?`Pero qué hay de una fórmula que da la solución general?
 \end{example}
 
 \begin{theorem}

@@ -2,7 +2,7 @@
 %%pag 373
 \begin{enumerate}
 	\item Supongamos que $E_n$ es definido recursivamente en $\mathds{Z}^+$ por \[ E_0=0,E_1=2,\text{ y },E_{n+1}=2n\{E_n+E_{n-1}\} \text{ para }n\geq 1. \] Determine el valor de $E_{10}$.
-	\item Supongamos que la función $f$ es definida recursivamente en $\mathds{Z}^+$ por \[ f(n)=\begin{cases}1 & \text{si }n=2^k\text{ para algún }k \in \mathds{N}\\ f(n/2) & \text{si }n\text{ es par pero no una potencia de 2} \\ f(3n+1) & \text{si }n\text{ es impar.}\end{cases}. \] Entonces 
+	\item Supongamos que la función $f$ es definida recursivamente en $\mathds{Z}^+$ por \[ f(n)\coloneq \ccases{1 & \text{si }n=2^k\text{ para algún }k \in \mathds{N}.\\ f(n/2) & \text{si }n\text{ es par pero no una potencia de 2} \\ f(3n+1) & \text{si }n\text{ es impar.}}. \] Entonces 
 		\begin{align*}
 		f(3)=&f(10)\text{ porque }3\text{ es impar}\\
 				=&f(5)\text{ porque } 10=2\times 5\\
@@ -14,7 +14,7 @@
 	    \item Mostrar que $f(9)$, $f(14)$, y $f(25)$ son todos iguales a $f(11)$ y, por lo tanto, todos iguales a $1$.
 	    \item Escriba un programa para hallar $f(27)$.
 		\end{enumerate}
-	¿Crees que esta función siempre dará el valor de $1$, sin importar con qué $n$ comiences? Busque la ``Conjetura de Collatz'' o el ``Problema del granizo''.
+	?`Crees que esta función siempre dará el valor de $1$, sin importar con qué $n$ comiences? Busque la ``Conjetura de Collatz'' o el ``Problema del granizo''.
 	\item Podríamos definir una degeneración como una $n$--permutación $S$ de $\left\{1.\ldots,n\right\}$ donde cada $S_j\neq j$ y luego definir $\bm{D_n}$ como el número de degeneraciones de $\left\{1,\ldots,n\right\}$. Entonces $\bm{D_n}$ es la única sucesión que satisface la ecuación de recurrencia
 		\begin{equation}\label{eq1}
 			\bm{D_n}=\left(n-1\right)\left\{\bm{D_{n-1}}+\bm{D_{n-2}}\right\}\text{ para }n=3,4,5,\ldots
@@ -34,7 +34,7 @@
     \begin{enumerate}
         \item Use el resultado de la pregunta anterior para mostrar \[ \frac{n!}{e}=\bm{D_n}+n!E_n\text{ donde }|n!E_n|<\frac{n!}{(n+1)!}=\frac{1}{n+1}\leq 1/2. \]
         \item Explique por qué $\bm{D_n}-\tfrac{1}{2}\leq n!/e\leq\bm{D_n}+\tfrac{1}{2}$.
-        \item ¿Es $\lceil n!/e\rfloor=\bm{D_n}$?% TODO:
+        \item ?`Es $\lceil n!/e\rfloor=\bm{D_n}$?% TODO:
     \end{enumerate}
     \item La \emph{función de Ackermann} a veces es definida recursivamente en una forma ligeramente diferente
     \item Supongamos que $\bm{A}$ es un conjunto de $2n$ objetos. Sea $\bm{P_n}$ el número de diferentes maneras que los objetos en $\bm{A}$ pueden ser ``emparejados'' (el número de diferentes particiones de $\bm{A}$ en $2$--subconjuntos). Supongamos que $n\in\mathds{Z}^{+}$. Si $n=2$, entonces $\bm{A}$ tiene cuatro elementos, $\bm{A}=\left\{x_1,x_2,x_3,x_4\right\}$.
@@ -70,15 +70,15 @@
     \begin{enumerate}
         \item Halle $s_{1}$, $s_{2}$, y $s_{3}$.
         \item Resuelva la relación de recurrencia para dar una fórmula para $s_{n}$.
-        \item ¿Es esa sucesión convergente? Si es así, ¿cuál es el límite?
-        \item ¿La serie correspondiente converge? Si es así, ¿cuál es límite?
+        \item ?`Es esa sucesión convergente? Si es así, ?`cuál es el límite?
+        \item ?`La serie correspondiente converge? Si es así, ?`cuál es límite?
     \end{enumerate}
     \item Supongamos $s_{0}=75$ y $s_{n+1}=(1/3)s_{n}-6$ para $n=0,1,\ldots$
     \begin{enumerate}
         \item Halle $s_{1}$, $s_{2}$, y $s_{3}$.
          \item Resuelva la relación de recurrencia para dar una fórmula para $s_{n}$.
-        \item ¿Es esa sucesión convergente? Si es así, ¿cuál es el límite?
-        \item ¿La serie correspondiente converge? Si es así, ¿cuál es límite?
+        \item ?`Es esa sucesión convergente? Si es así, ?`cuál es el límite?
+        \item ?`La serie correspondiente converge? Si es así, ?`cuál es límite?
     \end{enumerate}
     \begin{enumerate}
         \item Mostrar que $f_{n}=A\times3^{n}+B\times2^{n}$ satisface la ecuación de recurrencia \[ f_{n}=5f_{n-1}-6f_{n-2}\text{ para }n\geq 2. \]
