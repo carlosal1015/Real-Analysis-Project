@@ -11,6 +11,8 @@ Los temas para investigar son los siguientes:
   <img alt="Logistic map bifurcation" height="400px" vspace="" hspace="25" src=./img/logistic_map.gif>
 </div>
 
+Por favor, revise la [guía de contribuidores](./CONTRIBUTING.md)
+
 ## Integrantes
 
 Este trabajo está conformado por los siguientes alumnos de la carrera de Matemática:

@@ -11,7 +11,10 @@ El siguiente es un conjunto de pautas para contribuir a `Real-Analysis-Project`.
 
 [¿Cómo puedo contribuir?](#¿cómo-puedo-contribuir?)
   * [Reportando errores](#reportando-errores)
+  * [Antes de enviar un informe de error](#antes-de-enviar-un-informe-de-error)
+  * [¿Cómo presento un buen informe de error?](#¿cómo-presento-un-buen-informe-de-error?)
   * [Sugiriendo mejoras](#sugiriendo-mejoras)
+  * [¿Cómo presento una (buena) sugerencia de mejora?](#¿cómo-presento-una-(buena)-sugerencia-de-mejora?)
   * [Solicitud de extracción](#solicitud-de-extracción)
 
 [Guía de estilos](#guías-de-estilos)
@@ -101,36 +104,29 @@ Antes de crear informes de errores, por favor, compruebe [esta lista](#before-su
 
 #### ¿Cómo presento un buen informe de error?
 
-Cree un problema en ese repositorio y proporcione la siguiente información al completar la [plantilla](./github/ISSUE_TEMPLATE.md).
+Cree un problema en ese repositorio y proporcione la siguiente información al completar la [plantilla](./github/ISSUE_TEMPLATE/informe-de-error.md).
 
 Explique el problema e incluya detalles adicionales para ayudar a los mantenedores a reproducir el problema.
 
 ### Sugiriendo mejoras
 
-This section guides you through submitting an enhancement suggestion for Atom, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
+Esta sección lo guía a través del envío de una sugerencia de mejora para Atom, que incluye funciones completamente nuevas y mejoras menores en la funcionalidad existente. Seguir estas pautas ayuda a los mantenedores y a la comunidad a entender su sugerencia :pencil: y encuentra sugerencias relacionadas :mag_right:.
 
-Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](ISSUE_TEMPLATE.md), including the steps that you imagine you would take if the feature you're requesting existed.
+Cuando esté creando una sugerencia de mejora, por favor [incluir tantos detalles como sea posible](#¿cómo-presento-una-(buena)-sugerencia-de-mejora?). Rellene en [la plantilla](.github/ISSUE_TEMPLATE/solicitud-de-funci-n.md), incluyendo los pasos que imagina que tomaría si existiera la función que está solicitando.
 
-#### Before Submitting An Enhancement Suggestion
+#### ¿Cómo presento una (buena) sugerencia de mejora?
 
-* **Check the [debugging guide](https://flight-manual.atom.io/hacking-atom/sections/debugging/)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of Atom](https://flight-manual.atom.io/hacking-atom/sections/debugging/#update-to-the-latest-version) and if you can get the desired behavior by changing [Atom's or packages' config settings](https://flight-manual.atom.io/hacking-atom/sections/debugging/#check-atom-and-package-settings).
-* **Check if there's already [a package](https://atom.io/packages) which provides that enhancement.**
-* **Determine [which repository the enhancement should be suggested in](#atom-and-packages).**
-* **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Aatom)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
+Las sugerencias de mejora se rastrean como [problemas de GitHub](https://guides.github.com/features/issues/). Cree un problema en ese repositorio y proporcione la siguiente información:
 
-#### How Do I Submit A (Good) Enhancement Suggestion?
-
-Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#atom-and-packages) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
-
-* **Use a clear and descriptive title** for the issue to identify the suggestion.
-* **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
-* **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
-* **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
-* **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of Atom which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux.
-* **Explain why this enhancement would be useful** to most Atom users and isn't something that can or should be implemented as a [community package](#atom-and-packages).
-* **List some other text editors or applications where this enhancement exists.**
-* **Specify which version of Atom you're using.** You can get the exact version by running `atom -v` in your terminal, or by starting Atom and running the `Application: About` command from the [Command Palette](https://github.com/atom/command-palette).
-* **Specify the name and version of the OS you're using.**
+* **Usa un título claro y descriptivo** para el tema e identificar la sugerencia.
+* **Proporcione una descripción paso a paso de la mejora sugerida** en tantos detalles como sea posible.
+* **Proporcionar ejemplos específicos para demostrar los pasos**. Incluya fragmentos de copia que use en esos ejemplos, como [Bloques de código de Markdown](https://help.github.com/articles/markdown-basics/#multiple-lines).
+* **Describe el comportamiento actual** y **explique qué comportamiento esperaba ver en su lugar** y el porqué.
+* **Incluye capturas de pantalla y GIF animados** que le ayudan a demostrar los pasos o señalar la parte a la que se relaciona la sugerencia. Puede utilizar [esta herramienta](https://www.cockos.com/licecap/) para grabar GIFs en macOS y Windows, y [esta herramienta](https://github.com/colinkeenan/silentcast) o [this tool](https://github.com/GNOME/byzanz) en GNU/Linux.
+* **Explica por qué esta mejora sería útil** para la mayoría de los usuarios.
+* **Enumere algunos otros editores de texto o aplicaciones donde exista esta mejora**.
+* **Especifique qué versión de TeX Live está utilizando.** Puede obtener la versión exacta ejecutando `tex --version` en su terminal.
+* **Especifique el nombre y la versión del sistema operativo que está utilizando.**
 
 ### Solicitud de extracción
 
@@ -143,8 +139,7 @@ El proceso descrito aquí tiene varios objetivos:
 
 Por favor, siga estos pasos para que su contribución sea considerada por los mantenedores:
 
-1. Siga todas las instrucciones en
- [la plantilla](.github/PULL_REQUEST_TEMPLATE/pull_request_template.md)
+1. Siga todas las instrucciones en [la plantilla](.github/PULL_REQUEST_TEMPLATE/pull_request_template.md)
 2. Siga la [guía de estilos](#guías-de-estilos)
 3. Después de enviar su solicitud de extracción, verifique que todos
  [controles de estado](https://help.github.com/articles/about-status-checks/) están pasando<details><summary>¿Qué pasa si las comprobaciones de estado fallan?</summary>Si la verificación de estado falla y cree que la falla no está relacionada con su cambio, deje un comentario en la solicitud de extracción que explique por qué cree que la falla no está relacionada. Un mantenedor volverá a ejecutar la verificación de estado por usted. Si llegamos a la conclusión de que el error fue un falso positivo, abriremos un problema para rastrear ese problema con nuestro conjunto de verificación de estado.</details>
