@@ -3,28 +3,28 @@
 \subsection{Relación de Recurrencia}
 
 Una relación de recurrencia es una ecuación que expresa cada término de una sucesión en función de los términos precedentes. Una relación de recurrencia presenta la siguiente forma:
-\begin{equation*}
-	u_{n}=\varphi\left(n,u_{n-1}\right),\forall n>0,
+\begin{align*}
+	u_{n}&=\varphi\left(n,u_{n-1}\right),\forall n>0,\\
 	\intertext{donde}
-	\varphi\colon\mathds{N}\times X\rightarrow x
-\end{equation*}
+	\varphi&\colon\mathds{N}\times X\rightarrow x
+\end{align*}
 es una función donde $X$ es un conjunto al que deben pertenecer los elementos de una sucesión. Para cualquier $u_{0}\in X$, esto define una sucesión única con $u_{0}$ como su primer elemento, llamado el valor inicial.
 
 Es fácil modificar la definición para obtener sucesiones a partir del término del índice $1$ o superior. Esto define la relación de recurrencia de primer orden. Una relación de recurrencia de orden $k$ tiene la forma:
-\begin{equation*}
-	u_{n}=\varphi\left(n,u_{n-1},u_{n-2},\ldots,u_{n-k}\right),\forall n\geq k,
+\begin{align*}
+	u_{n}&=\varphi\left(n,u_{n-1},u_{n-2},\ldots,u_{n-k}\right),\forall n\geq k,\\
 	\intertext{donde}
-	\varphi\colon\mathds{N}\times X^{k}\rightarrow X
-\end{equation*}
+	\varphi&\colon\mathds{N}\times X^{k}\rightarrow X
+\end{align*}
 Es una función que involucra $k$ elementos consecutivos de la sucesión. En este caso, se necesitan $k$ valores iniciales para definir una sucesión.
 
 \subsection{Ecuaciones en Diferencias}
 
 Una ecuación en diferencias es una expresión de la forma:
-\begin{equation*}
-	G\left(n,f(n),f(n+1),\ldots,f(n+k)\right)=0,\forall n\in\mathds{Z}
+\begin{align*}
+	G\left(n,f(n),f(n+1),\ldots,f(n+k)\right)&=0,\forall n\in\mathds{Z}\\
 	\intertext{donde}
-\end{equation*}
+\end{align*}
 $f$ es una función definida en $\mathds{Z}$.
 
 Si después de simplificar esta expresión quedan los términos $f\left(n+k_{1}\right)$ y $f\left(n+k_{2}\right)$ como el mayor y el menor, respectivamente. Se dice que la ecuación es de orden $k=k_{1}-k_{2}$.

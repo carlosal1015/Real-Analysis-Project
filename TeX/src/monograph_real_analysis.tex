@@ -1,9 +1,9 @@
 % arara: clean: {extensions: ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','pdf','synctex.gz','bcf','run.xml']}
 % arara: lualatex: { shell: yes }
-% arara: lualatex: { synctex: yes }
 % arara: biber
 % arara: lualatex: { synctex: yes }
 % arara: makeindex
+% arara: lualatex: { synctex: yes }
 % arara: lualatex: { synctex: yes }
 % arara: clean: {extensions: ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','bcf','run.xml']}
 \documentclass[graybox,envcountchap,sectrefs]{svmono}
@@ -26,6 +26,9 @@
 \usepackage{newtxmath}       % selects Times Roman as basic font
 \usepackage{bm,dsfont}
 \usepackage{mathrsfs}
+\usepackage{lipsum}
+
+\graphicspath{ {img} }
 
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
 \addbibresource{bib.bib}
@@ -66,32 +69,33 @@ Davis S. García Fernández}
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\extrachap{A}
 %\Extrachap{B}
-\include{dedication}
-%\include{foreword}
-\include{preface}
-\include{acknowledgement}
+\include{./02_frontmatter/dedication}
+\include{./02_frontmatter/foreword}
+\include{./02_frontmatter/preface}
+\include{./02_frontmatter/acknowledgement}
 
 \tableofcontents
 
-%\include{acronym}
+\include{acronym}
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{part}
-\include{conceptos_previos}
-\include{chap9}
-\include{definiciones}
+
+%\include{./03_mainmatter/part}
+\include{./03_mainmatter/gabriel}
+\include{./03_mainmatter/previos}
+\include{./03_mainmatter/chap9}
+\include{./03_mainmatter/definiciones}
 %\include{parcial}
-\include{micha2}
-\include{main}
-\include{exercises}
+\include{./03_mainmatter/micha2}
+\include{./03_mainmatter/main}
+\include{./03_mainmatter/exercises}
 %\include{chapter}
-\include{part}
 %\include{appendix}
-\include{references}
+\include{./03_mainmatter/references}
 
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\include{glossary}
-\include{solutions}
+\include{./04_backmatter/solutions}
 
 \printindex
 
