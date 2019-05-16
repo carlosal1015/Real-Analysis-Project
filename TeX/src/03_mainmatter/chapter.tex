@@ -1,0 +1,292 @@
+%\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
+%\chapter{}
+%\label{intro} % Always give a unique label
+% use \chaptermark{}
+% to alter or adjust the chapter heading in the running head
+%
+%\abstract*{}
+%
+%\abstract{El cálculo de variaciones se desarrolló a partir del problema de la curva braquistócrona, planteado inicialmente por \textbf{Johann Bernoulli} (1696). Inmediatamente este problema captó la atención de Jakob Bernoulli y el marqués de l'Hôpital, aunque fue \textbf{Leonhard Euler} el primero que elaboró una teoría del cálculo variacional. Las contribuciones de Euler se iniciaron en 1733 con su Elementa Calculi Variationum (``Elementos del cálculo de variaciones'') que da nombre a la disciplina. \newline\indent
+%\textbf{Lagrange} contribuyó extensamente a la teoría y Legendre (1786) asentó un método, no enteramente satisfactorio para distinguir entre máximos y mínimos. \textbf{Isaac Newton} y \textbf{Gottfried Leibniz} también prestaron atención a este asunto.}
+%
+%\section{Otras publicaciones}
+%\label{sec:1}
+%Otros trabajos destacados fueron los de Vincenzo Brunacci (1810), Carl Friedrich Gauss (1829), Siméon Poisson (1831), Mijaíl Ostrogradski (1834) y Carl Jacobi (1837). Un trabajo general particularmente importante es el de Sarrus (1842) que fue resumido por Cauchy (1844). Otros trabajos destacados posteriores son los de Strauch (1849), Jellett (1850), Otto Hesse (1857), Alfred Clebsch (1858) y Carll (1885), aunque quizá el más importante de los trabajos durante el siglo XIX es el de \textbf{Weierstrass}. Este importante trabajo fue una referencia estándar y es el primero que trata el cálculo de variaciones sobre una base firme y rigurosa. Los problema 20 y 23 de Hilbert planteados en 1900 estimularon algunos desarrollos posteriores. Durante el siglo XX, David Hilbert, Emmy Noether, Leonida Tonelli, Henri Lebesgue y Jacques Hadamard, entre otros, hicieron contribuciones notables.\par
+%\textbf{Marston Morse} aplicó el cálculo de variaciones a lo que actualmente se conoce como teoría de Morse. Lev Semenovich Pontryagin, Ralph Rockafellar y Clarke desarrollaron nuevas herramientas matemáticas dentro de la teoría del control óptimo, generalizando el cálculo de variaciones.
+%
+%\section{Fermat, Bernoulli, Newton y Leibniz}
+%\label{sec:2}
+%% Always give a unique label
+%% and use \ref{<label>} for cross-references
+%% and \cite{<label>} for bibliographic references
+%% use \sectionmark{}
+%%% to alter or adjust the section heading in the running head
+%%
+%%% For figures use
+%%%
+%\begin{figure}[!ht]
+%	\sidecaption[t]
+%	% Use the relevant command for your figure-insertion program
+%	% to insert the figure file.
+%	% For example, with the option graphics use
+%	\includegraphics[width=0.343\textwidth]{bola.jpg}
+%	%
+%	% If not, use
+%	%\picplace{5cm}{2cm} % Give the correct figure height and width in cm
+%	%
+%	\caption{Dados dos puntos $A$ y $B$, con $A$ a una elevación mayor que $B$, existe solo una curva cicloide con la concavidad hacia arriba que pasa por $A$ con pendiente infinita (dirección vertical y sentido de arriba hacia abajo), también pasa por $B$ y no posee puntos máximos entre $A$ y $B$.}
+%	\label{fig:1}       % Give a unique label
+%\end{figure}
+%
+%\eject
+%
+%%\begin{eqnarray}
+%%\left|\nabla U_{\alpha}^{\mu}(y)\right| &\le&\frac1{d-\alpha}\int
+%%\left|\nabla\frac1{|\xi-y|^{d-\alpha}}\right|\,d\mu(\xi) =
+%%\int \frac1{|\xi-y|^{d-\alpha+1}} \,d\mu(\xi)\qquad  \\
+%%&=&(d-\alpha+1) \int\limits_{d(y)}^\infty
+%%\frac{\mu(B(y,r))}{r^{d-\alpha+2}}\,dr \le (d-\alpha+1)
+%%\int\limits_{d(y)}^\infty \frac{r^{d-\alpha}}{r^{d-\alpha+2}}\,dr
+%%\label{eq:01}
+%%\end{eqnarray}
+%
+%\enlargethispage{24pt}
+%
+%\begin{quotation}
+%Please do not use quotation marks when quoting texts! Simply use the \verb|quotation| environment -- it will automatically be rendered in the preferred layout.
+%\end{quotation}
+%\subsection{Algunas observaciones, demostraciones y aplicaciones de Euler, Lagrange y Jacobi en el Cálculo variacional}
+%Instead of simply listing headings of different levels we recommend to let every heading be followed by at least a short passage of text. Furtheron please use the \LaTeX\ automatism for all your cross-references and citations as has already been described in Sect.~\ref{subsec:2}, see also Fig.~\ref{fig:1}\footnote{If you copy text passages, figures, or tables from other works, you must obtain \textit{permission} from the copyright holder (usually the original publisher). Please enclose the signed permission with the manucript. The sources\index{permission to print} must be acknowledged either in the captions, as footnotes or in a separate section of the book.}
+%\paragraph{Paragraph Heading} %
+%Instead of simply listing headings of different levels we recommend to let every heading be followed by at least a short passage of text. Furtheron please use the \LaTeX\ automatism for all your cross-references and citations as has already been described in Sect.~\ref{sec:2}.
+%
+%Please note that the first line of text that follows a heading is not indented, whereas the first lines of all subsequent paragraphs are.
+%
+%For typesetting numbered lists we recommend to use the \verb|enumerate| environment -- it will automatically render Springer's preferred layout.
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{grafica.jpg}
+%	\caption{Costo de producción proporcional a la raíz cuadrada de la tasa de producción.}
+%\end{figure}
+%\begin{figure}[t]
+%\sidecaption[t]
+%% Use the relevant command for your figure-insertion program
+%% to insert the figure file.
+%% For example, with the option graphics use
+%\includegraphics[scale=.65]{figure}
+%%
+%% If not, use
+%%\picplace{5cm}{2cm} % Give the correct figure height and width in cm
+%%
+%\caption{Please write your figure caption here}
+%\label{fig:2}       % Give a unique label
+%\end{figure}
+%
+%\runinhead{Run-in Heading Boldface Version} Use the \LaTeX\ automatism for all your cross-references and citations as has already been described in Sect.~\ref{sec:2}.
+%
+%\subruninhead{Run-in Heading Boldface and Italic Version} Use the \LaTeX\ automatism for all your cross-refer\-ences and citations as has already been described in Sect.~\ref{sec:2}\index{paragraph}.
+%
+%\subsubruninhead{Run-in Heading Displayed Version} Use the \LaTeX\ automatism for all your cross-refer\-ences and citations as has already been described in Sect.~\ref{sec:2}\index{paragraph}.
+%% Use the \index{} command to code your index words
+%%
+%% For tables use
+%%
+%\begin{table}[!t]
+%\caption{Please write your table caption here}
+%\label{tab:1}       % Give a unique label
+%%
+%% For LaTeX tables use
+%%
+%\begin{tabular}{p{2cm}p{2.4cm}p{2cm}p{4.9cm}}
+%\hline\noalign{\smallskip}
+%Classes & Subclass & Length & Action Mechanism  \\
+%\noalign{\smallskip}\svhline\noalign{\smallskip}
+%Translation & mRNA$^a$  & 22 (19--25) & Translation repression, mRNA cleavage\\
+%Translation & mRNA cleavage & 21 & mRNA cleavage\\
+%Translation & mRNA  & 21--22 & mRNA cleavage\\
+%Translation & mRNA  & 24--26 & Histone and DNA Modification\\
+%\noalign{\smallskip}\hline\noalign{\smallskip}
+%\end{tabular}
+%$^a$ Table foot note (with superscript)
+%\end{table}
+%%
+%\section{Section Heading}
+%\label{sec:3}
+%% Always give a unique label
+%% and use \ref{<label>} for cross-references
+%% and \cite{<label>} for bibliographic references
+%% use \sectionmark{}
+%% to alter or adjust the section heading in the running head
+%Instead of simply listing headings of different levels we recommend to let every heading be followed by at least a short passage of text. Furtheron please use the \LaTeX\ automatism for all your cross-references and citations as has already been described in Sect.~\ref{sec:2}.
+%
+%Please note that the first line of text that follows a heading is not indented, whereas the first lines of all subsequent paragraphs are.
+%
+%If you want to list definitions or the like we recommend to use the Springer-enhanced \verb|description| environment -- it will automatically render Springer's preferred layout.
+%
+%\begin{description}[Type 1]
+%\item[Type 1]{That addresses central themes pertainng to migration, health, and disease. In Sect.~\ref{sec:1}, Wilson discusses the role of human migration in infectious disease distributions and patterns.}
+%\item[Type 2]{That addresses central themes pertainng to migration, health, and disease. In Sect.~\ref{subsec:2}, Wilson discusses the role of human migration in infectious disease distributions and patterns.}
+%\end{description}
+%
+%\subsection{Subsection Heading} %
+%In order to avoid simply listing headings of different levels we recommend to let every heading be followed by at least a short passage of text. Use the \LaTeX\ automatism for all your cross-references and citations citations as has already been described in Sect.~\ref{sec:2}.
+%
+%Please note that the first line of text that follows a heading is not indented, whereas the first lines of all subsequent paragraphs are.
+%
+%\begin{svgraybox}
+%If you want to emphasize complete paragraphs of texts we recommend to use the newly defined Springer class option \verb|graybox| and the newly defined environment \verb|svgraybox|. This will produce a 15 percent screened box 'behind' your text.
+%
+%If you want to emphasize complete paragraphs of texts we recommend to use the newly defined Springer class option and environment \verb|svgraybox|. This will produce a 15 percent screened box 'behind' your text.
+%\end{svgraybox}
+%
+%
+%\subsubsection{Subsubsection Heading}
+%Instead of simply listing headings of different levels we recommend to let every heading be followed by at least a short passage of text. Furtheron please use the \LaTeX\ automatism for all your cross-references and citations as has already been described in Sect.~\ref{sec:2}.
+%
+%Please note that the first line of text that follows a heading is not indented, whereas the first lines of all subsequent paragraphs are.
+%
+%\begin{theorem}
+%Theorem text goes here.
+%\end{theorem}
+%%
+%% or
+%%
+%\begin{definition}
+%Definition text goes here.
+%\end{definition}
+%
+%\begin{proof}
+%%\smartqed
+%Proof text goes here.
+%%\qed
+%\end{proof}
+%
+%\paragraph{Paragraph Heading} %
+%Instead of simply listing headings of different levels we recommend to let every heading be followed by at least a short passage of text. Furtheron please use the \LaTeX\ automatism for all your cross-references and citations as has already been described in Sect.~\ref{sec:2}.
+%
+%Note that the first line of text that follows a heading is not indented, whereas the first lines of all subsequent paragraphs are.
+%%
+%% For built-in environments use
+%%
+%\begin{theorem}
+%Theorem text goes here.
+%\end{theorem}
+%%
+%\begin{definition}
+%Definition text goes here.
+%\end{definition}
+%%
+%\begin{proof}
+%%\smartqed
+%Proof text goes here.
+%%\qed
+%\end{proof}
+%%
+%%
+%\begin{trailer}{Cabeza de remolque}
+%If you want to emphasize complete paragraphs of texts in an \verb|Trailer Head| we recommend to
+%use  \begin{verbatim}\begin{trailer}{Trailer Head}
+%...
+%\end{trailer}\end{verbatim}
+%\end{trailer}
+%%
+%\begin{question}{Preguntas}
+%If you want to emphasize complete paragraphs of texts in an \verb|Questions| we recommend to
+%use  \begin{verbatim}\begin{question}{Questions}
+%...
+%\end{question}\end{verbatim}
+%\end{question}
+%%
+%%
+%\begin{important}{Importante}
+%If you want to emphasize complete paragraphs of texts in an \verb|Important| we recommend to
+%use  \begin{verbatim}\begin{important}{Important}
+%...
+%\end{important}\end{verbatim}
+%\end{important}
+%%
+%\clearpage
+%\begin{warning}{Atención}
+%If you want to emphasize complete paragraphs of texts in an \verb|Attention| we recommend to
+%use  \begin{verbatim}\begin{warning}{Attention}
+%...
+%\end{warning}\end{verbatim}
+%\end{warning}
+%
+%\begin{programcode}{Código de programa}
+%If you want to emphasize complete paragraphs of texts in an \verb|Program Code| we recommend to
+%use
+%
+%\verb|\begin{programcode}{Program Code}|
+%
+%\verb|\begin{verbatim}...\end{verbatim}|
+%
+%\verb|\end{programcode}|
+%
+%\end{programcode}
+%%
+%\begin{tips}{Consejos}
+%If you want to emphasize complete paragraphs of texts in an \verb|Tips| we recommend to
+%use  \begin{verbatim}\begin{tips}{Tips}
+%...
+%\end{tips}\end{verbatim}
+%\end{tips}
+%%
+%%
+%\begin{overview}{Visión general}
+%If you want to emphasize complete paragraphs of texts in an \verb|Overview| we recommend to
+%use  \begin{verbatim}\begin{overview}{Overview}
+%...
+%\end{overview}\end{verbatim}
+%\end{overview}
+%\clearpage
+%\begin{backgroundinformation}{Background Information}
+%If you want to emphasize complete paragraphs of texts in an \verb|Background|
+%\verb|Information| we recommend to
+%use
+%
+%\verb|\begin{backgroundinformation}{Background Information}|
+%
+%\verb|...|
+%
+%\verb|\end{backgroundinformation}|
+%\end{backgroundinformation}
+%\begin{legaltext}{Legal Text}
+%If you want to emphasize complete paragraphs of texts in an \verb|Legal Text| we recommend to
+%use  \begin{verbatim}\begin{legaltext}{Legal Text}
+%...
+%\end{legaltext}\end{verbatim}
+%\end{legaltext}
+%%
+%\begin{acknowledgement}
+%If you want to include acknowledgments of assistance and the like at the end of an individual chapter please use the \verb|acknowledgement| environment -- it will automatically render Springer's preferred layout.
+%\end{acknowledgement}
+%%
+%\section*{Apéndice}
+%\addcontentsline{toc}{section}{Apéndice}
+%%
+%When placed at the end of a chapter or contribution (as opposed to at the end of the book), the numbering of tables, figures, and equations in the appendix section continues on from that in the main text. Hence please \textit{do not} use the \verb|appendix| command when writing an appendix at the end of your chapter or contribution. If there is only one the appendix is designated ``Appendix'', or ``Appendix 1'', or ``Appendix 2'', etc. if there is more than one.
+%
+%\begin{equation}
+%a \times b = c
+%\end{equation}
+%% Problems or Exercises should be sorted chapterwise
+%\section*{Problemas}
+%\addcontentsline{toc}{section}{Problems}
+%%
+%% Use the following environment.
+%% Don't forget to label each problem;
+%% the label is needed for the solutions' environment
+%\begin{prob}
+%\label{prob1}
+%A given problem or Excercise is described here. The
+%problem is described here. The problem is described here.
+%\end{prob}
+%
+%\begin{prob}
+%\label{prob2}
+%\textbf{Problem Heading}\\
+%(a) The first part of the problem is described here.\\
+%(b) The second part of the problem is described here.
+%\end{prob}
+\input{references}

@@ -1,0 +1,240 @@
+\section{Resolución de ecuaciones de recurrencia lineal de primer orden}
+
+\subsection{Las torres de Hanoi}
+
+La ecuación de recurrencia para el número de movimientos en las Torres de Hanoi es una ecuación de recurrencia lineal de primer orden:
+\begin{equation*}
+	T_{n}=2T_{n-1}+1.
+\end{equation*}
+Sea $a=2$ y $c=1$, entonces $\tfrac{c}{1-a}=\tfrac{1}{1-2}=-1$, y cualquier secuencia $T$ que satisfaga este $RE$ está dado por la fórmula
+\begin{align*}
+	\bm{T_{n}}&=2^{n}\left[I-(-1)\right]+(-1)\\
+	\bm{T_{n}}&=2^{n}\left[I+1\right]-1
+\end{align*}
+Asumiendo que $T$ tiene el dominio $\mathds{N}$ y que denota $T_0$ por $I$, vimos al principio de este capítulo varias soluciones particulares:
+
+Si $I=0$, entonces $\bm{T}=\left(0,1,3,7,15,31,\ldots\right)$ \ $\bm{T_{n}}=2^{n}[0+1]-1=2^n-1$.
+
+Si $I=2$, entonces $\bm{T}=\left(4,9,19,39,79,159,\ldots\right)$ \ $\bm{T_{n}}=2^{n}[2+1]-1=3\times2^n -1$.
+
+Si $I=4$, entonces $\bm{T}=\left(2,5,11,23,47,95,\ldots\right)$ \ $\bm{T_{n}}=2^{n}[4+1]-1=5\times2^n -1$.
+
+Si $I=-1$, entonces $\bm{T}=\left(-1,-1,-1,-1,-1,\ldots\right)$ \ $\bm{T_n}=2^{n}\left[-1+1\right]-1=-1$.
+
+\subsection{Los tres piratas naufragados}
+
+Un barco pirata es naufragado en una tormenta en la noche. Tres de los piratas sobreviven y se encuentran en una playa la mañana después de la tormenta. Aceptan cooperar para asegurar su supervivencia. Ellos divisan a un mono en la selva cerca de la playa y pasan todo ese primer día recogiendo una gran pila de cocos y luego se van a dormir exhaustos. Pero ellos son piratas. El primero duerme bien, preocupado por su parte de los cocos; despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones, y se va a dormir profundamente. El segundo pirata duerme bien, preocupado por su parte de los cocos; se despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones, y se va a dormir profundamente.
+
+El tercero también duerme bien, preocupado por su parte de los cocos; despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones juntos, y se va a dormir profundamente.
+
+A la mañana siguiente, todos se despiertan y ven una pila algo más pequeña de cocos que se dividen en 3 montones iguales, pero encontrar uno sobrante que tiran en el arbusto para el mono. ¿Cuántos cocos recolectaron el primer día?
+
+Sea $S_{j}$ el tamaño de la pila después del pirata $j^{4h}$ y sea $S_{0}$ el número que recogieron en el primer día. Entonces
+\begin{align*}
+	S_{0}&=3x+1\text{ para algún número entero }x\text{ y }S_1=2x,\\
+	S_{1}&= 3y+1\text{ para algún número entero }y\text{ y }S_2=2y,\\
+	S_{2}&=3z+1\text{ para algún número entero}z\text{ y }S_3=2z,\\
+	\intertext{y}
+	S_{3}&=3w+1\text{ para algún número entero }w.
+\end{align*}
+¿Hay una ecuación de recurrencia aquí?
+\begin{align*}
+	S_{1}&=2x\text{ donde }x=(S_{0}-1)/3\text{, entonces }S_{1}=(2/3)S_0-(2/3)\\
+	S_{2}&=2y\text{ donde }y=(S_{1}-1)/3\text{, entonces }S_{2}=(2/3)S_1-(2/3)\\
+	S_{3}&=2z\text{ donde }z=(S_{2}-1)/3\text{, entonces }S_{3}=(2/3)S_2-(2/3).
+\end{align*}
+La ecuación de recurrencia satisfecha por los primeros $S_{j}^{\prime}s$ es
+\begin{equation}
+	S_{j+1}=(2/3)S_{j}-(2/3).
+\end{equation}
+Si ahora tenemos $S_{4}=(2/3)S_{3}-(2/3)$, entonces $S_{4}=2[S_{3}-1]/3=2w$ para algún número entero $w$. Queremos saber qué valor (o valores) de $S_0$ producirá un número entero par para $S_4$ cuando aplicamos el RE (1). En (1), $a=2/3$ y $c=-2/3$, entonces $c/(1-a) = -2$, y así la solución general de (1) es
+\begin{equation*}
+	S_{n}={\left(\frac{2}{3}\right)}^{n}\left[S_{0}+2\right]-2.
+\end{equation*}
+Por lo tanto, $S_{4}=(2/3)^{4}[S_0+2]-2=(16/81)\left[S_0 + 2\right]-2$.
+
+$S_{4}$ será un número entero
+
+$\Leftrightarrow S_{4}+2$ es (un aún) el número entero
+
+$\Leftrightarrow 81\divides\left[S_0 + 2\right]$
+
+$\Leftrightarrow\left[S_{0}+2\right]= 81k$ para algún número entero $k$
+
+$\Leftrightarrow S_{0}=81k-2$ para algún número entero $k$.
+
+$S_{0}$ debe ser un número entero positivo, pero hay un número infinito de respuestas posibles: \[ 79\vee160\vee241\vee322\vee\cdots \]
+
+Necesitamos más información para determinar $S_0$. Si nos hubieran dicho que el primer día los piratas recolectaron entre $200$ y $300$ cocos, ahora podríamos decir ``el número que recogieron el primer día fue exactamente $241$''.
+
+\subsection{Interés Compuesto}
+
+Supongamos que se le ofrecen dos planes de ahorro para la jubilación. En el plan $A$, empiezas con $\$1,000$, y cada año (en el aniversario del plan), te pagan un $11\%$ de interés simple, y agregas $\$1,000$. En el plan $B$, empiezas con $\$100$, y cada mes, te pagan una-duodécima parte del $10\%$ de interés simple (anual), y agregas $\$100$. ¿Qué plan será más grande después de $40$ años?. ¿Podemos aplicar una ecuación de recurrencia? Considere el plan A y deje que $S_{n}$ denote el número de dólares en el plan después de (exactamente) $n$ años de operación. Entonces $S_{0}=\$1,000$ y
+\begin{align*}
+	S_{n+1}&= S_{n}+\text{ interés sobre }S_n+\$1000\\
+	S_{n+1}&=S_{n}+11\%\text{ de }S_n+\$1000\\
+	S_{n+1}&=S_{n}(1+0.11)+\$1000.
+\end{align*}
+En esta RE, $a=1.11$, $c=1000$, entonces $\tfrac{c}{1-a}=\tfrac{1000}{-0.11}$ y
+\begin{align*}
+	S_{n}&={\left(1.11\right)}^{n}\left[1000-\frac{1000}{-0.11}\right]+\frac{1000}{+0.11}\\
+	S_{n}&={\left(1.11\right)}^{n}\left[\frac{1110}{+0.11}\right]-\frac{1000}{+0.11}
+\end{align*}
+Por lo tanto,
+\begin{align*}
+	S_{40}&={\left(1.11\right)}^{40}(10090.090909\ldots)-(-9090.909090\ldots)\\
+	S_{40}&=(65.000867\ldots)(10090.090909\ldots)-(9090.909090\ldots)\\
+	S_{40}&=655917.842\ldots-(9090.909090\ldots)\\
+	S_{40}&\approxeq\$646826.
+\end{align*}
+¿Puede ser cierto? Pusiste $\$40,000$ y sacaste mayor que $\$600,000$ en intereses. Ahora considere el plan $B$ y sea $T_{n}$ denota el número de dólares en el plan después de (exactamente) $n$ meses de funcionamiento. Entonces $T_{0}=\$100$ y
+\begin{align*}
+	T_{n+1}&=T_{n}+\text{ interés sobre }T_{n}+\$100\\
+	T_{n+1}&= T_{n}+(1/2)\text{ de }10\%\text{ de }T_{n}+\$100\\
+	T_{n+1}&=T_{n}\left[1+0.1/12\right]\$100
+\end{align*}
+En esta RE, $a=12.1/12,c=100$, entonces $\tfrac{c}{1-a}=\tfrac{100}{-0.1/12}=-12000$ y
+\begin{equation*}
+	T_{n}={\left(12.1/12\right)}^{n}\left[100+12000\right]-12000
+\end{equation*}
+De ahí, después $40\times12$ meses,
+\begin{align*}
+	T_{480}&={\left(12.1/12\right)}^{480}(12100)\quad-(12000)\\
+	T_{480}&={\left(1.008333\ldots\right)}^{480}(12100)\quad-(12000)\\
+	T_{480}&=\left(53.700663\ldots\right)(12100)\quad-(12000)\\
+	T_{480}&=649778.0234\ldots \quad-(12000)\\
+	T_{480}&\approxeq\$637778.
+\end{align*}
+Por lo tanto, el plan $A$ tiene un valor ligeramente mayor después de $40$ años.
+
+\section{Resolución de ecuaciones de recurrencia lineal de segundo orden}
+
+Una ecuación de la recurrencia lineal de segundo orden relaciona entradas consecutivas en una secuencia por una ecuación de la forma
+\begin{equation}
+	S_{n+2}=aS_{n+1}+bS_{n}+c\quad\forall n\text{ en el dominio de }S.
+\end{equation}
+Pero vamos a asumir que el dominio de $S$ es $\mathds{N}$. Supongamos también que $ab\neq0$, de lo contrario, $S_{n}=c$ para $\forall\,n \in\left\{2\ldots\right\}$, y las soluciones para (2) no son muy interesantes.
+
+¿Qué es de ellos?
+El primer orden RE son solo un caso especial de segundo orden RE’s cuando $b=0$.
+
+Cuando $c=0$, se dice que la RE es homogénea (todos los términos se ven igual–una constante veces una entrada de secuencia).
+
+Cuando $c=0$, se dice que la RE es homogénea (todos los términos se ven igual – una constante veces una entrada de secuencia).
+
+El Fibonacci RE es homogénea.
+
+Vamos a restringir también nuestra atención (por el momento) a una ecuación de segundo orden lineal, la recurrencia homogénea
+\begin{equation}
+	S_{n+2}=aS_{n+1}+bS_{n}\text{ para }\forall n\in\mathds{N}.
+\end{equation}
+Tal como hicimos para la ecuación de la recurrencia de Fibonacci, supongamos que hay una secuencia geométrica, $S_n=r^n$, que satisface (3)
+
+Si lo hubiera, entonces $r^{n+2}=ar^{n+1}+br^{n}$ para $\forall\,n\in\mathds{N}$.
+
+Cuando $n = 0$, $r^2=ar+b$.
+
+La ``ecuación característica'' de (3) es $x^2-ax-b=0$, que tiene ``raíces'' $r=\tfrac{-(-a)\pm\sqrt{(-a)^2-4(1)(-b)}}{2(1)}=\tfrac{a\pm\sqrt{a^2+4b}}{2}$.
+
+Sea $\Delta=\sqrt{a^2+4b}$, $r_1=\tfrac{a+\Delta}{2}$, y $r_2=\frac{a-\Delta}{2}$.
+
+Entonces $r_{1}+r_{2}=a$, $r_{1}xr_{2}=-b$, y $r_{1}-r_{2}=\Delta$.
+
+¿estos son derechos?
+The Greek capital letter delta denotes the “difference” in the roots.
+Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
+
+\begin{example}{}
+Si $S_{n+2}=10S_{n+1}-21S_n$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-10x+21=0$ o $(x-7)(x-3)=0$ donde, $a=10$, $b=-21$, $a^2+4b=100-84=16$, $\Delta = 4$, entonces $r_{1}=7$ y $r_{2}=3$.
+\end{example}
+
+\begin{example}{}
+Si $S_{n+2} = 3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^2-3x+2=0$ o $(x-2)(x-1)=0$ donde, $a=3$, $b=-2$, $a^2+4b=9-8=1$, $\Delta = 1$, entonces $r_1=2$ y $r_2=1$.
+\end{example}
+
+\begin{example}{}
+Si $S_{n+2}=2S_{n+1}-S_{n}$ para $\forall\,n\in\mathds{N}$, la ecuación característica es $x^{2}-2x+1=0$ o $(x-1)(x-1)=0$ donde, $a=2$, $b=-1$, $a^2+4b=4-4=0$, $\Delta = 0$, entonces $r_{1}=1$ y $r_{2}=1$. ¿Pero qué hay de una fórmula que da la solución general?
+\end{example}
+
+\begin{theorem}
+La solución general de la RE homogénea (3) es
+	\begin{align*}
+		S_{n}&=A(r_1)^{n}+B(r_2)^{n}\text{, si }r_{1}\neq r_{2}\quad\text{ si}\Delta\neq0\\
+		S_{n}&=A(r)^n+Bn(r)^{n}\text{, si }r_{1}=r_{2}=r\quad\text{ si }\Delta=0
+	\end{align*}
+\end{theorem}
+\begin{proof}
+Supongamos que $T$ es cualquier solución particular de la RE homogénea. Nos ocupamos de los dos casos por separado.
+
+Caso 1. Si $\Delta\neq0$, entonces las dos raíces son distintas (pero pueden ser números ``complejos'').
+
+Encontraremos valores para $A$ y $B$, luego probaremos que $T_{n}=A(r_1)^{n}+B(r_2)^{n}$ para $\forall\,n\in\mathds{N}$.
+
+Mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ arranca correctamente para valores especialmente elegidos de $A$ y $B$, y luego mostrar $A(r_1)^{n}+B(r_2)^{n}$ continúa correctamente.
+
+Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizaría $T_{n}=A(r_1)^{n}+B(r_{2})^n$, entonces $n=0$ y $n=1$. Si
+$T_0 = A(r_1)^0 + B(r_2)^0 = A + B$.................................(1)\\
+y $T_1 = A(r_1)^1 + B(r_2)^1 = A(r_1) + B(r_2)$.................................(2)\\
+
+entonces $(r_1)T_0 = A(r_1) + B(r_1)$.......................//multiplicamos (1) por $r_1$\\
+y $T_1 = A(r_1) + B(r_2)$.................// (2) otra vez restamos, obtenemos\\
+
+$(r_1)T_0 - T_1 = B(r_1 - r_2) = B\Delta$...............//$r_1 - r_2 = \Delta \neq 0$\\
+
+entonces $B = \frac{(r_1)T_0 - T_1}{\Delta}$\\
+
+Tenemos, $A=T_0 - B =\frac{\Delta T_0}{\Delta} -\frac{(r_1)T_0 - T_1}{\Delta} = \frac{-(r_2)T_0+T_1}{\Delta}$\\
+// No importa cómo comience la secuencia T (no importa cuáles sean los valores para $T_0$ y $T_1$)\\
+//hay números únicos A y B tales que $T_n = A(r_1)^n + B(r_2)^n$ para $n = 0$ y 1\\
+// Continuando la prueba por la inducción matemática que $T_n= A(r_1)^n + B(r_2)^n$ para $\forall \; n \in \mathbb{N}$\\
+
+Paso 1. Si $n=0$ o $1$, entonces $T_{n} = A(r_{1})^{n}+B(r_{2})^{n}$, por nuestra ``opción'' $A$ y $B$.\\
+Paso 2. Asuma que $\exists k\geq1$ tal que si $0\leq n\leq k$, entonces $T_{n}=A(r_1)^{n}+B(r_{2})^{n}$.\\
+Paso 3. Si $n=k+1$, entonces $n\geq2$ entonces, porque $T$ satisface la RE homogénea (3)\\
+
+\begin{align*}
+	T_{k+1}&=aT_{k}+bT_{k-1}\\
+	T_{k+1}&=a\left[A(r_1)^k + B(r_2)^k\right]+b\left[A(r_1)^{k-1} + B(r_2)^{k-1}\right] \text{por el paso }2\\
+	T_{k+1}&=\left[aA(r_1)^k+bA(r_1)^{k-1}\right]+[aB(r_2)^k+bB(r_2)^{k-1}]\\
+	T_{k+1}&=A(r_1)^{k-1}[a(r_1)+b]+B(r_2)^{k-1}[a(r_2)+n]\\
+	T_{k+1}&= A(r_1)^{k+1}+B(r_2)^{k+1}
+\end{align*}
+Así, si $r_{1}\neq r_{2}$, $T_{n}=A(r_1)^n+B(r_2)^n$ para $\forall\,n\in\mathds{N}$.
+\end{proof}
+% TODO: Checkear bien escrito.
+\begin{example}{}
+Si $S_{n+2}=10S_{n+1}-21S_{n}$ para $\forall\, n\in\mathds{N}$, entonces $r_{1}=7$ y $r_{2}=3$. Tenemos, la solución general de la RE es $S_{n}=A7^n+B3^{n}$.
+\end{example}
+
+\begin{example}{}
+Si $S_{n+2}=3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, entonces $r_{1}=2$ y $r_{2}=1$. Tenemos, la solución general de la RE es $S_{n}= A2^{n}+B1^{n}=A2^{n}+B$.
+
+Caso 2. Si $\Delta=0$, entonces las raíces son (ambos) iguales a $r$ donde $r=a/2$. También, $b=-a^2/4=-r^2$. Si $a$ eran $0$, entonces $b=0$, pero asumimos que no tanto $a$ y $b$ son $0$. De ahí, $r\neq0$. Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizarían $T_{n}=A{\left(r\right)}^{n}+nB{\left(r\right)}^{n}$ cuando $n=0$ y $n=1$. Si
+
+$T_{0}=A(r)^{0}+0B(r)^{0}=A$................(1)\\
+y $T_{1}= A(r)^{1}+1B(r)^{1}=Ar+Br$, ....................(2)\\
+
+entonces $A=T_{0}$ y $B=(T_{1}-Ar)/r$
+
+No importa cómo comience la sucesión $T$ (no importa cuáles sean los valores para $T_{0}$ y $T_{1}$)
+hay números únicos $A$ y $B$ tales que $T_n = A(r)^n + B(r)^n$ para $n = 0$ y 1\\
+// Continuando la prueba por la inducción matemática que $T_n= A(r)^n + B(r)^n$ para $\forall \; n \in \mathbb{N}$\\
+
+Paso 1. Si $n=0$ o $n=1$, entonces $T_n=A(r)^n+B(r)^n$, por nuestra ``opción'' $A$ y $B$.
+
+Paso 2. Asuma que $\exists k\geq 1$ tal que si $0\leq n\leq k$, entonces $T_n=A(r)^n+B(r)^n$.
+
+Paso 3. Si $n= k+1$, entonces $n\geq 2$ entonces, porque $T$ satisface la RE homogénea (3).
+\end{example}
+
+\begin{align*}
+	T_{k+1}&= aT_{k}+bT_{k-1}\\
+	T_{k+1}&= a[A(r)^k+kB(r)^k]+b[A(r)^{k-1}+(k-1)B(r)^{k-1}] // \text{ por el paso 2}\\
+	T_{k+1}&=[aAr^k+bAr^{k-1}]+[akBr^k+b(k-1)Br^{k-1}]\\
+	T_{k+1}&=Ar^{k-1}[ar+b]+Br^{k-1}[akr + b(k-1)]\\
+	T_{k+1}&=Ar^{k-1}[r^2]+Br^{k-1}[k(r^{2}) +r^{2}]//r^2 = ar + b\\
+	T_{k+1}&=Ar^{k+1}+Br^{k-1}[k(r^2) + r^2]//-b = r^{2}\\
+	T_{k+1}&=Ar^{k+1}+(k+1)Br^{k+1}
+\end{align*}
+
+Así, si $r_{1}=r_{2}=r$, $T_{n}=A(r)^{n}+nB(r)^{n}$ para $\forall n\in\mathds{N}$.

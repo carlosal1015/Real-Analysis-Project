@@ -1,0 +1,22 @@
+% arara: clean: {extensions: ['log','out','bbl','blg','thm','toc','aux','pdf','synctex.gz','bcf','run.xml']}
+% arara: pdflatex: { shell: yes }
+% arara: pdflatex: { shell: yes }
+% arara: bibtex
+% arara: pdflatex: { shell: yes }
+% arara: clean: {extensions: ['log','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml']}
+\documentclass{article}
+\usepackage[square,sort,comma,numbers]{natbib}
+\setlength{\bibhang}{\parindent}
+%\setlength{\bibsep}{0mm}
+\let\bibfont=\small
+\def\@biblabel#1{#1.}
+\newcommand{\etal}{\textit{et al}.}
+
+\begin{document}
+
+\nocite{*}
+%\printbibliography
+\bibliography{bib}
+\bibliographystyle{spmpsci}
+
+\end{document}
