@@ -28,7 +28,7 @@
 \usepackage{bm,dsfont}
 \usepackage{mathrsfs}
 \usepackage{lipsum}
-
+\usepackage[shortlabels]{enumitem}
 \graphicspath{ {img} }
 
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
@@ -46,7 +46,7 @@
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
 
-\date{16 de mayo del 2019}
+\date{17 de mayo del 2019}
 % see the list of further useful packages
 % in the Reference Guide
 
@@ -64,7 +64,7 @@ Junior Micha Velasque\\
 Gabriel Quiróz Gómez\\
 Davis S. García Fernández}
 \title{Relación de recurrencia}
-\subtitle{-- Monografía de Análisis Real --}
+\subtitle{Ecuaciones en diferencias y Análisis en Escalas de tiempo}
 \maketitle
 
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,15 +81,17 @@ Davis S. García Fernández}
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\include{./03_mainmatter/part}
-\include{./03_mainmatter/gabriel}
-\include{./03_mainmatter/previos}
-\include{./03_mainmatter/chap9}
-\include{./03_mainmatter/definiciones}
+% Primera parte
+\include{./03_mainmatter/fundamentals}
+%\include{./03_mainmatter/first_part}
 %\include{parcial}
 \include{./03_mainmatter/micha2}
 \include{./03_mainmatter/main}
 \include{./03_mainmatter/exercises}
+% Segunda parte
+\include{./03_mainmatter/numerical}
+% Tercera parte
+\include{./03_mainmatter/applications}
 %\include{chapter}
 %\include{appendix}
 \include{./03_mainmatter/references}

@@ -1,3 +1,5 @@
+%\sectionmark{Ejercicios}
+\section*{Ejercicios}
 \begin{prob}{Sucesión contractiva}
 	Una sucesión $\left\{x_{n}\right\}$ se dice que \textbf{contractiva} si $\exists$ alguna constante $c$, $0<c<1\ni\forall\,n\in\mathds{N}$, $|x_{n+2}-x_{n+1}|\leq c|x_{n+1}-x_{n}|$. Pruebe que una sucesión contractiva debe ser una sucesión de Cauchy, y por lo tanto converge.
 \end{prob}
@@ -7,7 +9,7 @@ Sea $a\neq b$ números reales arbitrarios, y defina la sucesión $\left\{x_{n}\r
 	\begin{enumerate}
 		\item Pruebe que $\left\{x_{n}\right\}$ converge probando que este es una sucesión constructiva.
 		\item Pruebe que $\forall\,n\in\mathds{N}$, $x_{n+1}+\frac{1}{2}x_{n}=b+\frac{1}{2}a$.\label{9b}
-		\item Use~\ref{9b} y el álgebra de límites para encontrar que  $\lim\limits_{n\to\infty}x_{n}$. ¿Está sorprendido por la respuesta? Note que si usted intercambia $a$ y $b$ la respuesta podría ser diferente.
+		\item Use~\ref{9b} y el álgebra de límites para encontrar que  $\lim\limits_{n\to\infty}x_{n}$. ?`Está sorprendido por la respuesta? Note que si usted intercambia $a$ y $b$ la respuesta podría ser diferente.
 	\end{enumerate}
 \end{prob}
 
@@ -22,12 +24,12 @@ Sea $a\neq b$ números reales arbitrarios, y defina la sucesión $\left\{x_{n}\r
 \begin{prob}{Números de Fibonacci}
 	La sucesión de Fibonacci consiste de los números de Fibonacci, $1,1,2,3,5,8,13,21,\ldots$, y está definido recursivamente por $f_{1}=1$, $f_{2}=1$, y $\forall\,n\geq2$, $f_{n+2}=f_{n+1}+f_{n}$. Cada nuevo término después del segundo es la suma de los dos términos previos. Muchos resultados interesantes han sido probados acerca de los números de Fibonacci--lo suficiente para llenar un libro entero. Deberemos concentrarnos aquí con la sucesión de proporciones de los sucesivos números de Fibonacci. Empezamos definiendo la sucesión por $r_{n}=\tfrac{f_{n+1}}{f_{n}}$.
 		\begin{enumerate}
-			\item Desarrolle una tabla que muestre los primeros diez términos de $\left\{r_{n}\right\}$. En la basa de esta tabla, conjeture las respuestas a las siguientes preguntas. ¿$\left\{r_{n}\right\}$ es convergente? ¿Es monótona? ¿Eventualmente monótona? ¿Puede encontrar una subsucesión estrictamente creciente? ¿Una subsucesión estrictamente decreciente? (No se requieren demostraciones).
+			\item Desarrolle una tabla que muestre los primeros diez términos de $\left\{r_{n}\right\}$. En la basa de esta tabla, conjeture las respuestas a las siguientes preguntas. ?`$\left\{r_{n}\right\}$ es convergente? ?`Es monótona? ?`Eventualmente monótona? ?`Puede encontrar una subsucesión estrictamente creciente? ?`Una subsucesión estrictamente decreciente? (No se requieren demostraciones).
 			\item Pruebe que $\forall\,n\in\mathds{N}$, $r_{n+1}=1+\tfrac{1}{r_{n}}$.
 			\item Pruebe que $\forall\,n\geq2$, $\tfrac{3}{2}<r_{n}<2$.
 			\item Pruebe que $\left\{r_{n}\right\}$ es ``contractiva'', y por lo tanto es una sucesión de Cauchy.
 			\item Encuentre $\lim\limits_{n\to\infty}r_{n}$. [Tome nota de este límite; este reaparecerá.]
-			\item La ecuación cuadrática $x^{2}-x-1=0$ tiene dos soluciones, $\alpha=\frac{1+\sqrt{5}}{2}$ y $\beta=\frac{1-\sqrt{5}}{2}$. Muestre que $\alpha+\beta=1$, $\alpha^{2}=a+1$, y $\beta^{2}=\beta+1$, y desde estos hechos muestre que $\forall\,n\in\mathbb{N}$, $\alpha^{n+2}=\alpha^{n+1}+\alpha^{n}$ y $\beta^{n+2}=\beta^{n+1}+\beta^{n}$..\label{9f}
+			\item La ecuación cuadrática $x^{2}-x-1=0$ tiene dos soluciones, $\alpha=\frac{1+\sqrt{5}}{2}$ y $\beta=\frac{1-\sqrt{5}}{2}$. Muestre que $\alpha+\beta=1$, $\alpha^{2}=a+1$, y $\beta^{2}=\beta+1$, y desde estos hechos muestre que $\forall\,n\in\mathbb{N}$, $\alpha^{n+2}=\alpha^{n+1}+\alpha^{n}$ y $\beta^{n+2}=\beta^{n+1}+\beta^{n}$.\label{9f}
 			\item $\forall\,n\in\mathds{N}$, defina $u_{n}=\frac{\alpha^{n}-\beta^{n}}{\alpha-\beta}$, donde $\alpha$ y $\beta$ están definidos en~\ref{9f}. Pruebe que $u_{1}=1$, $u_{2}=1$, y $\forall\,n\geq2$, $u_{n+2}=u_{n+1}+u_{n}$. Por lo tanto, $\left\{u_{n}\right\}$ debe ser la sucesión de Fibonacci. Tenemos encontrado una fórmula para los números de Fibonacci: $f_{n}=u_{n}$.
 			\item \textbf{Significado geométrico} de $\alpha$. Considere un rectángulo cuyo ancho $\alpha$ y largo $a+b$ son así proporcionados que cuando un cuadrado de lado $a$ es removido, como se muestra aquí, el rectángulo restante tiene ancho y longitud en la misma proporción. Esto es, $\tfrac{a+b}{a}=\tfrac{a}{b}$.
 	
