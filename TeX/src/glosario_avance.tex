@@ -2,98 +2,246 @@
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{multicol}
-\usepackage{amssymb}
+\usepackage{amsmath,amssymb}
 \setlength{\columnsep}{4.5cm}
 \setlength{\columnseprule}{0mm}
+\newcommand{\centrado}[1]{
+	\ \\[.1\baselineskip]
+	{\Large\bfseries\centering #1\par}
+	\hrule
+	\ \\[.1\baselineskip]
+}
 
 \begin{document}
-	
-\begin{center}
-	{\Huge \bf Glosario de Símbolos}
-\end{center}
-\ \\[5mm]
-\begin{center}
-	{\Large \bf Alfabeto Griego}
-\end{center}
+%\centrado{Glosario de Símbolos}
+\centrado{Alfabeto griego}
 \begin{multicols}{2}
-\begin{tabular}{cc}
-	$ \alpha $	&  alpha\\ 
-	
-	$ \beta $&  beta \\ 
-	$ \gamma $&  gamma\\ 
-	
-	$ \delta $& delta  \\ 
-	
-	$ \zeta $& zeta  \\ 
-	
-	$ \eta $&  eta\\ 
-	
-	$ \theta $& theta  \\ 
-	
-	$ \iota $	& iota \\ 
-	
-	$ \kappa $ & kappa  \\ 
-	
-	$ \mu $	& mu  \\ 
-	
-\end{tabular} 
+\begin{tabular}{ccc}
+	$\alpha$	&	$A$	&	alpha		\\
+	$\beta$		&	$B$	&	beta		\\
+	$\gamma$	& $\Gamma$	&	gamma		\\
+	$\delta$	& $\Delta$&	delta		\\
+	$\epsilon$ & $E$ & épsilon \\
+	$\zeta$		& $Z$	&	zeta		\\
+	$\eta$		& $H$ &	eta			\\
+	$\theta$	& $\Theta$ &	theta		\\
+	$\iota$		& $I$&	iota		\\
+	$\kappa$	& $K$ &	kappa		\\
+	$\lambda$ & $\Lambda$ & lambda \\
+	$\mu$			& $M$ &	mu			\\
+\end{tabular}
 \columnbreak
-\begin{tabular}{cc}
-	
-	$ \nu $	&  nu\\ 
-	
-	$ \xi $&  xi \\ 
-	$ o$&  omicron\\ 
-	
-	$ \pi $& pi  \\ 
-	
-	$ \rho $& rho  \\ 
-	
-	$ \sigma $&  sigma\\ 
-	
-	$ \tau $& tau  \\ 
-	
-	$ \upsilon $	& upsilon \\ 
-	
-	$ \phi $ & phi  \\ 
-	
-	$ \omega $	& omega  \\ 
-	
-\end{tabular} 
-
-\end{multicols}
-\begin{center}
-	{\Large \bf General}
-\end{center}
-\begin{multicols}{2}
-
-
-\begin{tabular}{c} 
-	Símbolo  \\ 
-	\textasteriskcentered \\
-   $ \blacksquare $ \\ 
-
-	$ \square $  \\ 
-\end{tabular}  
-
-\columnbreak
-
-\begin{tabular}{l}
-	Significado \\
-	 \\
-	Fin de una prueba	\\
-	
-	Fin de un ejemplo u observación	\\
+\begin{tabular}{ccc}
+	$\nu$			& $N$ &	nu			\\
+	$\xi$			& $\Xi$ &xi			\\
+	$o$				& $O$ &omicron	\\
+	$\pi$			& $\Pi$ &pi			\\
+	$\rho$		& $P$ &rho			\\
+	$\sigma$	& $\Sigma$ &sigma		\\
+	$\tau$		& $T$ &tau			\\
+	$\upsilon$& $\Upsilon$ &upsilon	\\
+	$\chi$ & $X$ & chi \\
+	$\phi,\varphi$		& $\Phi$ &phi			\\
+	$\psi$ & $\Psi$ & psi \\
+	$\omega$	& $\Omega$ &omega		\\
 \end{tabular}
 \end{multicols}
-\begin{center}
-	{\Large \bf Operadores Lógicos}
-\end{center}
 
+\centrado{General}
+	\begin{tabular}{ccc}
+		Símbolo & Significado & Definido en la página \\
+		\textasteriskcentered &  Indica material opcional en curso de 1 término &\\
+		$\blacksquare$	& fin de la prueba &\\
+		$\square$		& fin del ejemplo u observación &\\
+		$\left[\cdots\right]$ & referencia al ítem en bibliografía &\\
+	\end{tabular}
+\centrado{Lógica}
+\begin{tabular}{ccc}
+		Símbolo & Significado & Definido en la página \\
+		$\wedge,\vee$ & y, o & \\
+		$\implies$ & implica & \\
+		$\impliedby$ & la recíproca de $\implies$ & \\
+		$\iff$ & si y solo si (sii) & \\
+		$\sim$ & no & \\
+		$\equiv$ & es lógicamente equivalente a & \\
+		$\forall x$ & para todo $x$ & \\
+		$\exists x\ni$ & existe un $x$ tal que & \\
+\end{tabular}
+\centrado{Conjuntos}
+\begin{tabular}{ccc}
+		Símbolo & Significado & Definido en la página \\
+		$\in$  & pertenece a (es miembro de) & \\
+		$\left\{a,b,c,\ldots\right\}$ & conjunto que contiene $a,b,c\ldots$ &\\
+		$\left\{x:P(x)\right\}$ & conjunto de todos los $x$ tal que $P(x)$ & \\
+		$\cup,\cap$ & unión, intersección & \\
+		$A^{\complement}$ & complemento de $A$ & \\
+		$B\setminus A$ & complemento de $A$ en $B$ & \\
+		$\mathcal{U}$ & el conjunto universal & \\
+		$\emptyset$ & el conjunto vacío & \\
+		$\subseteq$ & es un subconjunto de & \\
+		$\left\{A_{\lambda}:\lambda\in\Lambda\right\}$ & familia de conjuntos $A_{\lambda}$, indexados por $\lambda\in\Lambda$ \\
+		$\bigcup_{\lambda\in\Lambda}A_{\lambda}$ & unión de conjuntos $A_{\lambda},\lambda\in\Lambda$ \\
+		$\bigcap_{\lambda\in\Lambda}A_{\lambda}$ & intersección de conjuntos $A_{\lambda},\lambda\in\Lambda$ \\
+		$A\simeq B$ & $A$ y $B$ son conjuntos equivalentes \\
+		$x+A$ & $\left\{x+a:a\in A\right\}$ & \\
+		$xA$ & $\left\{xa:a\in A\right\}$ & \\
+		$-A$ & $\left\{-a:a\in A\right\}$ & \\
+		$A+B$ & $\left\{a+b:a\in A, b\in B\right\}$ & \\
+\end{tabular}
 
+\centrado{Funciones}
+\begin{tabular}{ccc}
+		Símbolo & Significado & Definido en la página \\
+		$f\colon A\rightarrow B$ & f es una función de $A$ a $B$ & \\
+		$\mathcal{D}(f),\mathcal{R}(f)$ & dominio de $f$, rango de $f$ \\
+		$f(C)$ & $\left\{f(x):x\in C\right\}$ & \\
+		$\mathcal{F}\left(\mathcal{S},\mathbb{R}\right)$ & $\left\{\text{todas las funciones }f\colon\mathcal{S}\rightarrow\mathbb{R}\right\}$ & \\
+		$f\pm g,rf,fg,f/g$ & combinaciones algebraicas de $f$ y $g$ & \\
+		$|f|$ & valor absoluto de una función & \\
+		$\min\left\{f,g\right\}\max\left\{f,g\right\}$ & mínimo (máximo) de $f$ y $g$ & \\
+		$g\circ f$ & compuesta de $f$ y $g$ & \\
+		$i_{A}$ & función identidad en $A$ & \\
+		$f^{-1}$ & función inversa de $f$ & \\
+\end{tabular}
+\centrado{El sistema de los números reales}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$x^{-1}$ & inverso multiplicativo de $x$ & \\
+	$\mathcal{P}$ & conjunto de todos los elementos positivos de un cuerpo ordenado & \\
+	$<,>,\leq,\geq$ & menor que, mayor que, etc. & \\
+	$|x|$ & valor absoluto de $x$ & \\
+	$\left[a,b\right],\left(a,b\right)$, etc. & intervalos (acotados) & \\
+	$\left(-\infty,a\right),\left[b,+\infty\right)$, etc. & intervalos (no acotados) & \\
+	$\mathbb{N}_{F}$ & conjunto de los números naturales de un cuerpo ordenado  $F$ & \\
+	$n!$ & $n$ factorial & \\
+	$\binom{n}{k}$ & coeficiente binomial, para $0\leq k\leq n\in\mathbb{N}$ & \\
+	$\mathbb{Z}_{F}$ & conjunto de los números enteros de un cuerpo ordenado  $F$ & \\
+	$\mathbb{Q}_{F}$ & conjunto de los números racionales de un cuerpo ordenado  $F$ & \\
+	$\mathbb{N},\mathbb{Z},\mathbb{Q}$ & números naturales, enteros, racionales  $F$ & \\
+	$\min A, \max A$ & elementos mínimo y máximo de $A$ & \\
+	$\sup A$ & menor cota superior de $A$ &\\
+	$\inf A$ & mayor cota inferior de $A$ &\\
+	$\mathbb{R}$ & conjunto de todos los números reales & \\
+	$+\infty,+\infty$ & supremo o ínfimo de conjuntos no acotados \\
+	$e$ & $\lim\limits_{n\to\infty}{\left(1+1/n\right)}^{n}$, frecuentemente llamado número de Euler & \\
+	$\pi$ & $2\sin^{-1}1$ & \\
+	$\gamma$ & Constante de Euler & \\
+\end{tabular}
+\centrado{Sucesiones}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$\left\{x_{n}\right\}$ & una sucesión de números reales & \\
+	$\lim\limits_{n\to\infty}x_{n}=L$ & La sucesión $\left\{x_{n}\right\}$ tiene límite $L$. & \\
+	$x_{n}\rightarrow L$ & La sucesión $\left\{x_{n}\right\}$ converge a $L$. &\\
+	$T_{m}$ & la $m$--cola de una sucesión $\left\{x_{n}\right\}$ & \\
+	$\lim\limits_{n\to\infty}x_{n}\pm\infty$ & La sucesión $\left\{x_{n}\right\}$ tiene límite $+\infty$ o $-\infty$. &\\
+	$x_{n}\rightarrow\pm\infty$ & La sucesión $\left\{x_{n}\right\}$ diverge a $+\infty$ o $-\infty$. &\\
+	$\underline{\lim\limits}_{n\to\infty}x_{n},\overline{\lim\limits}_{n\to\infty}x_{n}$ & límite inferior o superior de $\left\{x_{n}\right\}$. & \\
+\end{tabular}
+\centrado{Topología de $\mathbb{R}$}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$N_{\varepsilon}(x)$ & $\varepsilon$--vecindad de $x$ & \\
+	$A^{\circ}, A^{\text{ext}},A^{\text{b}}$ & interior, exterior, y frontera de $A$ & \\
+	$\overline{A},A^{\text{cl}}$ & clausura de $A$ & \\
+	$A^{\prime}$ & conjunto de todos los puntos de acumulación de $A$ & \\
+	$d(A)$ & diámetro de $A$ & \\
+	$\mu(A)$ & medida de $A$ & \\
+	$\mathcal{M}$ & clase de todos los conjuntos $\mu$--medibles & \\
+\end{tabular}
+\centrado{Límite de funciones}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$\lim\limits_{x\to x_{0}}f(x)=L$ & $f$ tiene límite $L$ a medida que $x$ se acerca a $x_{0}$. & \\
+	$N^{\prime}_{\varepsilon}(x_{0})$ & $\varepsilon$--vecindad aniquilada de $x_{0}$ & \\
+	$\lim\limits_{x\to x^{+}_{0}}f(x)$ o $f\left(x^{+}_{0}\right)$ & límite de $f$ a medida que $x$ se acerca a $x_{0}$ por la derecha. & \\
+	$\lim\limits_{x\to x^{-}_{0}}f(x)$ o $f\left(x^{-}_{0}\right)$ & límite de $f$ a medida que $x$ se acerca a $x_{0}$ por la izquierda. & \\
+	$\lim\limits_{x\to x_{0}}f(x)=+\infty$ & $f$ tiene límite $+\infty$ a medida que $x$ se acerca a $x_{0}$. & \\
+	$\lim\limits_{x\to x_{0}}f(x)=-\infty$ & $f$ tiene límite $-\infty$ a medida que $x$ se acerca a $x_{0}$. & \\
+	$\lim\limits_{x\to+\infty}f(x)=L$ & $f$ tiene límite $L$ a medida que $x$ se acerca a $+\in{A}$. & \\
+	$\lim\limits_{x\to-\infty}f(x)=L$ & $f$ tiene límite $L$ a medida que $x$ se acerca a $-\infty$. & \\
+\end{tabular}
+\centrado{Funciones continuas}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$\operatorname{sgn}(x)$ & función signo & \\
+	$T(x)$ & función de Tom\ae & \\
+	$\lfloor x\rfloor$ & función máximo entero (piso) & \\
+	$\xi_{A}(x)$ & función característica de (el conjunto) $A$ & \\
+	$f{\left.\right|}_{A}$ & $f$ restringido al conjunto $A$ & \\
+	$\sqrt[n]{x}$ & única raíz $n$--ésima no negativa de $x\geq0$& \\
+	$\varphi$ & función de Cantor & \\
+	$a^{x}$ & $a^{x}$ para $a>1$ y $x\in\mathbb{R}$ & \\
+	$x^{t}$ & $x^{t}$ para $x\in\mathbb{R}$ y $t>0$ & \\
+	$\log_{1}x$ & $\log_{a}x$ para $a,x>0$ & \\
+	$\Psi_{f}(A)$ & oscilación de $f$ en el conjunto $A$ & \\
+	$\Psi_{f}(x)$ & oscilación de $f$ en $x$ & \\
+	$F_{\sigma}$--set & una unión numerable de conjuntos cerrados & \\
+\end{tabular}
 
+\centrado{Funciones diferenciables}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$f^{\prime}(x_{0})$ & derivada de $f$ en $x_{0}$ & \\
+	$f^{\prime}_{-}(x_{0}),f^{\prime}_{+}(x_{0})$ & derivada de $f$ por la derecha (izquierda) de $x_{0}$ & \\
+	$D_{x}f(x),\frac{df(x)}{dx},\frac{d}{dx}f(x)$ & notación alternativa para la derivada de $f$ & \\
+	$y^{\prime},\frac{dy}{dx},\frac{d}{dx}y$ & notación alternativa para la derivada de $f$ & \\
+	$f^{(k)}(x)$ & $n$--ésima derivada de $f$ en $x$ & \\
+	$T_{n}((x))$ & $n$--ésimo polinomio de Taylor para $f$ & \\
+	$R_{n}((x))$ & $n$--ésimo resto de Taylor para $f$ & \\
+\end{tabular}
 
+\centrado{La integral de Riemann}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$\mathcal{P}$ & partición de $\left[a,b\right]$ & \\
+	$m_{i}$ & $\inf\left\{f(x):x\in\left[x_{i-1},x_{i}\right]\right\}$ & \\
+	$M_{i}$ & $\sup\left\{f(x):x\in\left[x_{i-1},x_{i}\right]\right\}$ & \\
+	$\underline{S}\left(f,\mathcal{P}\right)=\sum_{i=1}^{n}m_{i}\triangle{i}$ & suma de Darboux inferior de $f$ sobre $\mathcal{P}$& \\
+	$\overline{S}\left(f,\mathcal{P}\right)=\sum_{i=1}^{n}M_{i}\triangle{i}$ & suma de Darboux superior de $f$ sobre $\mathcal{P}$& \\
+	$\underline{\int}_{a}^{b}f,\overline{\int}_{a}^{b}f$ & integrales de Darboux inferior (superior) de $f$ sobre $\left[a,b\right]$ & \\
+	$\int_{a}^{b}f$ & integral de Riemann de $f$ sobre $\left[a,b\right]$ & \\
+	$\|\mathcal{P}\|$ & malla de la partición $\mathcal{P}$ & \\
+	$\mathcal{P}^{\ast}$ & partición etiquetada de $\left[a,b\right]$ & \\
+	$R\left(f,\mathcal{P}^{\ast}\right)=\sum_{i=1}^{n}f(x^{\ast}_{i})\triangle_{i}$ & suma de Riemman de $f$ sobre la partición etiquetada $\mathcal{P}^{\ast}$ & \\
+	$\mathcal{Q}_{n}$ & partición regular de $\left[a,b\right]$ dentro de $n$ subintervalos & \\
+	$j\left(f,x_{0}\right)$ & salto de $f$ en $x_{0}$ & \\
+	$\int_{a}^{+\infty}f,\int_{-\infty}^{b}f,\int_{-\infty}^{+\infty}f$ & integrales (impropias) de $f$ sobre intervalos infinitos & \\
+\end{tabular}
 
+\centrado{Series de números reales}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$\sum_{k=1}^{\infty}a_{k} (=S)$ & una serie infinito de números con suma $S$ & \\
+	$S_{n}=\sum_{k=1}^{n}a_{k}$ & $n$--ésima suma parcial de $\sum_{k=1}^{n}a_{k}$ & \\
+	$a^{+}_{n},a^{-}_{n}$ & $\max\left\{a_{n},0\right\},\max\left\{-a_{n},0\right\}$ & \\
+	$\vec{x}=\left(x_{1},x_{2},\ldots,x_{n}\right)$ & un $n$--vector & \\
+	$\mathbb{R}^{n}$ & $n$--espacio euclidiano & \\
+	$\vec{x}\cdot\vec{y}$ & producto punto de $\vec{x}$ e $\vec{y}$ & \\
+	$\sum_{k=1}^{\infty}a_{k}{\left(x-c\right)}^{k}$ & una serie de potencia en $\left(x-c\right)$ & \\
+	$\rho$ & radio de convergencia de una serie de potencia & \\
+	$\binom{\alpha}{k}$ coeficiente binomial para un arbitrario $\alpha$, $n\in\mathbb{N}$ & \\
+	$\sum_{i,j=1}^{\infty}$ & una serie doble & \\
+\end{tabular}
 
-
+\centrado{Sucesiones y serie de funciones}
+\begin{tabular}{ccc}
+	Símbolo & Significado & Definido en la página \\
+	$\mathcal{F}\left(\mathcal{S},\mathbb{R}\right)$ & conjunto de todas las funciones $f\colon\mathcal{S}\rightarrow\mathbb{R}$ & \\
+	$B\left(\mathcal{S}\right)$ & conjunto de todas las funcione acotadas en $\left[a,b\right]$ & \\
+	$C\left(\mathcal{S}\right)$ & conjunto de todas las funciones continuas en $\left[a,b\right]$ & \\
+	$D\left(\mathcal{S}\right)$ & conjunto de todas las funciones diferenciables en $\left[a,b\right]$ & \\
+	$C^{k}\left(\mathcal{S}\right)$ & conjunto de todas las $f$ para cual $f^{(k)}$ es continua en $\left[a,b\right]$ & \\
+	$C^{\infty}\left(\mathcal{S}\right)$ & conjunto de todas las $f\ni\forall k\in\mathbb{N},f^{(k)}$ es continua en $\left[a,b\right]$ & \\
+	$R\left[a,b\right]$ & conjunto de todas las $f$ que son Riemann integrables en $\left[a,b\right]$ & \\
+	$\left\{f_{n}\right\}$ & una sucesión de funciones & \\
+	$\lim\limits_{n\to\infty}f_{n}=f$ & $\left\{f_{n}\right\}$ converge puntualmente a $f$ & \\
+	$f_{n}\rightarrow f$ & $\left\{f_{n}\right\}$ converge puntualmente a $f$ & \\
+	$\|f\|$ & normal del supremo de $f$ & \\
+	$d\left(f,g\right)$ & $\|f-g\|$, la distancia entre $f$ y $g$ & \\
+	$\zeta(x)$ & función zeta de Riemann & \\
+	$P\left[a,b\right]$ & conjunto de todos los polinomios en $\left[a,b\right]$ & \\
+	$CAP\left[a,b\right]$ & todas las $f$ continuas aproximable por polinomios en $\left[a,b\right]$ & \\
+	${\left(x-c\right)}^{+}$ & $\max\left\{0,x-c\right\}$ & \\
+\end{tabular}
 \end{document}
