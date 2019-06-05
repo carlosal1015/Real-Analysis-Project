@@ -1,0 +1,10 @@
+This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
+Scanning style file ./monograph_real_analysis.ist.............................done (29 attributes redefined, 0 ignored).
+Scanning input file monograph_real_analysis.ssfunn....
+!! Input index error (file = monograph_real_analysis.ssfunn, line = 11):
+   -- Extra `|' at position 8 of first argument.
+done (15 entries accepted, 1 rejected).
+Sorting entries....done (57 comparisons).
+Generating output file monograph_real_analysis.ssfunb....done (34 lines written, 0 warnings).
+Output written in monograph_real_analysis.ssfunb.
+Transcript written in monograph_real_analysis.ssfung.

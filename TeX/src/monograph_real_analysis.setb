@@ -1,0 +1,38 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossentry{set:neg}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:summ}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:equiv}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:comp}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:minus}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:bigcap}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:bigcup}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:cupcap}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:empty}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:in}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:family}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:abc}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:set}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:univ}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:subset}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:sum}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{set:dot}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\end{theglossary}\glossarypostamble

@@ -1,0 +1,44 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossentry{real:supinf}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:lg}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:bin}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:em}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:inf}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:unbounded}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:bounded}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:pos}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:nir}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:n}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:rat}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:r}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:int}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:minmax}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:pi}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:sup}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:e}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:fac}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:inv}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{real:abs}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\end{theglossary}\glossarypostamble

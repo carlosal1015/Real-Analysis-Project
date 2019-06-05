@@ -1,3 +1,23 @@
+\chapter{Símbolos y fórmulas}
 \Extrachap{Glosario}
 
 \runinhead{término del glosario}
+
+\printglossary[type=general, style=symbunitlong]%,title=
+\printglossary[type=logic, style=symbunitlong]
+\printglossary[type=sets, style=symbunitlong]
+\printglossary[type=functions, style=symbunitlong]
+\printglossary[type=realnumbers, style=symbunitlong]
+\printglossary[type=sequences, style=symbunitlong]
+\printglossary[type=topology, style=symbunitlong]
+\printglossary[type=limits, style=symbunitlong]
+\printglossary[type=continuous, style=symbunitlong]
+\printglossary[type=differentiable, style=symbunitlong]
+\printglossary[type=riemannintegral, style=symbunitlong]
+\printglossary[type=series, style=symbunitlong]
+\printglossary[type=sequencesfunctions, style=symbunitlong]
+
+\forallglsentries{\thislabel}%
+{%
+	\ifglsused{\thislabel}{}{\glsadd[format=ignore]{\thislabel}}%
+}

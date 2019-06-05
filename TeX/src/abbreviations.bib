@@ -1,0 +1,981 @@
+% Encoding: UTF-8
+@entry{gen:ast,
+  name = {$\ast$},
+  description = {indica material opcional en curso de un semestre},
+  type = {general
+}
+}
+
+@entry{gen:black,
+  name = {$\blacksquare$},
+  description = {fin de la prueba},
+  type = {general
+}
+}
+
+@entry{gen:white,
+  name = {$\square$},
+  description = {fin del ejemplo u observación},
+  type = {general
+}
+}
+
+@entry{gen:bib,
+  name = {$\left[\cdots\right]$},
+  description = {referencia al ítem en bibliografía},
+  type = {general
+}
+}
+
+@entry{log:andor,
+  name = {$\wedge,\vee$},
+  description = {y, o},
+  type = {logic
+}
+}
+
+@entry{log:impl,
+  name = {$\implies$},
+  description = {implica},
+  type = {logic
+}
+}
+
+@entry{log:implby,
+  name = {$\impliedby$},
+  description = {la recíproca de $\implies$},
+  type = {logic
+}
+}
+
+@entry{log:iff,
+  name = {$\iff$},
+  description = {si y solo si (sii)},
+  type = {logic
+}
+}
+
+@entry{log:not,
+  name = {$\sim$},
+  description = {no},
+  type = {logic
+}
+}
+
+@entry{log:equiv,
+  name = {$\equiv$},
+  description = {{es lógicamente equivalente a}.
+	type=logic
+}
+}
+
+@entry{log:forall,
+  name = {$\forall x$},
+  description = {para todo $x$},
+  type = {logic
+}
+}
+
+@entry{log:exists,
+  name = {$\exists x\ni$},
+  description = {existe un $x$ tal que},
+  type = {logic
+}
+}
+
+@entry{set:in,
+  name = {$\in$},
+  description = {pertenece a (es miembro de)},
+  type = {sets
+}
+}
+
+@entry{set:abc,
+  name = {$\left\{a,b,c,\ldots\right\}$},
+  description = {conjunto que contiene $a,b,c\ldots$},
+  type = {sets
+}
+}
+
+@entry{set:set,
+  name = {$\left\{x:P(x)\right\}$},
+  description = {conjunto de todos los $x$ tal que $P(x)$},
+  type = {sets
+}
+}
+
+@entry{set:cupcap,
+  name = {$\cup,\cap$},
+  description = {unión, intersección},
+  type = {sets
+}
+}
+
+@entry{set:comp,
+  name = {$A^{\complement}$},
+  description = {complemento de $A$},
+  type = {sets
+}
+}
+
+@entry{set:minus,
+  name = {$B\setminus A$},
+  description = {complemento de $A$ en $B$},
+  type = {sets
+}
+}
+
+@entry{set:univ,
+  name = {$\mathcal{U}$},
+  description = {el conjunto universal},
+  type = {sets
+}
+}
+
+@entry{set:empty,
+  name = {$\emptyset$},
+  description = {el conjunto vacío},
+  type = {sets
+}
+}
+
+@entry{set:subset,
+  name = {$\subseteq$},
+  description = {es un subconjunto de},
+  type = {sets
+}
+}
+
+@entry{set:family,
+  name = {$\left\{A_{\lambda}:\lambda\in\Lambda\right\}$},
+  description = {familia de conjuntos $A_{\lambda}$, indexados por $\lambda\in\Lambda$},
+  type = {sets
+}
+}
+
+@entry{set:bigcup,
+  name = {$\bigcup_{\lambda\in\Lambda}A_{\lambda}$},
+  description = {unión de conjuntos $A_{\lambda},\lambda\in\Lambda$},
+  type = {sets
+}
+}
+
+@entry{set:bigcap,
+  name = {$\bigcap_{\lambda\in\Lambda}A_{\lambda}$},
+  description = {intersección de conjuntos $A_{\lambda},\lambda\in\Lambda$},
+  type = {sets
+}
+}
+
+@entry{set:equiv,
+  name = {$A\simeq B$},
+  description = {$A$ y $B$ son conjuntos equivalentes},
+  type = {sets
+}
+}
+
+@entry{set:sum,
+  name = {$x+A$},
+  description = {$\left\{x+a:a\in A\right\}$},
+  type = {sets
+}
+}
+
+@entry{set:dot,
+  name = {$xA$},
+  description = {$\left\{xa:a\in A\right\}$},
+  type = {sets
+}
+}
+
+@entry{set:neg,
+  name = {$-A$},
+  description = {$\left\{-a:a\in A\right\}$},
+  type = {sets
+}
+}
+
+@entry{set:summ,
+  name = {$A+B$},
+  description = {$\left\{a+b:a\in A, b\in B\right\}$},
+  type = {sets
+}
+}
+
+@entry{fun:f,
+  name = {$f\colon A\rightarrow B$},
+  description = {$f$ es una función de $A$ a $B$},
+  type = {functions
+}
+}
+
+@entry{fun:domran,
+  name = {$\mathcal{D}(f),\mathcal{R}(f)$},
+  description = {dominio de $f$, rango de $f$},
+  type = {functions
+}
+}
+
+@entry{fun:c,
+  name = {$f(C)$},
+  description = {$\left\{f(x):x\in C\right\}$},
+  type = {functions
+}
+}
+
+@entry{fun:space,
+  name = {$\mathcal{F}\left(\mathcal{S},\mathds{R}\right)$},
+  description = {$\left\{\text{todas las funciones }f\colon\mathcal{S}\rightarrow\mathds{R}\right\}$},
+  type = {functions
+}
+}
+
+@entry{fun:alg,
+  name = {$f\pm g,rf,fg,f/g$},
+  description = {ombinaciones algebraicas de $f$ y $g$},
+  type = {functions
+}
+}
+
+@entry{fun:abs,
+  name = {$|f|$},
+  description = {valor absoluto de una función},
+  type = {functions
+}
+}
+
+@entry{fun:minmax,
+  name = {$\min\left\{f,g\right\}\max\left\{f,g\right\}$},
+  description = {mínimo (máximo) de $f$ y $g$},
+  type = {functions
+}
+}
+
+@entry{fun:comp,
+  name = {$g\circ f$},
+  description = {compuesta de $f$ y $g$},
+  type = {functions
+}
+}
+
+@entry{fun:id,
+  name = {$i_{A}$},
+  description = {función identidad en $A$},
+  type = {functions
+}
+}
+
+@entry{fun:inv,
+  name = {$f^{-1}$},
+  description = {función inversa de $f$},
+  type = {functions
+}
+}
+
+@entry{real:inv,
+  name = {$x^{-1}$},
+  description = {inverso multiplicativo de $x$},
+  type = {realnumbers
+}
+}
+
+@entry{real:pos,
+  name = {$\mathcal{P}$},
+  description = {conjunto de todos los elementos positivos de un cuerpo ordenado},
+  type = {realnumbers
+}
+}
+
+@entry{real:lg,
+  name = {$<,>,\leq,\geq$},
+  description = {menor que, mayor que, etc.},
+  type = {realnumbers
+}
+}
+
+@entry{real:abs,
+  name = {$|x|$},
+  description = {valor absoluto de $x$},
+  type = {realnumbers
+}
+}
+
+@entry{real:bounded,
+  name = {$\left[a,b\right],\left(a,b\right)$, etc.},
+  description = {intervalos (acotados)},
+  type = {realnumbers
+}
+}
+
+@entry{real:unbounded,
+  name = {$\left(-\infty,a\right),\left[b,+\infty\right)$, etc.},
+  description = {intervalos (no acotados)},
+  type = {realnumbers
+}
+}
+
+@entry{real:n,
+  name = {$\mathds{N}_{F}$ },
+  description = {conjunto de los números naturales de un cuerpo ordenado},
+  type = {realnumbers
+}
+}
+
+@entry{real:fac,
+  name = {$n!$},
+  description = {factorial de $n$},
+  type = {realnumbers
+}
+}
+
+@entry{real:bin,
+  name = {$\binom{n}{k}$},
+  description = {coeficiente binomial, para $0\leq k\leq n\in\mathds{N}$},
+  type = {realnumbers
+}
+}
+
+@entry{real:int,
+  name = {$\mathds{Z}_{F}$},
+  description = {conjunto de los números enteros de un cuerpo ordenado  $F$},
+  type = {realnumbers
+}
+}
+
+@entry{real:rat,
+  name = {$\mathds{Q}_{F}$},
+  description = {conjunto de los números racionales de un cuerpo ordenado},
+  type = {realnumbers
+}
+}
+
+@entry{real:nir,
+  name = {$\mathds{N},\mathds{Z},\mathds{Q}$},
+  description = {números naturales, enteros, racionales  $F$},
+  type = {realnumbers
+}
+}
+
+@entry{real:minmax,
+  name = {$\min A, \max A$},
+  description = {elementos mínimo y máximo de $A$},
+  type = {realnumbers
+}
+}
+
+@entry{real:sup,
+  name = {$\sup A$},
+  description = {menor cota superior de $A$},
+  type = {realnumbers
+}
+}
+
+@entry{real:inf,
+  name = {$\inf A$},
+  description = {mayor cota inferior de $A$},
+  type = {realnumbers
+}
+}
+
+@entry{real:r,
+  name = {$\mathds{R}$},
+  description = {conjunto de todos los números reales},
+  type = {realnumbers
+}
+}
+
+@entry{real:supinf,
+  name = {$+\infty,+\infty$},
+  description = {supremo o ínfimo de conjuntos no acotados},
+  type = {realnumbers
+}
+}
+
+@entry{real:e,
+  name = {$e$},
+  description = {$\lim\limits_{n\to\infty}{\left(1+1/n\right)}^{n}$, frecuentemente llamado número de Euler},
+  type = {realnumbers
+}
+}
+
+@entry{real:pi,
+  name = {$\pi$},
+  description = {$2\sin^{-1}1$},
+  type = {realnumbers
+}
+}
+
+@entry{real:em,
+  name = {$\gamma$},
+  description = {Constante de Euler},
+  type = {realnumbers
+}
+}
+
+@entry{seq:s,
+  name = {$\left\{x_{n}\right\}$},
+  description = {una sucesión de números reales},
+  type = {sequences
+}
+}
+
+@entry{seq:sl,
+  name = {$\lim\limits_{n\to\infty}x_{n}=L$},
+  description = {La sucesión $\left\{x_{n}\right\}$ tiene límite $L$.},
+  type = {sequences
+}
+}
+
+@entry{seq:cl,
+  name = {$x_{n}\rightarrow L$},
+  description = {La sucesión $\left\{x_{n}\right\}$ converge a $L$.},
+  type = {sequences
+}
+}
+
+@entry{seq:tail,
+  name = {$T_{m}$},
+  description = {la $m$--cola de una sucesión $\left\{x_{n}\right\}$},
+  type = {sequences
+}
+}
+
+@entry{seq:linf,
+  name = {$\lim\limits_{n\to\infty}x_{n}\pm\infty$},
+  description = {La sucesión $\left\{x_{n}\right\}$ tiene límite $+\infty$ o $-\infty$.},
+  type = {sequences
+}
+}
+
+@entry{seq:dinf,
+  name = {$x_{n}\rightarrow\pm\infty$},
+  description = {La sucesión $\left\{x_{n}\right\}$ diverge a $+\infty$ o $-\infty$.},
+  type = {sequences
+}
+}
+
+@entry{seq:linfsup,
+  name = {$\underline{\lim\limits}_{n\to\infty}x_{n},\overline{\lim\limits}_{n\to\infty}x_{n}$},
+  description = {límite inferior o superior de $\left\{x_{n}\right\}$.},
+  type = {sequences
+}
+}
+
+@entry{top:neigh,
+  name = {$N_{\varepsilon}(x)$},
+  description = {$\varepsilon$--vecindad de $x$},
+  type = {topology
+}
+}
+
+@entry{top:intextbound,
+  name = {$A^{\circ}, A^{\text{ext}},A^{\text{b}}$},
+  description = {interior, exterior, y frontera de $A$},
+  type = {topology
+}
+}
+
+@entry{top:clou,
+  name = {$\overline{A},A^{\text{cl}}$},
+  description = {clausura de $A$},
+  type = {topology
+}
+}
+
+@entry{top:clus,
+  name = {$A^{\prime}$},
+  description = {conjunto de todos los puntos de acumulación de $A$},
+  type = {topology
+}
+}
+
+@entry{top:dia,
+  name = {$d(A)$},
+  description = {diámetro de $A$},
+  type = {topology
+}
+}
+
+@entry{top:mea,
+  name = {$\mu(A)$},
+  description = {medida de $A$},
+  type = {topology
+}
+}
+
+@entry{top:sig,
+  name = {$\mathcal{M}$},
+  description = {clase de todos los conjuntos $\mu$--medibles},
+  type = {topology
+}
+}
+
+@entry{lim:l,
+  name = {$\lim\limits_{x\to x_{0}}f(x)=L$},
+  description = {$f$ tiene límite $L$ a medida que $x$ se acerca a $x_{0}$.},
+  type = {limits
+}
+}
+
+@entry{lim:dneigh,
+  name = {$N^{\prime}_{\varepsilon}(x_{0})$},
+  description = {$\varepsilon$--vecindad aniquilada de $x_{0}$},
+  type = {limits
+}
+}
+
+@entry{lim:right,
+  name = {$\lim\limits_{x\to x^{+}_{0}}f(x)$ o $f\left(x^{+}_{0}\right)$},
+  description = {límite de $f$ a medida que $x$ se acerca a $x_{0}$ por la derecha.},
+  type = {limits
+}
+}
+
+@entry{lim:left,
+  name = {$\lim\limits_{x\to x^{-}_{0}}f(x)$ o $f\left(x^{-}_{0}\right)$},
+  description = {límite de $f$ a medida que $x$ se acerca a $x_{0}$ por la izquierda.},
+  type = {limits
+}
+}
+
+@entry{lim:pinf,
+  name = {$\lim\limits_{x\to x_{0}}f(x)=+\infty$},
+  description = {$f$ tiene límite $+\infty$ a medida que $x$ se acerca a $x_{0}$.},
+  type = {limits
+}
+}
+
+@entry{lim:ninf,
+  name = {$\lim\limits_{x\to x_{0}}f(x)=-\infty$},
+  description = {$f$ tiene límite $-\infty$ a medida que $x$ se acerca a $x_{0}$.},
+  type = {limits
+}
+}
+
+@entry{lim:pinfl,
+  name = {$\lim\limits_{x\to+\infty}f(x)=L$},
+  description = {$f$ tiene límite $L$ a medida que $x$ se acerca a $+\in{A}$.},
+  type = {limits
+}
+}
+
+@entry{lim:ninfl,
+  name = {$\lim\limits_{x\to-\infty}f(x)=L$},
+  description = {$f$ tiene límite $L$ a medida que $x$ se acerca a $-\infty$.},
+  type = {limits
+}
+}
+
+@entry{cont:sig,
+  name = {$\operatorname{sgn}(x)$},
+  description = {función signo},
+  type = {continuous
+}
+}
+
+@entry{cont:tomae,
+  name = {$T(x)$},
+  description = {función de Tom\ae},
+  type = {continuous
+}
+}
+
+@entry{cont:floor,
+  name = {$\lfloor x\rfloor$},
+  description = {función máximo entero (piso)},
+  type = {continuous
+}
+}
+
+@entry{cont:char,
+  name = {$\xi_{A}(x)$},
+  description = {función característica de (el conjunto) $A$},
+  type = {continuous
+}
+}
+
+@entry{cont:rest,
+  name = {$f{\left.\right|}_{A}$},
+  description = {$f$ restringido al conjunto $A$},
+  type = {continuous
+}
+}
+
+@entry{cont:nroot,
+  name = {$\sqrt[n]{x}$},
+  description = {única raíz $n$--ésima no negativa de $x\geq0$},
+  type = {continuous
+}
+}
+
+@entry{cont:cantor,
+  name = {$\varphi$},
+  description = {función de Cantor},
+  type = {continuous
+}
+}
+
+@entry{cont:ax,
+  name = {$a^{x}$},
+  description = {$a^{x}$ para $a>1$ y $x\in\mathds{R}$},
+  type = {continuous
+}
+}
+
+@entry{cont:xt,
+  name = {$x^{t}$},
+  description = {$x^{t}$ para $x\in\mathds{R}$ y $t>0$},
+  type = {continuous
+}
+}
+
+@entry{cont:log,
+  name = {$\log_{a}x$},
+  description = {$\log_{a}x$ para $a,x>0$},
+  type = {continuous
+}
+}
+
+@entry{cont:osca,
+  name = {$\Psi_{f}(A)$},
+  description = {oscilación de $f$ en el conjunto $A$},
+  type = {continuous
+}
+}
+
+@entry{cont:oscx,
+  name = {$\Psi_{f}(x)$},
+  description = {oscilación de $f$ en $x$},
+  type = {continuous
+}
+}
+
+@entry{cont:sigma,
+  name = {$F_{\sigma}$--conjunto},
+  description = {una unión numerable de conjuntos cerrados},
+  type = {continuous
+}
+}
+
+@entry{diff:f,
+  name = {$f^{\prime}(x_{0})$},
+  description = {derivada de $f$ en $x_{0}$},
+  type = {differentiable
+}
+}
+
+@entry{diff:frl,
+  name = {$f^{\prime}_{-}(x_{0}),f^{\prime}_{+}(x_{0})$},
+  description = {derivada de $f$ por la derecha (izquierda) de $x_{0}$},
+  type = {differentiable
+}
+}
+
+@entry{diff:fai,
+  name = {$D_{x}f(x),\frac{df(x)}{dx},\frac{d}{dx}f(x)$},
+  description = {notación alternativa para la derivada de $f$},
+  type = {differentiable
+}
+}
+
+@entry{diff:faii,
+  name = {$y^{\prime},\frac{dy}{dx},\frac{d}{dx}y$},
+  description = {notación alternativa para la derivada de $f$},
+  type = {differentiable
+}
+}
+
+@entry{diff:nf,
+  name = {$f^{(k)}(x)$},
+  description = {$n$--ésima derivada de $f$ en $x$},
+  type = {differentiable
+}
+}
+
+@entry{diff:tf,
+  name = {$T_{n}(x)$},
+  description = {$n$--ésimo polinomio de Taylor para $f$},
+  type = {differentiable
+}
+}
+
+@entry{diff:rt,
+  name = {$R_{n}(x)$},
+  description = {$n$--ésimo resto de Taylor para $f$},
+  type = {differentiable
+}
+}
+
+@entry{int:p,
+  name = {$\mathcal{P}$},
+  description = {partición de $\left[a,b\right]$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:inf,
+  name = {$m_{i}$},
+  description = {$\inf\left\{f(x):x\in\left[x_{i-1},x_{i}\right]\right\}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:sup,
+  name = {$M_{i}$},
+  description = {$\sup\left\{f(x):x\in\left[x_{i-1},x_{i}\right]\right\}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:lower,
+  name = {$\underline{S}\left(f,\mathcal{P}\right)=\sum_{i=1}^{n}m_{i}\triangle{i}$},
+  description = {suma de Darboux inferior de $f$ sobre $\mathcal{P}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:upper,
+  name = {$\overline{S}\left(f,\mathcal{P}\right)=\sum_{i=1}^{n}M_{i}\triangle{i}$},
+  description = {suma de Darboux superior de $f$ sobre $\mathcal{P}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:ilowerupper,
+  name = {$\underline{\int}_{a}^{b}f,\overline{\int}_{a}^{b}f$},
+  description = {integrales de Darboux inferior (superior) de $f$ sobre $\left[a,b\right]$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:riemann,
+  name = {$\int_{a}^{b}f$},
+  description = {integral de Riemann de $f$ sobre $\left[a,b\right]$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:mesh,
+  name = {$\|\mathcal{P}\|$},
+  description = {malla de la partición $\mathcal{P}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:tagged,
+  name = {$\mathcal{P}^{\ast}$},
+  description = {partición etiquetada de $\left[a,b\right]$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:sriemann,
+  name = {$R\left(f,\mathcal{P}^{\ast}\right)=\sum_{i=1}^{n}f(x^{\ast}_{i})\triangle_{i}$},
+  description = {suma de Riemman de $f$ sobre la partición etiquetada $\mathcal{P}^{\ast}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:reg,
+  name = {$\mathcal{Q}_{n}$},
+  description = {partición regular de $\left[a,b\right]$ dentro de $n$ subintervalos},
+  type = {riemannintegral
+}
+}
+
+@entry{int:jump,
+  name = {$j\left(f,x_{0}\right)$},
+  description = {salto de $f$ en $x_{0}$},
+  type = {riemannintegral
+}
+}
+
+@entry{int:imp,
+  name = {$\int_{a}^{+\infty}f,\int_{-\infty}^{b}f,\int_{-\infty}^{+\infty}f$},
+  description = {integrales (impropias) de $f$ sobre intervalos infinitos},
+  type = {riemannintegral
+}
+}
+
+@entry{er:s,
+  name = {$\sum_{k=1}^{\infty}a_{k} (=S)$},
+  description = {una serie infinito de números con suma $S$},
+  type = {series
+}
+}
+
+@entry{ser:partial,
+  name = {$S_{n}=\sum_{k=1}^{n}a_{k}$},
+  description = {$n$--ésima suma parcial de $\sum_{k=1}^{n}a_{k}$},
+  type = {series
+}
+}
+
+@entry{ser:max,
+  name = {$a^{+}_{n},a^{-}_{n}$},
+  description = {$\max\left\{a_{n},0\right\},\max\left\{-a_{n},0\right\}$},
+  type = {series
+}
+}
+
+@entry{ser:vec,
+  name = {$\vec{x}=\left(x_{1},x_{2},\ldots,x_{n}\right)$},
+  description = {un $n$--vector},
+  type = {series
+}
+}
+
+@entry{ser:rn,
+  name = {$\mathds{R}^{n}$},
+  description = {$n$--espacio euclidiano},
+  type = {series
+}
+}
+
+@entry{ser:dot,
+  name = {$\vec{x}\cdot\vec{y}$},
+  description = {producto punto de $\vec{x}$ e $\vec{y}$},
+  type = {series
+}
+}
+
+@entry{ser:power,
+  name = {$\sum_{k=1}^{\infty}a_{k}{\left(x-c\right)}^{k}$},
+  description = {una serie de potencia en $\left(x-c\right)$},
+  type = {series
+}
+}
+
+@entry{ser:ratio,
+  name = {$\rho$},
+  description = {radio de convergencia de una serie de potencia},
+  type = {series
+}
+}
+
+@entry{ser:binom,
+  name = {$\binom{\alpha}{k}$},
+  description = {coeficiente binomial para un arbitrario $\alpha$, $n\in\mathds{N}$},
+  type = {series
+}
+}
+
+@entry{ser:double,
+  name = {$\sum_{i,j=1}^{\infty}$},
+  description = {una serie doble},
+  type = {series
+}
+}
+
+@entry{ssfun:space,
+  name = {$\mathcal{F}\left(\mathcal{S},\mathds{R}\right)$},
+  description = {conjunto de todas las funciones $f\colon\mathcal{S}\rightarrow\mathds{R}$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:bound,
+  name = {$B\left(\mathcal{S}\right)$},
+  description = {conjunto de todas las funcione acotadas en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:cont,
+  name = {$C\left(\mathcal{S}\right)$},
+  description = {conjunto de todas las funciones continuas en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:diff,
+  name = {$D\left(\mathcal{S}\right)$},
+  description = {conjunto de todas las funciones diferenciables en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:ck,
+  name = {$C^{k}\left(\mathcal{S}\right)$},
+  description = {conjunto de todas las $f$ para cual $f^{(k)}$ es continua en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:ana,
+  name = {$C^{\infty}\left(\mathcal{S}\right)$},
+  description = {conjunto de todas las $f\ni\forall k\in\mathds{N},f^{(k)}$ es continua en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:rie,
+  name = {$R\left[a,b\right]$},
+  description = {conjunto de todas las $f$ que son Riemann integrables en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:seq,
+  name = {$\left\{f_{n}\right\}$},
+  description = {una sucesión de funciones},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:fpoi,
+  name = {$\lim\limits_{n\to\infty}f_{n}=f$},
+  description = {$\left\{f_{n}\right\}$ converge puntualmente a $f$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:cpoi,
+  name = {$f_{n}\rightarrow f$},
+  description = {$\left\{f_{n}\right\}$ converge puntualmente a $f$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:supnorm,
+  name = {$\|f\|$},
+  description = {normal del supremo de $f$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:dist,
+  name = {$d\left(f,g\right)$},
+  description = {$\|f-g\|$, la distancia entre $f$ y $g$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:zeta,
+  name = {$\zeta(x)$},
+  description = {función zeta de Riemann},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:poly,
+  name = {$P\left[a,b\right]$},
+  description = {conjunto de todos los polinomios en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:apoly,
+  name = {$CAP\left[a,b\right]$},
+  description = {todas las $f$ continuas aproximable por polinomios en $\left[a,b\right]$},
+  type = {sequencesfunctions
+}
+}
+
+@entry{ssfun:max,
+  name = {${\left(x-c\right)}^{+}$},
+  description = {$\max\left\{0,x-c\right\}$},
+  type = {sequencesfunctions
+}
+}
+

@@ -6,13 +6,13 @@ tn = 20; % equal to: t0 + h*n, with n the number of steps
 [t, y] = Euler(t0, y0, h, tn);
 plot(t, y, 'b');
 
-    % exact solution (y = e^t):
-    tt = (t0:0.001:tn)';
-    yy = exp(tt);
-    hold('on');
-    plot(tt, yy, 'r');
-    hold('off');
-    legend('Euler', 'Exact');
+% exact solution (y = e^t):
+tt = (t0:0.001:tn)';
+yy = exp(tt);
+hold('on');
+plot(tt, yy, 'r');
+hold('off');
+legend('Euler', 'Exact');
 
 function [t, y] = Euler(t0, y0, h, tn)
     fprintf('%10s%10s%10s%15s\n', 'i', 'yi', 'ti', 'f(yi,ti)');

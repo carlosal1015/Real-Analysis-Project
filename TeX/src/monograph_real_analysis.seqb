@@ -1,0 +1,18 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossentry{seq:tail}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{seq:s}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{seq:sl}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{seq:linf}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{seq:linfsup}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{seq:cl}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\glossentry{seq:dinf}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\ignore{53}}}%
+\end{theglossary}\glossarypostamble
