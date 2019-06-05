@@ -1,14 +1,32 @@
-% arara: clean: {extensions: ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','pdf','synctex.gz','bcf','run.xml','contb','contg','contn','diifb','diifg']}
-% arara: lualatex: { shell: yes }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
+% arara: --> 'contg','contn','diifb','diifg','diffn','funb','fung','funn','genb','geng','genn','intb','intg',
+% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn',
+% arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
+% arara: --> }
+% arara: lualatex: { draft: yes }
 % arara: biber
-% arara: lualatex
+% arara: lualatex: { draft: yes }
 % arara: makeindex
 % arara: lualatex
 % arara: pythontex
-% arara: lualatex
+% arara: lualatex: { draft: yes }
 % arara: makeglossaries
-% arara: lualatex: { synctex: yes }
-% arara: clean: {extensions: ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb','contg','contn','diifb','diifg']}
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> draft: yes,
+% arara: --> interaction: batchpmode
+% arara: --> }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
+% arara: --> 'contg','contn','diifb','diifg','diffn','funb','fung','funn','genb','geng','genn','intb','intg',
+% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn',
+% arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
+% arara: --> }
+% arara: --> if missing('pdf') || changed('tex')
 \documentclass[graybox,envcountchap,sectrefs]{svmono}
 % choose options for [] as required from the list
 % in the Reference Guide
