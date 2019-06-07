@@ -1,6 +1,6 @@
 \begin{partbacktext}
 \part{Fundamentos}
-En la primera parte de la monografía presentaremos los conceptos fundamentales para modelar y simular los problemas de las ecuaciones en diferencias, a veces, mal llamado \emph{relaciones de recurrencias}. En el capítulo $1$ presentaremos los modelos fundamentales y las ecuaciones en diferencias. Discutiremos la relación de \emph{Ackermann}
+En la primera parte de la monografía presentaremos los conceptos fundamentales para modelar y simular los problemas de las f a veces, mal llamado \emph{relaciones de recurrencias}. En el capítulo $1$ presentaremos los modelos fundamentales y las ecuaciones en diferencias. Discutiremos la relación de \emph{Ackermann}
 \end{partbacktext}
 %\chapauthor{Autor}
 %\chapsubtitle{Subtítulo}
@@ -76,39 +76,108 @@ u_{n}&=\varphi\left(n,u_{n-1},u_{n-2},\ldots,u_{n-k}\right),\forall n\geq k,\\
 \varphi&\colon\mathds{N}\times X^{k}\rightarrow X
 \end{align*}
 Es una función que involucra $k$ elementos consecutivos de la sucesión. En este caso, se necesitan $k$ valores iniciales para definir una sucesión.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INCIO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ecuaciones en diferencias}\index{Ecuación en diferencias!definición}
+\subsubsection{Conceptos básicos}
 Una ecuación en diferencias es una expresión de la forma: \[ G\left(n,f(n),f(n+1),\ldots,f(n+k)\right)=0,\forall n\in\mathds{Z} \] donde $f$ es una función definida en $\mathds{Z}$.
 
 Si después de simplificar esta expresión quedan los términos $f\left(n+k_{1}\right)$ y $f\left(n+k_{2}\right)$ como el mayor y el menor, respectivamente. Se dice que la ecuación es de orden $k=k_{1}-k_{2}$.
-\begin{example}{Ecuación en diferencias de orden $3$}
-	La ecuación:
-	\begin{equation}
-	5f(n+4)-4f(n+2)+f(n+1)+(n-2)^{3}=0
-	\end{equation}
-	es de orden $4-1=3$.
+\begin{example}
+	La ecuación:\\
+	$$
+	5f(n+4)-4f(n+2)+f(n+1)+(n-2)^{3}=0,
+	$$
+	es de orden $ 4-1=3 .$
 \end{example}
-Una ecuación en diferencias de orden $k$ se dice que es \emph{lineal}\index{Ecuación en diferencias!lineal} si puede expresarse de la forma:
+Una ecuación en diferencias de orden $ k $ se dice {\bf lineal} si puede expresarse de la forma:\\
+$$
+p_{0}(n)f(n+k)+p_{1}(n)f(n+k-1)+\cdots+p_{k}(n)f(n)=g(n),
+$$
+donde los coeficientes $ p_{i} $ son funciones definidas en $ \mathds{Z}.$\\
+El caso más sencillo es cuando los coeficientes son constantes $ p_{i}(n)=a_{i} :$\\
+$$
+a_{0}(n)f(n+k)+a_{1}(n)f(n+k-1)+\cdots+a_{k}(n)f(n)=g(n),
+$$
+La ecuación en diferencias se dice homogénea en el caso de que $ g(n)=0 $, y completa en caso contrario.
+\begin{theorem}
+	Dada la ecuación en diferencias lineal de coeficientes constantes y de orden $ K $:
+	$$
+	a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n)
+	$$
+	el problema de hallar una función definida $ \mathds{Z} $,que verifique la ecuación, y tales que en los $ k $ enteros consecutivos $ n_{0},n_{0}+1,\cdots,n_{0}+k-1 $ tome los valores dados $ c_{0},c_{1},\cdots,c_{k-1}$,tiene solución única.
+\end{theorem}
+\begin{theorem}
+	Dada una ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $ k $ entonces,si una solución $ f $ es nula en $ k $ enteros consecutivos,es idénticamente nula.
+\end{theorem}
+\begin{theorem}
+	Toda combinación lineal de soluciones de una ecuación en diferencias lineal	homogénea de coefcientes constantes y de orden $ k $ es también solución de dicha ecuación.
+\end{theorem}
+\subsubsection{Solución de una ecuación homogénea}
+Sea la ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $ k $.
+$$
+a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=0, \; \forall \in \mathds{Z}.
+$$
+Buscaremos soluciones del tipo $ f(n)=r^{n} .$Entonces:
+$$
+r^{n}(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0
+$$
+$$
+\longrightarrow r^{n}(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0.
+$$
+Por tanto, $ r $ es raíz de la {\bf ecuación característica}
+$$
+(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0.
+$$
+El estudio de la solución dependería de si las raíces de la
+ecuación característica son simples o múltiples.
+\begin{example}
+	Hallar la solución de :
+	$$
+	f(n+2)-4f(n+1)+3f(n)=0, \; \forall \in \mathds{Z},
+	$$
+	$$
+	f(0)=0, \; f(1)=1.
+	$$
+	La ecuación característica es:
+	$$
+	r^{2}-4r+3=0 \rightarrow r_{1}=3\; , \; r_{2}=1
+	$$
+	Por tanto:
+	$$
+	f(n)=c_{1}3^{n}+c_{2}1^{n}=c_{1}3^{n}+c_{2}.
+	$$
+	Por otra parte:
 \begin{equation*}
-p_{0}(n)f(n+k)+p_{1}(n)f(0+k-1)+\cdots+p_{k}(n)f(n)=g(n),
+\left.\begin{aligned}
+f(0)&=c_{1}+c_{2}=0\\
+f(1)&=3c_{1}+c_{2}=1
+\end{aligned}
+\right\}
+\longrightarrow c_{1}=\frac{1}{2},c_{2}=-\frac{1}{2}
 \end{equation*}
-donde los coeficientes $p_{i}$ son funciones definidas en $\mathds{Z}$.
+	De donde:
+	$$
+	f(n)=\frac{1}{2}3^{n}-\frac{1}{2}=\frac{3^{n}-1}{2}.
+	$$
+	
+	
+\end{example}
 
-El caso más sencillo es cuando los coeficientes son constantes $p_{i}(n)=a_{i}$:
-\begin{equation*}
-a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n).
-\end{equation*}
-La ecuación en diferencias se dice que es \emph{homogénea}\index{Ecuación en diferencias!homogénea} en el caso que $g(n)=0$, y completa en el caso contrario.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \subsection{Algunos modelos de recurrencias lineales}
 
 Ahora damos una serie de ejemplos que ilustran cómo reducir la solución de un problema en el que la búsqueda de las soluciones de una relación de recurrencia apropiada.
+%%%%%%%%%%%inicio%%%%%%%%%%%%%%%%
+\begin{example}{Número de Catalan}
+Es el número de Catalán(C$ _{N} $) es igual al número de rutas de la esquina inferior izquierda de una rejilla cuadrada de $ n \times n $ a la esquina superior derecha si estamos restringidos a viajar sólo a la derecha o hacia arriba y si se permite tocar pero no pasar arriba de la diagonal entre la esquina inferior izquierda y la superior derecha.Tal ruta recibe el nombre de \emph{ruta buena.}Se da una relación de recurrencia para los números de Catalan.\\
+Las rutas buenas se dividen en clases con base en  la primera vez que tocan la diagonal después de salir de la esquina inferior derecha.Por ejemplo,la ruta en la figura toca la diagonal primero en el punto ($3,3$).Las rutas que tocan la diagonal primero en el punto($ k,k $) se consideran construidas por un proceso de dos pasos:
+primero, se construye la parte de $ (0,0) $ a $ (k,k) $ .Segundo,se construye la parte de ($ k,k $) a ($ n,n $).Una buena ruta siempre sale de ($ 0,0 $) moviéndose hacia la derecha a ($ 1,0 $) y siempre llega a ($ k,k $) moviéndose hacia arriba desde ($ k,k-1 $).Los movimientos de ($ 1,0 $) a ($ k,k-1 $) dan una ruta buena en la rejilla de $ (k-1) \times (k-1) $ con esquina en $ (1,0),(1,k-1),(k,k-1)$ y $ (k,0) .$En la figura,se marcaron los puntos $ (1,0) $ y $ (k,k-1),k=3 $,con rombos,y se aisló la subrejilla de $ (k-1) \times (k-1) $.Así,hay $ C_{k-1} $ rutas de $ (0,0) $ a $ (k,k) $ que tocan primero a la diagonal en $ (k,k) $.La parte de $ (k,k) $ a $ (n,n) $ es una buena ruta en la rejilla de $ (n-k) \times (n-k) $ con esquinas en $ (k,k),(k,n),(n,n) $ y $ (n,k) $(vea la figura).Hay $ C_{n-1} $ rutas de este tipo.Por el principio de la multiplicación,hay $ C_{k-1}C_{n-k}$ rutas buenas en una rejilla de $ n \times n $ que tocan primero la diagonal en $ (k,k)$.Las rutas buenas que tocan por primera vez en $ (k^{\prime},k^{\prime}), k \neq k^{\prime} .$Entonces se utiliza el principio de la suma a fin de obtener una relación de recurrencia para el número total de rutas buenas en una rejilla de $ n \times n $:
+$$
+C_{n}=\sum_{k=1}^{n}C_{k-1}C_{n-k}.
+$$
 
-\begin{example}{La escalera}
-	Un niño decide escalar una escalera con $n\geq 1$ de tal manera que cada paso que él despeja uno o dos de los pasos de la escalera %(vea)
-	Encuentre la relación de recurrencia que sirva para calcular el número de diferentes maneras posibles de escalar la escalera.
 \end{example}
-Usamos la variable desconocida $x_{n}$ para denotar el número de maneras en las cuales el niño puede escalar la escalera de $n\geq1$ pasos. Es fácil de observar que $x_{1}=1$ y $x_{2}=2$ (dos pasos cada uno de longitud uno, o un paso de longitud dos escalones). Ahora sea $n\geq3$: si con el primer paso el niño mueve solo el primer escalón; existen claramente $x_{n-1}$ posibles maneras de escalar los que quedan. Si en cambio con el primer lugar, se suben dos peldaños de escalera.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%fin%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %https://rajsain.files.wordpress.com/2013/11/randomized-algorithms-motwani-and-raghavan.pdf
 %
 %https://www.csie.ntu.edu.tw/~r97002/temp/Concrete%20Mathematics%202e.pdf
