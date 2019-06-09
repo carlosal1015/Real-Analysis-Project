@@ -25,8 +25,11 @@ legend(loc='lower right')
 savefig('img/myplot.pdf', bbox_inches='tight')
 \end{pylabcode}
 
-\begin{figure}
-	\centering
-	\includegraphics{./img/myplot}
+\begin{figure}[t]
+	\sidecaption[t]
+	%\centering
+	\includegraphics[scale=.65]{./img/myplot}
+	% If not, use
+	%\picplace{5cm}{2cm} % Give the correct figure height and width in cm
 	\caption{\label{fig:matlpotlib} A plot created with PythonTeX}
 \end{figure}

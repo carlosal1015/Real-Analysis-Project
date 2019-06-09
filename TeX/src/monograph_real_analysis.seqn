@@ -1,7 +1,0 @@
-\glossaryentry{$\left \{x_{n}\right \}$?\glossentry{seq:s}|setentrycounter[]{page}\ignore}{53}
-\glossaryentry{$\lim \limits _{n\to \infty }x_{n}=L$?\glossentry{seq:sl}|setentrycounter[]{page}\ignore}{53}
-\glossaryentry{$x_{n}\rightarrow L$?\glossentry{seq:cl}|setentrycounter[]{page}\ignore}{53}
-\glossaryentry{$T_{m}$?\glossentry{seq:tail}|setentrycounter[]{page}\ignore}{53}
-\glossaryentry{$\lim \limits _{n\to \infty }x_{n}\pm \infty $?\glossentry{seq:linf}|setentrycounter[]{page}\ignore}{53}
-\glossaryentry{$x_{n}\rightarrow \pm \infty $?\glossentry{seq:dinf}|setentrycounter[]{page}\ignore}{53}
-\glossaryentry{$\underline {\lim \limits }_{n\to \infty }x_{n},\overline {\lim \limits }_{n\to \infty }x_{n}$?\glossentry{seq:linfsup}|setentrycounter[]{page}\ignore}{53}

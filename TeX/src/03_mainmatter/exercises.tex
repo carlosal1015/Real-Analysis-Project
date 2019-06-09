@@ -5,7 +5,29 @@
 \end{prob}
 
 \begin{solution}
-	
+	Supongo que $\left\{x_{n}\right\}$ es contractiva con constante de contracción $c\in\left(0,1\right)$ tal que $\forall n\in\mathds{N}$:
+	\begin{equation}\label{prob:1.a}
+	 |x_{n+2}-x_{n+1}|\leq c|x_{n+1}-x_{n}|\leq c^{2}|x_{n}-x_{n-1}|\leq\cdots c^{n}|x_{2}-x_{1}|.
+	\end{equation}
+	Pero, pero en~\eqref{1} cuando $n\to\infty$, se tiene que  $c^{n}\to0$ ya que $c\in\left(0,1\right)$.  Sea $\varepsilon>0$ y escogiendo $\tilde{n}\in\mathds{N}$ apropiado de modo que
+	\[ \frac{e^{\tilde{n}}}{1-c}<\frac{\varepsilon}{|x_{1}-x_{2}|}. \] Para $m,n\geq n_{0}$, podemos escribir
+	\begin{align*}\label{prob:1.b}
+	|x_{n}-x_{m}|&=|x_{n}-x_{n-1}+x_{n-1}-x_{n-2}+x_{n-2}-\cdots-x_{m+1}+x_{m+1}-x_{m}|.
+	\intertext{Y aplicando la desigualdad triangular en~\eqref{prob:1.b} se tiene}
+	|x_{n}-x_{m}|&\leq|x_{n}-x_{n-1}|+|x_{n-1}-x_{n-2}|+\cdots+|x_{m+1}-x_{m}|.
+	\intertext{Pero, aplicando la cadena de desigualdades, se obtiene}
+	|x_{n}-x_{m}|&\leq c^{n-1}|x_{1}-x_{2}|+c^{n-3}|x_{1}-x_{2}|+\cdots+c^{m-1}|x_{1}-x_{2}|\\
+	|x_{n}-x_{m}|&\leq|x_{1}-x_{2}|c^{m-1}\frac{1-c^{n-m}}{1-c}\\
+	|x_{n}-x_{m}|&\leq|x_{1}-x_{2}|\frac{e^{m-1}}{1-c}
+	\end{align*}
+	Pero, empleando el $\tilde{n}$:
+	\begin{align*}
+	|x_{n}-x_{m}|&\leq|x_{1}-x_{2}|\frac{c^{\tilde{n}}-1}{1-c}\\
+	|x_{n}-x_{m}|&\leq|\frac{\varepsilon}{|x_{1}-x_{2}|}|
+	|x_{n}-x_{m}|&\leq\varepsilon.
+	\end{align*}
+	Por lo tanto, cualquier sucesión $\left\{x_{n}\right\}$ contractiva es de Cauchy, en consecuencia, $\left\{x_{n}\right\}$ es convergente.
+
 \end{solution}
 
 \begin{prob}{Media aritmética recursiva}\index{Sucesión!media aritmética}
@@ -18,7 +40,11 @@ Sea $a\neq b$ números reales arbitrarios, y defina la sucesión $\left\{x_{n}\r
 \end{prob}
 
 \begin{solution}
-	
+	\begin{enumerate}
+		\item 
+		\item 
+		\item 
+	\end{enumerate}
 \end{solution}
 
 \begin{prob}{Media aritmética ponderada recursiva}\index{Sucesión!media aritmética ponderada}

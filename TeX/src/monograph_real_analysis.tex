@@ -1,8 +1,8 @@
 % arara: clean: {
 % arara: --> extensions:
 % arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
-% arara: --> 'contg','contn','diifb','diifg','diffn','funb','fung','funn','genb','geng','genn','intb','intg',
-% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn',
+% arara: --> 'contg','contn','diffb','diffg','diffn','funb','fung','funn','genb','geng','genn','intb','intg','pytxcode',
+% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
 % arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
 % arara: --> }
 % arara: lualatex: { draft: yes }
@@ -16,18 +16,20 @@
 % arara: lualatex: {
 % arara: --> shell: yes,
 % arara: --> synctex: yes,
-% arara: --> draft: yes,
-% arara: --> interaction: batchpmode
+% arara: --> interaction: batchmode
 % arara: --> }
 % arara: clean: {
 % arara: --> extensions:
 % arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
-% arara: --> 'contg','contn','diifb','diifg','diffn','funb','fung','funn','genb','geng','genn','intb','intg',
-% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn',
-% arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
+% arara: --> 'contg','contn','diffb','diffg','diffn','funb','fung','funn','genb','geng','genn','intb','intg','pytxcode',
+% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
+% arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn']
 % arara: --> }
-% arara: --> if missing('pdf') || changed('tex')
-\documentclass[graybox,envcountchap,sectrefs]{svmono}
+\documentclass[
+	graybox,
+	envcountchap,
+	sectrefs
+]{svmono}
 % choose options for [] as required from the list
 % in the Reference Guide
 
@@ -44,7 +46,6 @@
 \usepackage{newtxtext}
 %\usepackage{newtxmath}       % selects Times Roman as basic font
 \usepackage[lite]{mtpro2}
-
 \usepackage{bm,dsfont}
 \usepackage{mathrsfs}
 \usepackage{lipsum}
@@ -54,10 +55,10 @@
 %\usepackage{subfiles}
 %\subfile{sub/sub.tex}
 \usepackage{morewrites}
-\usepackage[toc,
-nonumberlist,
-stylemods={longbooktabs},
-nomain
+\usepackage[
+	nonumberlist,%toc,
+	stylemods={longbooktabs},
+	nomain
 ]{glossaries-extra}
 \newglossary[geng]{general}{genb}{genn}{General}
 \newglossary[logg]{logic}{logb}{logn}{Lógica}
@@ -102,7 +103,7 @@ nomain
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
 
-\date{4 de junio del 2019}
+\date{7 de junio del 2019}
 
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
@@ -129,7 +130,14 @@ nomain
 \maketitle
 
 \frontmatter
-%\extrachap{A}
+\extrachap{Alcance del libro}
+El ánimo de la monografía es dar una introducción matemática al modelamiento, análisis y técnicas de simulación para interacciones. Dado que el campo de las posibles aplicaciones es enorme y las diferentes aplicaciones aportarán diferentes desafíos que requieren de técnicas adecuadas, centraremos nuestra atención en los problemas que involucran un acoplamiento muy fuerte entre los dos subproblemas discreto y continuo. 
+
+La monografía está dividida en tres partes. En la primera parte, comenzaremos introduciendo las definiciones básicas de las relaciones de recurrencia y dar una visión general de las diferentes propiedades utilizadas para describir los métodos de Euler y Runge Kutta. Para estos modelos y ecuaciones, desarrollaremos una teoría matemática fundamental que nos dará respuestas sobre la existencia, unicidad y regularidad de las soluciones. Dada la comprensión suficiente de los dos subproblemas, podremos abordar modelos acoplados para las relaciones de recurrencias. Ambos problemas se acoplan mediante la escalas de tiempo.
+
+La primera parte de este libro también cubrirá una introducción a las ecuaciones en diferencias y el método para la discretización temporal de ecuaciones diferenciales ordinarias. Comenzaremos a reunir los elementos esenciales que son necesarios para manejar el problema X. Luego, prestamos atención a las necesidades especiales de los problemas de interacción de la estructura del fluido.
+
+En la segunda parte de la monografía, describimos dos modelos numéricos específicos para la realización de problemas de interacción de X. Esta parte se centra en las formulaciones Y, donde ambos subproblemas están fuertemente vinculados y tratados como un único conjunto común de ecuaciones. Obtendremos una formulación matemática que cubrirá el problema de las recurrencias discretas, las ecuaciones en diferencias finitas y el cálculo clásico. Se consideran dos enfoques diferentes: En primer lugar, describimos el enfoque de la derivada discreta, una técnica bien establecida por George Boole para modelar las interacciones oferta-demanda que permiten esquemas de discretización muy precisos. En segundo lugar, presentamos la formulación completamente Runge-Kutta, un nuevo enfoque de modelado que puede cubrir una amplia gama de problemas de aplicación diferentes. Para estos dos enfoques, introduciremos detalles sobre la discretización en el espacio y tiempo. Además, describiremos técnicas avanzadas para la solución de los sistemas algebraicos resultantes. La compleja estructura de los problemas de interacción de la estructura de fluido acoplado combina las dificultades de los problemas de flujo con las de estructuras elásticas. Los sistemas de ecuaciones resultantes son enormes, carecen de estructura deseable (como la simetría) e incorporan un acoplamiento muy rígido. Finalmente, discutiremos algunos temas avanzados relacionados con el tratamiento numérico eficiente de problemas de sistema de ecuaciones dinámica en cálculo fraccionario. Con la ayuda del análisis de sensibilidad de los problemas acoplados, podremos diseñar estimadores de error orientados a objetivos que ayudarán a reducir significativamente los costos computacionales para grandes simulaciones. Además, estas técnicas pueden aplicarse para resolver problemas simples de optimización con X.
 %\Extrachap{B}
 \include{./02_frontmatter/dedication}
 \include{./02_frontmatter/foreword}
@@ -157,7 +165,8 @@ nomain
 
 \backmatter
 \include{./04_backmatter/appendix}
-\include{./04_backmatter/glossary}
+%\include{./04_backmatter/glossary}
 %\include{./04_backmatter/solutions}
 \printindex
+
 \end{document}
