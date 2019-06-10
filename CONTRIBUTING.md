@@ -42,6 +42,7 @@ Si para ti el chat es más rápido, puedes unirte al equipo en:
 * Ahora clone el repositorio de la siguiente manera. Ejecute en la terminal las siguientes instrucciones:
 ```bash
 me@linux:~$ git clone https://github.com/carlosal1015/Real-Analysis-Project.git # Clonar el repositorio.
+me@linux:~$ git submodule update --init --recursive # Clonar los submódulos
 ```
 > **Opcional: Configuración de git**
 > 
