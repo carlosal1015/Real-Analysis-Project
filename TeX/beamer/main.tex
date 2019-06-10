@@ -1,0 +1,117 @@
+\documentclass{beamer}
+%\usetheme[numbering=fullbar]{focus}%progressbar
+%\definecolor{main}{RGB}{92, 138, 168}
+%\definecolor{background}{RGB}{240, 247, 255}
+\usepackage[
+	audience=english
+%	audience=spanish,
+%	audience=german
+]{beameraudience}
+
+\usepackage{tikz}
+\newcommand{\progressbar}{%
+	\pgfmathsetmacro{\theta}{360/\inserttotalframenumber*\insertframenumber}
+	\begin{tikzpicture}[scale=0.035]
+	\fill[yellow] (0,0) circle (9);
+	\fill[red] (0,0) -- (9,0) arc (0:-\theta:9);
+	\fill[white] (0,0) circle (5);
+	\node at (0,0) {\insertframenumber};
+	\end{tikzpicture}
+}
+
+\setbeamertemplate{footline}{\hfill \progressbar}
+
+\usepackage{textpos}
+%\useoutertheme{splitwithminiframes}
+%\useoutertheme{sidebarwithminiframes}
+%\usecolortheme[cautious]{owl}
+\begin{document}
+
+\begin{frame}
+	\frametitle{Common title, appearing on all slides in one frame}
+	%------------------------------------------------------------ 1
+	\only<1>{
+		\framesubtitle{The first frame subtitle}
+		\begin{itemize}
+			\item some text on slide 1
+	\end{itemize}}
+	%------------------------------------------------------------ 2
+	\only<2>{
+		\framesubtitle{The second frame subtitle}
+		\begin{itemize}
+			\item some text on slide 2
+	\end{itemize}}
+\end{frame}
+\frame{\titlepage}
+
+\section{Introduction}
+\frame{
+	\frametitle{Equation}
+	
+	$$y=x^2$$
+} 
+
+\frame{text}
+
+\frame{text}
+
+\section{Experimental}
+\frame{
+	Content...
+}
+
+\frame{text}
+
+\frame{text} \frame{text} \frame{text} 
+
+\appendix  
+\frame[noframenumbering,plain]{text} 
+
+\setbeamertemplate{footline}
+{%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.4\paperwidth,ht=7.8pt,dp=3pt,center]{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{date in    head/foot}\insertshortdate\hspace*{5mm}%	
+		\end{beamercolorbox}  
+	}% 
+} 
+
+\addtobeamertemplate{footline}{}{%
+	\begin{textblock*}{100mm}(0.94\textwidth,-7mm)
+		\progressbar
+	\end{textblock*}
+}
+
+
+\begin{frame}{Title}
+ all version
+\end{frame}
+
+\justfor{english}{
+    \begin{frame}
+    English Slide
+    \pause
+    tba
+    \end{frame}
+}
+
+\justfor{spanish}{
+    \begin{frame}
+    Spanish Slide
+    \pause
+    tba
+    \end{frame}
+}
+
+\justfor{german}{
+    \begin{frame}
+    Deutcher Text
+    \pause
+    wird noch angekündigt
+    \end{frame}
+}
+
+\end{document}
