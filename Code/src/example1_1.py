@@ -12,11 +12,16 @@ ts.name
 print(ts.sigma(0))
 print(ts.sigma(4))
 print(ts.sigma(7))
+
 print(ts.mu(Fraction(1, 3)))
+
 print(ts.rho(1))
 print(ts.rho(3))
 print(ts.rho(0))
+
 print(ts.nu(Fraction(7, 9)))
+
 print(ts.dderivative(lambda x: 1, 5))
 print(ts.dderivative(lambda x: x*x, 5))
-#print(ts.dexpf(lambda x: 1, 3, 1))
+
+print(ts.dexp_p(lambda x: 1, 3, 1))
