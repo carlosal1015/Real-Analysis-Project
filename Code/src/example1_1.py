@@ -7,7 +7,7 @@ from fractions import Fraction
 
 ts = tsc.timescale( [0, Fraction(1, 3), Fraction(1, 2), Fraction(7, 9), 1, 2, 3, 4, 5, 6, 7], 'documentation example')
 
-ts.name
+print(ts.name)
 
 print(ts.sigma(0))
 print(ts.sigma(4))
