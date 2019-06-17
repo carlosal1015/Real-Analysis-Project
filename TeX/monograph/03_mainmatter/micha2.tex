@@ -1,6 +1,6 @@
 \textit{Resolver una ecuación de recurrencia} significa encontrar una sucesión que satisfaga las ecuaciones de recurrencias. Encontrar una ``solución general'' significa hallar una fórmula que describa todas las soluciones posibles (todas las sucesiones posibles que satisfacen la ecuación). Veamos el siguiente ejemplo:
 
-\begin{example}{}
+\begin{example}
 	Considere que $T_{n}$ satisface la siguiente ecuación para todo $n\in\mathds{N}$, $n>1$:
 	\begin{equation*}
 	T_{n}=2T_{n-1}+1.
@@ -16,50 +16,40 @@
 \end{example}
 
 \section{Ejemplos definidos por ecuaciones de recurrencia}
-% TODO: Checkear transtornada por permutada.
-\begin{example}{}
+
+\begin{example}[Parejas desordenadas]
 	Imagina una fiesta donde las parejas llegan juntas, pero al final de la noche, cada persona se va con una nueva pareja. Para cada $n\in P$, digamos que $D_{n}$ es el número de diferentes formas en que las parejas pueden ser ``desordenadas'', es decir, reorganizadas en parejas, por lo que ni uno está emparejado con la persona con la que llegaron.
 
 	Para los valores:
-
-	$D_{1} = 0$  // una pareja no puede ser desordenada.
-
-	$D_{2} = 1$  // $\exists$ una y solo una manera de transtornar una pareja.
-
-	$D_{3} = 2$  // si las parejas llegan como $Aa$, $Bb$, $Cc$, entonces $A$ estaría emparejado con $b$ o $c$. Si $A$ esta emparejado con $b$, $C$ debe estar emparejado con $a$(y no $c$) y $B$ con $c$. Si $A$ esta emparejado con $c$, $B$ no debe estar emparejado con $a$(y no $b$) y $C$ con $b$.
-
+	\begin{itemize}
+		\item $D_{1}=0$, una pareja no puede ser desordenada.
+		\item $D_{2} = 1$, existe una y solo una manera de ``desordenar'' una pareja.
+		\item $D_{3} = 2$, si las parejas llegan como $Aa$, $Bb$, $Cc$, entonces $A$ estaría emparejado con $b$ o $c$. Si $A$ esta emparejado con $b$, $C$ debe estar emparejado con $a$(y no $c$) y $B$ con $c$. Si $A$ esta emparejado con $c$, $B$ no debe estar emparejado con $a$(y no $b$) y $C$ con $b$.
+	\end{itemize}
 	?`Qué tan grandes son $D_{4}$, $D_{5}$ y $D_{10}$? ?`Cómo podemos calcularlos? ?`Existe alguna expresión cerrada para obtener todos los términos de la? % TODO: Sucesión.
 
 	Vamos a desarrollar una estrategia para contar los desajustes cuando $n\leq4$. Supongamos que hay $n$ mujeres $A_{1},A_{2},A_{3},\ldots,A_{n}$, y cada $A_{j}$ llega con el hombre $a_{j}$.
 
 	La mujer $A_{1}$ puede ser ``re-emparejada'' con cualquiera de los $n-1$ hombres restantes $a_{2}$ o $a_{3}$ o \ldots o $a_{n}$. Digamos que está emparejada con $a_{k}$, donde $2\leq k\leq n$ y ahora consideremos $a_{k}^{\prime}$ pareja original de la mujer $A_{k}$: ella podría tomar $a_{1}$ o ella podría rechazar $a_{1}$ y tomar a alguien más.
-	% TODO: Checkearlo.
-	
-	Si $A_{1}$ es pareja con $a_{k}$ y $A_{k}$ es pareja con $a_{1}$, entonces $n-2$ parejas dejaron para transtornar, y eso puede hacerse exactamente de $D_{n-2}$ maneras diferente.
+
+	Si $A_{1}$ es pareja con $a_{k}$ y $A_{k}$ es pareja con $a_{1}$, entonces $n-2$ parejas dejaron para desordenar, y eso puede hacerse exactamente de $D_{n-2}$ maneras diferentes.
 	% TODO: Cambiar hacerse.
 
 	Ahora para cada uno de los $n-1$ hombres que $A_{1}$ podría elegir, hay $\{D_{n-2}+ D_{n-1}\}$ diferentes formas de completar el trastorno. Por lo tanto, cuando $n\geq 4$ tenemos:
-\begin{equation*}\label{eq:1_1}
-D_{n}=\left(n-1\right)\left\{D_{n-2}+D_{n-1}\right\}%\tag{1_1}
-\end{equation*}
-Usando la ecuación \eqref{eq:1_1} las evaluaciones para 1 y 2 verifican la igualdad, ahora evaluemos $D_{n}$ para cualquier valor de $n$, con $n\in\mathds{N}$
-
-$D_{3}=\left(3-1\right)\left\{D_{2}+D_{1}\right\}=2\left(1+8\right)=2$
-
-$D_{4}=\left(4 - 1\right)\left\{D_{3}+D_{2}\right\}=3\left(2+1\right)=9$
-
-$D_{5}=\left(5-1\right)\left\{D_{4}+D_{3}\right\}=4\left(9+2\right)=44$
-
-$D_{6}=(6-1)\left\{D_{5}+D_{4}\right\}=5\left(44 + 9\right)=265$
-
-$D_{7}=\left(7-1\right)\left\{D_{6}+D_{5}\right\}=6\left(265+44\right)=1854$
-
-$D_{8}=\left(8-1\right)\left\{D_{7}+D_{6}\right\}=7\left(1854+265\right)=14833$
-
-$D_{9}=\left(9-1\right)\left\{D_{8}+D_{7}\right\}=8\left(14833+1854\right)=133496$
-
-$D_{10}=\left(10-1\right)\left\{D_{9}+D_{8}\right\}=9\left(133496+14833\right)=1334961$
-
+\begin{equation}\label{eq:1_1}
+D_{n}=\left(n-1\right)\left\{D_{n-2}+D_{n-1}\right\}
+\end{equation}
+Usando la ecuación \eqref{eq:1_1} las evaluaciones para $n=1$ y $n=2$ verifican la igualdad, ahora evaluemos $D_{n}$ para cualquier valor de $n$, con $n\in\mathds{N}$
+\begin{align*}
+D_{3}&=\left(3-1\right)\left\{D_{2}+D_{1}\right\}=2\left(1+8\right)=2.\\
+D_{4}&=\left(4-1\right)\left\{D_{3}+D_{2}\right\}=3\left(2+1\right)=9.\\
+D_{5}&=\left(5-1\right)\left\{D_{4}+D_{3}\right\}=4\left(9+2\right)=44.\\
+D_{6}&=(6-1)\left\{D_{5}+D_{4}\right\}=5\left(44 + 9\right)=265.\\
+D_{7}&=\left(7-1\right)\left\{D_{6}+D_{5}\right\}=6\left(265+44\right)=1854.\\
+D_{8}&=\left(8-1\right)\left\{D_{7}+D_{6}\right\}=7\left(1854+265\right)=14833.\\
+D_{9}&=\left(9-1\right)\left\{D_{8}+D_{7}\right\}=8\left(14833+1854\right)=133496.\\
+D_{10}&=\left(10-1\right)\left\{D_{9}+D_{8}\right\}=9\left(133496+14833\right)=1334961.
+\end{align*}
 La sucesión en $P$ definido por $S_{n}=A\times n!$ donde $A$ es un número real satisface la ecuación de recurrencia \eqref{eq:1_1}. Si $n\geq3$ se tiene:
 \begin{align*}
 	\left(n-1\right)\left\{S_{n-2}+S_{n-1}\right\}
@@ -76,111 +66,173 @@ La sucesión en $P$ definido por $S_{n}=A\times n!$ donde $A$ es un número real
 Para todo $n\geq 2$, $\left(\frac{1}{3}\right)n!\leq D_{n}\leq\left(\frac{1}{2}\right)n!$.
 \end{theorem}
 
-\begin{example}{Números de Ackermann}\index{Ackermann!número}
+\begin{proof}
+	Primero considere la tabla de valores:
+	\begin{table}[ht!]
+		\centering
+		\begin{tabular}{ >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
+			n & \left(\frac{1}{3}\right)n! & D_{n} & \left(\frac{1}{2}\right)n! \\
+			\hline
+			1 & \frac{1}{3} & 0 & \frac{1}{2}\\
+			2 & \frac{2}{3} & 1 &  1=\frac{2}{2}\\
+			3 & \frac{6}{3}=2 & 2 & 3=\frac{6}{2}\\
+			4 & \frac{24}{3}=8 & 9 & 12=\frac{24}{2}\\
+			5 & \frac{120}{3}=40 & 44 & 60=\frac{120}{2}\\
+			6 & \frac{720}{3}=240 & 265 & 360=\frac{720}{2}\\
+		\end{tabular}
+	\end{table}
+Por inducción fuerte en matemática sobre $n$.
+\begin{enumerate}[label={Paso~\arabic*}]
+	\item Si $n=2$, se tiene $\left(\frac{1}{3}\right)n!=\frac{2}{3}<1=D_{n}= \left(\frac{1}{2}\right)n!$ y $n=3$, se tiene $\left(\frac{1}{3}\right)n!=\frac{6}{3}=2=D_{n}<3=\left(\frac{1}{2}\right)n!$.
+	\item Supongamos que $\exists k\geq3$ tal que si $2\leq n\leq k$, se tiene $\left(\frac{1}{3}\right)n!\leq D_{n}\leq\left(\frac{1}{2}\right)n!$.
+	\item Si $n=k+1$, se tiene $n\geq 4$ y $D_{n}=(n-1)[D_{n-2}+D_{n-1}]$ cuando $2\leq n-2<n-1\leq k$. Así, $D_{n}\leq(n-1)\{(1/3)[n-2]!+(1/3)[n-1]!\}=(1/3)n!$, y $D_{n}\leq(n-1)\{(1/2)[n-2]!+(1/2)[n-1]!\}=(1/2)n!$.
+\end{enumerate}
+La mejor fórmula para $\bf{D_{n}}$ que sabemos utiliza la función de ``entero más cercano''. Para cualquier número real $x$, sea $\lceil x\rfloor$ que denote \emph{el entero más cercano a} $x$ se define de la siguiente manera:
+
+\begin{itemize}
+	\item Si $x$ es escrito como $n+f$ donde $n$ es el entero $\lfloor x\rfloor$, y $f$ es una fracción donde $0\leq f< 1$.
+	\item Si $0 \leq f < \frac{1}{2}$, entonces $\lceil x\rfloor=n$.
+	\item Si $\frac{1}{2}\leq f<1$, entonces $\lceil x\rfloor=n+1$.
+\end{itemize}
+?`Es $\lceil x\rfloor=\lfloor x+\frac{1}{2}\rfloor$? Así que $\lceil 3.29\rfloor=3$, $\lceil-3.78\rfloor=-4$. Entonces $D_{n}=\lceil(n!)/e\rfloor$ cuando $e=2.71828182844\ldots$ es la base del logaritmo natural. Note que $(n!)/e$ nunca es igual a $\lceil(n!)/e\rfloor+\frac{1}{2}$.
+
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{>{$}c<{$} >{$}c<{$} >{$}c<{$}}
+		n & D_{n} & (n!)/e \\
+		\hline
+		1 &  0 & 0.367879441\\
+		2 &  1 &  0.735758882\\
+		3 &  2 & 2.207276647\\
+		4 &  9 & 8.829106588\\
+		5 & 44 & 44.14553294\\
+		6 & 265 & 264.8731976\\
+		7 & 1854 & 1854.112384\\
+		8 & 14833 & 14832.89907 \\
+		9 & 133496 & 133496.0916\\
+		10 &  1334961 & 1334960.916\\
+	\end{tabular}
+\end{table}
+
+Hay otra fórmula (mucho menos compacta) para $D_{n}$ dado en los ejercicios, junto con un resumen de la prueba de que $D_{n}=\lceil(n!)/e\rfloor$.
+\end{proof}
+
+\begin{example}[Números de Ackermann]\index{Ackermann!número}
 	En la década de 1920's, el lógico y matemático alemán, Wilhelm Ackermann (1896–1962), inventó una función muy curiosa, $A\colon P\times P\rightarrow P$ que define recursivamente usando ``tres reglas'':
-	\begin{enumerate}[Regla 1]
+	\begin{enumerate}[label={Regla~\arabic*}]
 		\item $A(1,n)=2$ para $n=1,2,\ldots$.
 		\item $A(m,1)=2m$ para $m=2,3,\ldots$.
 		\item Cuando $m>1$ y $n>1$ se tiene $A(m,n)=A(A(m-1,n),n-1)$.
 	\end{enumerate}
 \end{example}
 
+Entonces,
 \begin{align*}
-	\intertext{Entonces}
-	A(2,2)
-	&=A(A(2-1,2),2-1) //regla~3\\
-	&= A(A(1,2),1)\\
-	&= A(2,1)//regla~ 1\\
-	&= 2(2)  //regla~2\\
-	&= 4.
-	\intertext{además}
-	A(2,3) &= A(A(2-1,3),3-1) //regla~3\\
-	&= A(A(1,3),2)\\
-	&= A(2,2)  //regla 1\\
-	&= 4.
-	\intertext{De hecho}
-	si~A(2,k) &= 4, // para algun k\geq2
-	\intertext{entonces}
-	A(2,k+1) &= A(A(2-1,k+1), (k+1)-1) // regla~3 \\
-				   &=A(A(1,k+1),k)\\
-				   &=A(2,k) //regla~1 \\
-				   &=4.// nuestro~supuesto
-	\intertext{Así, tenemos por inducción matemática:}
-	A(2,n) &= 4,  \forall n\geq1.
+A(2,2)
+&=A(A(2-1,2),2-1)&\text{regla }3\\
+&= A(A(1,2),1)&\\
+&= A(2,1)&\text{regla }1\\
+&= 2(2)&\text{regla }2\\
+&= 4.
 \end{align*}
+Además
+\begin{align*}
+A(2,3)
+&= A(A(2-1,3),3-1)&\text{regla }3\\
+&= A(A(1,3),2)\\
+&= A(2,2)&\text{regla }1\\
+&= 4.
+\end{align*}
+De hecho, si $A(2,k)= 4$, para algún $k\geq2$, entonces
+\begin{align*}
+A(2,k+1) &= A(A(2-1,k+1), (k+1)-1)&\text{regla }3\\
+&=A(A(1,k+1),k)\\
+&=A(2,k)&\text{regla }1\\
+&=4.
+\end{align*}
+Así, tenemos por inducción matemática $A(2,n)=4$, $\forall n\geq1$.
+
 Hasta ahora la tabla de los números de Ackermann se ve así:
-\begin{equation*}
-\begin{tabular}{ c| c| c| c| c| c| c| c| c| r }
-A & n=1 & n=2 & 3 & 4 & 5 & 6 & 7 & 8 & 9... \\
-\hline
-m=1 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
-\hline
-m=2 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
-\hline
-3   & 6 &  &  &  &  &  &  &  &  \\
-\hline
-4   & 8 &  &  &  &  &  &  &  &  \\
-\hline
-5  & 10 &  &  &  &  &  &  &  &  \\
-\end{tabular}
-\end{equation*}
+
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{>{$}c<{$}| >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
+		A & n=1 & n=2 & n=3 & n=4 & n=5 & n=6 & n=7 & n=8 & n=9 \\
+		\hline
+		m=1 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+		m=2 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+		m=3 & 6 &  &  &  &  &  &  &  &  \\
+		m=4 & 8 &  &  &  &  &  &  &  &  \\
+		m=5 & 10 &  &  &  &  &  &  &  &  \\
+	\end{tabular}
+\end{table}
+
 Observamos que la segunda fila es de puro 4s. ?`Pero cómo es la segunda columna?
+Si $A(k,2)=2^{k}$ para algunos $k\geq2$ se tiene
 \begin{align*}
-	\intertext{Si}
-	A(k,2)
-	&= 2^{k} // para algunos k \geq 2 \\
-	\intertext{se tiene}
-	&= A(A([k+1],2-1) // regla 3\\
-	&= A(A(k,2),1) \\
-	&= A(2^{k},1) // nuestro supuesto \\
-	&= 2(2^{k}) //~regla~2\\
+	A(k,2)=2^{k}
+	&= A(A([k+1],2-1)&\text{regla }3\\
+	&= A(A(k,2),1) &\\
+	&= A(2^{k},1)&\\
+	&= 2(2^{k})&\text{regla }2\\
 	&= 2^{k+1}.
-	\intertext{además}
-	A(2,3) &= A(A(2-1,3),3-1) //regla~3\\
-	&= A(A(1,3),2)\\
-	&= A(2,2)  //regla 1\\
-	&= 4.
-	\intertext{Asi se tiene:}
-	A(m,2)=2^{m} \forall m\geq1. \\
-	\intertext{Ahora, ?`como son los otros valores?}
-	A(3,3)
-	&= A(A(3-1),3),3-1) // Regla~3\\
-	&= A(A(2,3), 2)  \\
-	&=A(4,2) // Segunda~fila \\
-	&=2^{4} // segunda~columna\\
-	&=16.\\
-	A(4,3) &= A(A(4-1),3),3-1 // Regla~3\\
-	&= A(A(3,3), 2) \\
-	&=A(16,2) // Encima\\
-	&=2^{16} // Segunda columna\\
-	&=65536.\\
-	A(3,4) &= A(A(3-1),3),4-1 // Regla~3\\
-	&= A(A(2,4), 3) \\
-	&=A(4,3) // Segunda fila\\
-	&=65536.\\
-	\intertext{?`Cual es el valor de A(4,4)?
-	?`Podría ejecutar un programa recursivo simple para evaluar A (4,4)?}
-	A(5,3) &= A(A(5-1),3),3-1 // Regla~3\\
-	&= A(A(4,3), 2) \\
-	&=A(65536,2) \\
-	&=2^{65536}.// Segunda~columna\\
-	&=n(n grande aprox 20000 digitos en base 10.)\\
-	\intertext{hasta ahora tenemos:}
 \end{align*}
-\begin{equation*}
-\begin{tabular}{c|c|c|c|c|c|c|c|c|r}
-A & n=1 & n=2 & 3 & 4 & 5 & 6 & 7 & 8 & 9... \\
-\hline
-m=1 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
-\hline
-m=2 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
-\hline
-3   & 6 & 8 & 16 & 65536 & ? &  &  &  &  \\
-\hline
-4   & 8 & 16 & 65536 & ? &  &  &  &  &  \\
-\hline
-5  & 10 & 32 & $2^{65536}$ &  &  &  &  &  &  \\
-\end{tabular}
-\end{equation*}
+Además,
+\begin{align*}
+	A(2,3)
+	&=A(A(2-1,3),3-1)&\text{regla }3\\
+	&=A(A(1,3),2)&\\
+	&=A(2,2)&\text{regla }1\\
+	&=4.
+\end{align*}
+Así, se tiene $\forall m\geq1:A(m,2)=2^{m}$. Ahora, ?`como son los otros valores?
+\begin{align*}
+	A(3,3)
+	&= A(A(3-1,3),3-1)&\text{regla }3\\
+	&= A(A(2,3), 2)  \\
+	&=A(4,2)&\text{segunda fila}\\
+	&=2^{4}&\text{segunda columna}\\
+	&=16.&\\
+\end{align*}
+
+\begin{align*}
+	A(4,3)
+	&=A(A(4-1,3),3-1)&\text{regla }3\\
+	&= A(A(3,3), 2) &\\
+	&=A(16,2)&\text{encima}\\
+	&=2^{16}&\text{segunda columna}\\
+	&=65536.&\\
+\end{align*}
+
+\begin{align*}
+	A(3,4)
+	&= A(A(3-1,3),4-1)&\text{regla }3\\
+	&= A(A(2,4), 3) &\\
+	&=A(4,3)&\text{segunda fila}\\
+	&=65536.&\\
+\end{align*}
+?`Cual es el valor de $A(4,4)$? ?`Podría ejecutar un programa recursivo simple para evaluar $A(4,4)$?
+\begin{align*}
+	A(5,3)
+	&= A(A(5-1,3),3-1)&\text{regla }3\\
+	&= A(A(4,3),2) &\\
+	&=A(65536,2) &\\
+	&=2^{65536}.&\text{segunda columna}\\
+	&=n&\text{grande aproximadamente }20000\text{ dígitos en base }10.\\
+\end{align*}
+Hasta ahora tenemos:
+
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{>{$}c<{$}| >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
+		A & n=1 & n=2 & n=3 & n=4 & n=5 & n=6 & n=7 & n=8 & n=9 \\
+		\hline
+		m=1 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+		m=2 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+		m=3 & 6 & 8 & 16 & 65536 & \text{?} &  &  &  &  \\
+		m=4 & 8 & 16 & 65536  & \text{?} &  &  &  &  &  \\
+		m=5 & 10 & 2^{65536} &  &  &  &  &  &  &  \\
+	\end{tabular}
+\end{table}
 ?`Cómo continúa la tercera columna? Sea $2\uparrow$ denota el valor de ``Torre'' de k 2's, definida recursivamente por \[ 2\uparrow 1=2 \text{ y para } k\geq1,2\uparrow[k+1]=2^{2\uparrow k}. \]
 Pero este es un número tan grande que nunca podría escribirse en dígitos decimales, incluso utilizando todo el papel del mundo, Su valor nunca podría ser calculado. Ahora nos preguntamos ?`Los números Ackermann son ``computables''? Por otro lado, supongamos que las sucesiones que encontramos, incluso aquellas definidas por ecuaciones de recurrencia, serán fáciles para entender y tratar.

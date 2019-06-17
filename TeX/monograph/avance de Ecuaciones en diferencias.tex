@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{dsfont}
+\newtheorem{teor}{Teorema}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{defi}{Definición}[section]
+\newtheorem{ejem}{Ejemplo}[section]
+\newtheorem{obs}{Observación}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{cs}{caso}
+\renewcommand\qedsymbol{$ \blacksquare $}
+\begin{document}
+	\section{}
+	Aquí es conveniente representar cualquier sucesión de números reales $(a_{n})_{n} $ como la función $f\colon\mathds{N}\rightarrow\mathds{R}$ definido por: \[ f(n)=a_{n},\quad\forall n\in\mathds{N}. \] Dadas dos funciones $f,g\colon\mathds{N}\rightarrow\mathds{R}$ y $r\in\mathds{R} $ consideremos las funciones: \[ (f+g)(n)=f(n)+g(n),\quad\text{y}\quad(rf)(n)=rf(n)\quad\forall n\in\mathds{N}. \] Dotado de estas operaciones, el conjunto de funciones de $\mathds{N}\rightarrow\mathds{R}$ es un $\mathds{R}$--espacio vectorial de funciones. También consideraremos la función: \[ (fg)(n)=f(n)g(n)\forall k\in\mathbb{N}. \] Un mapa lineal del espacio de funciones de $\mathds{N}$ a $ \mathds{R}$ en sí mismo es un operador.
+	
+	\begin{defi}
+		Consideramos el espacio de funciones de $\mathds{N}\to\mathds{R}$. Para cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ el operador identidad y el operador de cambio $\theta$ están definidos:
+ $$
+	\mathds{I}(f)=f\quad\text{y}\quad\theta(f)(n)=f(n+1)\quad\forall n\in\mathds{N}
+ $$
+ Uno verifica inmediatamente que la identidad y el operador de cambio son de hecho lineales.
+	\end{defi}
+
+\begin{prop}(Linealidad de la identidad y el cambio de operador).
+	Sea $ f,g\colon\mathds{N}\to\mathds{N}\quad\text{y}\quad c\in\mathds{R}$. Luego tenemos:
+	\begin{enumerate}
+		\item $\mathds{I}\left(f+g\right)(n)=\mathds{I}(f)(n)+\mathds{I}(g)(n)$ y
+		\item $\mathds{I}\left(cf\right)(n)=c\mathds{I}(f)(n)\quad\text{y}\quad \theta\left(cf\right)(n)=c\theta(f)(n)$.
+	\end{enumerate}
+	\begin{proof}
+		Sea $n\in\mathds{N}$, luego:
+		$$
+		\theta(f+g)(n)=(f+g)(n+1)=f(n+1)+g(n+1)=\theta(f)(n)+\theta(g)(n).
+		$$
+		$$
+		\theta(cf)(n)=(cf)(n+1)=cf(n+1)=c\theta(f)(n).
+		$$
+		Se verifica la linealidad de $\mathds{I}$ inmediatamente.
+	\end{proof}
+\end{prop}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+Para cualquier operador $T$, será conveniente un ligero abuso de notación, para escribir $Tf(n)$ en lugar de $T(f)(n)$. Además en algunos casos, por ejemplo cuando $f$ depende de otros parámetros, uno escribe $T_{n}f(n)$ en lugar de $Tf(n)$ para evitar la ambigüedad. Así, por ejemplo, denotada por $\mathds{I}_{\mathds{N}}\colon\mathds{N}\rightarrow\mathds{N}$ la función definida por $\mathds{I}_{\mathds{N}}(n)=n$ para cada $n\in\mathds{N} $ escribiremos $\theta n=n+1$ en lugar de $\theta(\mathds{I}_{\mathds{N}})(n)=n+1$. Análogamente $\theta n^{2}=(n+1)^{2}$, $\theta_{n}n^{a}=(n+1)^{a}$ y $\theta_{n}a^{n}=a^{n+1}$ para cada $a\in\mathds{R}$.
+
+Para las funciones de valor real de una variable de número natural ahora introducimos el análogo de la derivada habitual para funciones de valor real de una variable real:
+
+	\begin{defi}
+		El operador diferencia es el operador $ \bigtriangleup $ que a cada función $ f:\mathbb{N} \to \mathbb{R} $ asigna la función $\bigtriangleup f:\mathbb{N} \to \mathbb{R},$ definido de la siguiente manera:
+		$$
+		\bigtriangleup f(k)=f(k+1)-f(k), \; \forall k \in \mathbb{N}.
+		$$ 
+	\end{defi}
+	\begin{obs}
+		Usando el operador de cambio, uno tiene $ \bigtriangleup=\theta - \mathbb{I};$ es decir:
+		$$
+		\bigtriangleup f= \theta f-f, \; \forall f:\mathbb{N} \to \mathbb{R}.
+		$$
+	\end{obs}
+	\begin{defi}
+		Claramente, para cada función $ f: \mathbb{N} \to \mathbb{R},$ uno tiene:
+		$$
+		\bigtriangleup f(k)=\frac{f(k+1)-f(k)}{1},
+		$$
+	\end{defi}
+	\noindent y entonces $ \bigtriangleup f:\mathbb{N} \to \mathbb{R} $ es una función que mide el cociente de diferencia de $ f $ sobre
+	el intervalo más pequeño posible de números naturales, es decir, un intervalo de longitud uno.
+	En este sentido, el operador diferencia constituye el análogo discreto de la noción de derivada para funciones de una variable real. En lo que sigue, el lector tendrá
+	ocasión para anotar analogías y contrastes entre estas dos nociones.\\
+	Al igual que la derivada, el operador de diferencia es lineal: de hecho, es una diferencia
+	de dos operadores lineales.
+	\begin{prop}
+		(Linealidad de la diferencia).\\Sea $ f,g:\mathbb{N} \to \mathbb{R} \; \text{y} \; c \in \mathbb{R}.$Luego uno tiene:
+		\begin{enumerate}[1.]
+			\item $\bigtriangleup (f+g)= \bigtriangleup f + \bigtriangleup g$
+			\item $ \bigtriangleup(cf)=c \bigtriangleup f $
+		\end{enumerate}
+	\end{prop}
+			\begin{proof}
+				 Como $ \bigtriangleup=\theta - \mathbb{I}$ se obtiene:
+			\begin{enumerate}[1.]
+				\item
+					$\bigtriangleup(f+g)=(\theta-\mathbb{I} )(f+g)=\theta (f+g)-\mathbb{I}(f+g)=\theta(f)-f+\theta(g)-g=\bigtriangleup(f)-\bigtriangleup(g).$
+				\item $\bigtriangleup(cf)=(\theta-\mathbb{I})(cf)=\theta(cf)-\mathbb{I}(cf)=c\;\theta(f)-cf=c(\theta -\mathbb{I})(f)=c \bigtriangleup(f).$
+			\end{enumerate}
+			\end{proof}
+			Ahora vemos cómo el operador de diferencia actúa en algunas funciones simples condominio  $ \mathbb{N} $.
+			\begin{ejem}
+				\begin{enumerate}
+				\item Funciones constantes: Al igual que en el caso de la derivada de una  constante.
+				Funciona con dominios en $ \mathbb{R} $, aquí también tenemos que la diferencia de
+				una función constante (con dominio $ \mathbb{N} $) es igual a la función cero: de hecho, si
+				$f(k) = c \in R $por cada $ k \in \mathbb{N}$, entonces
+				$$
+				\bigtriangleup f(k)=f(k+1)-f(k)=c-c=0 
+				$$
+				\item 
+				Función de identidad en los números naturales: al igual que en el caso continuo, el diferencia de la función de identidad $I_{\mathbb{N}}: \mathbb{N} \to \mathbb{N} es la función constante k \to  1$ para todo $ k\in \mathbb{N}:$de hecho
+				$$
+				\bigtriangleup I_{\mathbb{N}}(k)=I_{\mathbb{N}}(k+1)-1= k+1-k=1.
+				$$
+				\end{enumerate}
+			\newpage
+			\end{ejem}
+			\begin{ejem}
+			Los operadores de cambio y diferencia conmutan. Más explícitamente, uno tiene
+			$$
+			\bigtriangleup \circ \theta = \theta \circ \bigtriangleup
+			$$
+			\begin{proof}
+			De hecho, para cada $ k \in \mathbb{N} $ y cada función $f: \mathbb{N} \to \mathbb{R} $ uno tiene
+			$$
+			\bigtriangleup (\theta f) (k) = \theta f (k + 1) - \theta f (k) = f (k + 2) - f (k + 1),
+			$$
+			mientras
+			$$
+			\theta ( \bigtriangleup f)(k)=\bigtriangleup f(k+1)=f(k+2)-f(k+1).
+			$$
+			Por lo tanto uno tiene $ \bigtriangleup(\theta f)=\theta(\bigtriangleup f)(k)  $
+			\end{proof}
+			La fórmula para la diferencia de un producto se parece a la del derivado de un producto, excepto la introducción del operador de turno:
+			\end{ejem}
+		\begin{prop}
+		(Diferencia de un producto) If $ f,g:\mathbb{N} \to \mathbb{R},$ luego 
+		$$
+		\bigtriangleup (fg)=\bigtriangleup f \; \theta \; g + f \bigtriangleup g.
+		$$
+		\end{prop}
+	\begin{obs}
+		Cabe destacar el hecho evidente de que a pesar de la aparente falta de simetría, uno tiene $\bigtriangleup (fg) = \bigtriangleup (gf).$
+	\end{obs}
+		\noindent \emph{Demostración}
+		\begin{table}[h]
+		\begin{tabular}{ccl}
+		$\bigtriangleup (f(k)g(k))$& $=$& $f(k+1)g(k+1)-f(k)g(k)$\\
+		 & $=$&$ f(k+1)g(k+1)-f(k)g(k+1)+f(k)(k+1)-f(k)g(k)$\\
+		 & $=$&$ (f(k+1)-f(k))g(k+1)+f(k)g(k+1)-g(k) $\\
+		 & $=$&$ \bigtriangleup f(k) \theta g(k)+f(k)\bigtriangleup g(k)$\\
+		\end{tabular}\\
+	
+	\hfill{ $ \blacksquare $}
+		\end{table}
+	
+	
+	
+	
+\end{document}

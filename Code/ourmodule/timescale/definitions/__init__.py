@@ -1,1 +1,2 @@
-from timescale import Timescale
+from ..classes import Timescale
+from .definitions import *
