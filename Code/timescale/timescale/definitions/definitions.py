@@ -1,4 +1,4 @@
-from timescale.classes.timescale import Timescale
+import timescale.classes.timescale
 
 """
 	Función Salto hacia adelante:
@@ -74,13 +74,13 @@ def nu(self,t):
 """
 	create the time scale of integers {x : a <= x <= b}
 """
-def integers(a,b):
-    return timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
-
-
+#def integers(a,b):
+#    return timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
+#
+#
 """
 	create the time scale of quantum numbers of form {q^k:k=m,m+1,...,n}
 	only does q^(X) where X={0,1,2,3,...} at the moment
 """
-def quantum(q,m,n):
-    return timescale([q**k for k in range(m,n)], 'quantum numbers '+str(q)+'^'+str(m)+' to '+str(q)+'^'+str(n))
+#def quantum(q,m,n):
+#    return timescale([q**k for k in range(m,n)], 'quantum numbers '+str(q)+'^'+str(m)+' to '+str(q)+'^'+str(n))
