@@ -1,7 +1,7 @@
-from timescale.classes.timescale import Timescale
 import matplotlib.pyplot as plt
 
-"""
+def plot(self, f, stepSize=0.01, discreteStyle='b.', intervalStyle='r-', **kwargs):
+    """
     Plotting functionality.
     
     Required argument:
@@ -23,8 +23,7 @@ import matplotlib.pyplot as plt
     	For a list of all available parameters, see: https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html
 
     NOTE: To display plots that are created with this function, call the show() function of the plt data member of this class.
-"""
-def plot(self, f, stepSize=0.01, discreteStyle='b.', intervalStyle='r-', **kwargs):
+    """
     xDiscretePoints = []
     yDiscretePoints = []
 
@@ -51,7 +50,7 @@ def plot(self, f, stepSize=0.01, discreteStyle='b.', intervalStyle='r-', **kwarg
     
     labeled = False
     removedLabel = False
-    
+
     if "label" in kwargs:
         if discreteStyle == intervalStyle:            
             kwargs.pop("label")
@@ -67,8 +66,8 @@ def plot(self, f, stepSize=0.01, discreteStyle='b.', intervalStyle='r-', **kwarg
         
         labeled = True
 
-
-"""
+def scatter(self, f, stepSize=0.01, **kwargs):
+    """
     Scatter plotting functionality.
     
     Required argument:
@@ -82,8 +81,7 @@ def plot(self, f, stepSize=0.01, discreteStyle='b.', intervalStyle='r-', **kwarg
 	For a list of all available parameters, see: https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html
     
     NOTE: To display plots that are created with this function, call the show() function of the plt data member of this class.
-"""
-def scatter(self, f, stepSize=0.01, **kwargs):
+    """
     xDiscretePoints = []
     yDiscretePoints = []
 

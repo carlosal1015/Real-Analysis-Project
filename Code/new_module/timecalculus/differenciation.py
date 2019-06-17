@@ -1,10 +1,9 @@
-from timescale.classes.timescale import Timescale
 from scipy.misc import derivative
 
-"""
-	Función delta derivada
-"""
 def dderivative(self,f,t):
+	"""
+	Función delta derivada
+	"""
 	if self.sigma(t) == t:
 		return derivative(f, t, dx=(1.0/2**16))
 
@@ -12,8 +11,8 @@ def dderivative(self,f,t):
 		return (f(self.sigma(t))-f(t))/self.mu(t)
 
 
-"""
-	Función nabla derivada
-"""
 def nderivative(self,f,t):
+	"""
+	Función nabla derivada
+	"""
 	return (f(t)-f(self.rho(t)))/self.nu(t)

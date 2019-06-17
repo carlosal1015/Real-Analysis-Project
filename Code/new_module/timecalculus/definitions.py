@@ -1,10 +1,8 @@
-import timescale.classes.timescale
-
-"""
+def sigma(self, t):
+	"""
 	Función Salto hacia adelante:
 	\sigma(t) = \inf \{z\in\mathds{T} : z>t \}
-"""
-def sigma(self, t):
+	"""
 	tIndex = 0
 	tNext = None
 	iterations = 0
@@ -40,22 +38,22 @@ def sigma(self, t):
 			return tNext
 
 
-"""
+def rho(self,t):
+	"""
 	Función Salto hacia atrás:
 	\rho(t) = \sup \{ z\in\mathds{T} : z<t \}
-"""
-def rho(self,t):
-		if t==min(self.ts):
-			return t
-		else:
-			return max([x for x in self.ts if x<t])
+	"""
+	if t==min(self.ts):
+		return t
+	else:
+		return max([x for x in self.ts if x<t])
 
 
-"""
+def mu(self,t):
+	"""
 	Función de granicidad:	
 	\mu(t) = \sigma(t) - t
-"""
-def mu(self,t):
+	"""
 	for x in self.ts:
 		if isinstance(x, list) and t >= x[0] and t < x[1]:
 			return 0
@@ -63,24 +61,24 @@ def mu(self,t):
 		return self.sigma(t)-t
 
 
-"""
+def nu(self,t):
+	"""
 	Función de granicidad minimal:
 	\mu_{\ast} = \inf_{\tau\in\left[s,\infty\right)\cap\mathds{T}}\mu(t).
-"""
-def nu(self,t):
+	"""
 	return t-self.rho(t)
 
 
-"""
-	create the time scale of integers {x : a <= x <= b}
-"""
-#def integers(a,b):
-#    return timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
-#
-#
-"""
-	create the time scale of quantum numbers of form {q^k:k=m,m+1,...,n}
+def integers(a,b):
+	"""
+	Create the time scale of integers {x : a <= x <= b}
+	"""
+	return Timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
+
+
+def quantum(q,m,n):
+	"""
+	Create the time scale of quantum numbers of form {q^k:k=m,m+1,...,n}
 	only does q^(X) where X={0,1,2,3,...} at the moment
-"""
-#def quantum(q,m,n):
-#    return timescale([q**k for k in range(m,n)], 'quantum numbers '+str(q)+'^'+str(m)+' to '+str(q)+'^'+str(n))
+	"""
+	return Timescale([q**k for k in range(m,n)], 'quantum numbers '+str(q)+'^'+str(m)+' to '+str(q)+'^'+str(n))

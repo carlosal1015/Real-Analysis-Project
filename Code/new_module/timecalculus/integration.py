@@ -1,10 +1,9 @@
-from timescale.classes.timescale import Timescale
 import numpy as np
 
-"""
-	delta integral
-"""
 def dintegral(self,f,t,s):
+	"""
+	delta integral
+	"""
 	# The following code checks that t and s are elements of the timescale
 
 	tIsAnElement = False
@@ -93,10 +92,10 @@ def integrate_complex(self, f, s, t, **kwargs):
 		return real_result + 1j*imaginary_result
 
 
-"""
-	Generalized g_k polynomial from page 38 with memoization.
-"""
 def g_k(self, k, t, s):
+	"""
+	Generalized g_k polynomial from page 38 with memoization.
+	"""
 	if (k < 0):
 		raise Exception("g_k(): k should never be less than 0!")
 
@@ -120,8 +119,10 @@ def g_k(self, k, t, s):
 		return 1
 
 
-# Generalized h_k polynomial from page 38 with memoization.
 def h_k(self, k, t, s):
+	"""
+	Generalized h_k polynomial from page 38 with memoization.
+	"""
 	if (k < 0):
 		raise Exception("h_k(): k should never be less than 0!")
 
