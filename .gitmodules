@@ -1,0 +1,9 @@
+[submodule "Code/timecalculus"]
+	path = Code/timecalculus
+	url = https://github.com/carlosal1015/timescalecalculus
+[submodule "Code/Notebooks/numerical-mooc"]
+	path = Code/Notebooks/numerical-mooc
+	url = https://github.com/carlosal1015/numerical-mooc
+[submodule "Code/scipro-primer"]
+	path = Code/scipro-primer
+	url = https://github.com/hplgit/scipro-primer

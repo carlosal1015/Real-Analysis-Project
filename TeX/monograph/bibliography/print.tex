@@ -1,0 +1,15 @@
+% arara: clean: {extensions: ['log','out','bbl','blg','thm','toc','aux','pdf','synctex.gz','bcf','run.xml']}
+% arara: pdflatex: { shell: yes }
+% arara: pdflatex: { shell: yes }
+% arara: bibtex
+% arara: pdflatex: { shell: yes }
+% arara: clean: {extensions: ['log','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml']}
+\documentclass{article}
+%\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+%\addbibresource{bib.bib}
+\begin{document}
+\nocite{*}
+
+\bibliography{bib}
+\bibliographystyle{spmpsci}%
+\end{document}
