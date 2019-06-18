@@ -225,7 +225,7 @@ De donde \[ f(n)=\frac{1}{2}\cdot3^{n}-\frac{1}{2}=\frac{3^{n}-1}{2}. \]
 Ahora damos una serie de ejemplos que ilustran cómo reducir la solución de un problema en el que la búsqueda de las soluciones de una relación de recurrencia apropiada.
 
 \begin{example}[Número de Catalan]
-	El número de Catalán ($C_{n} $) es igual al número de rutas de la esquina inferior izquierda de una rejilla cuadrada de $n\times n$ a la esquina superior derecha si estamos restringidos a viajar solo a la derecha o hacia arriba y si se permite tocar pero no pasar arriba de la diagonal entre la esquina inferior izquierda y la superior derecha. Tal ruta recibe el nombre de \emph{ruta buena}. Se da una relación de recurrencia para los números de Catalan. Las rutas buenas se dividen en clases con base en  la primera vez que tocan la diagonal después de salir de la esquina inferior derecha.Por ejemplo,la ruta en la figura toca la diagonal primero en el punto ($3,3$).Las rutas que tocan la diagonal primero en el punto$(k,k)$ se consideran construidas por un proceso de dos pasos:
+	El número de Catalan ($C_{n} $) es igual al número de rutas de la esquina inferior izquierda de una rejilla cuadrada de $n\times n$ a la esquina superior derecha si estamos restringidos a viajar solo a la derecha o hacia arriba y si se permite tocar pero no pasar arriba de la diagonal entre la esquina inferior izquierda y la superior derecha. Tal ruta recibe el nombre de \emph{ruta buena}. Se da una relación de recurrencia para los números de Catalan. Las rutas buenas se dividen en clases con base en  la primera vez que tocan la diagonal después de salir de la esquina inferior derecha.Por ejemplo,la ruta en la figura toca la diagonal primero en el punto ($3,3$).Las rutas que tocan la diagonal primero en el punto$(k,k)$ se consideran construidas por un proceso de dos pasos:
 	\begin{enumerate}
 		\item Primero, se construye la parte de $(0,0)$ a $(k,k)$.
 		\item Segundo, se construye la parte de $(k,k)$ a $(n,n)$. Una buena ruta siempre sale de $(0,0)$ moviéndose hacia la derecha a $(1,0)$ y siempre llega a $(k,k)$ moviéndose hacia arriba desde $(k,k-1)$.
@@ -366,11 +366,12 @@ Supongamos que $E_n$ es definido recursivamente en $\mathds{Z}^+$ por \[ E_0=0,E
 %	\item $B\left(m,n\right)=B\left(m-1,B\left(m,n-1\right)\right)$ cuando ambos $m$ y $n$ son positivos.
 %\end{enumerate}
 %
-%\begin{enumerate}
+%	\begin{enumerate}
 %	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(1,n\right)=n+2$.
 %	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(2,n\right)=3+2n$.
 %	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(3,n\right)=2^{3+n}-3$.
-%	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(4,n\right)=$.
+%	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(4,n\right)=\left(2\uparrow\left[3+n\right]\right)-3$.
+%	\item De una expresión usando el símbolo $\uparrow$ para los valores de $B\left(5,1\right)$ y $B\left(5,2\right)$.
 %\end{enumerate}
 %\end{exercise}
 %

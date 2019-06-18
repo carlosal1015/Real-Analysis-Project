@@ -91,6 +91,8 @@
 \addbibresource{bib.bib}
 
 \usepackage{pythontex}
+\usepackage{hyperref}
+
 \usepackage{etoolbox,ifluatex}
 \ifluatex
 \makeatletter
@@ -103,7 +105,7 @@
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
 
-\date{17 de junio del 2019}
+\date{20 de junio del 2019}
 
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
@@ -150,11 +152,14 @@
 
 \mainmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Primera parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup
+\let\clearpage\relax
 \include{./03_mainmatter/fundamentals}
 %\include{./03_mainmatter/first_part}
 \include{./03_mainmatter/micha2}
 \include{./03_mainmatter/main}
 \include{./03_mainmatter/exercises}
+\endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Segunda parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{./03_mainmatter/numerical}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tercera parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
