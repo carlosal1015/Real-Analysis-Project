@@ -1,0 +1,68 @@
+\chapter{Método de Euler}
+
+Una aplicación inmediata del método de las diferencias finitas para aproximar derivada es la solución aproximada de los problemas de valor inicial para ecuaciones diferenciales ordinarias. El uso de la forma general de tal problema es
+\begin{equation}\label{eq:ivp}
+y^{\prime}=f\left[t,y\right],\quad y\left(t_{0}\right)=y_{0},
+\end{equation}
+donde $f$ es la función desconocida de $t$ e $y$, y $t_{0}$ y $y_{0}$ son los valores dados. El objetivo en la solución de este problema es encontrar la función $y$ como una función de $t$, en el curso usual en ecuaciones diferenciales ordinarias, el estudiante aprende un número de técnicas para resolver analíticamente~\eqref{eq:ivp}, basado sobre la asunción de cualquier número de formas especiales para $f$. Aquí usaremos una de nuestras aproximaciones de la derivada para construir un método para aproximadamente resolver ~\eqref{eq:ivp}.
+
+Usamos %
+para remplazar la derivada en~\eqref{eq:ivp}:
+\begin{align*}
+\frac{y\left(t+h\right)-y\left(t\right)}{h}
+&=f\left(t,y\left(t\right)\right)+\frac{1}{2}hy^{\prime\prime}\left(t_{h}\right),
+\shortintertext{el cual puede ser simplificado cuidadosamente hasta}% TODO:
+y\left(t+h\right)&=y\left(t\right)+hf\left(t,y\left(t\right)\right)+\frac{1}{2}h^{2}y^{\prime\prime}\left(t_{h}\right).
+\end{align*}
+Esto sugire el siguiente método numérico:
+\begin{enumerate}
+	\item Defina una sucesión de $t$ valores (llamado una \emph{malla}) de acuerdo con $t_{n}=t_{0}+nh$, donde $h$ es el parámetro fijado (llamado el \emph{espacio de la malla} o \emph{tamaño de la grilla}), encontraremos este tipo de cosa con frecuencia en tópicos posteriores.
+	\item Calcule los valores $y_{n}$ a partir de $y_{0}$ y los $t$ valores de la malla %TODO
+	, de acuerdo con
+	\begin{equation}\label{eq:euler}
+	y_{n+1}=y_{n}+hf\left(t_{n},y_{n}\right).
+	\end{equation}
+\end{enumerate}
+Note que esto se sigue de%
+por %
+el término de error y ajustando la notación cuidadosamente.
+
+La ecuación~\eqref{eq:euler} define lo que es conocido como el \emph{método de Euler} para resolver (aproximadamente) los problemas de valor inicial para ecuaciones diferenciales ordinarias. La figura X muestra qué está ocurriendo geométricamente.
+
+\begin{example}
+	Considere el problema de valor inicial \[ y^{\prime}=-y+\sin t,\quad y\left(0\right)=1. \]
+	Este tiene exactamente la solución $y\left(t\right)=\frac{3}{2}e^{-t}+\frac{1}{2}\left(\sin t-\cos t\right)$, encontrado al usar los tipos de métodos enseñados en un curso usual de EDO. Si aplicamos el método de Euler para esto, usando $h=\frac{1}{4}$, obtenemos los siguientes resultados.
+	\begin{enumerate}[Paso 1]
+		\item Tenemos $h=\frac{1}{4}$, así $t_{1}=h=\frac{1}{4}$ y $y_{0}$ es dado como $1$. Entonces, \[ y_{1}=y_{0}+hf\left(t_{0},y_{0}\right)=1+\frac{1}{4}\left(-1+\sin 0\right)=\frac{3}{4}. \] Así, y$\left(1/4\right)\approx0.75$, y el error en esta aproximación es $e_{1}=y\left(1/4\right)-y_{1}=0.8074469434-0.75=0.0574469434$.
+		\item Tenemos $t_{2}=2h=\frac{1}{2}$ y $y_{1}=0.75$ del paso 1%
+		Entonces, \[ y_{2}=y_{1}+hf\left(t_{1},y_{1}\right)=\frac{3}{4}+\frac{1}{4}\left(-\frac{3}{4}+\sin\frac{1}{4}\right)=0.6243509898. \] Así, $y\left[1/2\right]-y_{2}=0.710774779-0.6242509898=0.0863664881$.
+	\end{enumerate}
+\end{example}\footnote{Leonhard Euler (1707--1783) fue uno de los grandes matemáticos de la era post Newton, el otro fue Carl Friederich Gau\ss. Euler nació en Basilea, Suiza, y se educó en la Universidad de Basilea, el primero con un ojo siguiendo en la carrera de su padre como ministro Luterano. Con la asistencia de su tutor y su mentor Johann Bernoulli, sin embargo, él fue capaz de convencer a su pare a perseguir una carrera de matemáticas. En 1727, Euler ingresó a la Academia de Ciencias de San Petersburgo en Rusia, donde él estuvo hasta 1741, en su tiempo ĺe ingreso a la Academia de Ciencias de Berlín por la invitación del rey de Prusia, Federico el grande. Después de algunas disputas con el monarca, Euler dejó Berlín en 1766 y regresó a San Petersburgo. Las contribuciones de Euler a las matemáticas son %
+Él publicó una enorme cantidad de material, en una amplia variedad de áreas, incluyendo series infinitas, funciones especiales (un campo de estudio que él prácticamente inventó), teoría de números, variables complejas e hidrodinámicas. Su nombre es adjuntado a resultados%
+en matemáticas, desde la fórmula de Euler que relaciona las funciones trigonométricas para la exponencial compleja, hasta las ecuaciones diferenciales de Euler-Cauchy, hasta la fórmula de Euler que relaciona el número de caras, aristas y vértices en un poliedro. Su influencia en la notación se siente hasta el día de hoy por el uso de $\Sigma$ para denotar sumas, $\cos y $$\sin$ para el coseno y seno de un ángulo. Los trabajos recolectados de Euler, publicado entre 1911 y 1975 alcanza los 72 volúmenes!
+
+El méoto para resolver numéricamente ecuaciones diferenciales que lleva su nombre fue aparentemente presentado en el periodo 1768--1769, en los volúmenes de su trabajo \emph{Institutiones calculi integralis}. La base teórica para la convergencia de este método fue %
+por Augustin Louis Cauchy en los mediados de 1800 y por Rudolf Lipschitz en los finales de 1800.
+}
+
+Si en vez de usar $h=\frac{1}{8}$ y continuar el cálculo para $t=1$, entonces mostramos la tabla.
+
+Si dividimos el tamaño de la malla en la mitad, nuevamente, para $h=\frac{1}{16}$, entonces obtenemos los resultados en la Tabla X. Note que para $h=\frac{1}{8}$, el error máximo es dado por $4.425\times 10^{-2}$, donde $h=\frac{1}{16}$ este es dado por $2.140\times10^{-2}$. Esto sugiere (pero no prueba) que el método de Euler es $\mathcal{O}\left(h\right)$ preciso, algo que probaremos en \autoref{ch:6}, donde tomamos un rango más amplio de estudio de los métodos numéricos para ecuaciones diferenciales. Esto es adecuado, pero no preciso %
+preferimos un método que sea $\mathcal{O}\left(h^{p}\right)$ preciso para $p\geq2.$
+
+La figura X muestra la solución exacta (línea sólida), la solución aproximada calculado con $h=\frac{1}{8}$ (denotada por asteriscos), y la solución aproximada calculada con $h=\frac{1}{16}$ (denotada por los signos más). Note que los signos más (aquellos valores calculados con una malla menor) aparece ser más precioso.
+
+Escribiendo el código de computadora para el método de Euler no es difícil. Si asumimos que $h$, el tamaño de la malla, es dado, junto con $N$, el número de pasos a tomar, entonces el código luciría algo como el código dado en el algoritmo X
+
+\newpage
+
+Ahora nos concentraremos aquí con el problema de resolver ecuaciones diferenciales. numéricamente. Primero, nos concentramos en el llamado \emph{problema de valor inicial} (PVI): Encuentre una función $y\left(t\right)$ tal que \[ \frac{dy}{dt}=f\left(t,y\left(t\right)\right),\quad y\left(t_{0}\right)=y_{0}, \] donde $f$ es una función desconocida de dos variables, $t_{0}$ y $y_{0}$ son valores conocidos. Este es llamado el problema de valor inicial porque (como la notación sugiere) podemos ver el término independiente $t$ como el tiempo, y la ecuación como el modelamiento de un proceso que mueve anteriormente desde algún tiempo inicial $t_{0}$ con estado inicial $y_{0}$. (Muy frecuentemente, $t_{0}=0$.) La variable dependiente $y$, la función desconocida, podría ser una función escalar o, posiblemente, una función vectorial definida como \[ y\left(t\right)={\left(y_{1}\left(t\right),y_{2}\left(t\right)\ldots,y_{N}\left(t\right)\right)}^{T}. \] En \ref{} desarrollamos el método de Euler para aproximar soluciones de problemas de valor inicial. En este capítulo no solo revisaremos el método de Euler, sino también veremos métodos más sofisticados (y por lo tanto, esperamos más preciso) para resolver este tipo de problemas. Más adelante, atacaremos los problemas de valor de frontera, que puede ser escrito como
+\begin{align*}
+-\frac{d^{2}u}{dx^{2}}&=F\left(x,u,\frac{du}{dx}\right),\quad a<x<b,\\
+u\left(a\right)&=g_{0},\\
+u\left(b\right)&=g_{1}.
+\end{align*}
+Aquí la función desconocida es $u$ con variable independiente $x$, $F$ es una función desconocida de tres variables, y $g_{0}$ y $g$ son los datos iniciales conocidos. Muy frecuentemente el intervalo $\left(a,b\right)=\left(0,1\right)$.
+
+En ambos casos queremos encontrar una función desconocida. Haremos esto aproximando los puntos individuales en la gráfica de la función. así como lo hicimos en \ref{} con el método de Euler para los problemas de valor inicial. Por lo tanto, esperaremos (en el caso del PVI) un conjunto de valores $y_{k}$ tal que $y_{k}\approx y\left(t_{k}\right)$ para algún conjunto de puntos en la grilla $t_{k}$ (conocido), o (en el caso del PVF) un conjunto de valores $u_{k}$ tal que $u_{k}\approx u\left(u_{k}\right)$ para algún conjunto de puntos en la grilla (conocido) $x_{k}$. Note que esto significa que nuestra aproximación es solo definida en los puntos de la grilla, a menos podríamos usar los métodos de la aproximación del %\autoref{}
+ para construir soluciones que aproximen continuamente a las ecuaciones diferenciales, esto es algo que es frecuentemente hecho, y mostramos un ejemplo de este, donde $we$
