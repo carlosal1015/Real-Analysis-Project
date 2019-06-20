@@ -1,0 +1,416 @@
+\chapter{Método de Euler}
+
+Una aplicación inmediata del método de las diferencias finitas para aproximar derivada es la solución aproximada de los problemas de valor inicial para ecuaciones diferenciales ordinarias. El uso de la forma general de tal problema es
+\begin{equation}\label{eq:ivp}
+y^{\prime}=f\left[t,y\right],\quad y\left(t_{0}\right)=y_{0},
+\end{equation}
+donde $f$ es la función desconocida de $t$ e $y$, y $t_{0}$ y $y_{0}$ son los valores dados. El objetivo en la solución de este problema es encontrar la función $y$ como una función de $t$, en el curso usual en ecuaciones diferenciales ordinarias, el estudiante aprende un número de técnicas para resolver analíticamente~\eqref{eq:ivp}, basado sobre la asunción de cualquier número de formas especiales para $f$. Aquí usaremos una de nuestras aproximaciones de la derivada para construir un método para aproximadamente resolver ~\eqref{eq:ivp}.
+
+Usamos %
+para remplazar la derivada en~\eqref{eq:ivp}:
+\begin{align*}
+\frac{y\left(t+h\right)-y\left(t\right)}{h}
+&=f\left(t,y\left(t\right)\right)+\frac{1}{2}hy^{\prime\prime}\left(t_{h}\right),
+\shortintertext{el cual puede ser simplificado cuidadosamente hasta}% TODO:
+y\left(t+h\right)&=y\left(t\right)+hf\left(t,y\left(t\right)\right)+\frac{1}{2}h^{2}y^{\prime\prime}\left(t_{h}\right).
+\end{align*}
+Esto sugire el siguiente método numérico:
+\begin{enumerate}
+	\item Defina una sucesión de $t$ valores (llamado una \emph{malla}) de acuerdo con $t_{n}=t_{0}+nh$, donde $h$ es el parámetro fijado (llamado el \emph{espacio de la malla} o \emph{tamaño de la grilla}), encontraremos este tipo de cosa con frecuencia en tópicos posteriores.
+	\item Calcule los valores $y_{n}$ a partir de $y_{0}$ y los $t$ valores de la malla %TODO
+	, de acuerdo con
+	\begin{equation}\label{eq:euler}
+	y_{n+1}=y_{n}+hf\left(t_{n},y_{n}\right).
+	\end{equation}
+\end{enumerate}
+Note que esto se sigue de%
+por %
+el término de error y ajustando la notación cuidadosamente.
+
+La ecuación~\eqref{eq:euler} define lo que es conocido como el \emph{método de Euler} para resolver (aproximadamente) los problemas de valor inicial para ecuaciones diferenciales ordinarias. La figura X muestra qué está ocurriendo geométricamente.
+
+\begin{example}
+	Considere el problema de valor inicial \[ y^{\prime}=-y+\sin t,\quad y\left(0\right)=1. \]
+	Este tiene exactamente la solución $y\left(t\right)=\frac{3}{2}e^{-t}+\frac{1}{2}\left(\sin t-\cos t\right)$, encontrado al usar los tipos de métodos enseñados en un curso usual de EDO. Si aplicamos el método de Euler para esto, usando $h=\frac{1}{4}$, obtenemos los siguientes resultados.
+	\begin{enumerate}[Paso 1]
+		\item Tenemos $h=\frac{1}{4}$, así $t_{1}=h=\frac{1}{4}$ y $y_{0}$ es dado como $1$. Entonces, \[ y_{1}=y_{0}+hf\left(t_{0},y_{0}\right)=1+\frac{1}{4}\left(-1+\sin 0\right)=\frac{3}{4}. \] Así, y$\left(1/4\right)\approx0.75$, y el error en esta aproximación es $e_{1}=y\left(1/4\right)-y_{1}=0.8074469434-0.75=0.0574469434$.
+		\item Tenemos $t_{2}=2h=\frac{1}{2}$ y $y_{1}=0.75$ del paso 1%
+		Entonces, \[ y_{2}=y_{1}+hf\left(t_{1},y_{1}\right)=\frac{3}{4}+\frac{1}{4}\left(-\frac{3}{4}+\sin\frac{1}{4}\right)=0.6243509898. \] Así, $y\left[1/2\right]-y_{2}=0.710774779-0.6242509898=0.0863664881$.
+	\end{enumerate}
+\end{example}\footnote{Leonhard Euler (1707--1783) fue uno de los grandes matemáticos de la era post Newton, el otro fue Carl Friederich Gau\ss. Euler nació en Basilea, Suiza, y se educó en la Universidad de Basilea, el primero con un ojo siguiendo en la carrera de su padre como ministro Luterano. Con la asistencia de su tutor y su mentor Johann Bernoulli, sin embargo, él fue capaz de convencer a su pare a perseguir una carrera de matemáticas. En 1727, Euler ingresó a la Academia de Ciencias de San Petersburgo en Rusia, donde él estuvo hasta 1741, en su tiempo ĺe ingreso a la Academia de Ciencias de Berlín por la invitación del rey de Prusia, Federico el grande. Después de algunas disputas con el monarca, Euler dejó Berlín en 1766 y regresó a San Petersburgo. Las contribuciones de Euler a las matemáticas son %
+Él publicó una enorme cantidad de material, en una amplia variedad de áreas, incluyendo series infinitas, funciones especiales (un campo de estudio que él prácticamente inventó), teoría de números, variables complejas e hidrodinámicas. Su nombre es adjuntado a resultados%
+en matemáticas, desde la fórmula de Euler que relaciona las funciones trigonométricas para la exponencial compleja, hasta las ecuaciones diferenciales de Euler-Cauchy, hasta la fórmula de Euler que relaciona el número de caras, aristas y vértices en un poliedro. Su influencia en la notación se siente hasta el día de hoy por el uso de $\Sigma$ para denotar sumas, $\cos y $$\sin$ para el coseno y seno de un ángulo. Los trabajos recolectados de Euler, publicado entre 1911 y 1975 alcanza los 72 volúmenes!
+
+El método para resolver numéricamente ecuaciones diferenciales que lleva su nombre fue aparentemente presentado en el periodo 1768--1769, en los volúmenes de su trabajo \emph{Institutiones calculi integralis}. La base teórica para la convergencia de este método fue %
+por Augustin Louis Cauchy en los mediados de 1800 y por Rudolf Lipschitz en los finales de 1800.
+}
+
+Si en vez de usar $h=\frac{1}{8}$ y continuar el cálculo para $t=1$, entonces mostramos la tabla.
+
+Si dividimos el tamaño de la malla en la mitad, nuevamente, para $h=\frac{1}{16}$, entonces obtenemos los resultados en la Tabla X. Note que para $h=\frac{1}{8}$, el error máximo es dado por $4.425\times 10^{-2}$, donde $h=\frac{1}{16}$ este es dado por $2.140\times10^{-2}$. Esto sugiere (pero no prueba) que el método de Euler es $\mathcal{O}\left(h\right)$ preciso, algo que probaremos en \autoref{ch:6}, donde tomamos un rango más amplio de estudio de los métodos numéricos para ecuaciones diferenciales. Esto es adecuado, pero no preciso %
+preferimos un método que sea $\mathcal{O}\left(h^{p}\right)$ preciso para $p\geq2.$
+
+La figura X muestra la solución exacta (línea sólida), la solución aproximada calculado con $h=\frac{1}{8}$ (denotada por asteriscos), y la solución aproximada calculada con $h=\frac{1}{16}$ (denotada por los signos más). Note que los signos más (aquellos valores calculados con una malla menor) aparece ser más precioso.
+
+Escribiendo el código de computadora para el método de Euler no es difícil. Si asumimos que $h$, el tamaño de la malla, es dado, junto con $N$, el número de pasos a tomar, entonces el código luciría algo como el código dado en el algoritmo X
+
+\newpage
+
+Ahora nos concentraremos aquí con el problema de resolver ecuaciones diferenciales. numéricamente. Primero, nos concentramos en el llamado \emph{problema de valor inicial} (PVI): Encuentre una función $y\left(t\right)$ tal que \[ \frac{dy}{dt}=f\left(t,y\left(t\right)\right),\quad y\left(t_{0}\right)=y_{0}, \] donde $f$ es una función desconocida de dos variables, $t_{0}$ y $y_{0}$ son valores conocidos. Este es llamado el problema de valor inicial porque (como la notación sugiere) podemos ver el término independiente $t$ como el tiempo, y la ecuación como el modelamiento de un proceso que mueve anteriormente desde algún tiempo inicial $t_{0}$ con estado inicial $y_{0}$. (Muy frecuentemente, $t_{0}=0$.) La variable dependiente $y$, la función desconocida, podría ser una función escalar o, posiblemente, una función vectorial definida como \[ y\left(t\right)={\left(y_{1}\left(t\right),y_{2}\left(t\right)\ldots,y_{N}\left(t\right)\right)}^{T}. \] En \ref{} desarrollamos el método de Euler para aproximar soluciones de problemas de valor inicial. En este capítulo no solo revisaremos el método de Euler, sino también veremos métodos más sofisticados (y por lo tanto, esperamos más preciso) para resolver este tipo de problemas. Más adelante, atacaremos los problemas de valor de frontera, que puede ser escrito como
+\begin{align*}
+-\frac{d^{2}u}{dx^{2}}&=F\left(x,u,\frac{du}{dx}\right),\quad a<x<b,\\
+u\left(a\right)&=g_{0},\\
+u\left(b\right)&=g_{1}.
+\end{align*}
+Aquí la función desconocida es $u$ con variable independiente $x$, $F$ es una función desconocida de tres variables, y $g_{0}$ y $g$ son los datos iniciales conocidos. Muy frecuentemente el intervalo $\left(a,b\right)=\left(0,1\right)$.
+
+En ambos casos queremos encontrar una función desconocida. Haremos esto aproximando los puntos individuales en la gráfica de la función. así como lo hicimos en \ref{} con el método de Euler para los problemas de valor inicial. Por lo tanto, esperaremos (en el caso del PVI) un conjunto de valores $y_{k}$ tal que $y_{k}\approx y\left(t_{k}\right)$ para algún conjunto de puntos en la grilla $t_{k}$ (conocido), o (en el caso del PVF) un conjunto de valores $u_{k}$ tal que $u_{k}\approx u\left(u_{k}\right)$ para algún conjunto de puntos en la grilla (conocido) $x_{k}$. Note que esto significa que nuestra aproximación es solo definida en los puntos de la grilla, a menos podríamos usar los métodos de la aproximación del %\autoref{}
+ para construir soluciones que aproximen continuamente a las ecuaciones diferenciales, esto es algo que es frecuentemente hecho, y mostramos un ejemplo de este, donde usamos esplines para resolver problemas con dos valores de frontera.
+ 
+En X, %
+introducumos el método de los elementos finitos para PVF, el cual también usa la noción de expandir la aproximación como una combinación lineal de funciones simples. 
+
+En el %\autoref{}
+revisamos esta idea (y extendemos esto para algunas ecuaciones en derivadas parciales EDP). Pero en este capítulo nos concentraremos en lo básico.
+
+Debería notarse que la solución numérica de las ecuaciones diferenciales ordinarias (tanto los PVI o los PVF), es un área de investigación con mucha actividad. El lector es invitado a revisar la lista de referencias en el fin de este capítulo para un tratamiento más profundo de este material.
+
+\section{El problema de valor inicial}
+Considere la ecuación diferencial ordinaria
+\begin{equation}\label{eq:ode}
+\frac{dy}{dt}=f\left(t,y\left(t\right)\right),\quad y\left(t_{0}\right)=y_{0},
+\end{equation}
+ donde $f$ es una función desde $\mathds{R}^{N+1}$ en $\mathds{R}^{N}$ para algún  $N>0$ (si $N>1$, entonces tenemos una ecuación escalar, caso contrario, una ecuación vectorial), $t_{0}$ es un valor escalar dado, frecuentemente tomado como $t_{0}=0$, y conocido como el \emph{punto inicial} e $y_{0}$ es conocido como el vector en $\mathds{R}^{N}$, conocido como el \emph{valor inicial}. Queremos encontrar la función desconocida $y\left(t\right)$, el cuál resuelve~\eqref{eq:ode} en el sentido que \[ y^{\prime}\left(t\right)-f\left(t,y\left(t\right)\right)=0 \] para todo $t>t_{0}$, e $y\left(t_{0}\right)=y_{0}$.
+ 
+\begin{example}
+	Considere el problema \[ y^{\prime}=-2ty,\quad y\left(0\right)=1. \]
+\end{example}
+Aquí $f\left(t,y\right)$
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+Las ecuaciones diferenciales surgen cuando tenemos información sobre la tasa de cambio de una cantidad, en lugar de la cantidad en sí.
+
+Por ejemplo, sabemos que la tasa de descomposición de una sustancia radiactiva es proporcional a la masa $m$ de la sustancia remanente en el tiempo $t$. Podemos escribir esto como una ecuación diferencial:
+\[ \frac{dm}{dt}=-km \]
+donde $k$ es una constante. Lo que realmente nos gustaría es una expresión para la masa $m$ en el tiempo $t$. Usando las técnicas desarrolladas en este capítulo, encontraremos que la solución general a esta ecuación diferencial es $m=Ae^{-kt}$.
+
+Las ecuaciones diferenciales tienen muchas aplicaciones en la ciencia, ingeniería y economía, y su estudio es una rama importante de las matemáticas. Para matemáticas Especializadas, consideramos solo una variedad limitada de ecuaciones diferenciales.
+
+\section{Una introducción a las ecuaciones diferenciales}
+
+Una ecuación diferencial contiene derivadas de una función o variable particular. Los siguientes son ejemplos de ecuaciones diferenciales:
+\[ \frac{dy}{dx}=\cos x,\quad\frac{d^{2}y}{dx^{2}}-4\frac{dy}{dx}=0,\quad\frac{dy}{dx}=\frac{y}{y+1} \]
+
+La solución de una ecuación diferencial es una definición clara de la función o relación, sin ninguna de sus derivadas involucradas.
+
+Por ejemplo, si $\frac{dy}{dx}=\cos x$, entonces $y=\int\cos x\mathrm{d}x$ y así, $y=\sin x+c$.
+
+Aquí $y=\sin x+c$ es la \textbf{solución general} de la ecuación diferencial $\frac{dy}{dx}=\cos x$.
+
+Este ejemplo muestra las características principales de tales soluciones. Las soluciones de ecuaciones diferenciales son el resultado de una integral, y por lo tanto producen una familia de funciones.
+
+Para obtener una \textbf{solución particular}, requerimos información adicional, que generalmente se proporciona como un par ordenado que pertenece a la función o relación. (Para las ecuaciones con segundas derivadas, necesitamos dos elementos de información).
+
+\subsection{Verificando una solución de una ecuación diferencial}
+
+Podemos verificar que una expresión particular es una solución de una ecuación diferencial por sustitución. Esto se demuestra en los siguientes ejemplos.
+
+Usaremos la siguiente notación para indicar el valor de $y$ para un valor de $x$ dado:
+\[ y(0)=3 \text{ significará que cuando }x = 0, y = 3. \]
+Consideramos $y$ como una función de $x$. Esta notación es útil en ecuaciones diferenciales.
+
+\begin{example}
+	\begin{enumerate}
+		\item Verifique que $y=Ae^{x}-x-1$ es una solución de la ecuación diferencial $\frac{dy}{dx}=x+y$.
+		\item Por lo tanto, encuentre la solución particular de la ecuación diferencial dado que $y(0)=3$.
+	\end{enumerate}
+\end{example}
+
+\begin{enumerate}
+	\item Sea $y=Ae^{x}-x-1$. Necesitamos verificar que $\frac{dy}{dx}=x+y$.
+	\begin{align*}
+	\text{LHS}
+	&=\frac{dy}{dx}\\
+	&=Ae^{x}-1\\
+	\text{RHS}
+	&=x+y\\
+	&=x+Ae^{x}-x-1\\
+	&=Ae^{x}-1
+	\end{align*}
+	Por lo tanto $\text{LHS}=\text{RHS}$ y así $y=Ae^{x}-x-1$ es una solución de $\frac{dy}{dx}=x+y$.
+	\item $y\left(0\right)=3$ significa $y\left(0\right)=3$ significa que cuando $x=0$, $y=3$. Sustituyendo en la solución $y=Ae^{x}-x-1$  verificado en a:% TODO:
+	\begin{align*}
+	3&=Ae^{0}-0-1\\
+	3&=A-1\\
+	\therefore\quad A&=4.
+	\end{align*}
+	La solución particular es $y=4e^{x}-x-1$.
+	3 = Ae0 - 0 - 1
+	3 = A - 1
+	∴
+	A = 4
+	La solución particular es y = 4e x - x - 1.
+\end{enumerate}
+
+
+\begin{example}
+	Verifique que $y=e^{2x}$ es una solución de la ecuación diferencial $\frac{d^{2}y}{dx^{2}}+\frac{dy}{dx}-6y=0$.
+\end{example}
+
+Sea $y=e^{2x}$, entonces $\frac{dy}{dx}=2e^{2x}$ y $\frac{d^{2}y}{dx^{2}}=3e^{2x}$. Ahora considere la ecuación diferencial:
+\begin{align*}
+\text{LHS}
+&=\frac{d^{2}y}{dx^{2}}+\frac{dy}{dx}-6y\\
+&=4e^{2x}+2e^{2x}-6e^{2x}\quad(\text{de ariiba})\\
+&=0\\
+&=\text{RHS}.
+\end{align*}
+
+\begin{example}
+	Verigique que $y=ae^{2x}+be^{-3x}$ es una solución de la ecuación diferencial $\frac{d^{2}y}{dx^{2}}+\frac{dy}{dx}-6y=0$.
+\end{example}
+
+Sea $y=ae^{2x}+be^{-3x}$, entonces $\frac{dy}{dx}=2ae^{2x}-3be^{-3x}$ y $\frac{d^{2}y}{dx^{2}}=4ae^{2x}+9be^{-3x}$. Así,
+\begin{align*}
+	\text{LHS}
+	&=\frac{d^{2}y}{dx^{2}}+\frac{dy}{dx}-6y\\
+	&=\left(4ae^{2x}+9be^{-3x}\right)+\left(2ae^{2x}-3be^{-3x}\right)-6\left(ae^{2x}+be^{-3x}\right)\\
+	&=4ae^{2x}+9be^{-3x}+2ae^{2x}-3be^{-3x}-6ae^{2x}-6be^{-3x}\\
+	&=0\\
+	&=\text{RHS}.
+\end{align*}
+
+\begin{example}
+	Encuentre las constantes $a$ y $b$ si $y=e^{4x}\left(2x+1\right)$ es una solución de la ecuación diferencial \[ \frac{d^{2}y}{dx^{2}}-a\frac{dy}{dx}+by=0. \]
+\end{example}
+
+Sea $y=e^{4x}\left(2x+1\right)$, entonces
+\begin{align*}
+\frac{dy}{dx}
+&=4e^{4x}\left(2x+1\right)+2e^{4x}\\
+&=2e^{4x}\left(4x+2+1\right)\\
+&=2e^{4x}\left(4x+3\right)
+\shortintertext{y}
+\frac{d^{2}y}{dx^{2}}
+&=8e^{4x}\left(4x+3\right)+4\times2e^{4x}\\
+&=8e^{4x}\left(4x+3+1\right)\\
+&=8e^{4x}\left(4x+4\right)\\
+&=32e^{4x}\left(x+1\right).
+\end{align*}
+
+Si $y=e^{4x}\left(2x+1\right)$ es una solución de la ecuación diferencial, entonces
+\[ \frac{d^{2}y}{dx^{2}}-a\frac{dy}{dx}+by=0, \]
+es decir, $32e^{4x}\left(x+1\right)-2ae^{4x}\left(4x+3\right)+be^{4x}\left(2x+1\right)=0$. Podemos dividir por $e^{4x}$ (ya que $e^{4x}>0$):
+\begin{align*}
+32x+32-8ax-6a+2bx+b&=0
+\shortintertext{es decir,}
+\left(32-8a+2b\right)x+\left(32-6a+b\right)&=0
+\end{align*}
+Por lo tanto,
+\begin{align*}
+32-8a+2b&=0\label{eq:1}\\
+32-6a+b&=0\label{eq:2}
+\end{align*}
+Multiplicando~\eqref{eq:2} por $2$ y restando~\eqref{eq:1}: \[ -32+4a=0. \] Así, $a=8$ y $b=16$.
+
+\section{Ecuaciones diferenciales}
+
+Estas ecuaciones diferenciales son similares a las discutidas anteriormente, con la antidiferenciación siendo aplicado dos veces.
+
+Sea $p=\frac{dy}{dx}$, entonces $\frac{d^{2}y}{dx^{2}x}=\frac{dp}{dx}=f\left(x\right)$. La técnica consiste en encontrar primero $p$ como la solución de la ecuación diferencial $\frac{dp}{dx}=f\left(x\right)$ y luego sustituyendo $p$ en $\frac{dy}{dx}=p$ y resolviendo esta ecuación diferencial.
+
+\begin{example}
+\end{example}
+
+En esta sección discutimos un método para encontrar una solución aproximada a una ecuación diferencial. Esto se logra encontrando una sucesión finita de puntos $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),\ldots,(x_{n},y_{n})$ que se encuentran en una curva que se aproxima a la curva de solución de la ecuación diferencial dada.
+
+\subsection{Aproximación lineal a la curva}
+Para el diagrama, tenemos \[ \frac{f\left(x+h\right)-f\left(x\right)}{h}\approx f^{\prime}\left(x\right)\text{ para un pequeño }h \] Reordenando esta ecuación da \[ f\left(x+h\right)\approx f\left(x\right)+hf^{\prime}\left(x\right). \]
+Esto se muestra en el diagrama. La recta $\ell$ es tangente a $y=f(x)$ en el punto con coordenadas $(x,f(x))$.
+
+Esto da una aproximación a la curva $y=f(x)$ en que la coordenada $y$ de $B$ es una
+aproximación a la coordenada $y$ de $A$ en la gráfica de $y=f(x)$.
+\subsection{El proceso general}
+Este proceso se puede repetir para generar un sucesión de puntos más larga.
+
+
+Comenzamos de nuevo del principio. Considere la ecuación diferencial
+\[ \frac{dy}{dx}=g\left(x\right)\quad\text{con}\quad y\left(x_{0}\right)=y_{0}. \]
+Entonces $x_{1}=x_{0}+h$ y e1 $y_{1}=y_{0}+hg(x0)$.
+
+El proceso ahora se aplica repetidamente para aproximar el valor de la función en $x_{2},x_{3},\ldots$.
+
+El resultado es:
+\begin{align*}
+x_{2}=x_{1}+h\quad\text{y}\quad y_{2}=y_{1}+hg(x_{1})\\
+x_{3}=x_{2}+h\quad\text{y}\quad y_{3}=y_{2}+hg(x_{2})
+\end{align*}
+y así.
+
+El punto $\left(x_{n},y_{n}\right)$ se encuentra en el $n$--ésimo paso del proceso iterativo.
+
+Este proceso iterativo se puede resumir de la siguiente manera.
+
+\begin{theorem}[Método de Euler]
+	Si $\frac{dy}{dx}=g\left(x\right)$ con $x_{0}=a$ e $y_{0}=b$, entonces $x_{n+1}=x_{n}+h$ e $y_{n+1}=y_{n}+hg\left(x_{n}\right)$.
+\end{theorem}
+
+La precisión de esta fórmula, y el proceso asociado, se puede comparar con los valores
+Obtenido a través de la solución de la ecuación diferencial, donde se conoce el resultado.
+
+\section{Variantes del método de Euler}
+
+El método de Euler, por supuesto, no es el único ni el mejor esquema para aproximar soluciones a problemas de valor inicial, y lo que debemos hacer ahora es buscar otros métodos que podamos emplear. Varias ideas pueden ser consideradas basadas en algunas extensiones simples de una derivación del método de Euler.
+
+Nuestra tercera derivación del método de Euler, que también nos da un término restante, se basa en nuestros métodos de diferencia para la aproximación derivada %(de §2.2).
+
+Comenzamos con la ecuación diferencial
+\[ y^{\prime}\left(t\right)=f\left(t,y\left(t\right)\right) \]
+y reemplace la derivada con y reemplace la derivada con el cociente de diferencia simple derivado en %(2.1).
+Esto resulta
+\[ \frac{y\left(t+h\right)-y\left(t\right)}{h}=f\left(t,y\left(t\right)\right)+\frac{1}{2}hy^{\prime\prime}\left(\theta_{t,h}\right) \]
+donde los subíndices en $\theta$ nos recuerdan que el valor depende tanto de $t$ como de $h$. El método de Euler es entonces obtenido simplemente dejando caer el resto, y reemplazando $t$ por $t_{n}$ y $y\left(t\right)$ con $y_{n}$, y así sucesivamente. Esta es la derivación que usamos en el %Capítulo 2.
+
+Esto plantea una pregunta obvia: ¿Qué sucede si utilizamos otras aproximaciones a la
+derivada? Por ejemplo, si usamos
+\[ y^{\prime}\left(t\right)=\frac{y\left(t\right)-y\left(t-h\right)}{h}-\frac{1}{2}hy^{\rime\prime}\left(\theta\right), \]
+entonces obtenemos el método de Euler hacia atrás:
+\begin{equation}
+y_{n+1}=y_{n}+hf\left(t_{n+1},y_{n+1}\right),
+\end{equation}
+y si usamos
+\[ y^{\prime}\left(t\right)=\frac{y\left(t+h\right)-y\left(t-h\right)}{2h}-\frac{1}{6}h^{2}y^{\prime\prime\prime}\left(\theta_{t,h}\right) \]
+obtenemos lo que comúnmente se conoce como el método del punto medio:
+\[ y_{n+1}=y_{n-1}+2hf\left(t_{n},y_{n}\right). \]
+O, podríamos usar las aproximaciones derivadas basadas en la interpolación %(§4.5):
+\begin{align*}
+y^{\prime}\left(t\right)\approx\frac{1}{2h}\left(-y\left(t+2h\right)+4y\left(t+h\right)-3y\left(t\right)\right),\\
+y^{\prime}\left(t+2h\right)\approx\frac{1}{2h}\left(3y\left(t+2h\right)-4y\left(t+h\right)+y\left(t\right)\right),
+\end{align*}
+para obtener los dos métodos numéricos
+\begin{align*}
+	y_{n+1=4y_{n}-3y_{n-1}-2hf\left(t_{n-1},y_{n-1}\right),
+	\shortintertext{y}
+	y_{n+1}=\frac{4}{3}y_{n}-\frac{1}{3}y_{n-1}+\frac{2}{3}hf\left(t_{n+1},y_{n+1}\right).
+\end{align*}
+
+Finalmente, observamos que se puede derivar otro conjunto de métodos integrando la ecuación diferencial. Tenemos que la solución exacta satisface
+\begin{equation}\label{eq:combeuler}
+y\left(t+h\right)=y\left(t\right)+\int_{t}^{t+h}f\left(s,y\left(s\right)\right)\mathrm{d}s.
+\end{equation}
+Por lo tanto, podemos aplicar la regla del trapecio a~\eqref{eq:combeuler} para  obtener
+\begin{equation}\label{eq:combeulerb}
+y\left(t+h\right)=y\left(t\right)+\frac{1}{2}h\left[f\left(t+h,y\left(t+h\right)\right)+f\left(t,y\left(t\right)\right)\right]-\frac{1}{2}h^{3}y^{\prime\prime\prime}\left(\theta_{t,h}\right).
+\end{equation}
+donde $\theta_{t,h}\in\left[t,t+h\right]$ y recordamos al lector que
+\[ f\left(t,y\left(t\right)\right)=y^{\prime}\left(t\right)\implies\frac{d^{2}}{dt^{2}}f\left(t,y\left(t\right)\right)=y^{\prime\prime\prime}\left(t\right). \]
+Eliminar el resto de~\eqref{eq:combeulerb} conduce al método numérico (comúnmente llamado método trapezoidal, por obvias razones)
+\begin{equation}
+y_{n+1}=y_{n}+\frac{1}{2}hf\left(f\left(t_{n+1},y_{n+1}\right)+f\left(t_{n},y_{n}\right)\right)
+\end{equation}
+Alternativamente, podemos usar una aproximación de regla de punto medio para la integración~\eqref{eq:combeuler}. Esto lleva a
+\[ y\left(t+h\right)=y\left(t\right)+hf\left(t+\frac{1}{2}h,y\left(t+\frac{1}{2}h\right)\right)-\frac{1}{24}h^{3}y^{\prime\prime\prime}\left(\theta_{t,h}\right), \]
+lo que sugiere el método numérico
+\begin{equation}
+y_{n+1}=y_{n}+hf\left(t_{n+1/2},y_{n+1/2}\right),
+\end{equation}
+donde $t_{n+1/2}=t_{n}+\frac{1}{2}h$ y $y_{n+1/2}\approx y\left(t_{n}+\frac{1}{2}h\right)$. Esto es similar a %X
+
+¿Qué pasa con estos métodos? ¿Alguno de ellos es bueno?
+
+Varias observaciones se pueden hacer de inmediato. Los métodos (6.21), (6.22) y (6.23)
+todas se basan en aproximaciones derivadas que son $\mathcal{O}\left(h^{2}\right)$, mientras que el método de Euler fue basado en una aproximación derivada que es solo $\mathcal{O}\left(h\right)$ (como lo es el método de Euler hacia atrás) (6.20)). Esto nos sugiere (pero no prueba, por supuesto) que (6.21), (6.22) y (6.23)
+debería ser más preciso que Euler (y Euler hacia atrás). Del mismo modo, los métodos (6.26) y (6.27) se basan en aproximaciones integrales que son más precisas.
+
+Una segunda observación involucra el método del punto medio (6.21) y los dos métodos (6.22) y (6.23). Tenga en cuenta que aquí tenemos fórmulas para $y_{n+1}$ en términos de $y_{n}$ $y_{n-1}$. Estos no son métodos de un \emph{solo paso}, son métodos de \emph{varios pasos}, es decir, dependen de la información de más de un valor aproximado anterior de la función desconocida. ¿Cómo podemos en realidad implementar estos métodos? La ecuación diferencial solo nos da un único valor inicial, $y_{0}$, necesitamos más para comenzar la recursión aquí.
+
+
+Una tercera observación se refiere al método de Euler posterior y los métodos (6.26) y (6.23). Note que todas estas fórmulas involucran $f\left(t_{n+1},y_{n+1}\right)$. No podemos resolver explícitamente para el nuevo valor aproximado $y_{n+1}$, por lo que estos métodos (y otros similares) se llaman \emph{implícitos}, mientras que los métodos como Euler, punto medio y (6.22) se llaman \emph{explícitos}, porque define $y_{n+1}$ explícitamente en términos de información de los pasos anteriores.
+
+
+Nos gustaría abordar el tema de la precisión, al menos de manera experimental, pero no podemos incluso implementar varios de los métodos hasta que abordemos los otros problemas. De todos modos, eso será útil, en este punto, para introducir alguna terminología asociada con la precisión de Los diversos métodos.
+
+\begin{definition}[Orden de precisión]
+Si el error de truncamiento para un esquema numérico para la solución de problemas de valor inicial es $\mathcal{O}\left(h^{k}\right)$, entonces decimos que el método tiene un \emph{orden de precisión} $k$.
+\end{definition}
+
+
+\section{Métodos de un solo paso: Runge--Kutta}
+La familia de métodos Runge-Kutta\footnote{Martín Wilhelm Kutta (1867--1944) estudió en Breslau y Münich, además de un año pasado en Gran Bretaña en Cambridge. La mayor parte de su carrera profesional la pasó en Stuttgart. Sobre la base de la idea original de Runge (primera vez presentado en un artículo de 1894), Kutta publicó su versión de los métodos Runge-Kutta en 1901.} es una de las familias más populares de solucionadores precisos para problemas de valor inicial. La derivación general puede llegar a ser muy complicada; Para evitar el ahogamiento en un mar de detalles y notaciones, resumiremos las ideas básicas utilizando el caso de segundo orden. Recuerde la formulación habitual de predictor-corrector del método trapezoidal:
+\begin{align*}
+\tilde{y}_{n+1}
+&=y_{n}+hf\left(t_{n},y_{n}\right),\\
+y_{n+1}
+&=y_{n}+\frac{1}{2}h\left[f\left(t_{n+1},\tilde{y}_{n+1}\right)+f\left(t_{n},y_{n}\right)\right].
+\end{align*}
+Podemos sustituir directamente el predictor en el corrector para escribir esto como una sola recursión:
+\begin{equation}\label{eq:dedrunge}
+y_{n+1}=
+y_{n}+\frac{1}{2}h\left[f\left(t_{n+1},y_{n}+hf\left(t_{n},y_{n}\right)\right)+f\left(t_{n},y_{n}\right)\right]
+\end{equation}
+Dado que la ecuación diferencial implica que $f$ da valores de $y^{\prime}$, se sigue que podemos ver~\eqref{eq:dedrunge} como definiendo $y_{n+1}$ de $y_{n}$ avanzando a lo largo de una línea recta definida por el simple promedio de las dos pendientes $f\left(t_{n},y_{n}\right)$ y $f\left(t_{n+1},\overline{y}\right)$, donde $\overline{y}=y_{n}+hf\left(t_{n},y_{n}\right)$. Esta plantea la pregunta, por supuesto, de si un promedio diferente de dos pendientes podría o no producir un método más preciso. Para ello, consideramos el método más general.
+\begin{equation}\label{eq:casirunge}
+y_{n+1}=y_{n}+c_{1}hf\left(t_{n},y_{n}\right)+c_{2}hf\left(t_{n}+\alpha h, y_{n}+\betahf\left(t_{n},y_{n}\right)\right),
+\end{equation}
+donde $c_{1}$, $c_{2}$, $\alpha$, $\beta$ son parámetros aún no determinados. Queremos elegir estos para que la solución aproximada definida por~\eqref{eq:dedrunge} es lo más precisa posible y queremos hacer
+el error de truncamiento lo más pequeño posible, en términos de potencias de $h$. Por lo tanto, nos fijamos en la expresión
+\begin{equation}
+R=y\left(t+h\right)-y\left(t\right)-c_{1}hf\left(t,y\left(t\right)\right)-c_{2}hf\left(t+\alpha h, y\left(t\right)\right)+\beta hf\left(t,y\left(t\right)\right).
+\end{equation}
+Para reducir esto de modo que podamos inferir los valores correctos de $c_{1}$, $c_{2}$, $\alpha$ y $\beta$ que darán como resultado el residual más pequeña $R$, tendremos que usar el teorema de Taylor en dos variables, que indicamos aquí sin demostración:
+\begin{align*}
+F\left(x+h,y+\eta\right)
+&=F\left(x,y\right)+hF_{x}\left(x,y\right)+\eta F_{y}\left(x,y\right)+\frac{1}{2}\left(h^{2}F_{xx}\left(x,y\right)\right)\\
+&+h\eta F_{xy}\left(x,y\right)+\eta^{2}F_{yy}\left(x,y\right)+\mathcal{O}\left(h^{3}+\eta^{3}\right).
+\end{align*}
+
+\newpage
+
+\section{Análisis del método de Euler}
+En esta sección probaremos dos resultados que establecen la convergencia y la estimación de error para el método de Euler. En esta sección proporcionamos una gran cantidad de detalles para evitar entrar en tantos detalles con métodos más sofisticados que se derivarán más adelante. A lo largo de la sección nos ocupamos de la solución aproximada, a través del método de Euler, del problema del valor inicial
+\[ y^{\prime}=f\left(t,y\right),\quad y\left(t_{0}\right)=y_{0}. \]
+El primer teorema muestra que el método de Euler es, de hecho, de primer orden preciso.
+
+\begin{theorem}[Estimación del error del método de Euler]
+Sea $f$ Lipschitz continua, con coeficiente $K$, y asuma que la solución $y\in C^{2}\left(\left[t_{0},T\right]\right)$ para algún $T>t_{0}$. Entonces
+\[ \max_{t_{k}\leq T}\left|y\left(t_{k}\right)-y_{k}\right|\leq C_{0}\left|y\left(t_{0}\right)-y_{0}\right|+Ch\|y^{\prime\prime}\|_{\infty,\left[t_{0},T\right]}, \] donde \[ C_{0}=e^{K\left(T-t_{0}\right)} \] y \[ C=\frac{e^{K\left(t-t_{0}\right)-1}}{2K}. \]
+\end{theorem}
+
+\begin{proof}
+El elemento clave en la prueba de este resultado es el hecho de que la solución exacta satisface la misma relación que la solución aproximada, excepto por la adición de un término restante. Así tenemos (de (6.13) y (6.14)),
+\begin{align*}
+y\left(t_{n+1}\right)&=y\left(t_{n}\right)+hf\left(t_{n},y\left(t_{n}\right)\right)+\frac{1}{2}h^{2}y^{\prime\prime}\left(\theta_{n}\right),\\
+y_{n+1}&=y_{n}+hf\left(t_{n},y_{n}\right),
+\end{align*}
+que restamos para obtener
+\[ y\left(t_{n+1}\right)-y_{n+1}=y\left(t_{n}\right)-y_{n}+hf\left(t_{n},y\left(t_{n}\right)\right)-hf\left(t_{n},y_{n}\right)+\frac{1}{2}h^{2}y^{\prime\pŕime}\left(\theta_{n}\right). \]
+Tome valores absolutos y aplique la continuidad de Lipschitz de $ f$ para obtener
+\[ \left|y\left(t_{n+1}\right)-y_{n+1}\right|\leq\left|y\left(t_{n}-y_{n}\right)\right|+Kh\left|y\left(t_{n}\right)-y_{n}\right|+\frac{1}{2}h^{2}\left|y^{\prime\prime}\left(\theta_{n}\right)\right|, \]
+que escribimos como
+\[ e_{n+1}\leq\gammae_{n}+R_{n}, \]
+donde $e_{n}=\left|y\left(t_{n}-y_{n}\right)\right|$, $\gamma=1+Kh$ y $R_{n}=\frac{1}{2}h^{2}\left|y^{\prime\prime}\left(\theta_{n}\right)\right|$, para simplicidad de notación.
+
+Esta es una simple desigualdad recursiva, que podemos ``resolver'' de la siguiente manera. Tenemos
+\begin{align*}
+e_{1}\leq\gamma e_{0}+R_{0},\\
+e_{2}\leq\gamma e_{1}+R_{1}\leq\gamma^{2}e_{0}+\gamma R_{o}+R_{1},\\
+e_{3}\leq\gamma e_{2}+R_{2}\leq\gamma^{3}R_{0}\\
+\end{align*}
+							ei
+							e2
+							e3
+							<
+							<
+							<
+							7 ^ 0 + Ro,
+							7 ^ i + Ri <72εο + 7-Αο + Λι,
+							7 ^ 2 + # 2 <73 eo + 7 2-Ro + 7-Ri + R2,
+							y así. Se puede aplicar un argumento inductivo para obtener el resultado general.
+							n-l
+							es <7 "e 0 + 2 >> 2 Σ ^" ^ - 1 - *)! ·
+							fc = 0
+\end{proof}

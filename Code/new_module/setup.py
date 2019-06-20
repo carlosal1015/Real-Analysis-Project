@@ -18,7 +18,7 @@ To get a full list of available commands, read the output of:
 Or, if all else fails, feel free to write at
 caznaranl@uni.pe and ask for help.
 """
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name = "timescale",
@@ -28,5 +28,7 @@ setup(
     author_email = "tomcuchta@gmail.com",
     license = "GPL V3",
     url = "https://github.com/tomcuchta/timescalecalculus",
-    packages = ["calculos.basicos","calculos.redondeopotencia"]
+    packages = find_packages(),
+    scripts = [],
+    install_requires = []
 )
