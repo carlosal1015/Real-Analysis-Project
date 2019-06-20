@@ -1,0 +1,21 @@
+@book{book:{1641535},
+   title =     {Multivariable Dynamic Calculus on Time Scales},
+   author =    {Martin Bohner, Svetlin G. Georgiev},
+   publisher = {Springer},
+   isbn =      {978-3-319-47620-9},
+   year =      {2017},
+   series =    {},
+   edition =   {},
+   volume =    {},
+   url =       {http://gen.lib.rus.ec/book/index.php?md5=6f174deb6aa754dc8438d22105eca065}}
+
+@book{book:{2160529},
+   title =     {Dynamic Equations on Time Scales: An Introduction with Applications},
+   author =    {Martin Bohner, Allan Peterson},
+   publisher = {Birkhäuser / Springer},
+   isbn =      {1461266599,9781461266594},
+   year =      {2001,2012},
+   series =    {},
+   edition =   {reprint},
+   volume =    {},
+   url =       {http://gen.lib.rus.ec/book/index.php?md5=369c7d09cf8f9898db70058c0673ddf7}}
