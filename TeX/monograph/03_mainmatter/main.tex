@@ -16,10 +16,9 @@ Entonces podríamos decir que
 S_n = a^nI+a^{n-1}c+a^{n-2}c +\cdots+ac+c\quad\text{para }\forall n\in\mathds{N}.
 \end{equation}
 Podemos demostrarlo por \emph{inducción matemática} para cualquier $n\in\mathds{N}$, $S_k=a^nI+a^{n-1}c+a^{n-2}c+\cdots+ac+c$, entonces:
-
 \begin{align*}
 S_{k+1}&=aS_{k} + c  \\
-S_{k+1}&=a[a^kI+a^{k-1}c+a^{k-2}c+\cdots+ac+c] + c\\
+S_{k+1}&=a\left[a^kI+a^{k-1}c+a^{k-2}c+\cdots+ac+c\right] + c\\
 S_{k+1}&=a^{k+1}I+a^k c+a^{k-1}c+\cdots+a^2c+ac+c
 \end{align*}
 Por lo tanto,~\eqref{eq:linearb} es correcto. Por lo tanto, si $S$ es cualquier secuencia en $\mathds{N}$ que satisface~\eqref{eq:lineara}, entonces para $\forall n\in \mathds{P}$.
@@ -27,15 +26,15 @@ Por lo tanto,~\eqref{eq:linearb} es correcto. Por lo tanto, si $S$ es cualquier 
 	\item Si $a=1$, entonces $S_n=1^nI+1^{n-1}c+1^{n-2}+\cdots+1c+c=I+nc$.
 	\item Y si $a\neq1$, se tiene
 	\begin{align*}
-	S_n&=a^nI+a^{n-1}c+a^{n-2}c+\cdots+ac+c\\
-	&=a^nI+c\frac{1-a^n}{1-a}=a^nI+\frac{c}{1-a}-a^n\frac{c}{1-a}\\
-	&=a^n[1-\frac{c}{1-a}]+\frac{c}{1-a}\\
+	S_n&=a^{n}I+a^{n-1}c+a^{n-2}c+\cdots+ac+c\\
+	&=a^{n}I+c\frac{1-a^n}{1-a}=a^nI+\frac{c}{1-a}-a^n\frac{c}{1-a}\\
+	&=a^{n}\left[1-\frac{c}{1-a}\right]+\frac{c}{1-a}\\
 	\end{align*}
 \end{itemize}
-Por lo tanto la solución general a la ecuación de recurrencia es \[ S_{n+1} = aS_n+c\quad\forall n\in\mathds{N}. \] Se da en dos partes:
+Por lo tanto, la solución general a la ecuación de recurrencia es \[ S_{n+1} = aS_n+c\quad\forall n\in\mathds{N}. \] Se da en dos partes:
 \begin{align*}
 \text{Si }a=1, S_n&= S_0+ nc\forall n\in\mathds{N}\\
-\text{Si }a\neq1&=S_n= a^n[S_0-\frac{c}{1-a}]+\frac{c}{1-a}\forall n\in\mathds{N}.
+\text{Si }a\neq1&=S_n= a^{n}\left[S_0-\frac{c}{1-a}\right]+\frac{c}{1-a}\forall n\in\mathds{N}.
 \end{align*}
 
 \subsection{Las torres de Hanói}\index{Torres de Hanói}
@@ -152,7 +151,7 @@ Supongamos que se le ofrecen dos planes de ahorro para la jubilación. En el pla
 	S_{n+1}&=S_{n}+11\%\text{ de }S_n+\$1000\\
 	S_{n+1}&=S_{n}(1+0.11)+\$1000.
 \end{align*}
-En esta RE, $a=1.11$, $c=1000$, entonces $\tfrac{c}{1-a}=\tfrac{1000}{-0.11}$ y
+En esta RE, $a=1.11$, $c=1000$, entonces $\frac{c}{1-a}=\frac{1000}{-0.11}$ y
 \begin{align*}
 	S_{n}&={\left(1.11\right)}^{n}\left[1000-\frac{1000}{-0.11}\right]+\frac{1000}{+0.11}\\
 	S_{n}&={\left(1.11\right)}^{n}\left[\frac{1110}{+0.11}\right]-\frac{1000}{+0.11}
@@ -162,88 +161,96 @@ Por lo tanto,
 	S_{40}&={\left(1.11\right)}^{40}(10090.090909\ldots)-(-9090.909090\ldots)\\
 	S_{40}&=(65.000867\ldots)(10090.090909\ldots)-(9090.909090\ldots)\\
 	S_{40}&=655917.842\ldots-(9090.909090\ldots)\\
-	S_{40}&\approxeq\$646826.
+	S_{40}&\approx\$646826.
 \end{align*}
-?`Puede ser cierto? Pusiste $\$40,000$ y sacaste mayor que $\$600,000$ en intereses. Ahora considere el plan $B$ y sea $T_{n}$ denota el número de dólares en el plan después de (exactamente) $n$ meses de funcionamiento. Entonces $T_{0}=\$100$ y
+?`Puede ser cierto? Pusiste $\$40000$ y sacaste mayor que $\$600000$ en intereses. Ahora considere el plan $B$ y sea $T_{n}$ denota el número de dólares en el plan después de (exactamente) $n$ meses de funcionamiento. Entonces $T_{0}=\$100$ y
 \begin{align*}
 	T_{n+1}&=T_{n}+\text{ interés sobre }T_{n}+\$100\\
-	T_{n+1}&= T_{n}+(1/2)\text{ de }10\%\text{ de }T_{n}+\$100\\
-	T_{n+1}&=T_{n}\left[1+0.1/12\right]\$100
+	T_{n+1}&= T_{n}+\left(\frac{1}{2}\right)\text{ de }10\%\text{ de }T_{n}+\$100\\
+	T_{n+1}&=T_{n}\left[1+\frac{0.1}{12}\right]\$100
 \end{align*}
-En esta RE, $a=12.1/12,c=100$, entonces $\tfrac{c}{1-a}=\tfrac{100}{-0.1/12}=-12000$ y
+En esta RE, $a=12.1/12,c=100$, entonces $\frac{c}{1-a}=\frac{100}{-0.1/12}=-12000$ y
 \begin{equation*}
-	T_{n}={\left(12.1/12\right)}^{n}\left[100+12000\right]-12000
+	T_{n}={\left(\frac{12.1}{12}\right)}^{n}\left[100+12000\right]-12000.
 \end{equation*}
 De ahí, después $40\times12$ meses,
 \begin{align*}
-	T_{480}&={\left(12.1/12\right)}^{480}(12100)\quad-(12000)\\
-	T_{480}&={\left(1.008333\ldots\right)}^{480}(12100)\quad-(12000)\\
-	T_{480}&=\left(53.700663\ldots\right)(12100)\quad-(12000)\\
-	T_{480}&=649778.0234\ldots\quad-(12000)\\
-	T_{480}&\approxeq\$637778.
+	T_{480}&={\left(\frac{12.1}{12}\right)}^{480}(12100)-(12000)\\
+	T_{480}&={\left(1.008333\ldots\right)}^{480}(12100)-(12000)\\
+	T_{480}&=\left(53.700663\ldots\right)(12100)-(12000)\\
+	T_{480}&=649778.0234\ldots-(12000)\\
+	T_{480}&\approx\$637778.
 \end{align*}
 Por lo tanto, el plan $A$ tiene un valor ligeramente mayor después de $40$ años.
 
 \section{Resolución de ecuaciones de recurrencia lineal de segundo orden}
 
-Una ecuación de la recurrencia lineal de segundo orden relaciona entradas consecutivas en una secuencia por una ecuación de la forma
-\begin{equation}
+Una \emph{ecuación de recurrencia lineal de segundo orden} relaciona entradas consecutivas en una secuencia por una ecuación de la forma
+\begin{equation}\label{eq:segordena}
 	S_{n+2}=aS_{n+1}+bS_{n}+c\quad\forall n\text{ en el dominio de }S.
 \end{equation}
-Pero vamos a asumir que el dominio de $S$ es $\mathds{N}$. Supongamos también que $ab\neq0$, de lo contrario, $S_{n}=c$ para $\forall\,n \in\left\{2\ldots\right\}$, y las soluciones para (2) no son muy interesantes.
+Pero vamos a asumir que el dominio de $S$ es $\mathds{N}$. Supongamos también que $ab\neq0$, de lo contrario, $S_{n}=c$ para $\forall n\in\left\{2\ldots\right\}$, y las soluciones de~\eqref{eq:segorden} no son muy interesantes.
 
-La ecuación de recurrencia de primer orden es solo un caso especial de la ecuación de recurrencia de segundo orden cuando $b = 0$.
+\begin{remark}
+	La ecuación de recurrencia de primer orden es solo un caso especial de la ecuación de recurrencia de segundo orden~\eqref{eq:segorden} cuando $b=0$.
+\end{remark}
 
-Cuando $c=0$, se dice que la RE es homogénea (todos los términos se ven igual–una constante veces una entrada de secuencia).
+Cuando $c=0$, se dice que la RE es \textbf{homogénea} (todos los términos lucen igual a una constante multiplicada por una sucesión).
 
-La ecuación de recurrencia de Fibonacci es homogénenea.
+\begin{remark}
+	La ecuación de recurrencia de Fibonacci es homogénea.
+\end{remark}
 
-Vamos a restringir también nuestra atención (por el momento) a una ecuación de segundo orden lineal, la recurrencia homogénea
-\begin{equation}
+Vamos a restringir también nuestra atención (por el momento) a una \emph{lineal de segundo orden}, la \emph{ecuación de recurrencia homogénea}
+\begin{equation}\label{eq:segordenb}
 	S_{n+2}=aS_{n+1}+bS_{n}\text{ para }\forall n\in\mathds{N}.
 \end{equation}
-Tal como hicimos para la ecuación de la recurrencia de Fibonacci, supongamos que
-hay una secuencia geométrica, $S_n=r^n$, que satisface (3). Si lo hubiera, entonces $r^{n+2}=ar^{n+1}+br^{n}$ para $\forall\,n\in\mathds{N}$.
+Tal como hicimos para la ecuación de la recurrencia de Fibonacci, supongamos que existe una secuencia geométrica, $S_{n}=r^{n}$, que satisface~\eqref{eq:segordenb}. Si lo hubiera, entonces \[ r^{n+2}=ar^{n+1}+br^{n}\quad\forall n\in\mathds{N}. \] Cuando $n=0$, \[ r^{2}=ar+b. \]
 
-Cuando $n = 0$, $r^2=ar+b$.
+La ``ecuación característica'' de~\eqref{eq:segordenb} es $x^2-ax-b=0$, cuyas ``raíces'' son \[ r=\frac{-\left(-a\right)\pm\sqrt{{\left(-a\right)}^{2}-4\left(\right)\left(-b\right)}}{2\left(1\right)}=\frac{a\pm\sqrt{a^{2}+4b}}{2}. \]
 
-La ``ecuación característica'' de (3) es $x^2-ax-b=0$, que tiene ``raíces'' $r=\tfrac{-(-a)\pm\sqrt{(-a)^2-4(1)(-b)}}{2(1)}=\tfrac{a\pm\sqrt{a^2+4b}}{2}$.
-
-Sea $\Delta=\sqrt{a^2+4b}$, $r_1=\tfrac{a+\Delta}{2}$, y $r_2=\frac{a-\Delta}{2}$.
-
-Entonces $r_{1}+r_{2}=a$, $r_{1}\times r_{2}=-b$, y $r_{1}-r_{2}=\Delta$.
-
-Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
+Sean $\Delta=\sqrt{a^2+4b}$, $r_1=\frac{a+\Delta}{2}$, y $r_2=\frac{a-\Delta}{2}$, entonces $r_{1}+r_{2}=a$, $r_{1}\times r_{2}=-b$, y $r_{1}-r_{2}=\Delta$. Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
 
 \begin{example}{}
-Si $S_{n+2}=10S_{n+1}-21S_n$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-10x+21=0$ o $(x-7)(x-3)=0$, donde $a=10$, $b=-21$, $a^2+4b=100-84=16$, $\Delta = 4$, entonces $r_{1}=7$ y $r_{2}=3$.
+Si $S_{n+2}=10S_{n+1}-21S_n$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-10x+21=0$ o $(x-7)(x-3)=0$.
+
+Aquí $a=10$, $b=-21$, $a^2+4b=100-84=16$, $\Delta = 4$, entonces $r_{1}=7$ y $r_{2}=3$.
 \end{example}
 
 \begin{example}{}
-Si $S_{n+2} = 3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^2-3x+2=0$ o $(x-2)(x-1)=0$ donde, $a=3$, $b=-2$, $a^2+4b=9-8=1$, $\Delta = 1$, entonces $r_1=2$ y $r_2=1$.
+Si $S_{n+2} = 3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-3x+2=0$ o $(x-2)(x-1)=0$.
+
+Aquí, $a=3$, $b=-2$, $a^{2}+4b=9-8=1$, $\Delta = 1$, entonces $r_{1}=2$ y $r_{2}=1$.
 \end{example}
 
 \begin{example}{}
-Si $S_{n+2}=2S_{n+1}-S_{n}$ para $\forall\,n\in\mathds{N}$, la ecuación característica es $x^{2}-2x+1=0$ o $(x-1)(x-1)=0$ donde, $a=2$, $b=-1$, $a^2+4b=4-4=0$, $\Delta = 0$, entonces $r_{1}=1$ y $r_{2}=1$. ?`Pero qué hay de una fórmula que da la solución general?
+Si $S_{n+2}=2S_{n+1}-S_{n}$ para $\forall\,n\in\mathds{N}$, la ecuación característica es $x^{2}-2x+1=0$ o $(x-1)(x-1)=0$.
+
+Aquí, $a=2$, $b=-1$, $a^2+4b=4-4=0$, $\Delta = 0$, entonces $r_{1}=1$ y $r_{2}=1$.
 \end{example}
+
+?`Pero qué hay de una fórmula que da la solución general?
 
 \begin{theorem}
-La solución general de la RE homogénea (3) es
+La solución general de la RE homogénea~\eqref{eq:segordenb} es
 	\begin{align*}
-		S_{n}&=A(r_1)^{n}+B(r_2)^{n}\text{, si }r_{1}\neq r_{2}\quad\text{ si}\Delta\neq0\\
-		S_{n}&=A(r)^n+Bn(r)^{n}\text{, si }r_{1}=r_{2}=r\quad\text{ si }\Delta=0
+		S_{n}&=A(r_1)^{n}+B(r_2)^{n},&\text{si }r_{1}\neq r_{2}\left(\Delta\neq0\right)&
+		\shortintertext{y}
+		S_{n}&=A(r)^n+Bn(r)^{n},&\text{si }r_{1}=r_{2}=r\left(\Delta=0\right).&
 	\end{align*}
 \end{theorem}
 \begin{proof}
 Supongamos que $T$ es cualquier solución particular de la RE homogénea. Nos ocupamos de los dos casos por separado.
 \begin{enumerate}[label={Caso~\arabic*}]
-	\item Si $\Delta\neq0$, entonces las dos raíces son distintas (pero pueden ser números ``complejos''). Encontraremos valores para $A$ y $B$, luego probaremos que $T_{n}=A(r_1)^{n}+B(r_2)^{n}$ para $\forall\,n\in\mathds{N}$. Mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ inicia correctamente para valores especialmente elegidos de $A$ y $B$, y luego mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ continúa correctamente. Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizaría $T_{n}=A(r_1)^{n}+B(r_{2})^n$, entonces $n=0$ y $n=1$. Si
+	\item Si $\Delta\neq0$, entonces las dos raíces son distintas (pero pueden ser números ``complejos''). Encontraremos valores para $A$ y $B$, luego probaremos que $T_{n}=A(r_1)^{n}+B(r_2)^{n}$ para $\forall\,n\in\mathds{N}$. Mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ inicia correctamente para valores especialmente elegidos de $A$ y $B$, y luego mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ continúa correctamente.
+
+	Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizaría $T_{n}=A(r_1)^{n}+B(r_{2})^n$, entonces $n=0$ y $n=1$. Si
 		\begin{align}
-		T_{0}&={A(r_{1})}^{0}+{B(r_{2})}^{0}=A+B %(1)
-		\intertext{y}
-		T_{1}&={A(r_{1})}^{1}+{B(r_{2})}^{1}=A(r_{1})+B(r_{2})%(2)
+		T_{0}&={A(r_{1})}^{0}+{B(r_{2})}^{0}=A+B\label{eq:sol1}
+		\shortintertext{y}
+		T_{1}&={A(r_{1})}^{1}+{B(r_{2})}^{1}=A(r_{1})+B(r_{2}),\label{eq:sol2}
 		\end{align}
-	entonces $(r_{1})T_{0}=A(r_{1})+B(r_{1})$//multiplicamos (1) por $r_{1}$ y $T_{1}= A(r_{1})+B(r_{2})$// (2) otra vez restamos, obtenemos $(r_{1})T_{0}-T_{1}=B(r_{1}-r_{2})=B\Delta$//$r_{1}-r_{2}=\Delta\neq 0$ entonces $B=\frac{(r_{1})T_{0}-T_{1}}{\Delta}$. Tenemos, $A=T_{0}-B=\frac{\Delta T_{0}}{\Delta} -\frac{(r_{1})T_{0}-T_{1}}{\Delta}=\frac{-(r_{2})T_{0}+T_{1}}{\Delta}$. No importa cómo comience la sucesión $T$ (no importa cuáles sean los valores para $T_{0}$ y $T_{1}$). Hay números únicos $A$ y $B$ tales que $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$ para $n=0$ y $1$. Continuando la prueba por la inducción matemática que $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$ para $\forall n\in\mathds{N}$.
+	entonces $(r_{1})T_{0}=A(r_{1})+B(r_{1})$. multiplicamos~\eqref{eq:so} por $r_{1}$ y $T_{1}= A(r_{1})+B(r_{2})$// (2) otra vez restamos, obtenemos $(r_{1})T_{0}-T_{1}=B(r_{1}-r_{2})=B\Delta$//$r_{1}-r_{2}=\Delta\neq 0$ entonces $B=\frac{(r_{1})T_{0}-T_{1}}{\Delta}$. Tenemos, $A=T_{0}-B=\frac{\Delta T_{0}}{\Delta} -\frac{(r_{1})T_{0}-T_{1}}{\Delta}=\frac{-(r_{2})T_{0}+T_{1}}{\Delta}$. No importa cómo comience la sucesión $T$ (no importa cuáles sean los valores para $T_{0}$ y $T_{1}$). Hay números únicos $A$ y $B$ tales que $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$ para $n=0$ y $1$. Continuando la prueba por la inducción matemática que $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$ para $\forall n\in\mathds{N}$.
 
 	\begin{enumerate}[label={Paso~\arabic*}]
 		\item Si $n=0$ o $n=1$, entonces $T_{n} = A(r_{1})^{n}+B(r_{2})^{n}$, por nuestra ``opción'' $A$ y $B$.

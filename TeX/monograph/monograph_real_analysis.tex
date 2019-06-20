@@ -6,7 +6,7 @@
 % arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
 % arara: --> }
 % arara: lualatex: { draft: yes }
-% arara: biber
+% arara: bibtex
 % arara: lualatex: { draft: yes }
 % arara: makeindex
 % arara: lualatex
@@ -30,17 +30,10 @@
 	envcountchap,
 	sectrefs
 ]{svmono}
-% choose options for [] as required from the list
-% in the Reference Guide
-
-%\usepackage{mathptmx}
-%\usepackage{helvet}
-%\usepackage{courier}
+\usepackage[showframe]{geometry}
 \usepackage{type1cm}
-
-\usepackage{makeidx}% allows index generation
-															% when including figure files
-\usepackage{multicol}        % used for the two-column index
+\usepackage{makeidx}
+\usepackage{multicol}
 \usepackage[bottom]{footmisc}% places footnotes at page bottom
 \usepackage{amssymb,mathtools}
 \usepackage{newtxtext}
@@ -54,7 +47,6 @@
 \graphicspath{ {img} }
 %\usepackage{subfiles}
 %\subfile{sub/sub.tex}
-\usepackage{morewrites}
 \usepackage[
 	nonumberlist,%toc,
 	stylemods={longbooktabs},
@@ -86,11 +78,26 @@
 		\bfseries Definido en la página
 		\tabularnewline\midrule\endhead}
 }
-
-\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
-\addbibresource{bib.bib}
-
 \usepackage{pythontex}
+\usepackage[%	hyperref,
+	pdfencoding=auto,
+	linktocpage=true,
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=magenta,
+		pdfpagelabels
+%	bookmark=false
+]{hyperref}
+
+\hypersetup{pdfinfo={
+		Title={Relación de recurrencia. Ecuaciones en diferencias y análisis en escala de tiempo},
+		Author={Carlos Aznarán, Franss Cruz, Junior Micha, Gabriel Quiróz, Davis García},
+		Keywords={recurrence relation, difference equations},
+		Subject={Real Analysis},
+		Producer={TeXstudio 2.12.16},
+		Creator={LuaTeX, Version 3.1.10.0 (TeX Live 2019)},
+}}
+
 \usepackage{etoolbox,ifluatex}
 \ifluatex
 \makeatletter
@@ -102,21 +109,21 @@
 \DeclareMathOperator{\sen}{sen}
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
-
-\date{17 de junio del 2019}
+\renewcommand{\chapterautorefname}{capítulo}
+\date{20 de junio del 2019}
 
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
                        % your makeindex program
 %\let\claim\relax
 %\renewcommand\claimname{Aa}
-
-\makeatletter
-\let\addtocontents\newfloat@addtocontents@ORI
-\makeatother
-
+%\makeatletter
+%\let\addtocontents\newfloat@addtocontents@ORI
+%\makeatother
 \makeglossaries
 \begin{document}
+
+\hypersetup{pageanchor=false}
 
 \author{
 	Carlos A. Aznarán Laos\\
@@ -133,28 +140,31 @@
 \include{./02_frontmatter/dedication}
 \include{./02_frontmatter/foreword}
 \include{./02_frontmatter/preface}
-%\extrachap{Alcance de la monografía}
-%El ánimo de la monografía es dar una introducción matemática al modelamiento, análisis y técnicas de simulación para interacciones. Dado que el campo de las posibles aplicaciones es enorme y las diferentes aplicaciones aportarán diferentes desafíos que requieren de técnicas adecuadas, centraremos nuestra atención en los problemas que involucran un acoplamiento muy fuerte entre los dos subproblemas discreto y continuo.
-%
-%La monografía está dividida en tres partes. En la primera parte, comenzaremos introduciendo las definiciones básicas de las relaciones de recurrencia y dar una visión general de las diferentes propiedades utilizadas para describir los métodos de Euler y Runge--Kutta. Para estos modelos y ecuaciones, desarrollaremos una teoría matemática fundamental que nos dará respuestas sobre la existencia, unicidad y regularidad de las soluciones. Dada la comprensión suficiente de los dos subproblemas, podremos abordar modelos acoplados para las relaciones de recurrencias. Ambos problemas se acoplan mediante la escalas de tiempo.
-%
-%La primera parte de este libro también cubrirá una introducción a las ecuaciones en diferencias y el método para la discretización temporal de ecuaciones diferenciales ordinarias. Comenzaremos a reunir los elementos esenciales que son necesarios para manejar el problema X. Luego, prestamos atención a las necesidades especiales de los problemas de interacción de la estructura del fluido.
-%
-%En la segunda parte de la monografía, describimos dos modelos numéricos específicos para la realización de problemas de interacción de X. Esta parte se centra en las formulaciones Y, donde ambos subproblemas están fuertemente vinculados y tratados como un único conjunto común de ecuaciones. Obtendremos una formulación matemática que cubrirá el problema de las recurrencias discretas, las ecuaciones en diferencias finitas y el cálculo clásico. Se consideran dos enfoques diferentes: En primer lugar, describimos el enfoque de la derivada discreta, una técnica bien establecida por George Boole para modelar las interacciones oferta-demanda que permiten esquemas de discretización muy precisos. En segundo lugar, presentamos la formulación completamente Runge-Kutta, un nuevo enfoque de modelado que puede cubrir una amplia gama de problemas de aplicación diferentes. Para estos dos enfoques, introduciremos detalles sobre la discretización en el espacio y tiempo. Además, describiremos técnicas avanzadas para la solución de los sistemas algebraicos resultantes. La compleja estructura de los problemas de interacción de la estructura de fluido acoplado combina las dificultades de los problemas de flujo con las de estructuras elásticas. Los sistemas de ecuaciones resultantes son enormes, carecen de estructura deseable (como la simetría) e incorporan un acoplamiento muy rígido. Finalmente, discutiremos algunos temas avanzados relacionados con el tratamiento numérico eficiente de problemas de sistema de ecuaciones dinámica en cálculo fraccionario. Con la ayuda del análisis de sensibilidad de los problemas acoplados, podremos diseñar estimadores de error orientados a objetivos que ayudarán a reducir significativamente los costos computacionales para grandes simulaciones. Además, estas técnicas pueden aplicarse para resolver problemas simples de optimización con X.
-%%\Extrachap{B}
+\include{./02_frontmatter/scope}
 \include{./02_frontmatter/acknowledgement}
 
 \tableofcontents
 
-\include{acronym}
+\include{./02_frontmatter/acronym}
+
+\hypersetup{pageanchor=true}
 
 \mainmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Primera parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{./03_mainmatter/fundamentals}
+\begingroup
+\let\clearpage\relax
+\begin{partbacktext}
+	\part{Fundamentos}
+	En la primera parte de la monografía presentaremos los conceptos fundamentales para modelar y simular los problemas de las ecuaciones en diferencias, a veces, mal llamado \emph{relaciones de recurrencias}. En el capítulo $1$ presentaremos los modelos fundamentales y las ecuaciones en diferencias. Discutiremos la relación de \emph{Ackermann}
+\end{partbacktext}
+\chapsubtitle{Subtítulo}
+\chapauthor{Tu nombre}
+\include{./03_mainmatter/fundaments/introduction}
 %\include{./03_mainmatter/first_part}
 \include{./03_mainmatter/micha2}
 \include{./03_mainmatter/main}
 \include{./03_mainmatter/exercises}
+\endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Segunda parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{./03_mainmatter/numerical}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tercera parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
