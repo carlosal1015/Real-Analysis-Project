@@ -1,5 +1,9 @@
-\chapter{Método de Euler}
-
+%\chapauthor{Autor}
+%\chapsubtitle{Subtítulo}
+\chapter{Método de Euler}\index{Método de Euler}
+\abstract{En este capítulo introducimos un tipo de funciones llamadas que pueden ser usados para aproximar otras funciones más generales}
+%\chaptermark{xd}
+\section{Ecuación diferencial ordinaria lineal}
 Una aplicación inmediata del método de las diferencias finitas para aproximar derivada es la solución aproximada de los problemas de valor inicial para ecuaciones diferenciales ordinarias. El uso de la forma general de tal problema es
 \begin{equation}\label{eq:ivp}
 y^{\prime}=f\left[t,y\right],\quad y\left(t_{0}\right)=y_{0},
@@ -37,11 +41,11 @@ La ecuación~\eqref{eq:euler} define lo que es conocido como el \emph{método de
 		\item Tenemos $t_{2}=2h=\frac{1}{2}$ y $y_{1}=0.75$ del paso 1%
 		Entonces, \[ y_{2}=y_{1}+hf\left(t_{1},y_{1}\right)=\frac{3}{4}+\frac{1}{4}\left(-\frac{3}{4}+\sin\frac{1}{4}\right)=0.6243509898. \] Así, $y\left[1/2\right]-y_{2}=0.710774779-0.6242509898=0.0863664881$.
 	\end{enumerate}
-\end{example}\footnote{Leonhard Euler (1707--1783) fue uno de los grandes matemáticos de la era post Newton, el otro fue Carl Friederich Gau\ss. Euler nació en Basilea, Suiza, y se educó en la Universidad de Basilea, el primero con un ojo siguiendo en la carrera de su padre como ministro Luterano. Con la asistencia de su tutor y su mentor Johann Bernoulli, sin embargo, él fue capaz de convencer a su pare a perseguir una carrera de matemáticas. En 1727, Euler ingresó a la Academia de Ciencias de San Petersburgo en Rusia, donde él estuvo hasta 1741, en su tiempo ĺe ingreso a la Academia de Ciencias de Berlín por la invitación del rey de Prusia, Federico el grande. Después de algunas disputas con el monarca, Euler dejó Berlín en 1766 y regresó a San Petersburgo. Las contribuciones de Euler a las matemáticas son %
+\end{example}\footnote{Leonhard Euler (1707--1783) fue uno de los grandes matemáticos de la era pos Newton, el otro fue Carl Friedrich Gauß. Euler nació en Basilea, Suiza, y se educó en la Universidad de Basilea, el primero con un ojo siguiendo en la carrera de su padre como ministro Luterano. Con la asistencia de su tutor y su mentor Johann Bernoulli, sin embargo, él fue capaz de convencer a su pare a perseguir una carrera de matemáticas. En 1727, Euler ingresó a la Academia de Ciencias de San Petersburgo en Rusia, donde él estuvo hasta 1741, en su tiempo ĺe ingreso a la Academia de Ciencias de Berlín por la invitación del rey de Prusia, Federico el grande. Después de algunas disputas con el monarca, Euler dejó Berlín en 1766 y regresó a San Petersburgo. Las contribuciones de Euler a las matemáticas son %
 Él publicó una enorme cantidad de material, en una amplia variedad de áreas, incluyendo series infinitas, funciones especiales (un campo de estudio que él prácticamente inventó), teoría de números, variables complejas e hidrodinámicas. Su nombre es adjuntado a resultados%
 en matemáticas, desde la fórmula de Euler que relaciona las funciones trigonométricas para la exponencial compleja, hasta las ecuaciones diferenciales de Euler-Cauchy, hasta la fórmula de Euler que relaciona el número de caras, aristas y vértices en un poliedro. Su influencia en la notación se siente hasta el día de hoy por el uso de $\Sigma$ para denotar sumas, $\cos y $$\sin$ para el coseno y seno de un ángulo. Los trabajos recolectados de Euler, publicado entre 1911 y 1975 alcanza los 72 volúmenes!
 
-El método para resolver numéricamente ecuaciones diferenciales que lleva su nombre fue aparentemente presentado en el periodo 1768--1769, en los volúmenes de su trabajo \emph{Institutiones calculi integralis}. La base teórica para la convergencia de este método fue %
+El método para resolver numéricamente ecuaciones diferenciales que lleva su nombre fue aparentemente presentado en el periodo 1768--1769, en los volúmenes de su trabajo \emph{Institutionum calculi integralis}. La base teórica para la convergencia de este método fue %
 por Augustin Louis Cauchy en los mediados de 1800 y por Rudolf Lipschitz en los finales de 1800.
 }
 
@@ -68,7 +72,7 @@ En ambos casos queremos encontrar una función desconocida. Haremos esto aproxim
  para construir soluciones que aproximen continuamente a las ecuaciones diferenciales, esto es algo que es frecuentemente hecho, y mostramos un ejemplo de este, donde usamos esplines para resolver problemas con dos valores de frontera.
  
 En X, %
-introducumos el método de los elementos finitos para PVF, el cual también usa la noción de expandir la aproximación como una combinación lineal de funciones simples. 
+introducimos el método de los elementos finitos para PVF, el cual también usa la noción de expandir la aproximación como una combinación lineal de funciones simples. 
 
 En el %\autoref{}
 revisamos esta idea (y extendemos esto para algunas ecuaciones en derivadas parciales EDP). Pero en este capítulo nos concentraremos en lo básico.
@@ -86,9 +90,6 @@ Considere la ecuación diferencial ordinaria
 	Considere el problema \[ y^{\prime}=-2ty,\quad y\left(0\right)=1. \]
 \end{example}
 Aquí $f\left(t,y\right)$
-
-
-
 %%%%%%%%%%%%%%%%%%%%
 \newpage
 
@@ -211,10 +212,10 @@ es decir, $32e^{4x}\left(x+1\right)-2ae^{4x}\left(4x+3\right)+be^{4x}\left(2x+1\
 \left(32-8a+2b\right)x+\left(32-6a+b\right)&=0
 \end{align*}
 Por lo tanto,
-\begin{align*}
-32-8a+2b&=0\label{eq:1}\\
-32-6a+b&=0\label{eq:2}
-\end{align*}
+\begin{align}
+32-8a+2b	&=0 \label{eq:1}\\
+32-6a+b		&=0 \label{eq:2}\\
+\end{align}
 Multiplicando~\eqref{eq:2} por $2$ y restando~\eqref{eq:1}: \[ -32+4a=0. \] Así, $a=8$ y $b=16$.
 
 \section{Ecuaciones diferenciales}
@@ -275,9 +276,9 @@ Esto resulta
 \[ \frac{y\left(t+h\right)-y\left(t\right)}{h}=f\left(t,y\left(t\right)\right)+\frac{1}{2}hy^{\prime\prime}\left(\theta_{t,h}\right) \]
 donde los subíndices en $\theta$ nos recuerdan que el valor depende tanto de $t$ como de $h$. El método de Euler es entonces obtenido simplemente dejando caer el resto, y reemplazando $t$ por $t_{n}$ y $y\left(t\right)$ con $y_{n}$, y así sucesivamente. Esta es la derivación que usamos en el %Capítulo 2.
 
-Esto plantea una pregunta obvia: ¿Qué sucede si utilizamos otras aproximaciones a la
+Esto plantea una pregunta obvia: ?`Qué sucede si utilizamos otras aproximaciones a la
 derivada? Por ejemplo, si usamos
-\[ y^{\prime}\left(t\right)=\frac{y\left(t\right)-y\left(t-h\right)}{h}-\frac{1}{2}hy^{\rime\prime}\left(\theta\right), \]
+\[ y^{\prime}\left(t\right)=\frac{y\left(t\right)-y\left(t-h\right)}{h}-\frac{1}{2}hy^{\prime\prime}\left(\theta\right), \]
 entonces obtenemos el método de Euler hacia atrás:
 \begin{equation}
 y_{n+1}=y_{n}+hf\left(t_{n+1},y_{n+1}\right),
@@ -293,9 +294,9 @@ y^{\prime}\left(t+2h\right)\approx\frac{1}{2h}\left(3y\left(t+2h\right)-4y\left(
 \end{align*}
 para obtener los dos métodos numéricos
 \begin{align*}
-	y_{n+1=4y_{n}-3y_{n-1}-2hf\left(t_{n-1},y_{n-1}\right),
+	y_{n+1}&=4y_{n}-3y_{n-1}-2hf\left(t_{n-1},y_{n-1}\right),
 	\shortintertext{y}
-	y_{n+1}=\frac{4}{3}y_{n}-\frac{1}{3}y_{n-1}+\frac{2}{3}hf\left(t_{n+1},y_{n+1}\right).
+	y_{n+1}&=\frac{4}{3}y_{n}-\frac{1}{3}y_{n-1}+\frac{2}{3}hf\left(t_{n+1},y_{n+1}\right).
 \end{align*}
 
 Finalmente, observamos que se puede derivar otro conjunto de métodos integrando la ecuación diferencial. Tenemos que la solución exacta satisface
@@ -320,13 +321,13 @@ y_{n+1}=y_{n}+hf\left(t_{n+1/2},y_{n+1/2}\right),
 \end{equation}
 donde $t_{n+1/2}=t_{n}+\frac{1}{2}h$ y $y_{n+1/2}\approx y\left(t_{n}+\frac{1}{2}h\right)$. Esto es similar a %X
 
-¿Qué pasa con estos métodos? ¿Alguno de ellos es bueno?
+?`Qué pasa con estos métodos? ?`Alguno de ellos es bueno?
 
 Varias observaciones se pueden hacer de inmediato. Los métodos (6.21), (6.22) y (6.23)
 todas se basan en aproximaciones derivadas que son $\mathcal{O}\left(h^{2}\right)$, mientras que el método de Euler fue basado en una aproximación derivada que es solo $\mathcal{O}\left(h\right)$ (como lo es el método de Euler hacia atrás) (6.20)). Esto nos sugiere (pero no prueba, por supuesto) que (6.21), (6.22) y (6.23)
 debería ser más preciso que Euler (y Euler hacia atrás). Del mismo modo, los métodos (6.26) y (6.27) se basan en aproximaciones integrales que son más precisas.
 
-Una segunda observación involucra el método del punto medio (6.21) y los dos métodos (6.22) y (6.23). Tenga en cuenta que aquí tenemos fórmulas para $y_{n+1}$ en términos de $y_{n}$ $y_{n-1}$. Estos no son métodos de un \emph{solo paso}, son métodos de \emph{varios pasos}, es decir, dependen de la información de más de un valor aproximado anterior de la función desconocida. ¿Cómo podemos en realidad implementar estos métodos? La ecuación diferencial solo nos da un único valor inicial, $y_{0}$, necesitamos más para comenzar la recursión aquí.
+Una segunda observación involucra el método del punto medio (6.21) y los dos métodos (6.22) y (6.23). Tenga en cuenta que aquí tenemos fórmulas para $y_{n+1}$ en términos de $y_{n}$ $y_{n-1}$. Estos no son métodos de un \emph{solo paso}, son métodos de \emph{varios pasos}, es decir, dependen de la información de más de un valor aproximado anterior de la función desconocida. ?`Cómo podemos en realidad implementar estos métodos? La ecuación diferencial solo nos da un único valor inicial, $y_{0}$, necesitamos más para comenzar la recursión aquí.
 
 
 Una tercera observación se refiere al método de Euler posterior y los métodos (6.26) y (6.23). Note que todas estas fórmulas involucran $f\left(t_{n+1},y_{n+1}\right)$. No podemos resolver explícitamente para el nuevo valor aproximado $y_{n+1}$, por lo que estos métodos (y otros similares) se llaman \emph{implícitos}, mientras que los métodos como Euler, punto medio y (6.22) se llaman \emph{explícitos}, porque define $y_{n+1}$ explícitamente en términos de información de los pasos anteriores.
@@ -340,7 +341,7 @@ Si el error de truncamiento para un esquema numérico para la solución de probl
 
 
 \section{Métodos de un solo paso: Runge--Kutta}
-La familia de métodos Runge-Kutta\footnote{Martín Wilhelm Kutta (1867--1944) estudió en Breslau y Münich, además de un año pasado en Gran Bretaña en Cambridge. La mayor parte de su carrera profesional la pasó en Stuttgart. Sobre la base de la idea original de Runge (primera vez presentado en un artículo de 1894), Kutta publicó su versión de los métodos Runge-Kutta en 1901.} es una de las familias más populares de solucionadores precisos para problemas de valor inicial. La derivación general puede llegar a ser muy complicada; Para evitar el ahogamiento en un mar de detalles y notaciones, resumiremos las ideas básicas utilizando el caso de segundo orden. Recuerde la formulación habitual de predictor-corrector del método trapezoidal:
+La familia de métodos Runge-Kutta\footnote{Martín Wilhelm Kutta (1867--1944) estudió en Breslavia y Múnich, además de un año pasado en Gran Bretaña en Cambridge. La mayor parte de su carrera profesional la pasó en Stuttgart. Sobre la base de la idea original de Runge (primera vez presentado en un artículo de 1894), Kutta publicó su versión de los métodos Runge-Kutta en 1901.} es una de las familias más populares de solucionadores precisos para problemas de valor inicial. La derivación general puede llegar a ser muy complicada; Para evitar el ahogamiento en un mar de detalles y notaciones, resumiremos las ideas básicas utilizando el caso de segundo orden. Recuerde la formulación habitual de predictor-corrector del método trapezoidal:
 \begin{align*}
 \tilde{y}_{n+1}
 &=y_{n}+hf\left(t_{n},y_{n}\right),\\
@@ -354,7 +355,7 @@ y_{n}+\frac{1}{2}h\left[f\left(t_{n+1},y_{n}+hf\left(t_{n},y_{n}\right)\right)+f
 \end{equation}
 Dado que la ecuación diferencial implica que $f$ da valores de $y^{\prime}$, se sigue que podemos ver~\eqref{eq:dedrunge} como definiendo $y_{n+1}$ de $y_{n}$ avanzando a lo largo de una línea recta definida por el simple promedio de las dos pendientes $f\left(t_{n},y_{n}\right)$ y $f\left(t_{n+1},\overline{y}\right)$, donde $\overline{y}=y_{n}+hf\left(t_{n},y_{n}\right)$. Esta plantea la pregunta, por supuesto, de si un promedio diferente de dos pendientes podría o no producir un método más preciso. Para ello, consideramos el método más general.
 \begin{equation}\label{eq:casirunge}
-y_{n+1}=y_{n}+c_{1}hf\left(t_{n},y_{n}\right)+c_{2}hf\left(t_{n}+\alpha h, y_{n}+\betahf\left(t_{n},y_{n}\right)\right),
+y_{n+1}=y_{n}+c_{1}hf\left(t_{n},y_{n}\right)+c_{2}hf\left(t_{n}+\alpha h, y_{n}+\beta hf\left(t_{n},y_{n}\right)\right),
 \end{equation}
 donde $c_{1}$, $c_{2}$, $\alpha$, $\beta$ son parámetros aún no determinados. Queremos elegir estos para que la solución aproximada definida por~\eqref{eq:dedrunge} es lo más precisa posible y queremos hacer
 el error de truncamiento lo más pequeño posible, en términos de potencias de $h$. Por lo tanto, nos fijamos en la expresión
@@ -387,30 +388,30 @@ y\left(t_{n+1}\right)&=y\left(t_{n}\right)+hf\left(t_{n},y\left(t_{n}\right)\rig
 y_{n+1}&=y_{n}+hf\left(t_{n},y_{n}\right),
 \end{align*}
 que restamos para obtener
-\[ y\left(t_{n+1}\right)-y_{n+1}=y\left(t_{n}\right)-y_{n}+hf\left(t_{n},y\left(t_{n}\right)\right)-hf\left(t_{n},y_{n}\right)+\frac{1}{2}h^{2}y^{\prime\pŕime}\left(\theta_{n}\right). \]
+\[ y\left(t_{n+1}\right)-y_{n+1}=y\left(t_{n}\right)-y_{n}+hf\left(t_{n},y\left(t_{n}\right)\right)-hf\left(t_{n},y_{n}\right)+\frac{1}{2}h^{2}y^{\prime\prime}\left(\theta_{n}\right). \]
 Tome valores absolutos y aplique la continuidad de Lipschitz de $ f$ para obtener
 \[ \left|y\left(t_{n+1}\right)-y_{n+1}\right|\leq\left|y\left(t_{n}-y_{n}\right)\right|+Kh\left|y\left(t_{n}\right)-y_{n}\right|+\frac{1}{2}h^{2}\left|y^{\prime\prime}\left(\theta_{n}\right)\right|, \]
 que escribimos como
-\[ e_{n+1}\leq\gammae_{n}+R_{n}, \]
+\[ e_{n+1}\leq\gamma e_{n}+R_{n}, \]
 donde $e_{n}=\left|y\left(t_{n}-y_{n}\right)\right|$, $\gamma=1+Kh$ y $R_{n}=\frac{1}{2}h^{2}\left|y^{\prime\prime}\left(\theta_{n}\right)\right|$, para simplicidad de notación.
 
 Esta es una simple desigualdad recursiva, que podemos ``resolver'' de la siguiente manera. Tenemos
 \begin{align*}
-e_{1}\leq\gamma e_{0}+R_{0},\\
-e_{2}\leq\gamma e_{1}+R_{1}\leq\gamma^{2}e_{0}+\gamma R_{o}+R_{1},\\
-e_{3}\leq\gamma e_{2}+R_{2}\leq\gamma^{3}R_{0}\\
+e_{1}&\leq\gamma e_{0}+R_{0},\\
+e_{2}&\leq\gamma e_{1}+R_{1}\leq\gamma^{2}e_{0}+\gamma R_{o}+R_{1},\\
+e_{3}&\leq\gamma e_{2}+R_{2}\leq\gamma^{3}R_{0}\\
 \end{align*}
-							ei
-							e2
-							e3
-							<
-							<
-							<
-							7 ^ 0 + Ro,
-							7 ^ i + Ri <72εο + 7-Αο + Λι,
-							7 ^ 2 + # 2 <73 eo + 7 2-Ro + 7-Ri + R2,
-							y así. Se puede aplicar un argumento inductivo para obtener el resultado general.
-							n-l
-							es <7 "e 0 + 2 >> 2 Σ ^" ^ - 1 - *)! ·
-							fc = 0
+%							ei
+%							e2
+%							e3
+%							<
+%							<
+%							<
+%							7 ^ 0 + Ro,
+%							7 ^ i + Ri <72εο + 7-Αο + Λι,
+%							7 ^ 2 + # 2 <73 eo + 7 2-Ro + 7-Ri + R2,
+%							y así. Se puede aplicar un argumento inductivo para obtener el resultado general.
+%							n-l
+%							es <7 "e 0 + 2 >> 2 Σ ^" ^ - 1 - *)! ·
+%							fc = 0
 \end{proof}

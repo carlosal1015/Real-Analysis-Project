@@ -1,0 +1,66 @@
+En este capítulo introducimos algunos conceptos básicos concernientes al cálculo en una escala de tiempo. Una \emph{escala de tiempo} es un subconjunto arbitrario no vacío de los números reales. Así, \[ \mathds{R},\quad\mathds{Z},\quad\mathds{N},\quad\mathds{N}_{0}, \] es decir, los números reales, los enteros, los números naturales, y los enteros no negativos son ejemplos de escala de tiempo, como son \[ \left[0,1\right]\cup\left[2,3\right],\quad\left[0,1\right]\cup\mathds{N},\quad\text{el conjunto de Cantor}, \] mientras que \[ \mathds{Q},\quad\mathds{R}\setminus\mathds{Q},\quad\mathds{C},\quad\left(0,1\right), \] los números racionales, los números irracionales, los números complejos y el intervalo abierto entro $0$ y $1$, \emph{no} son escalas de tiempo. A lo largo de esta monografía denotaremos una escala de tiempo por el símbolo $\mathds{T}$. Asumiremos que una escala de tiempo $\mathds{T}$ tiene la topología que hereda de los números reales con la topología estándar.
+
+El cálculo de escala de tiempo fue iniciado por Stefan Hilger, a fin de crear una teoría que pueda unificar el análisis discreto y continuo. En efecto, abajo en la sección 1.2 introduciremos la derivada delta $f^{\Delta}$ para una función $f$ definida sobre $\mathds{T}$, y resulta que
+\begin{enumerate}
+	\item $f^{\Delta}=f^{\prime}$ es la derivada usual si $\mathds{T}=\mathds{R}$ y
+	\item $f^{\Delta}=\Delta f$ es el operador diferencia posterior usual si $\mathds{T}=\mathds{Z}$.
+\end{enumerate}
+En esta sección introducimos las nociones básicas conectadas a las escalas de tiempo. Empezamos definiendo los operadores salto posterior y anterior.
+
+\section{Introducción}
+
+\begin{definition}[Escala de tiempo]
+Sea $\mathds{T}$ una escala de tiempo. Para $t\in\mathds{T}$ definimos el \emph{operador salto posterior} $\sigma\colon\mathds{T}\rightarrow\mathds{T}$ por \[ \sigma(t)\coloneqq\inf\left\{s\in\mathds{T}:s>t\right\}\quad\text{ para cualquier }\quad t\in\mathds{T}, \] mientras que el \emph{operador salto anterior} $\rho\colon\mathds{T}\rightarrow\mathds{T}$ es definido por \[ \rho(t)\coloneqq\sup\left\{s\in\mathds{T}:s<t\right\}\quad\text{ para cualquier }\quad t\in\mathds{T}. \] En esta definición agregamos el $\inf\emptyset=\sup\mathds{T}$, es decir, $\sigma(M)=M$ si $T$ tiene un máximo $M$ y el $\sup\emptyset=\inf\mathds{T}$, es decir, $\rho(m)=m$ si $\mathds{T}$ tiene un mínimo $m$. Si $\sigma(t)>t$, diremos que $t$ es \emph{dispersa a la derecha}, mientras que si $\rho(t)<t$ diremos que $t$ es \emph{dispersa a la izquierda}. Puntos que son dispersos a la derecha y dispersos a la izquierda en el mismo tiempo son llamados \emph{aislados}. También, si $t<\sup\mathds{T}$ y $\sigma(t)=t$, entonces $t$ es llamado \emph{denso a la derecha}, y si $t>\inf\mathds{T}$ y $\rho=t$, entonces $t$ es llamado \emph{denso a la izquierda}. Los puntos que son denso derecha y denso izquierda se llaman \emph{densos}. Si $T$ tiene un máximo disperso a la derecha $M$, entonces definimos $\mathds{T}^{\kappa}=\mathds{T}\setminus\{M\}$, caso contrario $\mathds{T}^{\kappa}=\mathds{T}$. Finalmente, la función \emph{grano} $\mu\colon\mathds{T}\rightarrow\left[0,\infty\right)$ es definida por \[ \mu(t)\coloneqq\sigma(t)-t\quad\text{para cualquier}\quad t\in\mathds{T}. \]
+\end{definition}
+
+\section{Diferenciación}
+
+Ahora consideremos una función $f\colon\mathds{T}\rightarrow\mathds{R}$ y definir el llamado delta derivada (o Hilger) de $f$ en un punto $t\in\mathds{T}^{\kappa}$.
+
+\begin{definition}[Delta diferenciable]
+	Asuma que $f\colon\mathds{T}\rightarrow\mathds{R}$ es una función y sea $t\in\mathds{T}^{\kappa}$. Entonces definimos el número $f^{\Delta}(t)$  (siempre que este exista) con la propiedad que dado cualquier $\varepsilon>0$, existe una vecindad $U$ de $t$ (es decir, $U=\left(t-\delta\right)\cap\mathds{T}$ para algún $\delta>0$) tal que \[ |f(\sigma(t))|-f(s)-f^{\Delta}(t)(\sigma(t)-s)|\leq\varepsilon|\sigma(t)-s|\quad\text{para cualquier}\quad s\in U. \] Llamamos $f^{\Delta}(t)$ la derivada delta (o Hilger) de $f$ en $t$. Es más, diremos que $f$ es \emph{delta} (o Hilger) \emph{diferenciable} (o en breve: \emph{diferenciable}) en $\mathds{T}^{\kappa}$ siempre que $f^{\Delta}(t)$ exista para cualquier $t\in\mathds{T}^{\kappa}$. La función $f^{\Delta}\colon\mathds{T}^{\kappa}\rightarrow\mathds{R}$ es entonces llamada la derivada (delta) de $f$ sobre $\mathds{T}^{\kappa}$.
+
+	Algunas relaciones sencillas y útiles en relación con la derivada delta se dan a continuación.
+\end{definition}
+
+\begin{theorem}{}
+	Asuma que $f\colon\mathds{T}\rightarrow\mathds{R}$ es una función y sea $t\in\mathds{T}^{k}$. Entonces tenemos lo siguiente:
+	\begin{enumerate}
+		\item Si $f$ es diferenciable en $\mathds{T}$, entonces $f$ es continua en $t$.
+		\item Si $f$ es continua en $t$ y $t$ es dispersa a la derecha, entonces $f$ es diferenciable en $t$ con \[ f^{\Delta}(t)=\frac{f(\sigma(t))-f(t)}{\mu(t)}. \]
+		\item Si $t$ es densa a la derecha, entonces $f$ es diferenciable en $t$ sii el límite \[ \lim_{s\to t}\frac{f(t)-f(s)}{t-s} \] existe como un número finito. En este caso \[ f^{\Delta}(t)=\lim_{s\to t}\frac{f(t)-f(s)}{t-s}. \]
+		\item Si $f$ es diferenciable en $t$, entonces \[ f(\sigma(t))=f(t)+\mu(t)f^{\Delta}(t). \]
+	\end{enumerate}
+\end{theorem}
+\begin{exercise}
+	Muestre que si $\mathds{T}=q^{\mathds{N}_{0}}\coloneqq\left\{q^{n}:n\in\mathds{N}_{0}\right\}$, $q>1$, entonces \[ {\left(\log t\right)}^{\Delta}=\frac{\log q}{q-1}\cdot\frac{1}{t}. \]
+\end{exercise}
+\begin{example}{}
+	Nuevamente consideremos los dos casos $\mathds{T}=\mathds{R}$ y $\mathds{T}=\mathds{Z}$.
+	\begin{enumerate}
+		\item Si $\mathds{T}=\mathds{R}$, entonces el Teorema 1.3 resulta que $f\colon\mathds{R}\rightarrow\mathds{R}$ es delta diferenciable en $t\in\mathds{R}$ sii \[ f^{\prime}(t)=\lim_{s\to t}\frac{f(t)-f(s)}{t-s}\quad\text{existe}, \] es decir, sii $f$ es diferenciable (en el sentido clásico) en $t$. En este caso tenemos entonces \[ f^{\Delta}(t)=\lim_{s\to t}\frac{f(t)-f(s)}{t-s}=f^{\prime}(t) \] por el Teorema 1.3 (iii).
+		\item Si $\mathds{T}=\mathds{Z}$, entonces el Teorema 1.3 (ii) resulta que $f\colon\mathds{Z}\rightarrow\mathds{R}$ es delta diferenciable en $t\in\mathds{Z}$ con \[ f^{\Delta}(t)=\frac{f(\sigma(t))-f(t)}{\mu(t)}=\frac{f(t+1)-f(t)}{1}=f(t+1)-f(t)=\Delta f(t), \] donde $\Delta$ es el \emph{operador diferencia posterior} usual definida por la última ecuación de arriba.
+	\end{enumerate}
+\end{example}
+
+A continuación, nos gustaría poder encontrar las derivadas de sumas, productos, y cocientes de funciones diferenciables. Esto es posible de acuerdo con el siguiente teorema:
+\begin{theorem}{}
+	Asuma que $f,g\colon\mathds{T}\rightarrow\mathds{R}$ son diferenciables en $t\in\mathds{T}^{\kappa}$. Entonces
+	\begin{enumerate}
+		\item La suma de $f+g\colon\mathds{T}\rightarrow\mathds{R}$ es diferenciable en $a$ con \[ {\left(f+g\right)}^{\Delta}(t)=f^{\Delta}(t)+g^{\Delta}(t). \]
+		\item Para cualquier constante $\alpha$, $\alpha f\colon\mathds{T}\rightarrow\mathds{R}$ es diferenciable en $t$ con \[ {\left(\alpha f\right)}^{\Delta}\left(t\right)=f^{\Delta}\left(t\right)+g^{\Delta}\left(t\right). \]
+		\item El producto $fg\colon\mathds{T}\rightarrow\mathds{R}$ es diferenciable en $t$ con \[ {\left(fg\right)}^{\Delta}\left(t\right)=f^{\Delta}\left(t\right)g\left(t\right)+f\left(\sigma\left(t\right)\right)g^{\Delta}\left(t\right)=f\left(t\right)g^{\Delta}\left(t\right)+f^{\Delta}\left(t\right)g\left(\sigma\left(t\right)\right). \]
+		\item Si $f\left(t\right)f\left(\sigma\left(t\right)\right)\neq0$, entonces $\frac{1}{f}$ es diferenciable en $t$ con \[ {\left(\frac{1}{f}\right)}^{\Delta}\left(t\right)=-\frac{f^{\Delta}\left(t\right)}{f\left(t\right)f\left(\sigma\left(t\right)\right)}. \]
+		\item Si $g\left(t\right)g\left(\sigma\left(t\right)\right)\neq0$, entonces $\frac{f}{g}$ es diferenciable en $t$ y \[ {\left(\frac{f}{g}\right)}^{\Delta}\left(t\right)=\frac{f^{\Delta}\left(t\right)g\left(t\right)-f\left(t\right)g^{\Delta}\left(t\right)}{g\left(t\right)g\left(\sigma\left(t\right)\right)}. \]
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Asuma que $f$ y $g$ son delta diferenciables en $t\in\mathds{T}^{\kappa}$.
+	\begin{enumerate}
+		\item Sea $\varepsilon>0$. Entonces, existen vecindades $U_{1}$ y $U_{2}$ de $t$ con \[ \left|f\left(\sigma\left(t\right)\right)-f\left(s\right)-f^{\Delta}\left(t\right)\left(\sigma\left(t\right)-s\right)\right|\leq\frac{\varepsilon}{2}\left|\sigma\left(t\right)-s\right|\quad\text{para todo}\quad s\in U_{1} \] y \[ \left|g\left(\sigma\left(t\right)\right)-g\left(s\right)-g^{\Delta}\left(t\right)\left(\sigma\left(t\right)-s\right)\right|\leq\frac{\varepsilon}{2}\left|\sigma\left(t\right)-s\right|\quad\text{para todo}\quad s\in U_{2}. \] Sea $U=U_{1}\cap U_{2}$. Entonces tenemos para todo $s\in U$
+		\begin{align*}
+		=+\\
+		\end{align*}
+		Por lo tanto, $f+g$ es diferenciable en $t$ y ${\left(\right)}^{\Delta}$
+	\end{enumerate}
+\end{proof}

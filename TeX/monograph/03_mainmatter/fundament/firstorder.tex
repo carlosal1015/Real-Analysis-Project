@@ -1,0 +1,301 @@
+\section{Resolución de ecuaciones de recurrencia lineal de primer orden}
+
+Una ecuación de recurrencia lineal de primer orden relaciona entradas consecutivas en una secuencia por una ecuación de la forma:
+\begin{equation}\label{eq:lineara}
+S_{n+1}=a S_{n}+c\quad\text{ para todo }n\text{ en el dominio de } S.
+\end{equation}
+Una solución general es una descripción algebraica de todas estas secuencias de soluciones. Si $S$ es cualquier secuencia en $\mathds{N}$ que satisface la ecuación anterior, entonces denotando $S_{0}$ por $I$, tenemos:
+\begin{align*}
+S_1&=aS_0+c=aI+c \\
+S_2=&aS_1+c=a[aI+c]+c=a^2I+ac+c \\
+S_3=&aS_2+c=a[a^2I+ac+c]+c=a^3I+a^2c+ac+c
+\end{align*}
+Entonces podríamos decir que
+\begin{equation}\label{eq:linearb}
+S_n = a^nI+a^{n-1}c+a^{n-2}c +\cdots+ac+c\quad\text{para }\forall n\in\mathds{N}.
+\end{equation}
+Podemos demostrarlo por \emph{inducción matemática} para cualquier $n\in\mathds{N}$, $S_k=a^nI+a^{n-1}c+a^{n-2}c+\cdots+ac+c$, entonces:
+\begin{align*}
+S_{k+1}&=aS_{k} + c  \\
+S_{k+1}&=a\left[a^kI+a^{k-1}c+a^{k-2}c+\cdots+ac+c\right] + c\\
+S_{k+1}&=a^{k+1}I+a^k c+a^{k-1}c+\cdots+a^2c+ac+c
+\end{align*}
+Por lo tanto,~\eqref{eq:linearb} es correcto. Por lo tanto, si $S$ es cualquier secuencia en $\mathds{N}$ que satisface~\eqref{eq:lineara}, entonces para $\forall n\in \mathds{P}$.
+\begin{itemize}
+	\item Si $a=1$, entonces $S_n=1^nI+1^{n-1}c+1^{n-2}+\cdots+1c+c=I+nc$.
+	\item Y si $a\neq1$, se tiene
+	\begin{align*}
+	S_n&=a^{n}I+a^{n-1}c+a^{n-2}c+\cdots+ac+c\\
+	&=a^{n}I+c\frac{1-a^n}{1-a}=a^nI+\frac{c}{1-a}-a^n\frac{c}{1-a}\\
+	&=a^{n}\left[1-\frac{c}{1-a}\right]+\frac{c}{1-a}\\
+	\end{align*}
+\end{itemize}
+Por lo tanto, la solución general a la ecuación de recurrencia es \[ S_{n+1} = aS_n+c\quad\forall n\in\mathds{N}. \] Se da en dos partes:
+\begin{align*}
+\text{Si }a=1, S_n&= S_0+ nc\forall n\in\mathds{N}\\
+\text{Si }a\neq1&=S_n= a^{n}\left[S_0-\frac{c}{1-a}\right]+\frac{c}{1-a}\forall n\in\mathds{N}.
+\end{align*}
+
+\subsection{Las torres de Hanói}\index{Torres de Hanói}
+
+Cuenta la leyenda que los monjes de un monasterio de la ciudad Hanói medían el tiempo que faltaba para la llegada del ``fin del mundo'' con el siguiente procedimiento:
+\begin{quote}
+	``Se dispone de tres agujas de diamante, en una de las cuales se apilan $64$ discos de oro distintos, ordenados según el tamaño de sus diámetros. En cada segundo mueven un disco de una aguja a otra, y su tarea finalizará (y con ella el mundo) cuando logren transportar todos los discos a la otra aguja. Pero, ¡atención!, a lo largo del proceso no se puede colocar un disco sobre otro de diámetro más pequeño.''.
+\end{quote}
+Como la preparación para el ``fin del mundo'' supondrá sin duda un notable ajetreo, vamos a estimar el tiempo del cuál dispondremos. Por ello, replanteamos el problema en general:
+\begin{quote}
+	``Tenemos $n$ discos y llamamos $a_n$ al mínimo número de movimientos necesario para transportar los $n$ discos desde una aguja a otra.''.
+\end{quote}
+Por ejemplo, si $a_{1}=1$, nos basta con un movimiento para pasar el disco a otra aguja. El cálculo de $a_2$ requiere ya un pequeño argumento: podemos, por ejemplo, pasar el disco pequeño a otra aguja, luego el grande a la tercera, para finalmente pasar el pequeño a esta tercera aguja, como en la figura~\ref{fig:hanoi}
+\begin{figure}[ht!]
+	\sidecaption[t]%[ht!]
+	\centering
+	\includegraphics[width=0.4\paperwidth]{./img/hanoi}
+	\caption{\label{fig:hanoi} Proceso exitoso para dos discos.}
+\end{figure}
+Como en dos movimientos no se puede hacer, concluimos que la descrita es la mejor estrategia posible, y que, por tanto, $a_{2}= 3$. Si partimos de tres discos, podemos pasar los dos menores a una segunda aguja (con el procedimiento anterior, de tres movimientos), luego pasar el mayor a la tercera aguja, para finalmente llevar los dos discos menores sobre ese disco mayor (de nuevo tres movimientos). En total, $7$ movimientos. Aunque ahora no está claro si se puede hacer el trasvase con menos.
+
+El procedimiento esbozado en el caso $n=3$ se puede generalizar: si tenemos $n$ discos, pasamos $n-1$ a una segunda aguja, luego el mayor disco a la aguja final y, por último, pasamos los $n-1$ discos a esa tercera aguja. Es un algoritmo recursivo: el procedimiento para mover $n$ discos se apoya, dos veces, en el (ya conocido) método para mover $n-1$. Se deduce entonces que el número mínimo de movimientos para transportar $n$ discos cumple que
+\begin{equation}\label{eq:hanoi1}
+	a_{n}\leq 2a_{n-1}+1,\quad\forall n\geq2
+\end{equation} porque con $2a_{n-1}+1$ movimientos lo sabemos hacer. Observe que no es una ecuación de recurrencia, sino una desigualdad. Para comprobar que, en realidad, la
+relación se cumple en la igualdad. Deduciríamos así que la estrategia de movimientos es la mejor posible. Esto requiere un argumento extra.
+
+Veamos: Si tenemos $n$ discos, en algún momento tendremos que mover el disco mayor, para lo que necesitaremos haber llevado el resto de los discos a otra aguja, pues debe quedar una aguja libre. Esto requiere, como mínimo $a_{n-1}$ movimientos. Una vez movido el disco grande a una aguja, tendremos que mover los restantes $n-1$ discos sobre él, y esto exige, al menos, otros $a_{n-1}$ movimientos (sea cual sea la estrategia que empleemos). Así que
+\begin{equation}\label{eq:hanoi2}
+	a_{n}\geq 2a_{n-1}+1,\quad\forall n \geq 2.
+\end{equation}
+Reuniendo las condiciones~\eqref{eq:hanoi1} y~\eqref{eq:hanoi2}, ya podemos afirmar que
+\begin{equation}
+	a_{n}= 2a_{n-1}+1,\quad\forall n\geq2.
+\end{equation}
+La condición inicial ya la hemos visto, es $a_{1}=1$. La resolvemos por simple aplicación repetida de la regla de recurrencia:
+\begin{align*}
+	a_{n}&=2a_{n-1}+1=2\left(2a_{n-2}+1\right)+1=2^{2}a_{n-2}+2+1=2^{2}\left(2a_{n-3}+1\right)+2+1\\
+	a_{n}&= 2^{3}a_{n-3}+2^{2}+2+1=2^{3}(2a_{n-4}+1)+2+1=2^{4}a_{n-4}+2^{3}+2^{2}+2+1\\
+	a_{n}&=2^{n-1}a_{1}+2^{n-2}+2^{n-3}+\cdots+2+1=\sum_{k=1}^{n}2^{k-1}=\frac{1-2^{n}}{1-2}=2^{n}-1.
+\end{align*}
+En el caso de $n=64$ deducimos que el fin del mundo llegará dentro de $a_{64}= 2^{64}-1$ segundos, esto es, !`más de medio billón de años! Parece que, después de todo, la profecía de los monjes de Hanói no debería ser una de nuestras mayores preocupaciones.
+
+\begin{example}{Recurrencia del número de movimientos en la Torre de Hanói}
+	La ecuación de recurrencia para el número de movimientos en las Torres de Hanói es una ecuación de recurrencia lineal de primer orden:
+	\begin{equation*}
+	T_{n}=2T_{n-1}+1.
+	\end{equation*}
+	Sea $a=2$ y $c=1$, entonces $\frac{c}{1-a}=\frac{1}{1-2}=-1$, y cualquier secuencia $T$ que satisfaga la $RE$ está dado por la fórmula:
+	\begin{align*}
+	T_{n}&=2^{n}\left[T_{0}-(-1)\right]+(-1)\\
+	T_{n}&=2^{n}\left[T_{0}+1\right]-1
+	\end{align*}
+	Asumiendo que $T$ tiene el dominio $\mathds{Z}$ y que denota $T_0$ la condición inicial, vimos al principio de este capítulo varias soluciones particulares:
+	\begin{align*}
+		\text{Si }T_{0}=0,\text{ entonces }T=\left(0,1,3,7,15,31,\ldots\right)\quad &T_{n}=2^{n}[0+1]-1=2^n-1.\\
+		\text{Si }T_{0}=2,\text{ entonces }T=\left(4,9,19,39,79,159,\ldots\right)\quad &T_{n}=2^{n}[2+1]-1=3\times2^{n}-1.\\
+		\text{Si }T_{0}=4,\text{ entonces }T=\left(2,5,11,23,47,95,\ldots\right)\quad &T_{n}=2^{n}[4+1]-1=5\times2^{n}-1.\\
+		\text{Si }T_{0}=-1,\text{ entonces }T=\left(-1,-1,-1,-1,-1,\ldots\right)\quad &T_{n}=2^{n}\left[-1+1\right]-1=-1.
+	\end{align*}
+\end{example}
+
+\subsection{Los tres piratas naufragados}
+
+Un barco pirata es naufragado en una tormenta en la noche. Tres de los piratas sobreviven y se encuentran en una playa la mañana después de la tormenta. Aceptan cooperar para asegurar su supervivencia. Ellos divisan a un mono en la selva cerca de la playa y pasan todo ese primer día recogiendo una gran pila de cocos y luego se van a dormir exhaustos. Pero ellos son piratas. El primero duerme bien, preocupado por su parte de los cocos; despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones, y se va a dormir profundamente. El segundo pirata duerme bien, preocupado por su parte de los cocos; se despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones, y se va a dormir profundamente.
+
+El tercero también duerme bien, preocupado por su parte de los cocos; despierta, divide la pila en 3 montones iguales, pero encuentra uno sobrante que arroja en el arbusto para el mono, entierra su tercero en la arena, amontona los otros dos montones juntos, y se va a dormir profundamente.
+
+A la mañana siguiente, todos se despiertan y ven una pila algo más pequeña de cocos que se dividen en 3 montones iguales, pero encontrar uno sobrante que tiran en el arbusto para el mono. ?`Cuántos cocos recolectaron el primer día?
+
+Sea $S_{j}$ el tamaño de la pila después del pirata $j^{4h}$ y sea $S_{0}$ el número que recogieron en el primer día. Entonces
+\begin{align*}
+	S_{0}&=3x+1\text{ para algún número entero }x\text{ y }S_1=2x,\\
+	S_{1}&= 3y+1\text{ para algún número entero }y\text{ y }S_2=2y,\\
+	S_{2}&=3z+1\text{ para algún número entero}z\text{ y }S_3=2z,\\
+	\intertext{y}
+	S_{3}&=3w+1\text{ para algún número entero }w.
+\end{align*}
+?`Hay una ecuación de recurrencia aquí?
+\begin{align*}
+	S_{1}&=2x\text{ donde }x=(S_{0}-1)/3\text{, entonces }S_{1}=(2/3)S_0-(2/3)\\
+	S_{2}&=2y\text{ donde }y=(S_{1}-1)/3\text{, entonces }S_{2}=(2/3)S_1-(2/3)\\
+	S_{3}&=2z\text{ donde }z=(S_{2}-1)/3\text{, entonces }S_{3}=(2/3)S_2-(2/3).
+\end{align*}
+La ecuación de recurrencia satisfecha por los primeros $S_{j}^{\prime}s$ es
+\begin{equation}
+	S_{j+1}=(2/3)S_{j}-(2/3).
+\end{equation}
+Si ahora tenemos $S_{4}=(2/3)S_{3}-(2/3)$, entonces $S_{4}=2[S_{3}-1]/3=2w$ para algún número entero $w$. Queremos saber qué valor (o valores) de $S_0$ producirá un número entero par para $S_4$ cuando aplicamos el RE (1). En (1), $a=2/3$ y $c=-2/3$, entonces $c/(1-a) = -2$, y así la solución general de (1) es
+\begin{equation*}
+	S_{n}={\left(\frac{2}{3}\right)}^{n}\left[S_{0}+2\right]-2.
+\end{equation*}
+Por lo tanto, $S_{4}=(2/3)^{4}[S_0+2]-2=(16/81)\left[S_0 + 2\right]-2$.
+
+$S_{4}$ será un número entero
+
+$\Leftrightarrow S_{4}+2$ es (un aún) el número entero
+
+$\Leftrightarrow 81\divides\left[S_0 + 2\right]$
+
+$\Leftrightarrow\left[S_{0}+2\right]= 81k$ para algún número entero $k$
+
+$\Leftrightarrow S_{0}=81k-2$ para algún número entero $k$.
+
+$S_{0}$ debe ser un número entero positivo, pero hay un número infinito de respuestas posibles: \[ 79\vee160\vee241\vee322\vee\cdots \]
+
+Necesitamos más información para determinar $S_0$. Si nos hubieran dicho que el primer día los piratas recolectaron entre $200$ y $300$ cocos, ahora podríamos decir ``el número que recogieron el primer día fue exactamente $241$''.
+
+\subsection{Interés compuesto}\index{Interés compuesto}
+
+Supongamos que se le ofrecen dos planes de ahorro para la jubilación. En el plan $A$, empiezas con $\$1,000$, y cada año (en el aniversario del plan), te pagan un $11\%$ de interés simple, y agregas $\$1,000$. En el plan $B$, empiezas con $\$100$, y cada mes, te pagan una-duodécima parte del $10\%$ de interés simple (anual), y agregas $\$100$. ?`Qué plan será más grande después de $40$ años?. ?`Podemos aplicar una ecuación de recurrencia? Considere el plan A y deje que $S_{n}$ denote el número de dólares en el plan después de (exactamente) $n$ años de operación. Entonces $S_{0}=\$1,000$ y
+\begin{align*}
+	S_{n+1}&= S_{n}+\text{ interés sobre }S_n+\$1000\\
+	S_{n+1}&=S_{n}+11\%\text{ de }S_n+\$1000\\
+	S_{n+1}&=S_{n}(1+0.11)+\$1000.
+\end{align*}
+En esta RE, $a=1.11$, $c=1000$, entonces $\frac{c}{1-a}=\frac{1000}{-0.11}$ y
+\begin{align*}
+	S_{n}&={\left(1.11\right)}^{n}\left[1000-\frac{1000}{-0.11}\right]+\frac{1000}{+0.11}\\
+	S_{n}&={\left(1.11\right)}^{n}\left[\frac{1110}{+0.11}\right]-\frac{1000}{+0.11}
+\end{align*}
+Por lo tanto,
+\begin{align*}
+	S_{40}&={\left(1.11\right)}^{40}(10090.090909\ldots)-(-9090.909090\ldots)\\
+	S_{40}&=(65.000867\ldots)(10090.090909\ldots)-(9090.909090\ldots)\\
+	S_{40}&=655917.842\ldots-(9090.909090\ldots)\\
+	S_{40}&\approx\$646826.
+\end{align*}
+?`Puede ser cierto? Pusiste $\$40000$ y sacaste mayor que $\$600000$ en intereses. Ahora considere el plan $B$ y sea $T_{n}$ denota el número de dólares en el plan después de (exactamente) $n$ meses de funcionamiento. Entonces $T_{0}=\$100$ y
+\begin{align*}
+	T_{n+1}&=T_{n}+\text{ interés sobre }T_{n}+\$100\\
+	T_{n+1}&= T_{n}+\left(\frac{1}{2}\right)\text{ de }10\%\text{ de }T_{n}+\$100\\
+	T_{n+1}&=T_{n}\left[1+\frac{0.1}{12}\right]\$100
+\end{align*}
+En esta RE, $a=12.1/12,c=100$, entonces $\frac{c}{1-a}=\frac{100}{-0.1/12}=-12000$ y
+\begin{equation*}
+	T_{n}={\left(\frac{12.1}{12}\right)}^{n}\left[100+12000\right]-12000.
+\end{equation*}
+De ahí, después $40\times12$ meses,
+\begin{align*}
+	T_{480}&={\left(\frac{12.1}{12}\right)}^{480}(12100)-(12000)\\
+	T_{480}&={\left(1.008333\ldots\right)}^{480}(12100)-(12000)\\
+	T_{480}&=\left(53.700663\ldots\right)(12100)-(12000)\\
+	T_{480}&=649778.0234\ldots-(12000)\\
+	T_{480}&\approx\$637778.
+\end{align*}
+Por lo tanto, el plan $A$ tiene un valor ligeramente mayor después de $40$ años.
+
+\section{Resolución de ecuaciones de recurrencia lineal de segundo orden}
+
+Una \emph{ecuación de recurrencia lineal de segundo orden} relaciona entradas consecutivas en una secuencia por una ecuación de la forma
+\begin{equation}\label{eq:segordena}
+	S_{n+2}=aS_{n+1}+bS_{n}+c\quad\forall n\text{ en el dominio de }S.
+\end{equation}
+Pero vamos a asumir que el dominio de $S$ es $\mathds{N}$. Supongamos también que $ab\neq0$, de lo contrario, $S_{n}=c$ para $\forall n\in\left\{2\ldots\right\}$, y las soluciones de~\eqref{eq:segorden} no son muy interesantes.
+
+\begin{remark}
+	La ecuación de recurrencia de primer orden es solo un caso especial de la ecuación de recurrencia de segundo orden~\eqref{eq:segorden} cuando $b=0$.
+\end{remark}
+
+Cuando $c=0$, se dice que la RE es \textbf{homogénea} (todos los términos lucen igual a una constante multiplicada por una sucesión).
+
+\begin{remark}
+	La ecuación de recurrencia de Fibonacci es homogénea.
+\end{remark}
+
+Vamos a restringir también nuestra atención (por el momento) a una \emph{lineal de segundo orden}, la \emph{ecuación de recurrencia homogénea}
+\begin{equation}\label{eq:segordenb}
+	S_{n+2}=aS_{n+1}+bS_{n}\text{ para }\forall n\in\mathds{N}.
+\end{equation}
+Tal como hicimos para la ecuación de la recurrencia de Fibonacci, supongamos que existe una secuencia geométrica, $S_{n}=r^{n}$, que satisface~\eqref{eq:segordenb}. Si lo hubiera, entonces \[ r^{n+2}=ar^{n+1}+br^{n}\quad\forall n\in\mathds{N}. \] Cuando $n=0$, \[ r^{2}=ar+b. \]
+
+La ``ecuación característica'' de~\eqref{eq:segordenb} es $x^2-ax-b=0$, cuyas ``raíces'' son \[ r=\frac{-\left(-a\right)\pm\sqrt{{\left(-a\right)}^{2}-4\left(\right)\left(-b\right)}}{2\left(1\right)}=\frac{a\pm\sqrt{a^{2}+4b}}{2}. \]
+
+Sean $\Delta=\sqrt{a^2+4b}$, $r_1=\frac{a+\Delta}{2}$, y $r_2=\frac{a-\Delta}{2}$, entonces $r_{1}+r_{2}=a$, $r_{1}\times r_{2}=-b$, y $r_{1}-r_{2}=\Delta$. Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
+
+\begin{example}{}
+Si $S_{n+2}=10S_{n+1}-21S_n$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-10x+21=0$ o $(x-7)(x-3)=0$.
+
+Aquí $a=10$, $b=-21$, $a^2+4b=100-84=16$, $\Delta = 4$, entonces $r_{1}=7$ y $r_{2}=3$.
+\end{example}
+
+\begin{example}{}
+Si $S_{n+2} = 3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, la ecuación característica es $x^{2}-3x+2=0$ o $(x-2)(x-1)=0$.
+
+Aquí, $a=3$, $b=-2$, $a^{2}+4b=9-8=1$, $\Delta = 1$, entonces $r_{1}=2$ y $r_{2}=1$.
+\end{example}
+
+\begin{example}{}
+Si $S_{n+2}=2S_{n+1}-S_{n}$ para $\forall\,n\in\mathds{N}$, la ecuación característica es $x^{2}-2x+1=0$ o $(x-1)(x-1)=0$.
+
+Aquí, $a=2$, $b=-1$, $a^2+4b=4-4=0$, $\Delta = 0$, entonces $r_{1}=1$ y $r_{2}=1$.
+\end{example}
+
+?`Pero qué hay de una fórmula que da la solución general?
+
+\begin{theorem}
+La solución general de la RE homogénea~\eqref{eq:segordenb} es
+	\begin{align*}
+		S_{n}&=A(r_1)^{n}+B(r_2)^{n},&\text{si }r_{1}\neq r_{2}\left(\Delta\neq0\right)&
+		\shortintertext{y}
+		S_{n}&=A(r)^n+Bn(r)^{n},&\text{si }r_{1}=r_{2}=r\left(\Delta=0\right).&
+	\end{align*}
+\end{theorem}
+\begin{proof}
+Supongamos que $T$ es cualquier solución particular de la RE homogénea. Nos ocupamos de los dos casos por separado.
+\begin{enumerate}[label={Caso~\arabic*}]
+	\item Si $\Delta\neq0$, entonces las dos raíces son distintas (pero pueden ser números ``complejos''). Encontraremos valores para $A$ y $B$, luego probaremos que $T_{n}=A(r_1)^{n}+B(r_2)^{n}$ para $\forall\,n\in\mathds{N}$. Mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ inicia correctamente para valores especialmente elegidos de $A$ y $B$, y luego mostraremos que $A(r_1)^{n}+B(r_2)^{n}$ continúa correctamente.
+
+	Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizaría $T_{n}=A(r_1)^{n}+B(r_{2})^n$, entonces $n=0$ y $n=1$. Si
+		\begin{align}
+		T_{0}&={A(r_{1})}^{0}+{B(r_{2})}^{0}=A+B\label{eq:sol1}
+		\shortintertext{y}
+		T_{1}&={A(r_{1})}^{1}+{B(r_{2})}^{1}=A(r_{1})+B(r_{2}),\label{eq:sol2}
+		\end{align}
+	entonces $(r_{1})T_{0}=A(r_{1})+B(r_{1})$. multiplicamos~\eqref{eq:so} por $r_{1}$ y $T_{1}= A(r_{1})+B(r_{2})$// (2) otra vez restamos, obtenemos $(r_{1})T_{0}-T_{1}=B(r_{1}-r_{2})=B\Delta$//$r_{1}-r_{2}=\Delta\neq 0$ entonces $B=\frac{(r_{1})T_{0}-T_{1}}{\Delta}$. Tenemos, $A=T_{0}-B=\frac{\Delta T_{0}}{\Delta} -\frac{(r_{1})T_{0}-T_{1}}{\Delta}=\frac{-(r_{2})T_{0}+T_{1}}{\Delta}$. No importa cómo comience la sucesión $T$ (no importa cuáles sean los valores para $T_{0}$ y $T_{1}$). Hay números únicos $A$ y $B$ tales que $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$ para $n=0$ y $1$. Continuando la prueba por la inducción matemática que $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$ para $\forall n\in\mathds{N}$.
+
+	\begin{enumerate}[label={Paso~\arabic*}]
+		\item Si $n=0$ o $n=1$, entonces $T_{n} = A(r_{1})^{n}+B(r_{2})^{n}$, por nuestra ``opción'' $A$ y $B$.
+		\item Asuma que $\exists k\geq1$ tal que si $0\leq n\leq k$, entonces $T_{n}={A(r_{1})}^{n}+{B(r_{2})}^{n}$.
+		\item Si $n=k+1$, entonces $n\geq2$ entonces, porque $T$ satisface la RE homogénea (3).
+	\end{enumerate}
+	\begin{align*}
+		T_{k+1}&=aT_{k}+bT_{k-1}\\
+		T_{k+1}&=a\left[A(r_1)^k + B(r_2)^k\right]+b\left[A(r_1)^{k-1} + B(r_2)^{k-1}\right] \text{por el paso }2\\
+		T_{k+1}&=\left[aA(r_1)^k+bA(r_1)^{k-1}\right]+[aB(r_2)^k+bB(r_2)^{k-1}]\\
+		T_{k+1}&=A(r_1)^{k-1}[a(r_1)+b]+B(r_2)^{k-1}[a(r_2)+n]\\
+		T_{k+1}&= A(r_1)^{k+1}+B(r_2)^{k+1}
+	\end{align*}
+	Así, si $r_{1}\neq r_{2}$, $T_{n}=A(r_1)^n+B(r_2)^n$ para $\forall\,n\in\mathds{N}$.
+	% TODO: Checkear bien escrito.
+	\begin{example}{}
+	Si $S_{n+2}=10S_{n+1}-21S_{n}$ para $\forall\, n\in\mathds{N}$, entonces $r_{1}=7$ y $r_{2}=3$. Tenemos, la solución general de la RE es $S_{n}=A7^n+B3^{n}$.
+	\end{example}
+
+	\begin{example}{}
+	Si $S_{n+2}=3S_{n+1}-2S_{n}$ para $\forall n\in\mathds{N}$, entonces $r_{1}=2$ y $r_{2}=1$. Tenemos, la solución general de la RE es $S_{n}= A2^{n}+B1^{n}=A2^{n}+B$.
+	\end{example}
+\item Si $\Delta=0$, entonces las raíces son (ambos) iguales a $r$ donde $r=a/2$. También, $b=-a^{2}/4=-r^{2}$. Si $a$ eran $0$, entonces $b=0$, pero asumimos que no tanto $a$ y $b$ son $0$. De ahí, $r\neq0$. Vamos a resolver las ecuaciones (para $A$ y $B$) que garantizarían $T_{n}=A{\left(r\right)}^{n}+nB{\left(r\right)}^{n}$ cuando $n=0$ y $n=1$. Si
+\begin{align}
+	T_{0}&={A(r)}^{0}+0{B(r)}^{0}=A%(1)
+	\intertext{y}
+	T_{1}&={A(r)}^{1}+1{B(r)}^{1}=Ar+Br%(2)
+\end{align}
+entonces $A=T_{0}$ y $B=(T_{1}-Ar)/r$. No importa cómo comience la sucesión $T$ (no importa cuáles sean los valores para $T_{0}$ y $T_{1}$). Hay números únicos $A$ y $B$ tales que $T_n = A(r)^n + B(r)^n$ para $n = 0$ y $1$. Continuando la prueba por la inducción matemática que $T_{n}={A(r)}^{n}+{B(r)}^{n}$ para $\forall n\in\mathds{N}$.
+
+\begin{enumerate}[label={Paso~\arabic*}]
+	\item Si $n=0$ o $n=1$, entonces $T_{n}={A(r)}^{n}+{B(r)}^{n}$, por nuestra ``opción'' $A$ y $B$.
+	\item Asuma que $\exists k\geq1$ tal que si $0\leq n\leq k$, entonces $T_{n}={A(r)}^{n}+{B(r)}^{n}$.
+	\item Si $n=k+1$, entonces $n\geq2$ entonces, porque $T$ satisface la RE homogénea (3).
+\end{enumerate}
+
+\begin{align*}
+	T_{k+1}&= aT_{k}+bT_{k-1}\\
+	T_{k+1}&= a[A(r)^k+kB(r)^k]+b[A(r)^{k-1}+(k-1)B(r)^{k-1}] // \text{ por el paso 2}\\
+	T_{k+1}&=[aAr^k+bAr^{k-1}]+[akBr^k+b(k-1)Br^{k-1}]\\
+	T_{k+1}&=Ar^{k-1}[ar+b]+Br^{k-1}[akr + b(k-1)]\\
+	T_{k+1}&=Ar^{k-1}[r^2]+Br^{k-1}[k(r^{2}) +r^{2}]//r^2 = ar + b\\
+	T_{k+1}&=Ar^{k+1}+Br^{k-1}[k(r^2) + r^2]//-b = r^{2}\\
+	T_{k+1}&=Ar^{k+1}+(k+1)Br^{k+1}
+\end{align*}
+
+Así, si $r_{1}=r_{2}=r$, $T_{n}=A(r)^{n}+nB(r)^{n}$ para $\forall n\in\mathds{N}$.
+\end{enumerate}
+\end{proof}

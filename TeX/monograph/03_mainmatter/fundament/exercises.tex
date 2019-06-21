@@ -1,0 +1,243 @@
+\subsection{Problemas}
+
+\begin{exercise}
+Supongamos que $E_n$ es definido recursivamente en $\mathds{Z}^+$ por \[ E_0=0,E_1=2,\text{ y },E_{n+1}=2n\{E_n+E_{n-1}\} \text{ para }n\geq 1. \] Determine el valor de $E_{10}$.
+\end{exercise}
+
+\begin{solution}
+	Suponga que $E_{n}$ es definida recursivamente sobre $P$ por \[ E_{0}=0,\quad E_{1}=2,\quad\text{y}\quad E_{n+1}=2n \LEFTRIGHT\{\}{E_{n}+E_{n-1}}\quad\forall n\geq1. \]
+	El valor de $E_{10}$ se determina así:
+	\begin{align*}
+	E_{2}&=E_{1+1}=2(1)\LEFTRIGHT\{\}{E_{1}+E_{0}}=2\LEFTRIGHT\{\}{2+0}=4.\\
+	E_{3}&=E_{2+1}=2(2)\LEFTRIGHT\{\}{E_{2}+E_{1}}=4\LEFTRIGHT\{\}{4+2}=24.\\
+	E_{4}&=E_{3+1}=2(3)\LEFTRIGHT\{\}{E_{3}+E_{2}}=6\LEFTRIGHT\{\}{24+4}=168.\\
+	E_{5}&=E_{4+1}=2(4)\LEFTRIGHT\{\}{E_{4}+E_{3}}=8\LEFTRIGHT\{\}{168+24}=1536.\\
+	E_{6}&=E_{5+1}=2(5)\LEFTRIGHT\{\}{E_{5}+E_{4}}=10\LEFTRIGHT\{\}{1536+168}=17040.\\
+	E_{7}&=E_{6+1}=2(6)\LEFTRIGHT\{\}{E_{6}+E_{5}}=12\LEFTRIGHT\{\}{17040+1536}=222912.\\
+	E_{8}&=E_{7+1}=2(7)\LEFTRIGHT\{\}{E_{7}+E_{6}}=14\LEFTRIGHT\{\}{222912+17040}=3359328.\\
+	E_{9}&=E_{8+1}=2(8)\LEFTRIGHT\{\}{E_{8}+E_{7}}=16\LEFTRIGHT\{\}{3359328+222912}=57315840.\\
+	E_{10}&=E_{9+1}=2(9)\LEFTRIGHT\{\}{E_{9}+E_{8}}=18\LEFTRIGHT\{\}{57315840+3359328}=1092153024.
+	\end{align*}
+\end{solution}
+
+%\begin{exercise}
+%Supongamos que la función $f$ es definida recursivamente en $\mathds{Z}^+$ por \[ f(n)\coloneq \ccases{1 & \text{si }n=2^k\text{ para algún }k \in \mathds{N}.\\ f(n/2) & \text{si }n\text{ es par pero no una potencia de 2} \\ f(3n+1) & \text{si }n\text{ es impar.}}. \] Entonces
+%	\begin{alignat*}{2}
+%f(3)	=&f(10)	&&\qquad\text{ porque }3\text{ es impar}\\
+%			=&f(5)	&&\qquad\text{ porque } 10=2\times 5\\
+%			=&f(16)	&&\qquad\text{ porque }5\text{ es impar}\\
+%			=&1&&\qquad\text{ porque } 16=2^4.
+%\end{alignat*}
+%\begin{enumerate}[(a)]
+%	\item Mostrar que $f(11)$ también es igual a $1$.
+%	\item Mostrar que $f(9)$, $f(14)$, y $f(25)$ son todos iguales a $f(11)$ y, por lo tanto, todos iguales a $1$.
+%	\item Escriba un programa para hallar $f(27)$.
+%\end{enumerate}
+%?`Crees que esta función siempre dará el valor de $1$, sin importar con qué $n$ comiences? Busque la ``Conjetura de Collatz'' o el ``Problema del granizo''.
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+%\begin{exercise}
+%Podríamos definir una \emph{desajuste} como una $n$--permutación $S$ de $\left\{1,\ldots,n\right\}$ donde cada $S_{j}\neq j$ y luego definir $\bm{D_n}$ como el número de desajustes de $\left\{1,\ldots,n\right\}$. Entonces $D_{n}$ es la única sucesión que satisface la ecuación de recurrencia
+%\begin{equation}\label{ex:1.3}
+%D_{n}=\left(n-1\right)\left\{D_{n-1}+D_{n-2}\right\}\text{ para }n=3,4,5,\ldots
+%\end{equation}
+%con las condiciones iniciales $D_{1}=0$ y $D_{2}=1$.
+%\begin{enumerate}[(a)]
+%	\item Mostrar que $D_{2}=(2)\left(D_{1}\right)+(-1)^2$.
+%	\item Use la inducción matemática para probar que para todo entero $n\geq2$, \[ D_{n}=(n)(D_{n-1})+{(-1)}^n. \]
+%\end{enumerate}
+%\end{exercise}
+%
+%\begin{solution}
+%
+%\end{solution}
+
+%\begin{exercise}
+%Use la inducción matemática y la ecuación \eqref{ex:1.3} para probar que \[ \forall n\in\mathds{Z}^{+}\colon\bm{D_n}=n!\sum_{j=0}^n\frac{(-1)^j}{j!}. \]
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+%\begin{exercise}
+%Supongamos que (o busque estos dos resultados de cálculo)
+%\begin{enumerate}[A.]
+%	\item $\forall x\in\mathds{R}\colon e^x=\sum_{j=0}^\infty\frac{x^j}{j!}$, entonces $e^{-1}=\sum_{j=0}^\infty\frac{(-1)^j}{j!},$
+%	\item $\forall n\in\mathds{Z}^{+}\colon e^{-1}=\sum_{j=0}^n\frac{(-1)^j}{j!}+E_n$ donde $|E_n|<\left|\frac{(-1)^{n+1}}{(n+1)!}\right|=\frac{1}{(n+1)!}$.
+%\end{enumerate}
+%
+%\begin{enumerate}[(a)]
+%	\item Use el resultado de la pregunta anterior para mostrar \[ \frac{n!}{e}=D_{n}+n!E_{n}\quad\text{donde}\quad|n!E_n|<\frac{n!}{(n+1)!}=\frac{1}{n+1}\leq\frac{1}{2}. \]
+%	\item Explique por qué $D_{n}-\frac{1}{2}\leq\frac{n!}{e}\leq D_{n}+\frac{1}{2}$.
+%	\item ?`Es $\left\lceil\frac{n!}{e}\right\rceil=D_{n}$?
+%\end{enumerate}
+%
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+%\begin{exercise}
+%La \emph{función de Ackermann}\index{Ackermann!función} a veces es definida recursivamente en una forma ligeramente diferente
+%\begin{enumerate}[label={Regla~\arabic*}]
+%	\item $B\left(0,n\right)=n+1$ para $n=0,1,2,\ldots$,
+%	\item $B\left(m,0\right)=B\left(m-1,1\right)$ para $m=1,2,3,\ldots$, y
+%	\item $B\left(m,n\right)=B\left(m-1,B\left(m,n-1\right)\right)$ cuando ambos $m$ y $n$ son positivos.
+%\end{enumerate}
+%
+%	\begin{enumerate}
+%	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(1,n\right)=n+2$.
+%	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(2,n\right)=3+2n$.
+%	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(3,n\right)=2^{3+n}-3$.
+%	\item Use inducción matemática para probar $\forall n\in\mathds{N}\colon B\left(4,n\right)=\left(2\uparrow\left[3+n\right]\right)-3$.
+%	\item De una expresión usando el símbolo $\uparrow$ para los valores de $B\left(5,1\right)$ y $B\left(5,2\right)$.
+%\end{enumerate}
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+\begin{exercise}
+Supongamos que $A$ es un conjunto de $2n$ objetos. Sea $P_{n}$ el número de diferentes maneras que los objetos en $A$ pueden ser ``emparejados'' (el número de diferentes particiones de $A$ en $2$--subconjuntos). Supongamos que $n\in\mathds{Z}^{+}$. Si $n=2$, entonces $A$ tiene cuatro elementos, $A=\left\{x_1,x_2,x_3,x_4\right\}$. Los tres posibles emparejamientos son:
+\begin{enumerate}
+	\item $x_{1}$ con $x_{2}$ y $x_{3}$ con $x_{4}$,
+	\item $x_{2}$ con $x_{3}$ y $x_{2}$ con $x_{4}$,
+	\item $x_{3}$ con $x_{4}$ y $x_{2}$ con $x_{3}$.
+\end{enumerate}
+Así $P_{2}=3$.
+
+\begin{enumerate}[(a)]% TODO: Crear el programa en Python
+	\item Mostrar que si $n=3$ y $A=\left\{x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right\}$, existen $15$ posibles emparejamientos enumerándolos a todos:
+	\begin{enumerate}
+		\item $x_{1}$ con $x_{2}$ y $x_{3}$ con $x_{4}$ y $x_{5}$ con $x_{6}$.
+		\item \ldots
+	\end{enumerate}
+	Así $\bm{P_3}=15$.
+	\item Mostrar que $P_{n}$ debe satisfacer la RE $P_{n}=(2n-1)P_{n-1}$ para $\forall n\geq2$.
+	\item Use esta ecuación de recurrencia y la inducción matemática para probar \[ P_{n}=\frac{(2n)!}{2^n\times n!}\quad\forall n\geq 1. \]
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}\leavevmode
+	\begin{enumerate}[(a)]
+		\item Los $15$ posibles emparejamientos son:
+		\begin{enumerate}[1.]
+			\item $x_{1}$ con $x_{2}$, $x_{3}$ con $x_{4}$ y $x_{5}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{2}$, $x_{3}$ con $x_{5}$ y $x_{4}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{2}$, $x_{3}$ con $x_{6}$ y $x_{4}$ con $x_{5}$.
+			\item $x_{1}$ con $x_{3}$, $x_{2}$ con $x_{4}$ y $x_{5}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{3}$, $x_{2}$ con $x_{5}$ y $x_{4}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{2}$, $x_{2}$ con $x_{6}$ y $x_{4}$ con $x_{5}$.
+			\item $x_{1}$ con $x_{4}$, $x_{2}$ con $x_{3}$ y $x_{5}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{4}$, $x_{2}$ con $x_{5}$ y $x_{3}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{4}$, $x_{2}$ con $x_{6}$ y $x_{3}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{5}$, $x_{2}$ con $x_{3}$ y $x_{4}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{5}$, $x_{2}$ con $x_{4}$ y $x_{3}$ con $x_{6}$.
+			\item $x_{1}$ con $x_{5}$, $x_{2}$ con $x_{6}$ y $x_{3}$ con $x_{4}$.
+			\item $x_{1}$ con $x_{6}$, $x_{2}$ con $x_{3}$ y $x_{4}$ con $x_{5}$.
+			\item $x_{1}$ con $x_{5}$, $x_{2}$ con $x_{4}$ y $x_{3}$ con $x_{5}$.
+			\item $x_{1}$ con $x_{6}$, $x_{2}$ con $x_{5}$ y $x_{3}$ con $x_{4}$.
+		\end{enumerate}
+		Así, $P_{3}=15$ posibles emparejamientos.
+		\item Supongamos que $n\geq2$. Un elemento $x_{1}$ puede ser emparejado con cualquier de los $\left(2n-1\right)$ otros elementos en $A$. Esto resulta $2\left(n-2\right)=2\left(n-1\right)$ elementos aún por emparejar, y que pueden emparejarse en $P_{n-1}$ maneras. Así, el número de emparejamientos de $2n$ elementos es $P_{n}=\left(2n-1\right)\times P_{n-1}$.
+		\item $P_{n}=(1)(3)\cdots\left(2n-1\right)$, esto es, el producto de los primeros $n$ naturales. Por inducción matemática:
+		\begin{enumerate}[label={Paso~\arabic*}]
+			\item $P_{1}=1$ que es el primer natural impar.
+			\item Asuma que $\exists k\geq1$ donde $P_{k}=(1)(3)\cdots\left(2k-1\right)$.
+			\item Si $n=k+1$, entonces para $n\geq2$ y
+			\begin{align*}
+			P_{k+1}&=\left(2\left[k+1\right]-1\right)P_{j}\quad\text{usando la RE}&\\
+			&=\left(2k+1\right)\times(1)(3)\cdots\left(2k-1\right)\quad\text{del paso 2}&\\
+			&=(1)(3)(5)\cdots\left(2k-1\right)\times\left(2\left[k+1\right]-1\right).
+			\end{align*}
+		\end{enumerate}
+	\end{enumerate}
+\end{solution}
+
+
+\begin{exercise}
+	Mostrar que $y_{n}=\frac{n(n-1)}{2}+c$ para $n>0$ es una solución de la relación de recurrencia \[ y_{n+1}=y_{n}+n. \]
+\end{exercise}
+
+\begin{solution}
+	$z_{n+1}=\frac{\left[n+1\right]\left(\left[n+1\right]-1\right)}{2}+c=\frac{\left[n+1\right]\left(n\right)}{2}+c=\frac{n\left(n-1\right)+2n}{2}+c=z_{n}+n$.
+\end{solution}
+
+\begin{exercise}
+Suponga que una sucesión es definida por: \[ f(0)=5\text{ y }f(n+1)=2\times f(n)+1\text{ para } n=0,1,2,\ldots. \]
+\begin{enumerate}[(a)]
+	\item Encuentre el valor de $f(10)$.
+	\item Probar que la sucesión ni es una sucesión aritmética ni es una sucesión geométrica.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+	\begin{enumerate}
+		\item
+		\begin{align*}
+		f(1)&=11, f(2)&=23, f(3)&=47, f(4)&=95, f(5)&=191,\\
+		f(6)&=383, f(7)&=767, f(8)&=1535, f(9)&=3071, f(10)&=6143.
+		\end{align*}
+		\item $f(1)-f(0)=6$, pero $f(2)-f(1)=12$, así que $f$ no es un sucesión aritmética. Por otro lado, $\frac{f(1)}{f(0)}=\frac{11}{5}=\frac{121}{55}$. pero $\frac{f(2)}{f(1)}=\frac{23}{11}=\frac{115}{55}$, por lo tanto, $f$ no es una sucesión geométrica.
+	\end{enumerate}
+\end{solution}
+
+%\begin{exercise}
+%\begin{enumerate}[(a)]
+%	\item Encuentre la solución general de la ecuación de recurrencia \[ S_{n}=3S_{n-1}-10\text{ para }n=1,2,\ldots \]\label{ex:1.10a}
+%	\item Determine la solución particular donde $S_{0}=15$.
+%	\item Use la fórmula en~\eqref{ex:1.10a} para evaluar $S_6$ y verifique su respuesta usando la ecuación de recurrencia en sí.
+%\end{enumerate}
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+%\begin{exercise}
+%Suponga que $s_{0}=60$ y $s_{n+1}=(1/5)s_n-8$ para $n=0,1,\ldots$.
+%\begin{enumerate}[(a)]
+%	\item Encuentre $s_{1}$, $s_{2}$, y $s_{3}$.
+%	\item Resuelva la relación de recurrencia para dar una fórmula para $s_{n}$.
+%	\item ?`Es esa sucesión convergente? Si es así, ?`cuál es el límite?
+%	\item ?`La serie correspondiente converge? Si es así, ?`cuál es el límite?
+%\end{enumerate}
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+%\begin{exercise}
+%Suponga que $s_{0}=75$ y $s_{n+1}=(1/3)s_{n}-6$ para $n=0,1,\ldots$.
+%\begin{enumerate}[(a)]
+%	\item Encuentre $s_{1}$, $s_{2}$, y $s_{3}$.
+%	\item Resuelva la relación de recurrencia para dar una fórmula para $s_{n}$.
+%	\item ?`Es esa sucesión convergente? Si es así, ?`cuál es el límite?
+%	\item ?`La serie correspondiente converge? Si es así, ?`cuál es límite?
+%\end{enumerate}
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}
+
+%\begin{exercise}
+%\begin{enumerate}[(a)]
+%	\item Mostrar que $f_{n}=A\times3^{n}+B\times2^{n}$ satisface la ecuación de recurrencia \[ f_{n}=5f_{n-1}-6f_{n-2}\text{ para }n\geq 2. \]
+%	\item Encuentre la solución particular (valores para $A$ y $B$) para que \[ f_{0}=4\text{ y }f_{1}=17. \]
+%\end{enumerate}
+%
+%\end{exercise}
+%
+%\begin{solution}
+%	
+%\end{solution}

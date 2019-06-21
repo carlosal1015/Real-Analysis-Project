@@ -110,7 +110,7 @@
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
 \renewcommand{\chapterautorefname}{capítulo}
-\date{20 de junio del 2019}
+\date{21 de junio del 2019}
 
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
@@ -141,7 +141,6 @@
 \include{./02_frontmatter/foreword}
 \include{./02_frontmatter/preface}
 \include{./02_frontmatter/scope}
-\include{./02_frontmatter/acknowledgement}
 
 \tableofcontents
 
@@ -151,32 +150,37 @@
 
 \mainmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Primera parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./03_mainmatter/fundament/fundaments}
 \begingroup
 \let\clearpage\relax
-\begin{partbacktext}
-	\part{Fundamentos}
-	En la primera parte de la monografía presentaremos los conceptos fundamentales para modelar y simular los problemas de las ecuaciones en diferencias, a veces, mal llamado \emph{relaciones de recurrencias}. En el capítulo $1$ presentaremos los modelos fundamentales y las ecuaciones en diferencias. Discutiremos la relación de \emph{Ackermann}
-\end{partbacktext}
-\chapsubtitle{Subtítulo}
-\chapauthor{Tu nombre}
-\include{./03_mainmatter/fundaments/introduction}
-%\include{./03_mainmatter/first_part}
-\include{./03_mainmatter/micha2}
-\include{./03_mainmatter/main}
-\include{./03_mainmatter/exercises}
+\include{./03_mainmatter/fundament/introduction}
+\include{./03_mainmatter/fundament/recurrence}
+\include{./03_mainmatter/fundament/difference}
+\include{./03_mainmatter/fundament/constant}
+\include{./03_mainmatter/fundament/exercise}
+\include{./03_mainmatter/fundament/solution}
+\include{./03_mainmatter/fundament/firstorder}
+\include{./03_mainmatter/fundament/first_part}
 \endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Segunda parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{./03_mainmatter/numerical}
+\include{./03_mainmatter/numeric/numerical}
+\begingroup
+\let\clearpage\relax
+\include{./03_mainmatter/numeric/euler}
+\endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tercera parte %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{./03_mainmatter/applications}
-\include{./03_mainmatter/timescales}
-%\include{chapter}
+\include{./03_mainmatter/application/applications}
+\begingroup
+\let\clearpage\relax
+\include{./03_mainmatter/application/logistic}
+\include{./03_mainmatter/application/timescales}
+\include{./03_mainmatter/application/exercises}
+\endgroup
 \include{./03_mainmatter/references}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
 \include{./04_backmatter/appendix}
 %\include{./04_backmatter/glossary}
 %\include{./04_backmatter/solutions}
 \printindex
-
 \end{document}

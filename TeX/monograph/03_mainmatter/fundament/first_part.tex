@@ -1,0 +1,179 @@
+\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
+use \chaptermark{Una prueba}
+\abstract*{Otra prueba}
+% Always give a unique label
+% and use \ref{<label>} for cross-references
+% and \cite{<label>} for bibliographic references
+% use \sectionmark{}
+%% to alter or adjust the section heading in the running head
+\begin{figure}[!ht]
+	\sidecaption[t]
+	% Use the relevant command for your figure-insertion program
+	\includegraphics[width=0.343\textwidth]{./img/example}
+	% If not, use
+	%\picplace{5cm}{2cm} % Give the correct figure height and width in cm
+	\caption{Da}
+	\label{fig:1}       % Give a unique label
+\end{figure}
+
+\eject
+
+%\begin{eqnarray}
+%\left|\nabla U_{\alpha}^{\mu}(y)\right| &\le&\frac1{d-\alpha}\int
+%\left|\nabla\frac1{|\xi-y|^{d-\alpha}}\right|\,d\mu(\xi) =
+%\int \frac1{|\xi-y|^{d-\alpha+1}} \,d\mu(\xi)\qquad  \\
+%&=&(d-\alpha+1) \int\limits_{d(y)}^\infty
+%\frac{\mu(B(y,r))}{r^{d-\alpha+2}}\,dr \le (d-\alpha+1)
+%\int\limits_{d(y)}^\infty \frac{r^{d-\alpha}}{r^{d-\alpha+2}}\,dr
+%\label{eq:01}
+%\end{eqnarray}
+
+\enlargethispage{24pt}
+
+\begin{quotation}
+Please do not use quotation marks when quoting texts! Simply use the \verb|quotation| environment -- it will automatically be rendered in the preferred layout.
+\end{quotation}
+
+Fig.~\ref{fig:1}\footnote{X}
+\paragraph{Paragraph Heading}
+For typesetting numbered lists we recommend to use the \verb|enumerate| environment -- it will automatically render Springer's preferred layout.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./img/example}
+	\caption{Costo de producción proporcional a la raíz cuadrada de la tasa de producción.}
+\end{figure}
+\begin{figure}[t]
+\sidecaption[t]
+% Use the relevant command for your figure-insertion program
+% to insert the figure file.
+% For example, with the option graphics use
+\includegraphics[scale=.65]{./img/example}
+% If not, use
+%\picplace{5cm}{2cm} % Give the correct figure height and width in cm
+\caption{Please write your figure caption here}
+\label{fig:2}       % Give a unique label
+\end{figure}
+
+\runinhead{Run-in Heading Boldface Version} 
+
+\subruninhead{Run-in Heading Boldface and Italic Version}
+
+\subsubruninhead{Run-in Heading Displayed Version}
+
+\begin{table}[!t]
+\caption{Please write your table caption here}
+\label{tab:1}       % Give a unique label
+%
+% For LaTeX tables use
+%
+\begin{tabular}{p{2cm}p{2.4cm}p{2cm}p{4.9cm}}
+\hline\noalign{\smallskip}
+Classes & Subclass & Length & Action Mechanism  \\
+\noalign{\smallskip}\svhline\noalign{\smallskip}
+Translation & mRNA  & 24--26 & Histone and DNA Modification\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+\end{tabular}
+$^a$ Table foot note (with superscript)
+\end{table}
+% Always give a unique label
+% and use \ref{<label>} for cross-references
+% and \cite{<label>} for bibliographic references
+% use \sectionmark{}
+% to alter or adjust the section heading in the running head
+If you want to list definitions or the like we recommend to use the Springer-enhanced \verb|description| environment -- it will automatically render Springer's preferred layout.
+
+\begin{svgraybox}
+If you want to emphasize complete paragraphs of texts we recommend to use the newly defined Springer class option \verb|graybox| and the newly defined environment \verb|svgraybox|. This will produce a 15 percent screened box 'behind' your text.
+
+If you want to emphasize complete paragraphs of texts we recommend to use the newly defined Springer class option and environment \verb|svgraybox|. This will produce a 15 percent screened box 'behind' your text.
+\end{svgraybox}
+
+\paragraph{Paragraph Heading}
+
+\begin{trailer}{Cabeza de remolque}
+If you want to emphasize complete paragraphs of texts in an \verb|Trailer Head| we recommend to
+use  \begin{verbatim}\begin{trailer}{Trailer Head}
+...
+\end{trailer}\end{verbatim}
+\end{trailer}
+%
+\begin{question}{Preguntas}
+If you want to emphasize complete paragraphs of texts in an \verb|Questions| we recommend to
+use  \begin{verbatim}\begin{question}{Questions}
+...
+\end{question}\end{verbatim}
+\end{question}
+
+\begin{important}{Importante}
+If you want to emphasize complete paragraphs of texts in an \verb|Important| we recommend to
+use  \begin{verbatim}\begin{important}{Important}
+...
+\end{important}\end{verbatim}
+\end{important}
+%
+\clearpage
+\begin{warning}{Atención}
+If you want to emphasize complete paragraphs of texts in an \verb|Attention| we recommend to
+use  \begin{verbatim}\begin{warning}{Attention}
+...
+\end{warning}\end{verbatim}
+\end{warning}
+
+\begin{programcode}{Código de programa}
+If you want to emphasize complete paragraphs of texts in an \verb|Program Code| we recommend to
+use
+
+\verb|\begin{programcode}{Program Code}|
+
+\verb|\begin{verbatim}...\end{verbatim}|
+
+\verb|\end{programcode}|
+
+\end{programcode}
+%
+\begin{tips}{Consejos}
+If you want to emphasize complete paragraphs of texts in an \verb|Tips| we recommend to
+use  \begin{verbatim}\begin{tips}{Tips}
+...
+\end{tips}\end{verbatim}
+\end{tips}
+%
+%
+\begin{overview}{Visión general}
+If you want to emphasize complete paragraphs of texts in an \verb|Overview| we recommend to
+use  \begin{verbatim}\begin{overview}{Overview}
+...
+\end{overview}\end{verbatim}
+\end{overview}
+\clearpage
+\begin{backgroundinformation}{Background Information}
+If you want to emphasize complete paragraphs of texts in an \verb|Background|
+\verb|Information| we recommend to
+use
+
+\verb|\begin{backgroundinformation}{Background Information}|
+
+\verb|...|
+
+\verb|\end{backgroundinformation}|
+\end{backgroundinformation}
+\begin{legaltext}{Legal Text}
+If you want to emphasize complete paragraphs of texts in an \verb|Legal Text| we recommend to
+use  \begin{verbatim}\begin{legaltext}{Legal Text}
+...
+\end{legaltext}\end{verbatim}
+\end{legaltext}
+
+\section*{Apéndice}
+\addcontentsline{toc}{section}{Apéndice}
+
+\section*{Problemas}
+\addcontentsline{toc}{section}{Problems}
+% Use the following environment.
+% Don't forget to label each problem;
+% the label is needed for the solutions' environment
+\begin{prob}
+\label{prob1}
+A given problem or Excercise is described here. The
+problem is described here. The problem is described here.
+\end{prob}

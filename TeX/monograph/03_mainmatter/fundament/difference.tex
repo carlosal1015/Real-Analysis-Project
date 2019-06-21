@@ -1,0 +1,139 @@
+\section{Ecuación en diferencias}\label{sec:difference}\index{Ecuación en diferencias!definición}
+
+Aquí es conveniente representar cualquier sucesión de números reales $(a_{n})_{n} $ como la función $f\colon\mathds{N}\rightarrow\mathds{R}$ definido por: \[ f(n)=a_{n},\quad\forall n\in\mathds{N}. \] Dadas dos funciones $f,g\colon\mathds{N}\rightarrow\mathds{R}$ y $r\in\mathds{R} $ consideremos las funciones: \[ (f+g)(n)=f(n)+g(n),\quad\text{y}\quad(rf)(n)=rf(n)\quad\forall n\in\mathds{N}. \] Dotado de estas operaciones, el conjunto de funciones de $\mathds{N}\rightarrow\mathds{R}$ es un $\mathds{R}$--espacio vectorial de funciones. También consideraremos la función: \[ (fg)(n)=f(n)g(n)\forall k\in\mathbb{N}. \] Un mapa lineal del espacio de funciones de $\mathds{N}$ a $ \mathds{R}$ en sí mismo es un operador.
+
+\begin{definition}[Operador identidad y operador de cambio]
+Consideramos el espacio de funciones de $\mathds{N}\to\mathds{R}$. Para cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ el operador identidad y el operador de cambio $\theta$ están definidos: \[ \mathds{I}(f)=f\quad\text{y}\quad\theta(f)(n)=f(n+1)\quad\forall n\in\mathds{N}. \] Uno verifica inmediatamente que la identidad y el operador de cambio son de hecho lineales.
+\end{definition}
+
+\begin{proposition}[Linealidad de la identidad y el operador de cambio]
+Sean las funciones $f,g\colon\mathds{N}\to\mathds{N}$ y $c\in\mathds{R}$. Luego tenemos:
+\begin{enumerate}
+	\item $\mathds{I}\left(f+g\right)(n)=\mathds{I}(f)(n)+\mathds{I}(g)(n)$.
+	\item $\mathds{I}\left(cf\right)(n)=c\mathds{I}(f)(n)$ y $\theta\left(cf\right)(n)=c\theta(f)(n)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Sea $n\in\mathds{N}$, luego:
+	\begin{align*}
+	\theta(f+g)(n)&=(f+g)(n+1)=f(n+1)+g(n+1)=\theta(f)(n)+\theta(g)(n).\\
+	\theta(cf)(n)&=(cf)(n+1)=cf(n+1)=c\theta(f)(n).
+	\end{align*}
+	Se verifica la linealidad de $\mathds{I}$ inmediatamente.
+\end{proof}
+
+Para cualquier operador $T$, será conveniente un ligero abuso de notación, para escribir $Tf(n)$ en lugar de $T(f)(n)$. Además en algunos casos, por ejemplo cuando $f$ depende de otros parámetros, uno escribe $T_{n}f(n)$ en lugar de $Tf(n)$ para evitar la ambigüedad. Así, por ejemplo, denotada por $\mathds{I}_{\mathds{N}}\colon\mathds{N}\rightarrow\mathds{N}$ la función definida por $\mathds{I}_{\mathds{N}}(n)=n$ para cada $n\in\mathds{N} $ escribiremos $\theta n=n+1$ en lugar de $\theta(\mathds{I}_{\mathds{N}})(n)=n+1$. Análogamente $\theta n^{2}=(n+1)^{2}$, $\theta_{n}n^{a}=(n+1)^{a}$ y $\theta_{n}a^{n}=a^{n+1}$ para cada $a\in\mathds{R}$.
+
+Para las funciones de valor real de una variable de número natural ahora introducimos el análogo de la derivada habitual para funciones de valor real de una variable real:
+
+\begin{definition}[Operador de cambio]
+	El operador diferencia es el operador $\bigtriangleup$ que a cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ asigna la función $\bigtriangleup f\colon\mathds{N}\rightarrow \mathds{R}$, definido de la siguiente manera: \[ \bigtriangleup f(n)=f(n+1)-f(n),\quad\forall n\in\mathds{N}. \]
+\end{definition}
+
+\begin{remark}
+	Usando el operador de cambio, uno tiene $\bigtriangleup=\theta-\mathds{I}$, es decir: \[ \bigtriangleup f=\theta f-f,\quad\forall f\colon\mathds{N}\rightarrow\mathds{R}. \] Claramente, para cada función $f\colon\mathds{N}\rightarrow\mathds{R}$, uno tiene: \[ \bigtriangleup f(k)=\frac{f(k+1)-f(k)}{1}, \] entonces $\bigtriangleup f\colon\mathds{N}\rightarrow\mathds{R}$ es una función que mide el cociente de diferencia de $f$ sobre el intervalo más pequeño posible de números naturales, es decir, un intervalo de longitud uno. En este sentido, el operador diferencia constituye el análogo discreto de la noción de derivada para funciones de una variable real. En lo que sigue, el lector tendrá ocasión para anotar analogías y contrastes entre estas dos nociones.
+\end{remark}
+
+Al igual que la derivada, el operador de diferencia es lineal: de hecho, es una diferencia de dos operadores lineales.
+
+\begin{proposition}[Linealidad de la diferencia]
+	Sean $ f,g\colon\mathds{N}\rightarrow\mathds{R}$ y $c\in\mathds{R}$. Luego uno tiene:
+	\begin{enumerate}
+		\item $\bigtriangleup\left(f+g\right)=\bigtriangleup f+\bigtriangleup g$.
+		\item $\bigtriangleup(cf)=c\bigtriangleup f$.
+	\end{enumerate}
+\end{proposition}
+
+
+\begin{proof}
+	Como $ \bigtriangleup=\theta-\mathds{I}$ se obtiene:
+	\begin{enumerate}
+		\item $\bigtriangleup\left(f+g\right)=\left(\theta-\mathds{I}\right)\left(f+g\right)=\theta\left(f+g\right)-\mathds{I}\left(f+g\right)=\theta(f)-f+\theta(g)-g=\bigtriangleup(f)-\bigtriangleup(g)$.
+		\item $\bigtriangleup\left(cf\right)=\left(\theta-\mathds{I}\right)\left(cf\right)=\theta\left(cf\right)-\mathds{I}\left(cf\right)=c\theta(f)-cf=c(\theta-\mathds{I})(f)=c\bigtriangleup(f)$.
+	\end{enumerate}
+\end{proof}
+Ahora vemos cómo el operador de diferencia actúa en algunas funciones simples con dominio $\mathds{N}$.
+
+\begin{example}\leavevmode
+	\begin{enumerate}
+		\item Funciones constantes: al igual que en el caso de la derivada de una  constante. Funciona con dominios en $\mathds{R}$, aquí también tenemos que la diferencia de una función constante (con dominio $\mathds{N}$) es igual a la función cero: de hecho, si $f(n)=c\in\mathds{R}$ por cada $n\in\mathds{N}$, entonces \[ \bigtriangleup f(k)=f(k+1)-f(k)=c-c=0. \]
+		\item Función de identidad en los números naturales: al igual que en el caso continuo, la diferencia de la función de identidad $I_{\mathds{N}}\colon\mathds{N}\rightarrow \mathds{N}$ es la función constante $n=1$ para todo $n\in\mathds{N}$. De hecho, \[ \bigtriangleup I_{\mathds{N}}(n)=I_{\mathds{N}}(n+1)-1=n+1-n=1. \]
+		\end{enumerate}
+\end{example}
+
+\begin{example}
+	Los operadores de cambio y diferencia conmutan. Más explícitamente, uno tiene \[ \bigtriangleup\circ\theta=\theta\circ\bigtriangleup. \]
+\end{example}
+
+\begin{proof}
+De hecho, para cada $n\in\mathds{N} $ y cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ uno tiene
+	\begin{align*}
+		\bigtriangleup\left(\theta f\right)(n)&=\theta f\left(n+1\right)-\theta f(n)=f(n+2)-f\left(n+1\right),\\
+		\shortintertext{mientras}
+		\theta\left(\bigtriangleup f\right)(n)&=\bigtriangleup f\left(n+1\right)=f(n+2)-f(n+1).
+	\end{align*}
+Por lo tanto, uno tiene $\bigtriangleup\left(\theta f\right)=\theta\left(\bigtriangleup f\right)(n)$.
+\end{proof}
+La fórmula para la diferencia de un producto se parece a la del derivado de un producto, excepto la introducción del operador de turno:
+\begin{proposition}[Diferencia de un producto]
+Si $f,g\colon\mathds{N}\rightarrow\mathds{R}$, luego \[ \bigtriangleup\left(fg\right)=\bigtriangleup f\theta g+f\bigtriangleup g. \]
+\end{proposition}
+
+\begin{remark}
+	Cabe destacar el hecho evidente de que a pesar de la aparente falta de simetría, uno tiene $\bigtriangleup\left(fg\right)=\bigtriangleup\left(gf\right)$.
+\end{remark}
+
+\begin{proof}
+	\begin{align*}
+		\bigtriangleup\left(f(n)g(n)\right)
+		&=f\left(n+1\right)g\left(n+1\right)-f(n)g(n)\\
+		&=f(n+1)g(n+1)-f(n)g(n+1)+f(n)(n+1)-f(n)g(n)\\
+		&=(f(n+1)-f(n))g(n+1)+f(n)g(n+1)-g(n)\\
+		&=\bigtriangleup f(n)\theta g(n)+f(n)\bigtriangleup g(n).
+	\end{align*}
+\end{proof}
+
+\
+
+Una ecuación en diferencias es una expresión de la forma: \[ G\left(n,f(n),f(n+1),\ldots,f(n+k)\right)=0,\forall n\in\mathds{Z} \] donde $f$ es una función definida en $\mathds{Z}$.
+
+Si después de simplificar esta expresión quedan los términos $f\left(n+k_{1}\right)$ y $f\left(n+k_{2}\right)$ como el mayor y el menor, respectivamente. Se dice que la ecuación es de orden $k=k_{1}-k_{2}$.
+
+\begin{example}[Ecuación en diferencias de orden $3$]
+	La ecuación dada por \[ 5f(n+4)-4f(n+2)+f(n+1)+(n-2)^{3}=0 \] es de orden $4-1=3$.
+\end{example}
+
+Una ecuación en diferencias de orden $k$ se dice que es \emph{lineal}\index{Ecuación en diferencias!lineal} si puede expresarse de la forma: \[ p_{0}(n)f(n+k)+p_{1}(n)f(0+k-1)+\cdots+p_{k}(n)f(n)=g(n), \] donde los coeficientes $p_{i}$ son funciones definidas en $\mathds{Z}$.
+
+El caso más sencillo es cuando los coeficientes son constantes $p_{i}(n)=a_{i}$: \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n). \] La ecuación en diferencias se dice que es \emph{homogénea}\index{Ecuación en diferencias!homogénea} en el caso que $g(n)=0$, y completa en el caso contrario.
+
+\begin{theorem}{}
+	Dada la ecuación en diferencias lineal de coeficientes constantes y de orden $ K $: \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n) \] el problema de hallar una función definida $\mathds{Z}$, que verifique la ecuación, y tales que en los $k$ enteros consecutivos $n_{0},n_{0}+1,\ldots,n_{0}+k-1$ tome los valores dados $c_{0},c_{1},\ldots,c_{k-1}$, tiene solución única.
+\end{theorem}
+
+\begin{theorem}{}
+	Dada una ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $k$. Si una solución $f$ es nula en $k$ enteros consecutivos, entonces $f$ es idénticamente nula.
+\end{theorem}
+
+\begin{theorem}{}
+	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $k$ es también solución de dicha ecuación.
+\end{theorem}
+
+\begin{definition}[Solución de una ecuación en diferencias homogénea]
+Sea la ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $k$. \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=0,\quad\forall k\in\mathds{Z}. \] Buscaremos soluciones del tipo $f(n)=r^{n}.$ Entonces, \[ r^{n}\left(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k}\right)=0\implies r^{n}(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0. \] Por tanto, $r$ es raíz de la \textbf{ecuación característica} \[ (a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0. \]
+\end{definition}
+
+El estudio de la solución dependería de si las raíces de la ecuación característica son simples o múltiples.
+\begin{example}
+	Hallar la solución de \[ f(n+2)-4f(n+1)+3f(n)=0\quad\forall n\in\mathds{Z},\quad f(0)=0,\quad f(1)=1. \] La ecuación característica es \[ r^{2}-4r+3=0\rightarrow r_{1}=3,\quad r_{2}=1. \] Por lo tanto: \[ f(n)=c_{1}3^{n}+c_{2}1^{n}=c_{1}3^{n}+c_{2}. \] Por otra parte:
+	\begin{equation*}
+	\left.\begin{aligned}
+	f(0)&=\phantom{1}c_{1}+c_{2}=0\\
+	f(1)&=3c_{1}+c_{2}=1
+	\end{aligned}
+	\right\}
+	\longrightarrow c_{1}=\frac{1}{2},\quad c_{2}=-\frac{1}{2}.
+	\end{equation*}
+De donde \[ f(n)=\frac{1}{2}\cdot3^{n}-\frac{1}{2}=\frac{3^{n}-1}{2}. \]
+\end{example}
