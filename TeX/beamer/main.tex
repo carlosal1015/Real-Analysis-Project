@@ -137,7 +137,7 @@
 	\begin{block}{Definición 2:}
 	Se le llama orden de una E.D a la diferencia entre el operador diferencia mayor y menor que aparezcan en la ecuación; es decir, $ n+k-n=k $
 	\end{block}
-\begin{block}{Ejemplo}
+\begin{block}{Ejemplo 2.1}
 	$ f(n+3)-f(n+1)-5f(n)=n $ es una E.D de orden $ 3 .$\\$ f(n+3)-f(n+1)=n^{2}-3 $ es una E.D de orden $ 2 .$
 \end{block}
 \end{frame}
@@ -169,6 +169,55 @@
  \end{block}
 \end{frame}
 \begin{frame}
+
+	\begin{block}{Ejemplo 1(Homogénea)}
+		Hallar la solución de:
+		$$
+		f(n+2)-4f(n+1)+3f(n)=0, \; \forall n \in \mathbb{Z}
+		$$
+		La ecuación característica es:
+		$$
+		r^{2}-4r+3=0 \rightarrow r_{1}=3,r_{2}=1.
+		$$
+		Por tanto:
+		$$
+		f(n)=c_{1}3^{n}+c_{2}1^{n}=c_{1}3^{n}+c_{2}.
+		$$
+		Por otro lado:
+				
+		\begin{equation*}
+		\left.\begin{aligned}
+		f(0)&=c_{1}+c_{2}&=0\\
+		f(1)&=3c_{1}+c_{2}&=0
+		\end{aligned}
+		\right\}
+		\rightarrow c_{1}=\frac{1}{2}, c_{2}=-\frac{1}{2}
+		\end{equation*}
+		
+		De donde:
+		$$
+		f(n)=\frac{1}{2}3^{n}-\frac{1}{2}=\frac{3^{n}-1}{2}
+		$$
+	\end{block}
+\end{frame}
+	\begin{frame}
+	\begin{block}{Ejemplo 2(Completa)}
+		Hallar la solución general de:
+		$$
+		f(n+2)-f(n+1)+f(n)=n, \; \forall n \in \mathbb{Z}
+		$$
+	\end{block}
+\begin{block}{Ejemplo 3(Completa)}
+	Hallar la solución de:
+	$$
+	f(n+1)-2f(n)=2^{n}, \; \forall n \in \mathbb{Z},
+	$$
+	$$
+	f(0)=-1.
+	$$
+\end{block}
+	\end{frame}
+
 	\begin{block}{Teorema 1:{\bf (Teorema de la existencia y la unicidad)}}
 		Dada la ecuación:
 		$$
@@ -180,45 +229,55 @@
 		$$
 	\end{block}
 \begin{block}{Teorema 2:}
-	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $ n $ es también una solución.
+	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $ k $ es también una solución.
 \end{block}
 \begin{block}{Corolario 1:}
-	Las soluciones de una ecuación en diferencia lineal de orden $ n $ forman un espacio vectorial.
+	Las soluciones de una ecuación en diferencia lineal de orden $ k $ forman un espacio vectorial.
 \end{block}
 \begin{block}{Teorema 3:}
-	La dimensión del espacio de soluciones de una ecuación en diferencias lineal de orden $ n $ es $ n .$
+	La dimensión del espacio de soluciones de una ecuación en diferencias lineal de orden $ k $ es $ k .$
 \end{block}
+
 \end{frame}
 
 
 
 
 %http://personal.us.es/pnadal/Informacion/leccion5ecdiferencias.pdf
-\begin{frame}
-	\begin{block}{Ecuaciones en diferencias de primer orden}
-		
-	\end{block}
-	\begin{block}{Ecuaciones en diferencias de segundo orden}
-		
-	\end{block}
 \end{frame}
 \subsubsection{Número de Catalan}
-\begin{frame}{Número de Catalan}
-	\begin{block}{Triangulación}
-		\begin{figure}
-		\centering
-		 \includegraphics[scale=0.15]{ca1}
-		\end{figure}
-	\end{block}
-\begin{block}{Caminos monótonos}
-	\begin{figure}
-		\centering
-		\includegraphics[scale=0.25]{ca2}
-	\end{figure}
+\begin{frame}{Números de Catalan}
+\begin{block}{¿Qué son?}
+	En combinatoria, los números de Catalan forman una secuencia de números naturales que aparece en varios problemas de conteo donde se ve la recursividad. Obtienen su nombre del matemático belga Eugène Charles Catalan (1814–1894).
 \end{block}
+\begin{block}{Fórmula explícita}
+	El $ n- $ésimo número de Catalán se obtiene de la siguiente fórmula:
+	$$
+	C_{n}=\frac{1}{n+1}\binom{2n}{n}; \; n \leq 0
+	$$
+\end{block}
+
 \end{frame}
 \begin{frame}
 	\frametitle{Aplicaciones}
+		\begin{block}{Triangulación}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.15]{ca1}
+		\end{figure}
+	\end{block}
+	\begin{block}{Caminos monótonos}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.25]{ca2}
+		\end{figure}
+	\end{block}
+\begin{block}{Árboles binarios}
+	\begin{figure}
+	\centering
+	\includegraphics[scale=0.09]{ca3}
+	\end{figure}
+\end{block}
 \end{frame}
 \subsubsection{Torre de Hanoi}
 \subsubsection{Número de Ackermann}
