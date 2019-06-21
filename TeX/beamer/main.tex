@@ -127,38 +127,47 @@
 \subsection{Ecuaciones en diferencias}
 \begin{frame}
 	\frametitle{Ecuaciones en diferencias(E.D)}
-	\begin{block}{Definición 1:}
+	\begin{definition}[1]
 	Una ecuación en diferencias es una expresión de la forma:
 	$$
 	G(n,f(n),f(n+1),\ldots,f(n+k))=0, \; \forall n \in \mathbb{Z}
 	$$
-	\emph{Obs:}\hspace{2mm}$ f $ está definida en $ \mathbb{Z} .$
-	\end{block}
-	\begin{block}{Definición 2:}
+
+	\end{definition}
+\begin{alertblock}{Obsv:}
+$ f $ está definida en $ \mathbb{Z} .$
+\end{alertblock}
+	\begin{definition}[2]
 	Se le llama orden de una E.D a la diferencia entre el operador diferencia mayor y menor que aparezcan en la ecuación; es decir, $ n+k-n=k $
-	\end{block}
+	\end{definition}
 \begin{block}{Ejemplo 2.1}
 	$ f(n+3)-f(n+1)-5f(n)=n $ es una E.D de orden $ 3 .$\\$ f(n+3)-f(n+1)=n^{2}-3 $ es una E.D de orden $ 2 .$
 \end{block}
 \end{frame}
-\begin{frame}
-\begin{block}{Definición 3:}
-	Se le llama \emph{solución} de una E.D a toda sucesión $  \{f(0),f(1),\ldots,f(n),\ldots \} $ que la satisfaga,ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación.La determinación de estos parámetros, a partir de unas
+\begin{frame}{}
+\begin{definition}[3]
+Se le llama \emph{solución} de una E.D a toda sucesión $  \{f(0),f(1),\ldots,f(n),\ldots \} $ que la satisfaga,ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación.La determinación de estos parámetros, a partir de unas
 	condiciones iniciales, nos proporcionará las distintas soluciones particulares.
-\end{block}
-\begin{block}{Ejemplo 3.1:}
+\end{definition}
+\begin{example}[]
 	$ f(n+1)-f(n)=3 $ es una E.D de orden uno cuya solución general es $ f(n)=3n+c $.Si consideramos unas condiciones iniciales,por ejemplo ,$ f(0)=2$, entonces $ f(0)=3\times0+c=c,$ por tanto $ c=2 $ y la solución particular es $ f_{p}(n)=3n+2.$Es decir, la solución es la sucesión $ f_{p}(n)=\{2,5,8,11,\ldots\} $
-\end{block}
+\end{example}
 \end{frame}
 \begin{frame}
-	 \begin{block}{Ecuaciones en diferencias lineales(E.D.L)}
+{Ecuaciones en diferencias lineales(E.D.L)}
+\begin{definition}[4]
+	 (CASO GENERAL):
 	 Llamamos ecuación en diferencias lineal de orden $ k $ a toda expresión de la forma:
 	 $$
-	 f(n+k)+a_{1}(n)f(n+k-1)+\ldots+a_{k-1}(n)f(n+1)+a_{k}(n)f(n)=b(n)
+	  a_{0}(n)f(n+k)+a_{1}(n)f(n+k-1)+\cdots+a_{k}(n)f(n)=b(n),
 	 $$
-	 \emph{Obsv:}\hspace{2mm}$ a_{k}(n)\neq0$
-	 \end{block}
- \begin{block}{Clasificación:}
+	 donde los coeficientes $ a_{i} $ son funciones definidas en $ \mathbb{Z}.( a_{k}(n)\neq 0)$\\
+	 (CASO PARTICULAR):Cuando los coeficientes son constantes $ a_{i}(n)=a_{i} $:
+	 $$
+	 f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k-1}f(n+1)+a_{k}f(n)=b(n).
+	 $$
+\end{definition}
+Clasificación:
  	Las E.D.L se pueden clasificar en:\\
  	\begin{itemize}
  		\item Homogéneas si $ b(n)=0 .$
@@ -166,11 +175,11 @@
  		\item De coeficientes constantes si $ a_{i}(n)=a_{i}, \forall i .$
  		\item De coeficientes no constantes si $ a_{i}(n)\neq a_{i} $ para algún $ i .$
  	\end{itemize}
- \end{block}
+
 \end{frame}
 \begin{frame}
-
-	\begin{block}{Ejemplo 1(Homogénea)}
+\begin{example}[Homogénea]
+%Ejemplo 1(Homogénea)
 		Hallar la solución de:
 		$$
 		f(n+2)-4f(n+1)+3f(n)=0, \; \forall n \in \mathbb{Z}
@@ -198,16 +207,18 @@
 		$$
 		f(n)=\frac{1}{2}3^{n}-\frac{1}{2}=\frac{3^{n}-1}{2}
 		$$
-	\end{block}
+\end{example}
 \end{frame}
 	\begin{frame}
-	\begin{block}{Ejemplo 2(Completa)}
+	\begin{example}[Completa]
+		%{Ejemplo 2(Completa)}
 		Hallar la solución general de:
 		$$
 		f(n+2)-f(n+1)+f(n)=n, \; \forall n \in \mathbb{Z}
 		$$
-	\end{block}
-\begin{block}{Ejemplo 3(Completa)}
+	\end{example}
+\begin{example}[Completa]
+	%{Ejemplo 3(Completa)}
 	Hallar la solución de:
 	$$
 	f(n+1)-2f(n)=2^{n}, \; \forall n \in \mathbb{Z},
@@ -215,17 +226,18 @@
 	$$
 	f(0)=-1.
 	$$
-\end{block}
+\end{example}
 	\end{frame}
 
+\begin{frame}
 	\begin{block}{Teorema 1:{\bf (Teorema de la existencia y la unicidad)}}
 		Dada la ecuación:
 		$$
-		f(n+k)+a_{1}(n)f(n+k-1)+\ldots+a_{n-1}(n)f(n+1)+a_{n}(n)f(n)=0,
+		f(n+k)+a_{1}(n)f(n+k-1)+\cdots+a_{n-1}(n)f(n+1)+a_{n}(n)f(n)=0,
 		$$
-		y dados $ n $ números reales $ k_{0},k_{1},\ldots,k_{n-1} $ existe una única solución que verifica 
+		y dados $ n $ números reales $ k_{0},k_{1},\cdots,k_{n-1} $ existe una única solución que verifica 
 		$$
-		f(0)=k_{0},f(1)=k_{1},\ldots,f(n-1)=k_{n-1}.
+		f(0)=k_{0},f(1)=k_{1},\cdots,f(n-1)=k_{n-1}.
 		$$
 	\end{block}
 \begin{block}{Teorema 2:}
@@ -234,9 +246,7 @@
 \begin{block}{Corolario 1:}
 	Las soluciones de una ecuación en diferencia lineal de orden $ k $ forman un espacio vectorial.
 \end{block}
-\begin{block}{Teorema 3:}
-	La dimensión del espacio de soluciones de una ecuación en diferencias lineal de orden $ k $ es $ k .$
-\end{block}
+
 
 \end{frame}
 
@@ -244,12 +254,12 @@
 
 
 %http://personal.us.es/pnadal/Informacion/leccion5ecdiferencias.pdf
-\end{frame}
+
 \subsubsection{Número de Catalan}
 \begin{frame}{Números de Catalan}
-\begin{block}{¿Qué son?}
+\begin{alertblock}{¿Qué son?}
 	En combinatoria, los números de Catalan forman una secuencia de números naturales que aparece en varios problemas de conteo donde se ve la recursividad. Obtienen su nombre del matemático belga Eugène Charles Catalan (1814–1894).
-\end{block}
+\end{alertblock}
 \begin{block}{Fórmula explícita}
 	El $ n- $ésimo número de Catalán se obtiene de la siguiente fórmula:
 	$$
@@ -260,26 +270,28 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Aplicaciones}
-		\begin{block}{Triangulación}
+\begin{example}[Triangulación]
+
 		\begin{figure}
 			\centering
 			\includegraphics[scale=0.15]{ca1}
 		\end{figure}
-	\end{block}
-	\begin{block}{Caminos monótonos}
+\end{example}
+\begin{example}[Caminos monótonos]
+
 		\begin{figure}
 			\centering
 			\includegraphics[scale=0.25]{ca2}
 		\end{figure}
-	\end{block}
-\begin{block}{Árboles binarios}
+\end{example}
+\begin{example}[Árboles binarios]
 	\begin{figure}
 	\centering
 	\includegraphics[scale=0.09]{ca3}
 	\end{figure}
-\end{block}
+\end{example}
 \end{frame}
-\subsubsection{Torre de Hanoi}
+\subsubsection{Torre de Hanói}
 \subsubsection{Número de Ackermann}
 
 \section{Realización numérica}
@@ -414,8 +426,8 @@ https://www.i-ciencias.com/pregunta/35252/termino-comun-para-las-ecuaciones-dife
 
 Dada la ecuación en diferencias lineal
 de coeficientes constantes y de orden $ k $ :
-$a_{0}f(n + k) + a_{1}f(n + k ¡ 1) + \ldots + a_{k}f(n) = g(n)$,
+$a_{0}f(n + k) + a_{1}f(n + k ¡ 1) + \cdots + a_{k}f(n) = g(n)$,
 el problema de hallar una función $ f $ definida en $ \mathbb{Z} $;
 que verifique la ecuación, y tal que en los $ k $ enteros
-consecutivos $n_{0}, n_{0}+1,\ldots ,n_{0}+k-1$ tome los valores
-dados $c_{0}, c_{1},\ldots , c_{k-1}$; tiene solución única.
+consecutivos $n_{0}, n_{0}+1,\cdots ,n_{0}+k-1$ tome los valores
+dados $c_{0}, c_{1},\cdots , c_{k-1}$; tiene solución única.
