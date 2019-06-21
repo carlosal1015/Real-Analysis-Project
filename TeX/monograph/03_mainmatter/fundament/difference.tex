@@ -1,9 +1,9 @@
 \section{Ecuación en diferencias}\label{sec:difference}\index{Ecuación en diferencias!definición}
 
-Aquí es conveniente representar cualquier sucesión de números reales $(a_{n})_{n} $ como la función $f\colon\mathds{N}\rightarrow\mathds{R}$ definido por: \[ f(n)=a_{n},\quad\forall n\in\mathds{N}. \] Dadas dos funciones $f,g\colon\mathds{N}\rightarrow\mathds{R}$ y $r\in\mathds{R} $ consideremos las funciones: \[ (f+g)(n)=f(n)+g(n),\quad\text{y}\quad(rf)(n)=rf(n)\quad\forall n\in\mathds{N}. \] Dotado de estas operaciones, el conjunto de funciones de $\mathds{N}\rightarrow\mathds{R}$ es un $\mathds{R}$--espacio vectorial de funciones. También consideraremos la función: \[ (fg)(n)=f(n)g(n)\forall k\in\mathbb{N}. \] Un mapa lineal del espacio de funciones de $\mathds{N}$ a $ \mathds{R}$ en sí mismo es un operador.
+Aquí es conveniente representar cualquier sucesión de números reales $(a_{n})_{n} $ como la función $f\colon\mathds{N}\rightarrow\mathds{R}$ definido por: \[ f(n)=a_{n},\quad\forall n\in\mathds{N}. \] Dadas dos funciones $f,g\colon\mathds{N}\rightarrow\mathds{R}$ y $r\in\mathds{R} $ consideremos las funciones: \[ (f+g)(n)=f(n)+g(n),\quad\text{y}\quad(rf)(n)=rf(n)\,quad\forall n\in\mathds{N}. \] Dotado de estas operaciones, el conjunto de funciones de $\mathds{N}\rightarrow\mathds{R}$ es un $\mathds{R}$--espacio vectorial de funciones. También consideraremos la función: \[ (fg)(n)=f(n)g(n),\quad\forall k\in\mathbb{N}. \] Un mapa lineal del espacio de funciones de $\mathds{N}$ a $ \mathds{R}$ en sí mismo es un operador.
 
 \begin{definition}[Operador identidad y operador de cambio]
-Consideramos el espacio de funciones de $\mathds{N}\to\mathds{R}$. Para cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ el operador identidad y el operador de cambio $\theta$ están definidos: \[ \mathds{I}(f)=f\quad\text{y}\quad\theta(f)(n)=f(n+1)\quad\forall n\in\mathds{N}. \] Uno verifica inmediatamente que la identidad y el operador de cambio son de hecho lineales.
+Consideramos el espacio de funciones de $\mathds{N}\to\mathds{R}$. Para cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ el operador identidad\index{Operador identidad} y el operador de cambio\index{Operador de cambio} $\theta$ están definidos: \[ \mathds{I}(f)=f\quad\text{y}\quad\theta(f)(n)=f(n+1),\quad\forall n\in\mathds{N}. \] Uno verifica inmediatamente que la identidad y el operador de cambio son de hecho lineales.
 \end{definition}
 
 \begin{proposition}[Linealidad de la identidad y el operador de cambio]
@@ -27,7 +27,7 @@ Para cualquier operador $T$, será conveniente un ligero abuso de notación, par
 
 Para las funciones de valor real de una variable de número natural ahora introducimos el análogo de la derivada habitual para funciones de valor real de una variable real:
 
-\begin{definition}[Operador de cambio]
+\begin{definition}[Operador diferencia]\index{Operador diferencia}
 	El operador diferencia es el operador $\bigtriangleup$ que a cada función $f\colon\mathds{N}\rightarrow\mathds{R}$ asigna la función $\bigtriangleup f\colon\mathds{N}\rightarrow \mathds{R}$, definido de la siguiente manera: \[ \bigtriangleup f(n)=f(n+1)-f(n),\quad\forall n\in\mathds{N}. \]
 \end{definition}
 
@@ -45,7 +45,6 @@ Al igual que la derivada, el operador de diferencia es lineal: de hecho, es una 
 	\end{enumerate}
 \end{proposition}
 
-
 \begin{proof}
 	Como $ \bigtriangleup=\theta-\mathds{I}$ se obtiene:
 	\begin{enumerate}
@@ -54,6 +53,8 @@ Al igual que la derivada, el operador de diferencia es lineal: de hecho, es una 
 	\end{enumerate}
 \end{proof}
 Ahora vemos cómo el operador de diferencia actúa en algunas funciones simples con dominio $\mathds{N}$.
+
+\eject
 
 \begin{example}\leavevmode
 	\begin{enumerate}
@@ -75,7 +76,7 @@ De hecho, para cada $n\in\mathds{N} $ y cada función $f\colon\mathds{N}\rightar
 	\end{align*}
 Por lo tanto, uno tiene $\bigtriangleup\left(\theta f\right)=\theta\left(\bigtriangleup f\right)(n)$.
 \end{proof}
-La fórmula para la diferencia de un producto se parece a la del derivado de un producto, excepto la introducción del operador de turno:
+La fórmula para la diferencia de un producto se parece a la del derivado de un producto, excepto la introducción del operador de cambio:
 \begin{proposition}[Diferencia de un producto]
 Si $f,g\colon\mathds{N}\rightarrow\mathds{R}$, luego \[ \bigtriangleup\left(fg\right)=\bigtriangleup f\theta g+f\bigtriangleup g. \]
 \end{proposition}
@@ -109,7 +110,7 @@ Una ecuación en diferencias de orden $k$ se dice que es \emph{lineal}\index{Ecu
 El caso más sencillo es cuando los coeficientes son constantes $p_{i}(n)=a_{i}$: \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n). \] La ecuación en diferencias se dice que es \emph{homogénea}\index{Ecuación en diferencias!homogénea} en el caso que $g(n)=0$, y completa en el caso contrario.
 
 \begin{theorem}{}
-	Dada la ecuación en diferencias lineal de coeficientes constantes y de orden $ K $: \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n) \] el problema de hallar una función definida $\mathds{Z}$, que verifique la ecuación, y tales que en los $k$ enteros consecutivos $n_{0},n_{0}+1,\ldots,n_{0}+k-1$ tome los valores dados $c_{0},c_{1},\ldots,c_{k-1}$, tiene solución única.
+	Dada la ecuación en diferencias lineal de coeficientes constantes y de orden $K$: \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=g(n) \] el problema de hallar una función definida $\mathds{Z}$, que verifique la ecuación, y tales que en los $k$ enteros consecutivos $n_{0},n_{0}+1,\ldots,n_{0}+k-1$ tome los valores dados $c_{0},c_{1},\ldots,c_{k-1}$, tiene solución única.
 \end{theorem}
 
 \begin{theorem}{}
@@ -120,13 +121,13 @@ El caso más sencillo es cuando los coeficientes son constantes $p_{i}(n)=a_{i}$
 	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $k$ es también solución de dicha ecuación.
 \end{theorem}
 
-\begin{definition}[Solución de una ecuación en diferencias homogénea]
+\begin{definition}[Solución de una ecuación en diferencias homogénea]\index{Ecuación en diferencias!homogénea!solución}
 Sea la ecuación en diferencias lineal homogénea de coeficientes constantes y de orden $k$. \[ a_{0}f(n+k)+a_{1}f(n+k-1)+\cdots+a_{k}f(n)=0,\quad\forall k\in\mathds{Z}. \] Buscaremos soluciones del tipo $f(n)=r^{n}.$ Entonces, \[ r^{n}\left(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k}\right)=0\implies r^{n}(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0. \] Por tanto, $r$ es raíz de la \textbf{ecuación característica} \[ (a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0. \]
 \end{definition}
 
 El estudio de la solución dependería de si las raíces de la ecuación característica son simples o múltiples.
 \begin{example}
-	Hallar la solución de \[ f(n+2)-4f(n+1)+3f(n)=0\quad\forall n\in\mathds{Z},\quad f(0)=0,\quad f(1)=1. \] La ecuación característica es \[ r^{2}-4r+3=0\rightarrow r_{1}=3,\quad r_{2}=1. \] Por lo tanto: \[ f(n)=c_{1}3^{n}+c_{2}1^{n}=c_{1}3^{n}+c_{2}. \] Por otra parte:
+	Hallar la solución de \[ f(n+2)-4f(n+1)+3f(n)=0,\quad\forall n\in\mathds{Z},\quad f(0)=0,\quad f(1)=1. \] La ecuación característica es \[ r^{2}-4r+3=0\rightarrow r_{1}=3,\quad r_{2}=1. \] Por lo tanto: \[ f(n)=c_{1}3^{n}+c_{2}1^{n}=c_{1}3^{n}+c_{2}. \] Por otra parte:
 	\begin{equation*}
 	\left.\begin{aligned}
 	f(0)&=\phantom{1}c_{1}+c_{2}=0\\

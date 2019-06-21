@@ -1,10 +1,26 @@
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
+% arara: --> 'contg','contn','diffb','diffg','diffn','funb','fung','funn','genb','geng','genn','intb','intg','pytxcode',
+% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
+% arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
+% arara: --> }
+% arara: pdflatex
+% arara: pdflatex
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
+% arara: --> 'contg','contn','diffb','diffg','diffn','funb','fung','funn','genb','geng','genn','intb','intg','pytxcode',
+% arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
+% arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn']
+% arara: --> }
 \PassOptionsToPackage{svgnames}{xcolor}
-\documentclass[spanish, utf8,handout]{beamer} %
+\documentclass[spanish,10pt,utf8,handout]{beamer} %
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
 \usepackage[spanish]{babel}
 \usepackage{amsmath,mathrsfs,amsfonts,amsthm}
-\usepackage{tikz}
+\usepackage{enumitem}
 %\usetheme[numbering=fullbar]{focus}%progressbar
 %\definecolor{main}{RGB}{92, 138, 168}
 %\definecolor{background}{RGB}{240, 247, 255}
@@ -50,6 +66,10 @@
 \setbeamertemplate{footline}{}
 \setbeamertemplate{headline}{}
 \setbeamertemplate{blocks}[rounded][shadow=false] 
+
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.6}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{block alerted begin}{\pgfsetfillopacity{0.6}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{block example begin}{\pgfsetfillopacity{0.6}}{\pgfsetfillopacity{1}}
 
 \title[Teorema de los cuatro colores]{\Huge\sffamily Relaciones de recurrencias}
 \subtitle{Ecuaciones en diferencias y análisis en escalas de tiempo}
@@ -116,10 +136,12 @@
 %	\maketitle
 %\end{frame}
 \include{./contents/toc}
-%\include{./toc}
-%\include{./toc}
 \section{Introducción}
+\subsection{Relación de recurrencia}
 \include{./contents/recurrence}
+\subsubsection{Con coeficientes constantes}
+\subsubsection{Homogénea}
+\subsection{Ecuaciones en diferencias}
 \include{./contents/difference}
 
 \include{./contents/hanoi}
@@ -147,10 +169,10 @@
 
 \include{./contents/hanoi.tex}
 \include{./contents/difference}
-\include{./contents/timescale}
+\include{./contents/examples}
 
-\appendix  
-\frame[noframenumbering,plain]{text} 
+%\appendix
+%\frame[noframenumbering,plain]{text}
 
 \setbeamertemplate{footline}
 {%
@@ -161,8 +183,8 @@
 		\end{beamercolorbox}%
 		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{date in    head/foot}\insertshortdate\hspace*{5mm}%	
 		\end{beamercolorbox}  
-	}% 
-} 
+	}%
+}
 
 \addtobeamertemplate{footline}{}{%
 	\begin{textblock*}{100mm}(0.94\textwidth,-7mm)

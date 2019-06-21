@@ -53,7 +53,7 @@ Se puede utilizar cualquiera de las formas presentadas.
 	\end{enumerate}
 \end{proof}
 
-\section{Relación de recurrencia lineal con homogénea con coeficientes constantes}
+\section{Relación de recurrencia lineal homogénea con coeficientes constantes}
 
 La sucesión nula es una solución de cualquier relación de recurrencia lineal. La estructura de la solución general de una relación de recurrencia lineal homogénea corresponde a la estructura de la solución general de un sistema de ecuaciones lineales homogéneas.
 \begin{proposition}[Teorema principal]
@@ -110,11 +110,11 @@ En general, no es fácil encontrar las raíces de un polinomio de grado mayor qu
 Ahora damos una serie de ejemplos que ilustran cómo reducir la solución de un problema en el que la búsqueda de las soluciones de una relación de recurrencia apropiada.
 
 \begin{example}[Número de Catalan]
-	El número de Catalan ($C_{n} $) es igual al número de rutas de la esquina inferior izquierda de una rejilla cuadrada de $n\times n$ a la esquina superior derecha si estamos restringidos a viajar solo a la derecha o hacia arriba y si se permite tocar pero no pasar arriba de la diagonal entre la esquina inferior izquierda y la superior derecha. Tal ruta recibe el nombre de \emph{ruta buena}. Se da una relación de recurrencia para los números de Catalan. Las rutas buenas se dividen en clases con base en  la primera vez que tocan la diagonal después de salir de la esquina inferior derecha.Por ejemplo,la ruta en la figura toca la diagonal primero en el punto ($3,3$).Las rutas que tocan la diagonal primero en el punto$(k,k)$ se consideran construidas por un proceso de dos pasos:
+	El número de Catalan ($C_{n} $) es igual al número de rutas de la esquina inferior izquierda de una retícula cuadrada de $n\times n$ a la esquina superior derecha si estamos restringidos a viajar solo a la derecha o hacia arriba y si se permite tocar pero no pasar arriba de la diagonal entre la esquina inferior izquierda y la superior derecha. Tal ruta recibe el nombre de \emph{ruta buena}. Se da una relación de recurrencia para los números de Catalan. Las rutas buenas se dividen en clases con base en la primera vez que tocan la diagonal después de salir de la esquina inferior derecha. Por ejemplo, la ruta en la figura toca la diagonal primero en el punto $\left(3,3\right)$. Las rutas que tocan la diagonal primero en el punto $\left(k,k\right)$ se consideran construidas por un proceso de varios pasos:
 	\begin{enumerate}
-		\item Primero, se construye la parte de $(0,0)$ a $(k,k)$.
-		\item Segundo, se construye la parte de $(k,k)$ a $(n,n)$. Una buena ruta siempre sale de $(0,0)$ moviéndose hacia la derecha a $(1,0)$ y siempre llega a $(k,k)$ moviéndose hacia arriba desde $(k,k-1)$.
-		\item Los movimientos de $(1,0)$ a $(k,k-1)$ dan una ruta buena en la rejilla de $(k-1)\times(k-1) $ con esquina en $ (1,0),(1,k-1),(k,k-1)$ y $ (k,0)$. En la figura, se marcaron los puntos $(1,0)$ y $(k,k-1),k=3$, con rombos, y se aisló la subrejilla de $(k-1)\times(k-1)$. Así, hay $C_{k-1}$ rutas de $(0,0)$ a $(k,k)$ que tocan primero a la diagonal en $(k,k)$.
+		\item Primero, se construye la parte de $\left(0,0\right)$ a $\left(k,k\right)$.
+		\item Segundo, se construye la parte de $(k,k)$ a $(n,n)$. Una buena ruta siempre sale de $\left(0,0\right)$ moviéndose hacia la derecha a $\left(1,0\right)$ y siempre llega a $\left(k,k\right)$ moviéndose hacia arriba desde $\left(k,k-1\right)$.
+		\item Los movimientos de $\left(1,0\right)$ a $\left(k,k-1\right)$ dan una ruta buena en la rejilla de $\left(k-1\right)\times(k-1)$ con esquina en $(1,0)$, $(1,k-1)$, $(k,k-1)$ y $(k,0)$. En la figura~\ref{fig:catalan}, se marcaron los puntos $(1,0)$ y $\left(k,k-1\right),k=3$, con rombos, y se aisló la subrejilla de $(k-1)\times(k-1)$. Así, hay $C_{k-1}$ rutas de $(0,0)$ a $(k,k)$ que tocan primero a la diagonal en $(k,k)$.
 		\item La parte de $(k,k)$ a $(n,n)$ es una buena ruta en la rejilla de $(n-k)\times(n-k)$ con esquinas en $(k,k),(k,n),(n,n)$ y $(n,k)$ (vea la figura). Hay $C_{n-1}$ rutas de este tipo. Por el principio de la multiplicación, hay $C_{k-1}C_{n-k}$ rutas buenas en una rejilla de $n\times n$ que tocan primero la diagonal en $(k,k)$. Las rutas buenas que tocan por primera vez en $(k^{\prime}, k^{\prime}),k\neq k^{\prime}$. Entonces se utiliza el principio de la suma a fin de obtener una relación de recurrencia para el número total de rutas buenas en una rejilla de $n\times n$:
 	\end{enumerate}
 	\[ C_{n}=\sum_{k=1}^{n}C_{k-1}C_{n-k}. \]
@@ -127,7 +127,7 @@ Ahora damos una serie de ejemplos que ilustran cómo reducir la solución de un 
 \end{example}
 
 \begin{example}[La escalera]
-	Un niño decide escalar una escalera con $n\geq 1$ de tal manera que cada paso que él despeja uno o dos de los pasos de la escalera %(vea)
+	Un niño decide escalar una escalera con $n\geq 1$ de tal manera que cada paso que él despeja uno o dos de los pasos de la escalera.%(vea)
 	Encuentre la relación de recurrencia que sirva para calcular el número de diferentes maneras posibles de escalar la escalera.
 \end{example}
 Usamos la variable desconocida $x_{n}$ para denotar el número de maneras en las cuales el niño puede escalar la escalera de $n\geq1$ pasos. Es fácil de observar que $x_{1}=1$ y $x_{2}=2$ (dos pasos cada uno de longitud uno, o un paso de longitud dos escalones). Ahora sea $n\geq3$: si con el primer paso el niño mueve solo el primer escalón; existen claramente $x_{n-1}$ posibles maneras de escalar los que quedan. Si en cambio con el primer lugar, se suben dos peldaños de escalera.

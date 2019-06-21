@@ -1,5 +1,47 @@
-\subsection{Relación de recurrencia}
+\begin{frame}
+\frametitle{\subsecname}
 
-\subsubsection{Con coeficientes constantes}
+\begin{definition}
+	Una \textbf{relación de recurrencia} en las incógnitas $x_{i}$, $i\in\mathds{N}$, es una familia de ecuaciones
+	\begin{equation}\label{eq:recurrence}
+	x_{n}=f_{n}\left(x_{0},\ldots,x_{n-1}\right),\quad n\geq r,
+	\end{equation}
+	donde $r\in\mathds{N}_{\geq1}$, y ${\left(f_{n}\right)}_{n\geq r}$ son funciones \[ f_{n}\colon D_{n}\rightarrow\mathds{R},\quad D_{n}\subseteq\mathds{R}^{n},\quad\text{o}\quad f_{n}\colon D_{n}\rightarrow\mathds{C},\quad D_{n}\subseteq\mathds{C}^{n}. \]
 
-\subsubsection{Homogénea}
+	Dependiendo del caso encontrado, las llamaremos \textbf{recurrencias reales}\index{Relación de recurrencia!real} o \textbf{recurrencias complejas}\index{Relación de recurrencia!compleja}. Las incógnitas $x_{0},\ldots,x_{r-1}$ son llamadas \textbf{libres}. Su número $r$ es el \textbf{orden} de la relación\index{Relación de recurrencia!orden}.
+\end{definition}
+
+\begin{definition}
+	Una sucesión ${\left(a_{n}\right)}_{n}$ es una \textbf{solución} de~\eqref{eq:recurrence}, sii
+	\begin{equation*}
+	\left(a_{0},\ldots,a_{n-1}\right)\in D_{n},\quad a_{n}=f_{n}\left(a_{0},a_{1},\ldots,a_{n-1}\right)\quad\forall\,n\geq r.
+	\end{equation*}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{\subsecname}
+
+\begin{example}
+	La sucesión real \[ x_{0}=2, x_{1}=1, x_{2}=2^{1/2}, x_{3}=1, \ldots, x_{2m-1}=1 ,x_{2m}=2^{1/2^{m}}, \ldots \] es la solución de la \emph{relación de recurrencia} con coeficientes reales \[ x_{n}=\sqrt{x_{n-2}},\quad n\geq2, \] y los \emph{valores iniciales} $x_{0}=2$ y $x_{1}=1$.
+\end{example}
+
+\begin{example}
+Considere la relación de recurrencia de primer orden definida por \[ x_{n}=\frac{1}{x_{n-1}-1},\quad n\geq1.\]
+\begin{itemize}[topsep=0pt]
+	\item La $1$--tupla $\left(2\right)\in D_{0}$ \alert{no es una tupla de valor inicial de una solución}.
+	\item $1$--tupla $\left(3\right)$ \alert{es una tupla de valor inicial de la solución}.
+\end{itemize}
+\end{example}
+\end{frame}
+
+\begin{frame}
+\frametitle{\subsecname}
+\begin{alertblock}{Observación}
+En muchas ocasiones una relación de recurrencia de orden $r$ involucra solo los últimos $r$ términos y es de la forma \[ x_{n}=g_{n}\left(x_{n-r},\ldots,x_{n-1}\right),\quad n\geq r, \] donde ${\left(g_{n}\right)}_{n\geq r}$ son las funciones definidas en un subconjunto $E_{n}$ de $\mathds{R}^{r}$ o $\mathds{C}^{r}$.
+
+\
+
+Este último es de hecho una relación de recurrencia: es suficiente para establecer \[ f_{n}\left(x_{0},\ldots,x_{n-1}\right)\coloneqq g_{n}\left(x_{n-r},\ldots,x_{n-1}\right) \] para $\left(x_{0},\ldots,x_{n-1}\right)\in D_{n}\coloneqq\mathds{R}^{n-r}\times E_{n}$ (o $\mathds{C}^{n-r}\times E_{n}$) a fin de cumplir los requerimientos de la definición~\eqref{eq:recurrence}.
+\end{alertblock}
+\end{frame}

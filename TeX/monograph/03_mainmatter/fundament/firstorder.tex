@@ -30,9 +30,9 @@ Por lo tanto,~\eqref{eq:linearb} es correcto. Por lo tanto, si $S$ es cualquier 
 	&=a^{n}\left[1-\frac{c}{1-a}\right]+\frac{c}{1-a}\\
 	\end{align*}
 \end{itemize}
-Por lo tanto, la solución general a la ecuación de recurrencia es \[ S_{n+1} = aS_n+c\quad\forall n\in\mathds{N}. \] Se da en dos partes:
+Por lo tanto, la solución general a la ecuación de recurrencia es \[ S_{n+1} = aS_n+c,\quad\forall n\in\mathds{N}. \] Se da en dos partes:
 \begin{align*}
-\text{Si }a=1, S_n&= S_0+ nc\forall n\in\mathds{N}\\
+\text{Si }a=1, S_n&= S_0+ nc,\quad\forall n\in\mathds{N}\\
 \text{Si }a\neq1&=S_n= a^{n}\left[S_0-\frac{c}{1-a}\right]+\frac{c}{1-a}\forall n\in\mathds{N}.
 \end{align*}
 
@@ -204,9 +204,9 @@ Vamos a restringir también nuestra atención (por el momento) a una \emph{linea
 \begin{equation}\label{eq:segordenb}
 	S_{n+2}=aS_{n+1}+bS_{n}\text{ para }\forall n\in\mathds{N}.
 \end{equation}
-Tal como hicimos para la ecuación de la recurrencia de Fibonacci, supongamos que existe una secuencia geométrica, $S_{n}=r^{n}$, que satisface~\eqref{eq:segordenb}. Si lo hubiera, entonces \[ r^{n+2}=ar^{n+1}+br^{n}\quad\forall n\in\mathds{N}. \] Cuando $n=0$, \[ r^{2}=ar+b. \]
+Tal como hicimos para la ecuación de la recurrencia de Fibonacci, supongamos que existe una secuencia geométrica, $S_{n}=r^{n}$, que satisface~\eqref{eq:segordenb}. Si lo hubiera, entonces \[ r^{n+2}=ar^{n+1}+br^{n},\quad\forall n\in\mathds{N}. \] Cuando $n=0$, \[ r^{2}=ar+b. \]
 
-La ``ecuación característica'' de~\eqref{eq:segordenb} es $x^2-ax-b=0$, cuyas ``raíces'' son \[ r=\frac{-\left(-a\right)\pm\sqrt{{\left(-a\right)}^{2}-4\left(\right)\left(-b\right)}}{2\left(1\right)}=\frac{a\pm\sqrt{a^{2}+4b}}{2}. \]
+La ``ecuación característica'' de~\eqref{eq:segordenb} es $x^2-ax-b=0$, cuyas ``raíces'' son \[ r=\frac{-\left(-a\right)\pm\sqrt{{\left(-a\right)}^{2}-4\left(1\right)\left(-b\right)}}{2\left(1\right)}=\frac{a\pm\sqrt{a^{2}+4b}}{2}. \]
 
 Sean $\Delta=\sqrt{a^2+4b}$, $r_1=\frac{a+\Delta}{2}$, y $r_2=\frac{a-\Delta}{2}$, entonces $r_{1}+r_{2}=a$, $r_{1}\times r_{2}=-b$, y $r_{1}-r_{2}=\Delta$. Tanto $r_{1}$ como $r_{2}$ satisfacen la ecuación $x^{2}=ax+b$, y son las únicas soluciones.
 
