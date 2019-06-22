@@ -69,11 +69,145 @@ Sea $u_{n}\left(t\right)\colon\mathds{T}$, $n=1,2,\ldots$. Entonces consideremos
 \begin{equation}\label{eq:functionserie}
 \sum_{n=1}^{\infty}u_{n}\left(t\right).
 \end{equation}
-Si la serie numérica $\sum_{n=1}^{\infty}u_{n}\left(t_{0}\right)$, $t_{0}\in\mathds{T}$ es convergente, entonces $t_{0}$ se llama punto de convergencia de la serie de funciones\eqref{eq:functionserie}.El conjunto de todas los puntos de convergencia se llama dominio de convergencia $D$. Y si el dominio de convergencia de una serie de funciones es no vacío, entonces la serie de funciones es llamado covergencia puntual sobre su dominio de convergencia. Definimos $U\left(t\right)=\sum_{n=1}^{\infty}u_{n}\left(t\right)$, $t\in D$ como la función suma.
-\begin{definition}
+Si la serie numérica $\sum_{n=1}^{\infty}u_{n}\left(t_{0}\right)$, $t_{0}\in\mathds{T}$ es convergente, entonces $t_{0}$ se llama punto de convergencia de la serie de funciones~\eqref{eq:functionserie}.El conjunto de todas los puntos de convergencia se llama dominio de convergencia $D$. Y si el dominio de convergencia de una serie de funciones es no vacío, entonces la serie de funciones es llamado convergencia puntual sobre su dominio de convergencia. Definimos $U\left(t\right)=\sum_{n=1}^{\infty}u_{n}\left(t\right)$, $t\in D$ como la función suma.
+\begin{definition}\label{def:partialsum}
 	La función \[ U_{n}\left(t\right)=u_{1}\left(t\right)+u_{2}\left(t\right)+\cdots+u_{n}\left(t\right) \] es llamado la suma parcial o, más precisamente, la $n$--ésima suma parcial de la serie de funciones.
 \end{definition}
 Ahora la definición importante investigada en este documento se proporciona a continuación.
-\begin{definition}
-	Suponga que la sucesión de suma parcial $\left\{U_{n}\left(t\right)\right\}$ de \eqref{eq:functionserie} es uniformemente convergente sobre su dominio de convergencia, es decir, para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que $n>N$ implica \[ \left|{U\left(t\right)}_{n}-U\left(t\right)\right|<\varepsilon\quad\forall t\in D. \] Entonces, $\left\{U_{n}\right\}$ se llama uniformemente convergente a $U\left(t\right)$, es decir, $U_{n}\left(t\right)\rightrightarrows U\left(t\right)$ en $D$ cuando $n\to\infty$.
+\begin{definition}\label{def:2}
+	Suponga que la sucesión de suma parcial $\left\{U_{n}\left(t\right)\right\}$ de~\eqref{eq:functionserie} es uniformemente convergente sobre su dominio de convergencia, es decir, para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que $n>N$ implica \[ \left|{U\left(t\right)}_{n}-U\left(t\right)\right|<\varepsilon\quad\forall t\in D. \] Entonces, $\left\{U_{n}\right\}$ se llama uniformemente convergente a $U\left(t\right)$, es decir, $U_{n}\left(t\right)\rightrightarrows U\left(t\right)$ en $D$ cuando $n\to\infty$.
 \end{definition}
+Si la sucesión de sumas parciales $U_{n}\left(t\right)$ de~\eqref{eq:functionserie} es uniformemente convergente a $U\left(t\right)$ en $D$, entonces denominamos $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ como uniformemente convergente a $U\left(t\right)$.
+
+Haciendo uso de la definición~\eqref{def:partialsum}, presentamos el siguiente ejemplo.
+\begin{example}\label{ex:1}
+	Asuma que $U_{n}\left(t\right)=\sqrt{t^{2}+\frac{1}{n^{2}}}$. Muestre que $\left\{U_{n}\left(t\right)\right\}$ es uniformemente convergente a $U\left(t\right)=t$ en $D=\left\{q^{k}:k\in\mathds{Z},q>1\right\}\cup\left\{0\right\}$.
+
+	Dado que \[ \left|U_{n}\left(t\right)-U\left(t\right)\right|=\left|\sqrt{t^{2}+\frac{1}{n^{2}}}-t\right|=\frac{1}{n^{2}\left(\sqrt{t^{2}+\frac{1}{n^{2}}}+t\right)}\leq\frac{1}{n}, \] entonces para cualquier $\varepsilon>0$, escoja $N=\frac{1}{\varepsilon}$ tal que $n>N$ implica \[ U_{n}\left(t\right)-U\left(t\right)\leq\frac{1}{n}<\varepsilon, \] para todo $t\in D$. Por lo tanto, $\left\{U_{n}\left(t\right)\right\}$ es uniformemente convergente a $U\left(t\right)=t$ en $D$.
+\end{example}
+Ahora vamos a dar un paso más al proporcionar dos condiciones necesarias y suficientes para una convergencia uniforme. Lo harán desempeñar un papel importante al juzgar la convergencia uniforme de la serie de funciones.
+\begin{theorem}\label{thm:uniform}
+	Suponga que la sucesión de funciones $\left\{U_{n}\left(t\right)\right\}$ es convergente puntualmente a $U\left(t\right)$ en $D$ y la distancia de $U_{m}\left(t\right)$ y $U\left(t\right)$ se define como \[ d\left(U_{n},U\right)=\sup_{t\in D}\left|U_{n}\left(t\right)-U\left(t\right)\right|. \] Entonces, $\left\{U_{n}\left(t\right)\right\}$ es convergente uniformemente a $U\left(t\right)$ en $D$ si y solo si $\lim\limits_{n\to\infty}d\left(U_{n},U\right)=0$.
+\end{theorem}
+\begin{proof}
+	Asuma que $\left\{U_{n}\left(t\right)\right\}$ converge uniformemente a $U\left(t\right)$ en $D$. Entonces para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que $n>N$ implica \[ \left|U_{n}\left(t\right)-U\left(t\right)\right|<\frac{\varepsilon}{2}\quad\text{para todo }t\in D. \] En consecuencia \[ d\left(U_{n},U\right)\leq\frac{\varepsilon}{2}<\varepsilon\quad\text{para }n>N. \] Así, $\lim\limits_{n\to\infty}d\left(U_{n},U\right)=0$. Recíprocamente, sea $\lim\limits_{n\to\infty}d\left(U_{n},U\right)=0$. Para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que $N>N$ implica $d\left(U_{n},U\right)<\varepsilon$. Esto resulta \[ \left|U_{n}\left(t\right)-U\left(t\right)\right|<\varepsilon, \] para todo $t\in D$. Por lo tanto, $\left\{U_{n}\left(t\right)\right\}$ es uniformemente convergente a $U\left(y\right)$ en $D$ y la prueba finaliza.
+\end{proof}
+El siguiente ejemplo es una aplicación del Teorema~\ref{thm:uniform}.
+\begin{example}
+	Considere $\left\{U_{n}\left(t\right)\right\}$ en el ejemplo~\ref{ex:1}. Notamos que \[ \left|U_{n}\left(t\right)-U\left(t\right)\right|=\frac{1}{n^{2}\left(\sqrt{t^{2}+\frac{1}{n^{2}}+t}\right)}\leq\frac{1}{n}. \] Por lo tanto, $d\left(U_{n},U\right)=\frac{1}{n}\to0$ cuando $n\to\infty$.
+	Al emplear el teorema~\ref{thm:uniform}, obtenemos que $\left\{U_{n}\left(t\right)\right\}$ es uniformemente convergente a $U\left(t\right)=t$ en $D$.
+\end{example}
+\begin{theorem}\label{thm:2}
+	Asuma que la sucesión de funciones $\left\{U_{n}\left(t\right)\right\}$ es convergente puntualmente a $U\left(t\right)$ en $D$. Entonces, $\left\{U_{n}\left(t\right)\right\}$ es convergente uniformemente a $U\left(t\right)$ en $D$ si y solo si para una sucesión arbitraria $\left\{t_{n}\right\}$, $t_{n}\in D$, \[ \lim_{n\to\infty}\left(U_{n}\left(t_{n}\right)-U\left(t_{n}\right)\right)=0. \]
+\end{theorem}
+\begin{proof}
+	Necesidad. Suponga que $\left\{U_{n}\left(t\right)\right\}$ es uniformemente convergente a $U\left(t\right)$ en $D$. Entonces \[ d\left(U_{n},U\right)=\sup_{t\in D}\left|U_{n}\left(t\right)-U\left(t\right)\right|\to0\quad\text{cuando }\to\infty. \] Además, para cualquier sucesión $\left\{t_{n}\right\}$, $t_{n}\in D$, \[ \left|U_{n}\left(t_{n}\right)-U\left(t_{n}\right)\right|\leq d\left(U_{n},U\right)\to0\quad\text{cuando }n\to\infty, \] es decir, $\lim\limits_{n\to\infty}\left(U_{n}\left(t_{n}\right)-U\left(t_{n}\right)\right)=0$. La prueba de suficiencia es por contradicción. Suponga que $\left\{U_{n}\left(t\right)\right\}$ no es uniformemente convergente a $U\left(t\right)$ en $D$. Esto es, $\exists\varepsilon_{0}>0$ tal que para cualquier $N>0$ existen $n>N$, $t\in D$ implicando $\left|U_{n}\left(t\right)-U\left(t\right)\right|\geq\varepsilon_{0}$. Por lo tanto, tenemos lo siguiente:
+	\begin{itemize}
+		\item Para $N_{1}=1$, existe $n_{1}>1$, $t_{n_{1}}\in D$ tal que \[ \left|U_{n_{1}}\left(t_{n_{1}}\right)-U\left(t_{n_{1}}\right)\right|\geq\varepsilon_{0}. \]
+		\item Para $N_{2}=n_{1}$, existe $n_{2}>n_{1}$, $t_{n_{2}}\in D$ tal que \[ \left|U_{n_{2}}\left(t_{n_{2}}\right)-U\left(t_{n_{2}}\right)\right|\geq\varepsilon_{0}. \]
+		\item \ldots
+		\item Para $N_{k}=n_{k-1}$, existe $n_{k}>n_{k-1}$, $t_{n_{k}}\in D$ tal que \[ \left|U_{n_{k}}\left(t_{n_{k}}\right)-U\left(t_{n_{k}}\right)\right|\geq\varepsilon_{0}. \]
+		\item \ldots
+		\item Para $m\in\mathds{N}^{+}\setminus\left\{n_{1},n_{2},\ldots,n_{k},\ldots\right\}$, sea $t_{m}\in D$, entonces obtenemos la sucesión $\left\{t_{n}\right\}$, $t_{n}\in D$. Dado que la sucesión de $\left\{t_{n}\right\}$ satisface \[ \left|U_{n_{k}}\left(t_{n_{k}}\right)-U\left(t_{n_{k}}\right)\right|\geq\varepsilon_{0}, \] esto conduce a una contradicción debido a que \[ \lim_{n\to\infty}\left(U_{n}\left(t_{n}\right)-U\left(t_{n}\right)\right)=0. \]
+	\end{itemize}
+Esto produce nuestro resultado deseado.
+\end{proof}
+Ahora mostraremos el siguiente ejemplo como una aplicación del Teorema~\ref{thm:2}.
+\begin{example}
+	Considere $U_{n}\left(t\right)=nt{\left(1-t\right)}^{n}$ definido en $D=\left\{\frac{1}{n}:n\in\mathds{N}\right\}\cup\left\{0\right\}$. $U_{n}\left(t\right)=nt{\left(1-t\right)}^{n}$, $U_{n}\left(t\right)$ es convergente a $U\left(t\right)=0$ en $D$. Escogiendo $t_{n}=\frac{1}{n}\in D$, tenemos \[ U_{n}\left(t_{n}\right)=n\cdot\frac{1}{n}{\left(1-\frac{1}{n}\right)}^{n}={\left(1-\frac{1}{n}\right)}^{n}\not\to0\quad\text{cuando }n\to\infty. \] Esto muestra que $\left\{U_{n}\left(t\right)\right\}$ no es convergente uniformemente a $U\left(t\right)=0$ en $D$.
+\end{example}
+
+Podemos ver que al juzgar la convergencia uniforme de las series de funciones utilizando la Definición~\ref{def:2} y los teoremas~\ref{thm:uniform} y~\ref{thm:2}, uno necesita conocer su función suma: la naturaleza de la convergencia de las series de funciones se identifica con la naturaleza de La convergencia de su sucesión de sumas parciales. Pero en muchos casos, obtener la función suma es difícil o incluso imposible. Por lo tanto, es necesario encontrar principios que no necesitan la función de suma. Ahora presentaremos y probaremos el siguiente criterio bien conocido.
+
+\begin{theorem}[Criterio de Cauchy para la covergencia uniforme de series de funciones]\label{thm:cauchy}
+	La serie de funciones $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ converge uniformemente en $D$ si y solo si para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que \[ \left|u_{n+1}\left(t\right)+\cdots+u_{m}\left(t\right)\right|<\varepsilon \] para todos los números naturales $m,n$ satisfaciendo $m>n>N$ y para cualquier punto $t\in D$.
+\end{theorem}
+\begin{proof}
+	Necesidad. Suponga que la serie de funciones $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ converge uniformemente en $D$ y la función suma es $U\left(t\right)$. Entonces, para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que $n>N$ implica \[ \left|U\left(t\right)-\sum_{k=1}^{n}u_{k}\left(t\right)\right|<\frac{\varepsilon}{2}\quad\text{para todo }t\in D. \] Así, para todo $m>n>N$ y todo $t\in D$, tenemos
+	\begin{align*}
+	\left|u_{n+1}\left(t\right)+\cdots+u_{m}\left(t\right)\right|
+	&=\left|\sum_{k=1}^{m}u_{k}\left(t\right)-\sum_{k=1}^{n}u_{k}\left(t\right)\right|\\
+	&=\left|\sum_{k=1}^{m}u_{k}\left(t\right)-U\left(t\right)\right|+\left|U\left(t\right)-\sum_{k=1}^{n}u_{k}\left(t\right)\right|\\
+	&=\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+	&=\varepsilon.
+	\end{align*}
+	Suficiencia. Suponga que para cualquier $\varepsilon>0$ existe un número natural $N$ tal que \[ \left|u_{n+1}\left(t\right)+\cdots+u_{m}\left(t\right)\right|=\left|\sum_{k=1}^{m}u_{k}\left(t\right)-\sum_{k=1}^{n}u_{k}\left(t\right)\right|<\frac{\varepsilon}{2} \] para todo $m>n>N$ y todo $t\in D$. Fije $t\in D$. Entonces obtenemos la serie numérica general $\sum_{n=1}^{\infty}u_{n}\left(t\right)$. Como $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ satisface el criterio de Cauchy para la convergencia de series numéricas. Así, la serie $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ es convergente. Sea \[ U\left(t\right)=\sum_{n=1}^{\infty}u_{n}\left(t\right)\quad\text{para todo }t\in D. \] Escoja $n$ para $\left|\sum_{k=1}^{m}-\sum_{k=1}^{n}u_{k}\left(t\right)\right|<\frac{\varepsilon}{2}$. Sea $m\to\infty$, obtenemos \[ \left|U\left(t\right)-\sum_{k=1}^{n}u_{k}\left(t\right)\right|\leq\frac{\varepsilon}{2}<\varepsilon\quad\text{para todo }t\in D. \] Por lo tanto, $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ converge uniformemente a $U\left(t\right)$ en $D$.
+\end{proof}
+
+\begin{remark}
+	 Si bajo la hipótesis del Teorema~\ref{thm:cauchy} todas las funciones $u_{n}\left(t\right)$ son constantes, obtenemos el familiar criterio de Cauchy para la convergencia de una serie numérica $\sum_{n=1}^{\infty}u_{n}$.
+\end{remark}
+
+\begin{corollary}[Condición necesaria para la convergencia uniforme de series de funciones]
+	Una condición necesaria para que la serie $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ converja uniformemente en $D$ es que $u_{n}\rightrightarrows0$ en $D$ cuando $n\to\infty$.
+\end{corollary}
+Nuestra primera aplicación del criterio de Cauchy para la convergencia uniforme de una serie de funciones da el siguiente ejemplo.
+\begin{example}
+	Pruebe que la serie de funciones $\sum_{n=0}^{\infty}\frac{t^{2}}{{\left(1+t^{2}\right)}^{n}}$ no es convergente uniformemente en $D=\left\{\frac{1}{\sqrt{n}}:n\in\mathds{N}\right\}\cup\left\{0\right\}$. Defina $u_{n}\left(t\right)=\frac{t^{2}}{{\left(1+t^{2}\right)}^{n}}$. Note que \[ \sum_{k=n+1}^{2n}u_{k}\left(t\right)=\frac{t^{2}}{{\left(1+t^{2}\right)}^{n+1}}+\frac{t^{2}}{{\left(1+t^{2}\right)}^{n+2}}+\cdots+\frac{t^{2}}{{\left(1+t^{2}\right)}^{2n}}>\frac{nt^{2}}{{\left(1+t^{2}\right)}^{2n}}. \] Sea $\varepsilon_{0}=\frac{1}{e^{2}}>0$. Para cualquier $N\in\mathds{N}$, escoja $m=2n$ con $n>N$ y $t_{n}=\frac{1}{\sqrt{n}}\in D$ implicando \[ \sum_{k=n+1}^{2n}u_{k}\left(t_{n}\right)>\frac{nt^{2}_{n}}{{\left(1+t^{2}_{n}\right)}^{2n}}>\frac{1}{e^{2}}=\varepsilon_{0}. \] Al usar el Teorema\ref{thm:cauchy}, obtenemos que $\sum_{n=0}^{\infty}\frac{t^{2}}{{\left(1+t^{2}\right)}^{n}}$ no es convergente uniformemente en $D$.
+\end{example}
+\begin{theorem}[El test $M$ de Weierstraß para la convergencia uniforme de series de funciones]\label{thm:weiertraß}
+	Suponga que cualquier término $u_{n}\left(t\right)$ de la serie de función $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ satisface \[ \left|u_{n}\left(t\right)\right|\leq a_{n}\quad\text{para }n=1,2,\ldots,\text{ y para todo} t\in D \] y la serie numérica $\sum_{n=1}^{\infty}a_{n}$ es convergente. Entonces la serie de funciones $\sum_{n=1}^{\infty}u_{n}$$\left(t\right)$ converge uniformemente en $D$.
+\end{theorem}
+\begin{proof}
+	Note que la serie numérica $\sum_{n=1}^{\infty}a_{n}$ es convergente. Al usar el criterio de Cauchy, obtenemos que para cualquier $\varepsilon>0$ existe $M\in\mathds{N}$ tal que \[ a_{n+1}+a_{n+2}+\cdots+a_{m}<\varepsilon\quad\text{para todo }m>n>M. \] Para todo $t\in D$ y todos los números naturales $m>n$, tenemos
+	\begin{align*}
+	\left|u_{n+1}\left(t\right)+\cdots+u_{m}\left(t\right)\right|
+	&\leq\left|u_{n+1}\left(t\right)\right|+\cdots+\left|u_{m}\left(t\right)\right|\\
+	&\leq a_{n+1}+\cdots+a_{m}\\
+	&<\varepsilon.
+	\end{align*}
+Entonces, una aplicación del Teorema~\ref{thm:cauchy} implica que $\sum_{n=1}^{\infty}u_{n}\left(t\right)$ converge uniformemente en $D$.
+\end{proof}
+El test $M$ de Weierstraß es la condición más simple y, al mismo tiempo, utilizada con mayor frecuencia para la convergencia uniforme de una serie de funciones.
+\begin{example}
+	Muestre que la serie de funciones $\sum_{n=0}^{\infty}\frac{t}{1+n^{3}t^{2}}$. $t\in D=\mathds{P}_{1,2}=\bigcup_{k=0}^{\infty}\left[3k,3k+1\right]$ es convergente uniformemente. Sea $u_{n}\left(t\right)=\frac{t}{1+n^{3}t^{2}}$. Cuando $n\geq1$ tenemos \[ \left|u_{n}\left(t\right)\right|\leq\frac{t}{2n^{\frac{3}{2}}t}=\frac{1}{2n^{\frac{3}{2}}}. \] Dado que $\sum_{n=1}^{\infty}\frac{1}{2n^{\frac{3}{2}}}$ es convergente, por el teorema~\ref{thm:weiertraß} tenemos que $\sum_{n=0}^{\infty}\frac{t}{1+n^{3}t^{2}}$ es convergente uniformemente en $D$. 
+\end{example}
+Para presentar el siguiente criterio, se requiere un lema bien conocido.
+\begin{lemma}[Lema de Abel]
+	Suponga que:
+	\begin{enumerate}
+		\item $\left\{u_{k}\right\}$ es una sucesión monótona,
+		\item $\left\{V_{k}\right\}$ con $V_{k}=\sum_{i=1}^{k}v_{i}$, $k=1,2,\ldots$, es una sucesión acotada, esto es, existe un $M>0$ tal que $\left|V_{k}\right|\leq M$ para todo $k$. Entonces \[ \left|\sum_{k=1}^{\infty}u_{k}v_{k}\right|\leq M\left(|u_{1}+2|u_{p}||\right). \]
+	\end{enumerate}
+El siguiente par de condiciones suficientes relacionadas para la convergencia uniforme de una serie es algo más especializado. Pero estas condiciones son más delicadas que el test $M$ de Weierstraß, ya que permiten investigar series $\sum_{n=1}^{\infty}u_{n}\left(t\right)v_{n}\left(t\right)$, $t\in D$, que convergen.
+\end{lemma}
+\begin{theorem}
+	Asuma que la serie de funciones $\sum_{n=1}^{\infty}u_{n}\left(t\right)v_{n}\left(t\right)$, $t\in D$, satisface una de las siguientes condiciones. Entonces, $\sum_{n=1}^{\infty}u_{n}\left(t\right)v_{n}\left(t\right)$ es convergente uniformemente en $D$.
+	\begin{enumerate}
+		\item (Test de Abel) La sucesión de funciones $\left\{u_{n}\left(t\right)\right\}$ es monótona para cada $t$ fijo en $D$ con respecto a $n$ y la $\left\{u_{n}\left(t\right)\right\}$ es uniformemente acotada en $D$: \[ \left|u_{n}\left(t\right)\right|\leq M\quad\text{para }t\in D\text{ y }n\in\mathds{N}^{+}, \] además, la serie de funciones $\sum_{n=1}^{\infty}v_{n}\left(t\right)$ es convergente uniformemente en $D$.
+		\item (Test de Dirichlet) La sucesión de funciones $\left\{u_{n}\left(t\right)\right\}$ es monótona para cada $t$ fijo en $D$ con respecto a $n$ y $\left\{u_{n}\left(t\right)\right\}$ es convergente uniformemente en $0$, además, la sucesión de sumas parciales de $\sum_{n=1}^{\infty}v_{n}\left(\right)$ es uniformemente acotada en $D$: \[ \left|\sum_{k=1}^{n}v_{k}\left(t\right)\right|\leq M\quad\text{para }t\in D\text{ y }n\in\mathds{N}^{+}. \]
+	\end{enumerate}
+\end{theorem}
+\begin{proof}\leavevmode
+	\begin{enumerate}
+		\item Dado que $\sum_{n=1}^{\infty}v_{n}\left(t\right)$ es convergente uniformemente en $D$, entonces para cualquier $\varepsilon>0$ existe un número positivo entero $N$ tal que \[ \left|\sum_{k=n+1}^{m}v_{k}\left(t\right)\right|<\varepsilon, \] para todo $m>n>N$ y todo $t\in D$. Empleando el teorema~\ref{thm:cauchy}, obtenemos que $\sum_{n=1}^{\infty}u_{n}\left(t\right)v_{n}\left(t\right)$ es convergente uniformemente en $D$. Esto prueba el Test de Abel.
+		\item Note que $\left\{u_{n}\left(t\right)\right\}$ es convergente uniformemente en $0$. Para cualquier $\varepsilon>0$ existe un entero positivo $N$ tal que $n>N$ implica \[ \left|u_{n}\left(t\right)\right|<\varepsilon\quad\text{para todo }t\in D. \] La sucesión de suma parcial de $\sum_{n=1}^{\infty}v_{n}\left(\right)$ es uniformemente acotada, entonces para todo $m>n>N$, \[ \left|\sum_{k=n+1}^{m}v_{k}\left(t\right)\right|=\left|\sum_{k=1}^{m}v_{k}\left(t\right)-\sum_{k=1}^{n}v_{k}\left(t\right)\right|\leq 2M. \] Usando el lema de Abel, obtenemos \[ \left|\sum_{k=n+1}^{m}u_{k}\left(t\right)v_{k}\left(t\right)\right|\leq 2M\left(\left|u_{n+1}\left(t\right)\right|+2\left|u_{m}\left(t\right)\right|\right)<6M\varepsilon, \] para todo $t\in D$. Por el teorema~\ref{thm:cauchy}, $\sum_{n=1}^{\infty}u_{n}\left(t\right)v_{n}\left(t\right)$ es uniformemente convergente en $D$. Esto completa la prueba del test de Dirichlet.
+	\end{enumerate}
+\end{proof}
+Ahora presentamos dos ejemplos utilizando el test de Abel y el test de Dirichlet.
+\begin{example}
+	Suponga que $\sum_{n=1}^{\infty}\frac{1}{n!}$ es convergente. Entonces la $\sum_{n=1}^{\infty}\frac{e^{-nt}}{n!}$ es convergente uniformemente en $D=\left[0,\frac{1}{3}\right]\bigcup\left[\frac{2}{3},1\right]$. Es claro que $\left\{e^{-nt}\right\}$ es monótona con respecto a $n$ y \[ \left|e^{-nt}\right|\leq1\quad\text{para todo }t\in D\text{ y todo }n. \] Note que la $\sum_{n=1}^{\infty}$ es una serie numérica. Entonces la convergencia de $\sum_{n=1}^{\infty}\frac{1}{n!}$ significa que este es convergente uniformemente con respecto a $t$. Por el test de Abel, $\sum_{n=1}^{\infty}\frac{{\left(-1\right)}^{n}}{n+t^{2}}$ es convergente uniformemente en $D$.
+\end{example}
+\begin{example}
+	Muestre que $\sum_{n=1}^{\infty}\frac{{\left(-1\right)}^{n}}{n+t^{2}}$ es convergente uniformemente en $D=\mathds{N}_{0}\bigcup\left\{1-\frac{1}{n}:n\in\mathds{N}\right\}$. Asuma que $u_{n}\left(t\right)=\frac{1}{n+t^{2}}$ y $v_{n}\left(t\right)={\left(-1\right)}^{n}$. Entonces $\left\{u_{n}\left(t\right)\right\}$ es monótona para cada $t$ fijo en $D$ con respecto a $n$ y este es convergente uniformemente en $0\in D$. Podemos fácilmente obtener que \[ \left|\sum_{k=1}^{n}v_{k}\left(t\right)\right|\leq1, \] es decir, $\left\{v_{n}\left(t\right)\right\}$ es uniformemente acotada. Usando el test de Dirichlet, $\sum_{n=1}^{\infty}\frac{\left(-1\right)}^{n}}{n+t^{2}}$ es convergente uniformemente en $D$.
+\end{example}
+\section{Exposición de los problemas fundamentales}
+En la sección 2 presentamos algunas conceptos relacionados de las series de funciones en escalas de tiempo y probamos varios principios para la convergencia uniforme de una serie de funciones. En esta sección, discutimos los problemas fundamentales de las series de funciones, es decir, qué tipo de propiedades funcionales tiene la función suma. Las propiedades más importantes para el análisis son la continuidad, la diferenciabilidad y la integrabilidad. Como antes, presentaremos y probaremos varios lemas y teoremas.
+
+\begin{lemma}
+	Sea $D\in\mathds{T}$
+\end{lemma}
+
+%\documentclass{article}
+%\usepackage{amsthm}
+%\usepackage{hyperref}
+%\newtheorem{satz}{Satz}
+%\newcommand{\satzautorefname}{Satz}
+%\begin{document}
+%	
+%	\begin{satz}\label{Satz}
+%		Hola
+%	\end{satz}
+%	
+%	In \autoref{Satz} we have shown...
+%\end{document}  ​
