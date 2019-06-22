@@ -64,3 +64,16 @@ A continuación, nos gustaría poder encontrar las derivadas de sumas, productos
 		Por lo tanto, $f+g$ es diferenciable en $t$ y ${\left(\right)}^{\Delta}$
 	\end{enumerate}
 \end{proof}
+
+Sea $u_{n}\left(t\right)\colon\mathds{T}$, $n=1,2,\ldots$. Entonces consideremos la siguiente suma infinita:
+\begin{equation}\label{eq:functionserie}
+\sum_{n=1}^{\infty}u_{n}\left(t\right).
+\end{equation}
+Si la serie numérica $\sum_{n=1}^{\infty}u_{n}\left(t_{0}\right)$, $t_{0}\in\mathds{T}$ es convergente, entonces $t_{0}$ se llama punto de convergencia de la serie de funciones\eqref{eq:functionserie}.El conjunto de todas los puntos de convergencia se llama dominio de convergencia $D$. Y si el dominio de convergencia de una serie de funciones es no vacío, entonces la serie de funciones es llamado covergencia puntual sobre su dominio de convergencia. Definimos $U\left(t\right)=\sum_{n=1}^{\infty}u_{n}\left(t\right)$, $t\in D$ como la función suma.
+\begin{definition}
+	La función \[ U_{n}\left(t\right)=u_{1}\left(t\right)+u_{2}\left(t\right)+\cdots+u_{n}\left(t\right) \] es llamado la suma parcial o, más precisamente, la $n$--ésima suma parcial de la serie de funciones.
+\end{definition}
+Ahora la definición importante investigada en este documento se proporciona a continuación.
+\begin{definition}
+	Suponga que la sucesión de suma parcial $\left\{U_{n}\left(t\right)\right\}$ de \eqref{eq:functionserie} es uniformemente convergente sobre su dominio de convergencia, es decir, para cualquier $\varepsilon>0$ existe $N\in\mathds{N}$ tal que $n>N$ implica \[ \left|{U\left(t\right)}_{n}-U\left(t\right)\right|<\varepsilon\quad\forall t\in D. \] Entonces, $\left\{U_{n}\right\}$ se llama uniformemente convergente a $U\left(t\right)$, es decir, $U_{n}\left(t\right)\rightrightarrows U\left(t\right)$ en $D$ cuando $n\to\infty$.
+\end{definition}
