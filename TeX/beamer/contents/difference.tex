@@ -16,53 +16,89 @@
 	\end{example}
 \end{frame}
 
-\begin{frame}
-	\begin{definition}
-		La \textbf{solución} de~(2) a toda sucesión $\{f\left(0\right),f\left(1\right),\ldots,f(n),\ldots\}$ que la satisfaga, ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación. La determinación de estos parámetros, a partir de unas condiciones iniciales, nos proporcionará las distintas soluciones particulares.
-	\end{definition}
-
-	\begin{example}
-		Sea \[ f\left(n+1\right)-f\left(n\right)=3 \] una ecuación en diferencias de orden uno cuya solución general es $f\left(n\right)=3n+c$.
-
-	\
-
-		Si consideramos las condiciones iniciales, por ejemplo, $f(0)=2$, entonces $f(0)=3\times0+c=c$, por tanto $c=2$ y la solución particular es $f_{p}(n)=3n+2$.
-		Es decir, la solución es la sucesión $f_{p}(n)=\left\{2,5,8,11,\ldots\right\}$.
-	\end{example}
-\end{frame}
 
 \begin{frame}
 	\begin{definition}
-		Llamamos ecuación en diferencias lineal de orden $k$ a toda expresión de la forma:
-		\[ f\left(n+k\right)+a_{1}(n)f\left(n+k-1\right)+\cdots+a_{k-1}(n)f\left(n+1\right)+a_{k}(n)f\left(n\right)=b\left(n\right), \]
+		Una \textbf{ecuación en diferencias} se le llama \textbf{lineal}	  si puede expresarse de la siguiente forma:
+		\begin{equation}\label{edl} f\left(n+k\right)+a_{1}(n)f\left(n+k-1\right)+\cdots+a_{k-1}(n)f\left(n+1\right)+a_{k}(n)f\left(n\right)=b\left(n\right), 
+		\end{equation}
 		donde $a_{k}(n)\neq0$.
 	\end{definition}
-
-	\begin{block}{Clasificación de las ecuaciones de diferencias lineal}
-		\begin{itemize}
-			\item Homogéneas si $b(n)=0$.
-			\item Completas si $b(n)\neq0$.
-			\item De coeficientes constantes si $a_{i}(n)=a_{i}$, $\forall i$.
-			\item De coeficientes no constantes si $a_{i}(n)\neq a_{i}$ para algún $i$.
-		\end{itemize}
+  \begin{block}{Clasificación}
+	\begin{table}[H]
+		\centering
+	\begin{tabular}{|c|c|}
+				\hline
+		   \alert{NOMBRE} & \alert{CONDICIÓN}\\
+		   \hline
+			Homogéneas(E.D.L.H) &si $b(n)=0$.\\
+			\hline
+			Completas (E.D.L.C) &si $b(n)\neq0$.\\
+			\hline
+			De coeficientes constantes & $a_{i}(n)=a_{i}$, $\forall i$.\\
+			\hline
+			De coeficientes no constantes &si $a_{i}(n)\neq a_{i}$ para algún $i$.\\
+			\hline
+		\end{tabular}
+		\end{table}
 	\end{block}
+\end{frame}
+\begin{frame}
+%\begin{definition}
+	%La \textbf{solución} de~(2) a toda sucesión $\{f\left(0\right),f\left(1\right),\ldots,f(n),\ldots\}$ que la satisfaga, ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación. La determinación de estos parámetros, a partir de unas condiciones iniciales, nos proporcionará las distintas soluciones particulares.
+%\end{definition}
+\begin{definition}
+	Sea una \textbf{ecuación en diferencias lineal homogénea} de coeficientes constantes y de orden $ k $,buscaremos soluciones del tipo  $f(n)=r^{n}$,haciendo este cambio y simplificando  tenemos:
+	$$
+	r^{n}(a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0
+	$$
+	$$
+	\rightarrow (a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k})=0,
+	$$
+	a la expresión anterior llamaremos \textbf{ecuación característica.}
+\end{definition}
+\begin{definition}
+	Llamamos \textbf{solución} de una E.D. a toda sucesión $\{ f(1), \ldots, f(k) \}$ que la satisfaga.
+\end{definition}
+
+\end{frame}
+\begin{frame}
+\begin{example}
+	Sea: \[ f\left(n+1\right)-f\left(n\right)=3 \] una ecuación en diferencias,halle su solución general
+	y particular.
+\end{example}
+\begin{example}
+	Hallar la solución de:
+	$$
+	f(n+2)-f(n+1)+f(n)=0, \; \forall n \in \mathbb{N},
+	$$
+	$$
+	f(0)=0, f(1)=1.
+	$$
+\end{example}
+\begin{example}[E.D.L.C]
+	Hallar la solución de:
+	$$f(n + 1) - 2f(n) = 2^{n} , \; \forall n \in \mathbb{N},$$
+	$$f(0) = -1.$$
+\end{example}
+%es $f\left(n\right)=3n+c$.
+
+
+%Si consideramos las condiciones iniciales, por ejemplo, $f(0)=2$, entonces $f(0)=3\times0+c=c$, por tanto $c=2$ y la solución particular es $f_{p}(n)=3n+2$.
+%Es decir, la solución es la sucesión $f_{p}(n)=\left\{2,5,8,11,\ldots\right\}$.
+%\end{example}
 \end{frame}
 
 \begin{frame}
 	\begin{theorem}[De la existencia y la unicidad]
-		Dada la ecuación: \[ f\left(n+k\right)+a_{1}(n)f\left(n+k-1\right)+\cdots+a_{n-1}(n)f\left(n+1\right)+a_{n}(n)f\left(n\right)=0, \] y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
+		Dada la ecuación (\ref{edl}) y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
 	\end{theorem}
 
 	\begin{theorem}
 		Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $n$ es también una solución.
 	\end{theorem}
-
-	\begin{corollary}
-		Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial.
-	\end{corollary}
-
 	\begin{theorem}
-		La dimensión del espacio de soluciones de una ecuación en diferencias lineal de orden $n$ es $n$.
+		Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial,cuya dimensión del espacio de soluciones de una ecuación en diferencias lineal de orden $k$ es $k$.
 	\end{theorem}
 \end{frame}
 
@@ -75,20 +111,32 @@
 %	\end{block}
 %\end{frame}
 
+
 \subsubsection{Número de Catalan}
 
 \begin{frame}{Número de Catalan}
+\begin{minipage}{6cm}
 	\begin{block}{Triangulación}
+	Una triangulación de un polígono es una partición del mismo en triángulos disjuntos cuyos vértices coinciden con los vértices del polígono.
+	\end{block}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.25]{ca1}	
+\end{figure}
+
+
+\end{minipage}
+\begin{minipage}{6cm}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.3\paperheight]{ca1}
+			\includegraphics[height=0.3\paperheight]{ca(1)}
 		\end{figure}
+\end{minipage}
+\begin{minipage}{5.5cm}
+	\begin{block}{Caminos en rejillas}
+		 Un camino monótono es aquél que empieza en la esquina inferior izquierda y termina en la esquina superior derecha, y consiste únicamente en tramos que apuntan hacia arriba o hacia la derecha,sin que pase de diagonal.
 	\end{block}
-	
-	\begin{block}{Caminos monótonos}
-		\begin{figure}
-			\centering
-			\includegraphics[height=0.3\paperheight]{ca2}
-		\end{figure}
-	\end{block}
+\end{minipage}
 \end{frame}
