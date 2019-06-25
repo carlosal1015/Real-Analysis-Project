@@ -60,36 +60,20 @@
 \begin{definition}
 	Llamamos \textbf{solución} de una E.D. a toda sucesión $\{ f(1), \ldots, f(k) \}$ que la satisfaga.
 \end{definition}
-
+\begin{definition}
+	Se le llama \textbf{solución general} de una E.D. al conjunto de todas las soluciones, que tendrá´a
+	tantos parámetros como orden tenga la ecuación´on
+\end{definition}
 \end{frame}
 \begin{frame}
-\begin{example}
-	Sea: \[ f\left(n+1\right)-f\left(n\right)=3 \] una ecuación en diferencias,halle su solución general
-	y particular.
-\end{example}
-\begin{example}
-	Hallar la solución de:
-	$$
-	f(n+2)-f(n+1)+f(n)=0, \; \forall n \in \mathbb{N},
-	$$
-	$$
-	f(0)=0, f(1)=1.
-	$$
-\end{example}
-\begin{example}[E.D.L.C]
-	Hallar la solución de:
-	$$f(n + 1) - 2f(n) = 2^{n} , \; \forall n \in \mathbb{N},$$
-	$$f(0) = -1.$$
-\end{example}
 %es $f\left(n\right)=3n+c$.
+
 
 
 %Si consideramos las condiciones iniciales, por ejemplo, $f(0)=2$, entonces $f(0)=3\times0+c=c$, por tanto $c=2$ y la solución particular es $f_{p}(n)=3n+2$.
 %Es decir, la solución es la sucesión $f_{p}(n)=\left\{2,5,8,11,\ldots\right\}$.
 %\end{example}
-\end{frame}
 
-\begin{frame}
 	\begin{theorem}[De la existencia y la unicidad]
 		Dada la ecuación (\ref{edl}) y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
 	\end{theorem}
@@ -101,7 +85,41 @@
 		Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial,cuya dimensión del espacio de soluciones de una ecuación en diferencias lineal de orden $k$ es $k$.
 	\end{theorem}
 \end{frame}
+\begin{frame}
+	\begin{block}{Raíces simples}
+		Sean $r_{1}, r_{2},\ldots, r_{k}$ las $k$ raíces de la ecuación característica. Se definen entonces las funciones:
+		$$
+		f_{j}(n) = r^{n}_{j}, \;  j = 1,\ldots, k.
+		$$
+		
+		Entonces $f_{1},\ldots, f_{k}$  es un sistema fundamental de soluciones, lo cual nos permite resolver la ecuación.
+	\end{block}
+	\begin{block}{Raíces múltiples}
+		Sea $ r $ una raíz de multiplicidad $ m $ de la ecuación característica. Esta raíz proporciona $ m $ soluciones diferentes
+		del tipo:
+		$$
+		f_{j}(n) = n^{j}r^{n}; j = 0, \ldots,m - 1.
+		$$
+		Por tanto, pasarán a formar parte del sistema fundamental de soluciones las funciones $f_{0}, \ldots, fm-1$; esto
+		es:
+		$$
+		r^{n}, nr^{n}, n^{2}r^{n}, \ldots, n^{m-1}r^{n}.
+		$$
 
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{example}
+		Hallar la solución de:
+		$$f(n+3)-7f(n+2)+15f(n+1)-9f(n) = 0, \forall n \in \mathbb{N},$$
+		$$f(0) = -1; f(1) = 2; f(2) = 17.$$
+	\end{example}
+	\begin{example}[E.D.L.C]
+		Hallar la solución de:
+		$$f(n + 1) - 2f(n) = 2^{n} , \; \forall n \in \mathbb{N},$$
+		$$f(0) = -1.$$
+	\end{example}
+\end{frame}
 %http://personal.us.es/pnadal/Informacion/leccion5ecdiferencias.pdf
 %\begin{frame}
 %	\begin{block}{Ecuaciones en diferencias de primer orden}
