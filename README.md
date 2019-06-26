@@ -13,6 +13,18 @@ Los temas para investigar son los siguientes:
 
 Por favor, revise la [guía de contribuidores](./CONTRIBUTING.md)
 
+## Preguntas frecuentes
+
+* ¿Qué programas necesito para ejecutar los archivos?
+  * Los programas utilizados para generar los archivos son los siguientes:
+    * `luatex` y `arara`, los cuales está en [Distribución de LaTeX y sus amigos](https://www.tug.org/texlive/): TeX Live 2019 o superior.
+    * `python`, el cual está en [Distribución de Python](https://www.anaconda.com/distribution/#download-section): Anaconda con Python 3.7 o superior.
+    * [Java](https://www.java.com/en/download/) 8 o superior.
+    * [](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+    * `/texlive/2019/texmf-dist/scripts/arara/rules`
+    * `/texlive/texmf-local/tex/latex/local`
+* ¿Cómo compilarle los archivos?
+
 ## Integrantes
 
 Este trabajo está conformado por los siguientes alumnos de la carrera de Matemática:
