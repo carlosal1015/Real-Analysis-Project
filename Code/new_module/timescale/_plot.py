@@ -1,4 +1,10 @@
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
+
+from timescale.timescale import Timescale
+
 import matplotlib.pyplot as plt
+import numpy as np
 
 def plot(self, f, stepSize=0.01, discreteStyle='b.', intervalStyle='r-', **kwargs):
     """

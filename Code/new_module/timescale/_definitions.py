@@ -1,3 +1,8 @@
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
+
+from timescale.timescale import Timescale
+
 def sigma(self, t):
 	"""
 	Función Salto hacia adelante:
@@ -67,18 +72,3 @@ def nu(self,t):
 	\mu_{\ast} = \inf_{\tau\in\left[s,\infty\right)\cap\mathds{T}}\mu(t).
 	"""
 	return t-self.rho(t)
-
-
-def integers(a,b):
-	"""
-	Create the time scale of integers {x : a <= x <= b}
-	"""
-	return Timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
-
-
-def quantum(q,m,n):
-	"""
-	Create the time scale of quantum numbers of form {q^k:k=m,m+1,...,n}
-	only does q^(X) where X={0,1,2,3,...} at the moment
-	"""
-	return Timescale([q**k for k in range(m,n)], 'quantum numbers '+str(q)+'^'+str(m)+' to '+str(q)+'^'+str(n))

@@ -1,3 +1,8 @@
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
+
+#from timescale.timescale import Timescale
+from scipy import integrate
 import numpy as np
 
 def dintegral(self,f,t,s):
@@ -90,7 +95,6 @@ def integrate_complex(self, f, s, t, **kwargs):
 	
 	else:        
 		return real_result + 1j*imaginary_result
-
 
 def g_k(self, k, t, s):
 	"""

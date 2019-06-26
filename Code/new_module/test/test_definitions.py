@@ -1,3 +1,5 @@
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
 import pytest
 from . import Timescale
 #from timecalculus.timescale import Timescale

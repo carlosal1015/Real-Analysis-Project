@@ -1,3 +1,12 @@
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
+
+from timescale.timescale import Timescale
+
+from scipy import integrate
+import numpy as np
+import jitcdde
+
 def solve_ode_for_t(self, y_0, t_0, t_target, y_prime):
 	"""
 	Ordinary Differential Equation solver for equations of the form:
