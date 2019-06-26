@@ -21,6 +21,10 @@
 \usepackage[spanish]{babel}
 \usepackage{amsmath,mathrsfs,amsfonts,amsthm}
 \usepackage{enumitem}
+
+\usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
+\addbibresource{bibliography/reference.bib}
+\input{generalcommands.tex}
 %\usetheme[numbering=fullbar]{focus}%progressbar
 %\definecolor{main}{RGB}{92, 138, 168}
 %\definecolor{background}{RGB}{240, 247, 255}
@@ -109,7 +113,7 @@
 	Facultad de Ciencias \and%\inst{2}
 	Universidad Nacional de Ingeniería
 }
-\date{25 de junio del 2019}
+\date{25, 27 de junio del 2019}
 
 \graphicspath{{images/}}
 
@@ -124,52 +128,25 @@
 		]
 	\end{frame}
 }
-
-\includeonlyframes{%
-	toc,%
-}
-
+%\includeonlyframes{%
+%	toc,%
+%}
 \begin{document}
 
-\frame{\titlepage}
-%\begin{frame}[plain]
-%	\maketitle
-%\end{frame}
+\frame{\titlepage} %\begin{frame}[plain]\maketitle\end{frame}
 \include{./contents/toc}
 \section{Introducción}
-\subsection{Relación de recurrencia}
 \include{./contents/recurrence}
-\subsubsection{Con coeficientes constantes}
-\subsubsection{Homogénea}
-\subsection{Ecuaciones en diferencias}
 \include{./contents/difference}
-
+\include{./contents/examples}
 \include{./contents/hanoi}
-
-\begin{frame}
-\frametitle{Aplicaciones}
-\end{frame}
-
-\subsubsection{Torre de Hanoi}
-\subsubsection{Número de Ackermann}
-
 \section{Realización numérica}
-
 \subsection{Discretización}
 \subsubsection{Método de Euler}
 \subsubsection{Método de Runge-Kutta}
-
-\section{Aplicaciones}
-
-\subsection{Escalas de tiempo}
-\subsubsection{Derivada fraccionaria}
-\subsection{Módulo \texttt{timescale}}
+\include{./contents/timescale}
 
 %\includeslide{}
-
-\include{./contents/hanoi.tex}
-\include{./contents/examples}
-
 %\appendix
 %\frame[noframenumbering,plain]{text}
 
@@ -180,7 +157,7 @@
 		\end{beamercolorbox}%
 		\begin{beamercolorbox}[wd=.4\paperwidth,ht=7.8pt,dp=3pt,center]{title in head/foot}\insertshorttitle
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{date in    head/foot}\insertshortdate\hspace*{5mm}%	
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{date in head/foot}\insertshortdate\hspace*{5mm}%	
 		\end{beamercolorbox}  
 	}%
 }
@@ -190,7 +167,6 @@
 		\progressbar
 	\end{textblock*}
 }
-
 %\begin{frame}{Title}
 % all version
 %\end{frame}
@@ -219,7 +195,6 @@
 %    \end{frame}
 %}
 \end{document}
-
 https://www.i-ciencias.com/pregunta/35252/termino-comun-para-las-ecuaciones-diferenciales-y-de-relaciones-de-recurrencia
 
 @book{book:{2135209},

@@ -1,5 +1,9 @@
-from timescale import Timescale
-from integration import *
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
+
+#from timescale.timescale import Timescale
+#from timescale.definitions import mu
+#from timescale.integration import dintegral
 import numpy as np
 
 def cyl(self, t, z):

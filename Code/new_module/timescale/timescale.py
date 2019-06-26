@@ -1,11 +1,32 @@
-class Timescale:
-	def __init__(self, ts, nombre = 'sin nombre'):
-		"""
-			* ts representa al objeto escala de tiempo
-			* name representa el nombre asociado a ts.
-		"""
-		self.ts = ts
-		self.name = nombre
+#!/opt/conda/bin/python3
+# -*- coding: utf-8 -*-
+
+import matplotlib.pyplot as plt
+import symengine
+from sympy import Interval
+
+class Timescale(object):
+	"""
+	Objeto matemático llamado escala de tiempo.
+	Métodos:
+		constructor(v0): fija el valor inicial.
+		value(t): calcula la altura como función de t.
+		formula(): imprime fuera la fórmula para la altura.
+
+	Atributos de datos:
+		v0: la velocidad inicial de la bola (tiempo 0).
+		g: aceleración de la gravedad.
+
+	Uso:
+		>>> from timescale import Timescale
+		>>> intervalo = [0, 1, 2, 3, 4, 5, 6, 7]
+		>>> nombre = 'documentation example'
+		>>> t1 = Timescale(intervalo, nombre)
+	"""
+	def __init__(self, ts,
+				nombre = 'sin nombre'):
+		self._ts = ts
+		self._name = nombre
 
 		"""
 		Los siguientes dos miembros de datos del diccionario se han utilizado para la
@@ -28,7 +49,7 @@ class Timescale:
 		Consulte este recurso para obtener una lista de las funciones disponibles:
 		https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html
 		"""
-		#self.plt = plt
+		self.plt = plt
 		"""
 		El siguiente código valida la escala de tiempo especificada por el usuario para garantizar que no haya
 		superposiciones, como por ejemplo:
@@ -71,9 +92,20 @@ class Timescale:
 						if listItem >= listItemToCompare[0] and listItem <= listItemToCompare[1]:
 							raise Exception("Invalid timescale declaration: you cannot declare a point that is included in an interval (you cannot declare a value more than once).")
 
-	"""
-	Mensaje de confirmación.
-	"""							
 	def __str__(self):
-		cadena = "¡La escala de tiempo {}, {}, fue construida con éxito!".format(self.ts, self.name)
-		return cadena
+		return "¡La escala de tiempo {}, {}, fue construida con éxito!".format(self._ts, self._name)
+
+
+def integers(a,b):
+	"""
+	Create the time scale of integers {x : a <= x <= b}
+	"""
+	return Timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
+
+
+def quantum(q,m,n):
+	"""
+	Create the time scale of quantum numbers of form {q^k:k=m,m+1,...,n}
+	only does q^(X) where X={0,1,2,3,...} at the moment
+	"""
+	return Timescale([q**k for k in range(m,n)], 'quantum numbers '+str(q)+'^'+str(m)+' to '+str(q)+'^'+str(n))
