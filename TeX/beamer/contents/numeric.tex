@@ -92,18 +92,37 @@
 
 %\subsubsection{Método de Runge-Kutta}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{\subsecname}
+
+\begin{pylabcode}[plotsession]
+rc('text', usetex=True)
+rc('font', **{'family':'serif', 'serif':['Times']})
+rc('legend', fontsize=10.0)
+def f(t): return (t**3)/3-t**2
+t1 = arange(0.0, 4.0, 0.01)
+x0, y0, xf, n = 0, 1, 5, 201
+deltax = (xf-x0)/(n-1)
+x = linspace(x0, xf, n)
+y = zeros([n])
+y[0] = 0
+for i in range(1, n): y[i] = deltax*( x[i - 1]*x[i - 1] - 2*x[i-1] )
+plot(x, y, 'b--',t1, f(t1), 'r--')
+xlabel("Valores de x")
+ylabel("Valores de y")
+title("Solución aproximada con el método de Euler vs la solución exacta")
+savefig('images/eulersol.pdf', bbox_inches='tight')
+\end{pylabcode}
 
 \begin{minipage}{0.45\paperwidth}
 \begin{example}
-	A
+	Considere el problema de valor inicial \[ \frac{\mathrm{d}y}{\mathrm{d}x}=-y+\operatorname{sen}\left(x\right),\quad y\left(0\right)=1. \]
 \end{example}
 \vfill
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=.65]{myplot}
-	\caption{\label{fig:matlpotlib} A plot created with PythonTeX}
+	\includegraphics[width=0.4\paperwidth]{eulersol}
+	\caption{\label{fig:matlpotlib}Solución exacta vs solución de Euler}
 \end{figure}
 \end{minipage}
 \hfill
@@ -113,22 +132,4 @@
 		\caption{Programa \texttt{euler.py}}
 	\end{listing}
 \end{minipage}
-\end{frame}
-
-\begin{frame}[fragile]
-\begin{pylabcode}[plotsession]
-rc('text', usetex=True)
-rc('font', **{'family':'serif', 'serif':['Times']})
-rc('legend', fontsize=10.0)
-x = linspace(0,3*pi)
-figure(figsize=(3.25,2))
-plot(x, sin(x), label='$\sin x$')
-plot(x, sin(x)**2, label='$\sin^{2}(x)$',linestyle='dashed')
-xlabel(r'$x$-axis')
-ylabel(r'$y$-axis')
-xticks(arange(0,4*pi, pi), ('$0$', '$\pi$', '$2\pi$', '$3\pi$'))
-axis([0, 3*pi, -1, 1])
-legend(loc='lower right')
-savefig('images/myplot.pdf', bbox_inches='tight')
-\end{pylabcode}
 \end{frame}
