@@ -1,0 +1,15 @@
+!config
+authors:
+- Oromion
+arguments:
+- flag: <arara> @{parameters.action}
+  identifier: action
+- default: <arara> @{getBasename(file)}.pytxcode
+  flag: <arara> @{parameters.pythonfile}
+  identifier: pythonfile
+commands:
+- command: <arara> pythontex @{action} @{pythonfile}
+  name: PythonTeX 0.16 engine
+identifier: pythontex
+name: PYTHONTEX
+# https://tex.stackexchange.com/questions/357881/arara-rule-for-pythontex
