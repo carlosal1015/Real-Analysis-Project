@@ -24,8 +24,10 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \end{example}
 \end{frame}
 
+\subsubsection{Ecuaciones en diferencias lineales}
+
 \begin{frame}
-\frametitle{\subsecname}
+\frametitle{\subsubsecname}
 
 \begin{definition}
 	Una \textbf{ecuación en diferencias} se le llama \textbf{lineal} si puede expresarse de la siguiente forma:
@@ -36,16 +38,16 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \end{definition}
 
 \begin{table}
-	\caption{Clasificación de las ecuaciones en diferencias.}
+	\caption{Clasificación de las ecuaciones en diferencias lineales.}
 	\small
 	\begin{tabular}{lll}
 		\toprule
-		Abreviación									& Denominación									& Condición\\
+		Abreviación										& Denominación									& Condición\\
 		\midrule
-		\rowcolor{green!40} E.D.L.H	& Homogéneas										& $b(n)=0$.\\
-		E.D.L.C											& Completas											& $b(n)\neq0$.\\
-		E.D.C.C.										& De coeficientes constantes		& $\forall i: a_{i}(n)=a_{i}$.\\
-		E.D.C.N.										& De coeficientes no constantes	& $\exists i\ni a_{i}(n)\neq a_{i}$.\\
+		\rowcolor{green!40} E.D.L.H		& Homogéneas										& $b(n)=0$.\\
+		E.D.L.C												& Completas											& $b(n)\neq0$.\\
+		\rowcolor{green!40} E.D.L.C.C.& De coeficientes constantes		& $\forall i: a_{i}(n)=a_{i}$.\\
+		E.D.C.N.C.										& De coeficientes no constantes	& $\exists i\ni a_{i}(n)\neq a_{i}$.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -87,21 +89,21 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 	Dada la ecuación (\ref{eq:edl}) y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
 \end{theorem}
 \begin{proof}
-	Por favor, ver~\cite{Mariconda2016}.
+	Por favor, ver~%\citeauthor[pág][]{Mariconda2016}.
 \end{proof}
 
 \begin{theorem}
 	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $n$ es también una solución.
 \end{theorem}
 \begin{proof}
-		Por favor, ver~\cite{Mariconda2016}.
+		Por favor,~\citeauthor[ver][357]{Mariconda2016}.
 \end{proof}
 
 \begin{theorem}
 	Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial y la dimensión del espacio solución de una ecuación en diferencias lineal de orden $k$ es $k$.
 \end{theorem}
 \begin{proof}
-		Por favor, ver~\cite{Mariconda2016}.
+		Por favor, ver~%\citeauthor[pág][90]{Mariconda2016}.
 \end{proof}
 \end{frame}
 

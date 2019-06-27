@@ -1,4 +1,134 @@
 \section{Realización numérica}
-\subsection{Discretización}
-\subsubsection{Método de Euler}
-\subsubsection{Método de Runge-Kutta}
+
+\subsection{Aproximación lineal de una función}
+\begin{frame}
+\frametitle{\subsecname}
+
+\begin{minipage}{0.45\paperwidth}
+	Del diagrama, tenemos \[ \frac{f\left(x+h\right)-f\left(x\right)}{h}\approx f^{\prime}\left(x\right)\quad\text{para }h\text{ pequeño}. \] Reordenando la ecuación resulta \[ f\left(x+h\right)\approx f\left(x\right)+hf^{\prime}\left(x\right). \] Esto se muestra en el diagrama. La recta $\ell$ es tangente a $y=f\left(x\right)$	en el punto de coordenadas $\left(x,f\left(x\right)\right)$.
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\paperwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\paperwidth]{euler1}
+		\caption{La recta $\ell$ es una aproximación lineal en $B$ de $y=f\left(x\right)$.}
+	\end{figure}
+\end{minipage}
+\vfill
+\begin{remark}
+	Esto nos da una aproximación a la curva $y=f\left(x\right)$ en que la coordenada $y$ de $B$ es una aproximación a la coordenada $y$ de $A$ en la gráfica de $y=f\left(x\right)$.
+\end{remark}
+\end{frame}
+
+\subsection{Problema de valor inicial}
+
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{minipage}{0.45\paperwidth}
+		Considere el problema de valor inicial \[ \frac{\mathrm{d}y}{\mathrm{d}x}=g\left(x\right)\quad\text{con}\quad y\left(x_{0}\right)=0. \] Entonces, $x_{1}=x_{0}+h$ e $y_{1}=y_{0}+hg\left(x_{0}\right)$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\paperwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\paperwidth]{euler2}
+			\caption{La diferencia en las ordenadas es $y_{1}-y_{0}=hg\left(x_{0}\right)$.}
+		\end{figure}
+	\end{minipage}
+\end{frame}
+
+\subsection{Método de Euler}
+
+\begin{frame}
+	\frametitle{\subsecname}
+	\begin{minipage}{0.45\paperwidth}
+		El proceso es ahora aplicado repetidamente para aproximar el valor de la función en $x_{2},x_{3},\ldots$.
+
+		\
+
+		El resultado es:
+		\begin{align*}
+		x_{2}&=x_{1}+h\quad\text{e}\quad y_{2}=y_{1}+hg\left(x_{1}\right),\\
+		x_{3}&=x_{2}+h\quad\text{e}\quad y_{3}=y_{2}+hg\left(x_{2}\right),
+		\end{align*}
+		y así sucesivamente.
+
+		\
+
+		El punto $\left(x_{n},y_{n}\right)$ es encontrado en el $n$--ésimo\linebreak paso del proceso iterativo.
+
+		\
+
+		Este proceso iterativo se puede resumir de la \linebreak siguiente manera.
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\paperwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\paperwidth]{euler3}
+			\caption{Los puntos $\left(x_{0},y_{0}\right)$, $\left(x_{1},y_{1}\right)$, $\left(x_{2},y_{2}\right)$ y $\left(x_{3},y_{3}\right)$ se aproximan a la curva solución.}
+		\end{figure}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{\subsecname}
+
+\begin{minipage}{0.45\paperwidth}
+	\begin{theorem}[Método de Euler]
+			Si $\frac{\mathrm{d}y}{\mathrm{d}x}=g\left(x\right)$ con $x_{0}=a$ e $y_{0}=b$, entonces \[ x_{n+1}=x_{n}+h\quad\text{e}\quad y_{n+1}=hg\left(x_{n}\right). \]
+	\end{theorem}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\paperwidth}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\paperwidth]{euler4}
+		\caption{.}
+	\end{figure}
+\end{minipage}
+\end{frame}
+
+%\subsubsection{Método de Runge-Kutta}
+
+\begin{frame}
+\frametitle{\subsecname}
+
+\begin{minipage}{0.45\paperwidth}
+\begin{example}
+	A
+\end{example}
+\vfill
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.65]{myplot}
+	\caption{\label{fig:matlpotlib} A plot created with PythonTeX}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\paperwidth}
+		\begin{listing}[H]
+		\inputminted{python}{./code/euler_01.py}
+		\caption{Programa \texttt{euler.py}}
+	\end{listing}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{pylabcode}[plotsession]
+rc('text', usetex=True)
+rc('font', **{'family':'serif', 'serif':['Times']})
+rc('legend', fontsize=10.0)
+x = linspace(0,3*pi)
+figure(figsize=(3.25,2))
+plot(x, sin(x), label='$\sin x$')
+plot(x, sin(x)**2, label='$\sin^{2}(x)$',linestyle='dashed')
+xlabel(r'$x$-axis')
+ylabel(r'$y$-axis')
+xticks(arange(0,4*pi, pi), ('$0$', '$\pi$', '$2\pi$', '$3\pi$'))
+axis([0, 3*pi, -1, 1])
+legend(loc='lower right')
+savefig('images/myplot.pdf', bbox_inches='tight')
+\end{pylabcode}
+\end{frame}
