@@ -21,11 +21,12 @@
 % arara: --> }
 % arara: clean: {
 % arara: --> extensions:
-% arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
+% arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','bcf','run.xml','contb',
 % arara: --> 'contg','contn','diffb','diffg','diffn','funb','fung','funn','genb','geng','genn','intb','intg','pytxcode',
 % arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
 % arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn']
 % arara: --> }
+\PassOptionsToPackage{svgnames}{xcolor}
 \documentclass[spanish,10pt,utf8,handout,xcolor=table,aspectratio=1610]{beamer} %
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
@@ -183,7 +184,8 @@
 \include{./contents/timescale}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{./contents/references}
-%\include{./contents/thanks}
+\include{./contents/thanks}
+
 %\includeslide{}
 %\appendix
 %\frame[noframenumbering,plain]{text}

@@ -1,8 +1,7 @@
 \subsection{Ecuaciones en diferencias}
 
 \begin{frame}
-\frametitle{\secname}
-\framesubtitle{\subsecname}
+\frametitle{\subsecname}
 
 Aquí es conveniente representar cualquier sucesión de números reales $(a_{n})_{n} $ como la función $f\colon\mathds{N}\rightarrow\mathds{R}$ definido por: \[ f(n)=a_{n},\quad\forall n\in\mathds{N}. \]
 
@@ -26,6 +25,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \end{frame}
 
 \begin{frame}
+\frametitle{\subsecname}
 
 \begin{definition}
 	Una \textbf{ecuación en diferencias} se le llama \textbf{lineal} si puede expresarse de la siguiente forma:
@@ -55,8 +55,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \subsubsection{Homogénea de coeficientes constantes}
 
 \begin{frame}
-\frametitle{\secname}
-\framesubtitle{\subsecname}
+\frametitle{\subsubsecname}
 %\begin{definition}
 	%La \textbf{solución} de~(2) a toda sucesión $\{f\left(0\right),f\left(1\right),\ldots,f(n),\ldots\}$ que la satisfaga, ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación. La determinación de estos parámetros, a partir de unas condiciones iniciales, nos proporcionará las distintas soluciones particulares.
 %\end{definition}
@@ -88,25 +87,27 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 	Dada la ecuación (\ref{eq:edl}) y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
 \end{theorem}
 \begin{proof}
-	
+	Por favor, ver~\cite{Mariconda2016}.
 \end{proof}
 
 \begin{theorem}
 	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $n$ es también una solución.
 \end{theorem}
 \begin{proof}
-	
+		Por favor, ver~\cite{Mariconda2016}.
 \end{proof}
 
 \begin{theorem}
 	Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial y la dimensión del espacio solución de una ecuación en diferencias lineal de orden $k$ es $k$.
 \end{theorem}
 \begin{proof}
-	
+		Por favor, ver~\cite{Mariconda2016}.
 \end{proof}
 \end{frame}
 
 \begin{frame}
+\frametitle{\subsubsecname}
+
 \begin{definition}[Raíces simples]
 	Sean $r_{1}, r_{2},\ldots, r_{k}$ las $k$ raíces de la ecuación característica. Se definen entonces las funciones: \[ f_{j}(n)=r^{n}_{j},\quad j=1,\ldots,k. \] Entonces, $f_{1},\ldots,f_{k}$ es un sistema fundamental de soluciones, lo cual nos permite resolver la ecuación. % TODO: Cuál ecuación.
 \end{definition}
@@ -117,6 +118,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \end{frame}
 
 \begin{frame}
+\frametitle{\subsubsecname}
 
 \begin{example}
 	Hallar la solución de la ecuación en diferencias \[ f(n+3)-7f(n+2)+15f(n+1)-9f(n)=0,\quad\forall n\in\mathds{N}, \] con las condiciones iniciales $f(0)=-1$,  $f(1)=2$ y $f(2)=17$.
@@ -131,8 +133,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \subsubsection{Número de Catalan}
 
 \begin{frame}
-\frametitle{\secname}
-\framesubtitle{\subsecname}
+\frametitle{\subsubsecname}
 
 \begin{minipage}{0.45\paperwidth}
 	\begin{block}{Triangulación}
@@ -141,7 +142,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.4\paperwidth]{ca1}
-		\caption{}
+		\caption{Diversas maneras de triangular hexágonos.}
 	\end{figure}
 \end{minipage}
 \hfill
@@ -152,7 +153,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.4\paperwidth]{ca(1)}
-		\caption{}
+		\caption{Los caminos monótonos que no cruzan la diagonal del retículo.}
 	\end{figure}
 \end{minipage}
 \end{frame}
