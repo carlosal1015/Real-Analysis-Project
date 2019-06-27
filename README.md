@@ -6,6 +6,7 @@ Los temas para investigar son los siguientes:
 - [ ] Construcción de los números reales vía cortaduras de Dedekind.
 - [ ] Construcción de los números reales vía sucesiones de Cauchy.
 - [x] **Relaciones por recurrencia vía sucesiones**.
+- [ ] Curvas de Peano.
 
 <div align="center">
   <img alt="Logistic map bifurcation" height="400px" vspace="" hspace="25" src=./img/logistic_map.gif>
