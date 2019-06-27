@@ -1,81 +1,103 @@
+\section{Ecuaciones de recurrencia}
 \subsection{Ejemplos definidos por ecuaciones de recurrencia}
 
 \begin{frame}
-\frametitle{\subsecname}
+\frametitle{\secname}
+\framesubtitle{\subsecname}
 
-\begin{columns}
-	\begin{column}{\textwidth}
-	\textit{Resolver una ecuación de recurrencia} significa encontrar una secuencia que satisfaga las ecuación de recurrencia. Encontrar una ``solución general'' significa encontrar una fórmula que describe todas las soluciones posibles (todas las secuencias posibles que satisfacen la ecuación).\\
-	Veamos el siguiente ejemplo:
-	
-	\begin{block}{Solución al ejemplo}
-		\begin{itemize}
-			\item Considere $T_{n}$ que satisface la siguiente ecuación para todo $n \in\mathds{N}\setminus\left\{1\right\}$: \[ T_{n}=2T_{n-1}+1. \]
-		\end{itemize}
-	\end{block}
+\textit{Resolver una ecuación de recurrencia} significa encontrar una sucesión que satisfaga las ecuaciones de recurrencia.
 
-\end{column}
-\end{columns}
+\
+
+Encontrar una ``solución general'' significa encontrar una fórmula que describe todas las soluciones posibles (todas las sucesiones posibles que satisfacen la ecuación).
+
+\
+
+Veamos el siguiente ejemplo:
+
+\begin{claim}
+	Considere que $T_{n}$ satisface la siguiente ecuación
+	\begin{equation}
+	T_{n}=2T_{n-1}+1\quad\forall n\in\mathds{N}\setminus\left\{1\right\}.
+	\end{equation}
+\end{claim}
+
 \end{frame}
 
 \begin{frame}
-\frametitle{Ejemplo 1. [Desajustes]}
-Imagina una fiesta donde las parejas llegan juntas, pero al final de la noche, cada persona se va con una nueva pareja. Para cada $n\in P$, digamos que $D_{n}$ es el número de diferentes formas en que las parejas pueden ser ``trastornadas'', es decir, reorganizadas en parejas, por lo que ni uno está emparejado con la persona con la que llegaron.
+%\frametitle{\secname}
+%\framesubtitle{\subsecname}
 
-\begin{columns}
-	\begin{column}{\textwidth}
-		\begin{block}{$D_{n}$ para cualquier valor de $n$}
-			\begin{itemize}
-			\item Para todo $n \geq 4$ tendremos: \[ D_{n}=(n-1)\left\{D_{n-2}+D_{n-1}\right\}. \] Y la sucesión definida en $P$ es \[ S_{n} = A \times n!. \]
-			\end{itemize}
-		\end{block}
-	\end{column}
-\end{columns}
+\begin{example}[Desajustes]
+	Imagine una fiesta donde las parejas llegan juntas, pero al final de la noche, cada persona se va con una nueva pareja. Para cada $n\in\mathds{N}$, digamos que $D_{n}$ es el número de diferentes formas en que las parejas pueden ser ``trastornadas'', es decir, reorganizadas en parejas, por lo que ni uno está emparejado con la persona con la que llegaron.
+\end{example}
+
+\begin{claim}[$D_{n}$ para cualquier valor de $n$]
+	Para todo $n\geq4$ tendremos: \[ D_{n}=(n-1)\left\{D_{n-2}+D_{n-1}\right\}. \] Y la sucesión definida en $\mathds{N}$ es \[ S_{n} = A \times n!. \]
+\end{claim}
+
 \end{frame}
 
 \begin{frame}
-\frametitle{Teorema Acotación para $D_{n}$}
-\begin{columns}
-	\begin{column}{\textwidth}
-		\begin{block}{Desigualdad para la acotación de $D_{n}$}
-			\begin{itemize}
-			\item Para todo$n\geq2$ tenemos: \[ \left(\frac{1}{3}\right)n!\leq D_{n}\leq\left(\frac{1}{2}\right)n!. \]
-			\end{itemize}
-		\end{block}
-	\end{column}
-\end{columns}
+%\frametitle{\secname}
+%\framesubtitle{\subsecname}
 
-La mejor fórmula para $D_{n}$ que sabemos utiliza la función de ``entero más cercano''. Para cualquier número real $x$, sea $\lceil x\rfloor$ que denote \textbf{el entero más cercano a} $x$, definido:
+\begin{theorem}[Desigualdad para la acotación de $D_{n}$]
+Para todo $n\geq2$ tenemos: \[ \left(\frac{1}{3}\right)n!\leq D_{n}\leq\left(\frac{1}{2}\right)n!. \]
+\end{theorem}
 
-Si $x$ es escrito como $n+f$ donde $n$ es el entero $\lfloor x\rfloor$, y $f$ es una fracción donde $0\leq f<1$:
+\
 
-Si $0\leq f<\frac{1}{2}$, entonces $\lceil x\rfloor=n$.
+La mejor fórmula para $D_{n}$ que sabemos utiliza la función de ``entero más cercano''.
 
-Si $\frac{1}{2}\leq f<1$, entonces $\lceil x\rfloor=n+1$.
+\
 
-Entonces $D_{n}=\lceil(n!)/e\rfloor$ cuando $e=2.71828182844\ldots$ es la base del logaritmo natural. $(n!)/e$  nunca es igual a $\lceil(n!)/e\rfloor+\frac{1}{2}$.
+\begin{definition}
+	Para cualquier número real $x$, se define \textbf{el entero más cercano a} $x$, $\lceil x\rfloor$:
+
+	Si $x$ es escrito como $n+f$ donde $n$ es el entero $\lfloor x\rfloor$, y $f$ es una fracción donde $0\leq f<1$:
+
+	\begin{itemize}
+		\item Si $0\leq f<\frac{1}{2}$, entonces $\lceil x\rfloor=n$.
+		\item Si $\frac{1}{2}\leq f<1$, entonces $\lceil x\rfloor=n+1$.
+	\end{itemize}
+\end{definition}
+
+\
+
+\begin{remark}
+	Entonces $D_{n}=\lceil(n!)/e\rfloor$ cuando $e=2.71828182844\ldots$ es la base del logaritmo natural.
+
+	$(n!)/e$  nunca es igual a $\lceil(n!)/e\rfloor+\frac{1}{2}$.
+\end{remark}
 \end{frame}
 
 \subsubsection{Número de Ackermann}
 
 \begin{frame}
-%\frametitle{\subsecname}
-\frametitle{Ejemplo 2.[Números de Ackermann.]}
-Por los 1920s, un lógico y matemático alemán, Wilhelm Ackermann (1896–1962), inventó una función muy curiosa.
-\begin{columns}
-	\begin{column}{\textwidth}
-		\begin{block}{Akckerman}
-				\begin{itemize}
-				\item Sea $A\colon P\times P\rightarrow P$, se define recursivamente usando tres reglas:
-				\begin{enumerate}
-					\item $A(1,n)=2$ para $n=1,2,\ldots$,
-					\item $A(m,1)=2m$ para $m=2,3,\ldots$,
-					\item Cuando $m>1$ y $n>1$ se tiene: $A\left(m,n\right)=A\left(A(m-1,n),n-1\right)$.
-				\end{enumerate}
-			\end{itemize}
-		\end{block}
-	\end{column}
-\end{columns}
+%\frametitle{\secname}
+%\framesubtitle{\subsecname}
+Por los 1920's, el lógico y matemático alemán, discípulo de David Hilbert, Wilhelm Ackermann (1896–1962), inventó una función muy curiosa.
 
-Entonces $A(2,n)=4,\forall n\geq1$. Además $A(m,2)=2^{m},\forall m\geq 1$. Seguidamente se puede continuar a calcular $A\left(m,3\right)=2\uparrow m$ con la función torre definida por $2\uparrow[k+1]=2^{2\uparrow k}$ con valor inicial $2\uparrow 1=2$, por PIM.
+\begin{minipage}{0.45\paperwidth}
+	\begin{definition}[Ackermann]
+		Sea $A\colon\mathds{N}\times\mathds{N}\rightarrow\mathds{N}$ una función. Se define recursivamente usando tres reglas:
+		\begin{enumerate}
+			\item $A(1,n)=2$, $\forall n\geq 1$.
+			\item $A(m,1)=2m$, $\forall m\geq 2$.
+			\item Cuando $m>1$ y $n>1$ se tiene: $A\left(m,n\right)=A\left(A(m-1,n),n-1\right)$.
+		\end{enumerate}
+	\end{definition}
+	\begin{remark}
+		Entonces $A\left(2,n\right)=4,\quad\forall n\geq1$. Además $A\left(m,2\right)=2^{m},\quad\forall m\geq 1$. Seguidamente se puede continuar a calcular $A\left(m,3\right)=2\uparrow m$ con la función torre definida por $2\uparrow\left[k+1\right]=2^{2\uparrow k}$ con valor inicial $2\uparrow 1=2$, por P.I.M.
+	\end{remark}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\paperwidth}
+	\begin{listing}[H]
+		\inputminted{python}{./code/ackermann.py}
+		\caption{Programa \texttt{ackermann.py}}
+	\end{listing}
+\end{minipage}
+
 \end{frame}

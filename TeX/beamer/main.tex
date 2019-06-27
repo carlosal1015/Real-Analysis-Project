@@ -5,8 +5,20 @@
 % arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
 % arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn','pdf']
 % arara: --> }
-% arara: pdflatex
-% arara: pdflatex
+% arara: pdflatex: {
+% arara: --> shell: yes,
+% arara: --> draft: yes,
+% arara: --> }
+% arara: biber
+% arara: pdflatex: {
+% arara: --> shell: yes,
+% arara: --> draft: yes,
+% arara: --> }
+% arara: pdflatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
 % arara: clean: {
 % arara: --> extensions:
 % arara: --> ['log','idx','ilg','ind','out','bbl','blg','thm','toc','aux','synctex.gz','bcf','run.xml','contb',
@@ -14,13 +26,14 @@
 % arara: --> 'intn','limb','limg','limn','logb','logg','logn','realb','realg','realn','seqb','seqg','seqn','ist',
 % arara: --> 'serb','serg','sern','setb','setg','setn','ssfunb','ssfung','ssfunn','topb','topg','topn']
 % arara: --> }
-\PassOptionsToPackage{svgnames}{xcolor}
-\documentclass[spanish,10pt,utf8,handout]{beamer} %
+\documentclass[spanish,10pt,utf8,handout,xcolor=table,aspectratio=1610]{beamer} %
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
 \usepackage[spanish]{babel}
 \usepackage{amsmath,mathrsfs,amsfonts,amsthm}
+\usepackage{minted}
 \usepackage{enumitem}
+\usepackage{booktabs}
 
 \usepackage[backend=biber,style=numeric, defernumbers=true, sorting=ynt,maxbibnames=4,maxcitenames=4]{biblatex}
 \addbibresource{bibliography/reference.bib}
@@ -51,8 +64,27 @@
 %\useoutertheme{splitwithminiframes}
 %\useoutertheme{sidebarwithminiframes}
 %\usecolortheme[cautious]{owl}
+\makeatletter
+\def\th@claim{%
+	\normalfont % body font
+	\setbeamercolor{block title}{bg=white,fg=orange}
+	\setbeamercolor{block body}{bg=white,fg=black}
+}
+\makeatother
+\theoremstyle{claim}
+\newtheorem{claim}[theorem]{Afirmación}
+
+\makeatletter
+\def\th@remark{%
+	\normalfont % body font
+	\setbeamercolor{block title}{bg=white,fg=red}
+	\setbeamercolor{block body}{bg=white,fg=black}
+}
+\makeatother
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Observación}
+
 \theoremstyle{definition}
-\newtheorem{remark}{Observación}
 
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
@@ -69,7 +101,7 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{}
 \setbeamertemplate{headline}{}
-\setbeamertemplate{blocks}[rounded][shadow=false] 
+\setbeamertemplate{blocks}[rounded][shadow=false]
 
 \addtobeamertemplate{block begin}{\pgfsetfillopacity{0.6}}{\pgfsetfillopacity{1}}
 \addtobeamertemplate{block alerted begin}{\pgfsetfillopacity{0.6}}{\pgfsetfillopacity{1}}
@@ -115,6 +147,12 @@
 }
 \date{25, 27 de junio del 2019}
 
+\titlegraphic{
+	\begin{picture}(0,0)
+	\put(190,100){\makebox(0,0)[rt]{\includegraphics[width=2.5cm]{logouni}}}
+	\end{picture}
+}
+
 \graphicspath{{images/}}
 
 \AtBeginSubsection[]
@@ -135,17 +173,17 @@
 
 \frame{\titlepage} %\begin{frame}[plain]\maketitle\end{frame}
 \include{./contents/toc}
-\section{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{./contents/recurrence}
 \include{./contents/difference}
 \include{./contents/examples}
 \include{./contents/hanoi}
-\section{Realización numérica}
-\subsection{Discretización}
-\subsubsection{Método de Euler}
-\subsubsection{Método de Runge-Kutta}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./contents/numeric}
 \include{./contents/timescale}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./contents/references}
+%\include{./contents/thanks}
 %\includeslide{}
 %\appendix
 %\frame[noframenumbering,plain]{text}
@@ -157,8 +195,8 @@
 		\end{beamercolorbox}%
 		\begin{beamercolorbox}[wd=.4\paperwidth,ht=7.8pt,dp=3pt,center]{title in head/foot}\insertshorttitle
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{date in head/foot}\insertshortdate\hspace*{5mm}%	
-		\end{beamercolorbox}  
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=7.8pt,dp=3pt,center]{date in head/foot}\insertshortdate\hspace*{5mm}%
+		\end{beamercolorbox}
 	}%
 }
 
