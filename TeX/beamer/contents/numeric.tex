@@ -85,7 +85,7 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.4\paperwidth]{euler4}
-		\caption{.}
+		\caption{Solución correcta y curva aproximada.}
 	\end{figure}
 \end{minipage}
 \end{frame}
@@ -105,7 +105,7 @@ x0, y0, xf, n = 0, 1, 5, 201
 deltax = (xf-x0)/(n-1)
 x = linspace(x0, xf, n)
 y = zeros([n])
-y[0] = 0
+y[3] = 0
 for i in range(1, n): y[i] = deltax*( x[i - 1]*x[i - 1] - 2*x[i-1] )
 plot(x, y, 'b--',t1, f(t1), 'r--')
 xlabel("Valores de x")
@@ -116,7 +116,7 @@ savefig('images/eulersol.pdf', bbox_inches='tight')
 
 \begin{minipage}{0.45\paperwidth}
 \begin{example}
-	Considere el problema de valor inicial \[ \frac{\mathrm{d}y}{\mathrm{d}x}=-y+\operatorname{sen}\left(x\right),\quad y\left(0\right)=1. \]
+	Considere el problema de valor inicial \[ \frac{\mathrm{d}y}{\mathrm{d}x}=x^{2}-2x,\quad y\left(3\right)=0. \]
 \end{example}
 \vfill
 \begin{figure}[H]

@@ -6,10 +6,10 @@
 Aquí es conveniente representar cualquier sucesión de números reales $(a_{n})_{n} $ como la función $f\colon\mathds{N}\rightarrow\mathds{R}$ definido por: \[ f(n)=a_{n},\quad\forall n\in\mathds{N}. \]
 
 \begin{definition}
-	Una \textbf{ecuación en diferencias} es una expresión de la forma:
-		\begin{equation}\label{eq:diffeq}
-			G\left(n,f(n),f\left(n+1\right),\ldots,f\left(n+k\right)\right)=0,\quad\forall n\in\mathds{N}.
-		\end{equation}
+Una \textbf{ecuación en diferencias} es una expresión de la forma:
+	\begin{equation}\label{eq:diffeq}
+		G\left(n,f(n),f\left(n+1\right),\ldots,f\left(n+k\right)\right)=0,\quad\forall n\in\mathds{N}.
+	\end{equation}
 \end{definition}
 
 \
@@ -30,11 +30,11 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \frametitle{\subsubsecname}
 
 \begin{definition}
-	Una \textbf{ecuación en diferencias} se le llama \textbf{lineal} si puede expresarse de la siguiente forma:
+Una \textbf{ecuación en diferencias} se le llama \textbf{lineal} si puede expresarse de la siguiente forma:
 	\begin{equation}\label{eq:edl}
 		a_{0}(n)f\left(n+k\right)+a_{1}(n)f\left(n+k-1\right)+\cdots+a_{k-1}(n)f\left(n+1\right)+a_{k}(n)f\left(n\right)=b\left(n\right), 
 	\end{equation}
-	donde $a_{k}(n)\neq0$.
+donde $a_{k}(n)\neq0$.
 \end{definition}
 
 \begin{table}
@@ -59,23 +59,23 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \begin{frame}
 \frametitle{\subsubsecname}
 %\begin{definition}
-	%La \textbf{solución} de~(2) a toda sucesión $\{f\left(0\right),f\left(1\right),\ldots,f(n),\ldots\}$ que la satisfaga, ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación. La determinación de estos parámetros, a partir de unas condiciones iniciales, nos proporcionará las distintas soluciones particulares.
+%La \textbf{solución} de~(2) a toda sucesión $\{f\left(0\right),f\left(1\right),\ldots,f(n),\ldots\}$ que la satisfaga, ahora se le llama \emph{solución general} de una E.D al conjunto de todas las soluciones que tendrán tanto parámetros como orden tenga la ecuación. La determinación de estos parámetros, a partir de unas condiciones iniciales, nos proporcionará las distintas soluciones particulares.
 %\end{definition}
 
 \begin{definition}
-	Sea una \textbf{ecuación en diferencias lineal homogénea} de coeficientes constantes y de orden $k$, buscaremos soluciones del tipo $f(n)=r^{n}$, haciendo este cambio en~\eqref{eq:edl} y simplificando resulta
+Sea una \textbf{ecuación en diferencias lineal homogénea} de coeficientes constantes y de orden $k$, buscaremos soluciones del tipo $f(n)=r^{n}$, haciendo este cambio en~\eqref{eq:edl} y simplificando resulta
 	\begin{equation}
-	a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k}=0
+		a_{0}r^{k}+a_{1}r^{k-1}+\cdots+a_{k}=0
 	\end{equation}
-	la \textbf{ecuación característica}.
+la \textbf{ecuación característica}.
 \end{definition}
 
 \begin{definition}
-	Llamamos \textbf{solución} de una ecuación en diferencias a cualquier sucesión $\left\{f(1),\ldots,f(k)\right\}$ que satisfaga~\eqref{eq:diffeq}.
+Llamamos \textbf{solución} de una ecuación en diferencias a cualquier sucesión $\left\{f(1),\ldots,f(k)\right\}$ que satisfaga~\eqref{eq:diffeq}.
 \end{definition}
 
 \begin{definition}
-	Se le llama \textbf{solución general} de una ecuación en diferencias al conjunto de todas las soluciones, que tendrá tantos parámetros como orden tenga la ecuación~\eqref{eq:diffeq}.
+Se le llama \textbf{solución general} de una ecuación en diferencias al conjunto de todas las soluciones, que tendrá tantos parámetros como orden tenga la ecuación~\eqref{eq:diffeq}.
 \end{definition}
 \end{frame}
 
@@ -86,24 +86,26 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 %\end{example}
 
 \begin{theorem}[De la existencia y la unicidad]
-	Dada la ecuación (\ref{eq:edl}) y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
+Dada la ecuación (\ref{eq:edl}) y dados $n$ números reales $k_{0}$, $k_{1}$, \ldots, $k_{n-1}$ existe una única solución que verifica \[ f\left(0\right)=k_{0},f\left(1\right)=k_{1},\ldots,f\left(n-1\right)=k_{n-1}. \]
 \end{theorem}
+
 \begin{proof}
-	Por favor, ver~%\citeauthor[pág][]{Mariconda2016}.
+Por favor, ver en~\citeauthor[el teorema 5.3.1]{nadal2014}.
 \end{proof}
 
 \begin{theorem}
-	Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $n$ es también una solución.
+Toda combinación lineal de soluciones de una ecuación en diferencias lineal homogénea de orden $n$ es también una solución.
 \end{theorem}
 \begin{proof}
-		Por favor,~\citeauthor[ver][357]{Mariconda2016}.
+Por favor,~\citeauthor[ver en][357]{Mariconda2016}.
 \end{proof}
 
 \begin{theorem}
-	Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial y la dimensión del espacio solución de una ecuación en diferencias lineal de orden $k$ es $k$.
+Las soluciones de una ecuación en diferencia lineal de orden $n$ forman un espacio vectorial y la dimensión del espacio solución de una ecuación en diferencias lineal de orden $k$ es $k$.
 \end{theorem}
+
 \begin{proof}
-		Por favor, ver~%\citeauthor[pág][90]{Mariconda2016}.
+Por favor, ver en~\citeauthor[el corolario 5.3.1]{nadal2014}.
 \end{proof}
 \end{frame}
 
@@ -111,11 +113,11 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \frametitle{\subsubsecname}
 
 \begin{definition}[Raíces simples]
-	Sean $r_{1}, r_{2},\ldots, r_{k}$ las $k$ raíces de la ecuación característica. Se definen entonces las funciones: \[ f_{j}(n)=r^{n}_{j},\quad j=1,\ldots,k. \] Entonces, $f_{1},\ldots,f_{k}$ es un sistema fundamental de soluciones, lo cual nos permite resolver la ecuación. % TODO: Cuál ecuación.
+Sean $r_{1}, r_{2},\ldots, r_{k}$ las $k$ raíces de la ecuación característica. Se definen entonces las funciones: \[ f_{j}(n)=r^{n}_{j},\quad j=1,\ldots,k. \] Entonces, $f_{1},\ldots,f_{k}$ es un sistema fundamental de soluciones, lo cual nos permite resolver la ecuación. % TODO: A cuál ecuación se refiere?
 \end{definition}
 
 \begin{definition}[Raíces múltiples]
-	Sea $r$ una raíz de multiplicidad $m$ de la ecuación característica. Esta raíz proporciona $m$ soluciones diferentes del tipo: \[ f_{j}(n)=n^{j}r^{n},\quad j= 0,\ldots,m-1. \] Por tanto, pasarán a formar parte del sistema fundamental de soluciones las funciones $f_{0},\ldots,f_{m-1}$; esto es: \[ r^{n},nr^{n},n^{2}r^{n},\ldots,n^{m-1}r^{n}. \]
+Sea $r$ una raíz de multiplicidad $m$ de la ecuación característica. Esta raíz proporciona $m$ soluciones diferentes del tipo: \[ f_{j}(n)=n^{j}r^{n},\quad j= 0,\ldots,m-1. \] Por tanto, pasarán a formar parte del sistema fundamental de soluciones las funciones $f_{0},\ldots,f_{m-1}$; esto es: \[ r^{n},nr^{n},n^{2}r^{n},\ldots,n^{m-1}r^{n}. \]
 \end{definition}
 \end{frame}
 
@@ -123,14 +125,13 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \frametitle{\subsubsecname}
 
 \begin{example}
-	Hallar la solución de la ecuación en diferencias \[ f(n+3)-7f(n+2)+15f(n+1)-9f(n)=0,\quad\forall n\in\mathds{N}, \] con las condiciones iniciales $f(0)=-1$,  $f(1)=2$ y $f(2)=17$.
+Hallar la solución de la ecuación en diferencias \[ f(n+3)-7f(n+2)+15f(n+1)-9f(n)=0,\quad\forall n\in\mathds{N}, \] con las condiciones iniciales $f(0)=-1$,  $f(1)=2$ y $f(2)=17$.
 \end{example}
 
-\begin{example}[E.D.L.C]
-	Hallar la solución de la ecuación en diferencias \[ f(n+1)-2f(n)=2^{n},\quad\forall n\in\mathds{N}, \] con la condición inicial $f(0)=-1$.
+\begin{example}
+Hallar la solución de la ecuación en diferencias \[ f(n+1)-2f(n)=2^{n},\quad\forall n\in\mathds{N}, \] con la condición inicial $f(0)=-1$.
 \end{example}
 \end{frame}
-%http://personal.us.es/pnadal/Informacion/leccion5ecdiferencias.pdf
 
 \subsubsection{Número de Catalan}
 
@@ -150,7 +151,7 @@ El \textbf{orden} de una ecuación en diferencias se halla mediante la diferenci
 \hfill
 \begin{minipage}{0.45\paperwidth}
 	\begin{block}{Caminos en rejillas}
-		Un camino monótono es aquel que empieza en la esquina inferior izquierda y termina en la esquina superior derecha, y consiste únicamente en tramos que apuntan hacia arriba o hacia la derecha,sin que pase de diagonal.
+	Un camino monótono es aquel que empieza en la esquina inferior izquierda y termina en la esquina superior derecha, y consiste únicamente en tramos que apuntan hacia arriba o hacia la derecha,sin que pase de diagonal.
 	\end{block}
 	\begin{figure}
 		\centering
