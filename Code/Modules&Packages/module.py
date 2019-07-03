@@ -1,9 +1,9 @@
 from zero import *
 import user.structure
 from user.greetings import despedida, funcion
-from math.operations import media, suma, variable_functions
+from mathe.operations import media, suma, variable_functions
 import user.message as ok
-
+import numpy as np
 a = 5
 b = 7
 

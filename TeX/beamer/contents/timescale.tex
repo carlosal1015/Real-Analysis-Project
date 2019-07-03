@@ -340,7 +340,7 @@ es decir, cualquier $\alpha\in\mathds{R}$ es la delta derivada de $f$ en el punt
 			\item la suma $f+g\colon\mathds{T}\rightarrow\mathds{R}$ es nabla diferenciable en $t$ con \[ {\left(f+g\right)}^{\nabla}\left(t\right)=f^{\nabla}\left(t\right)+g^{\nabla}\left(t\right). \]
 			\item Para cualquier constante $\alpha$, $\alpha f\colon\mathds{T}\rightarrow\mathds{R}$ es nabla diferenciable en $t$ con \[ {\left(\alpha f\right)}^{\nabla}\left(t\right)=\alpha f^{\nabla}\left(t\right). \]
 			\item El producto $fg\colon\mathds{T}\rightarrow\mathds{R}$ es nabla diferenciable en $t$ con \[ {\left(fg\right)}^{\nabla}\left(t\right)=f^{\nabla}\left(t\right)g\left(g\right)+f\left(\rho\left(t\right)\right)g^{\nabla}\left(t\right)=f\left(t\right)g^{\nabla}\left(t\right)+f^{\nabla}g\left(\rho\left(t\right)\right). \]
-			\item Si $g\left(t\right)g\left(\rho\left(t\right)\right)\neq0$, entonces $\frac{f}{g}\colon\mathds{T}\rightarrow\mathds{R}$ es nabla diferenciable en $t$ con \[ {\left(\frac{f}{g}\right)}^{\nabla}\left(t\right)=\frac{f^{\nabla}\left(t\right)g\left(t\right)-f\left(t\right)g^{\nabla}\left(t\right)}{g\left(t\right)g\left(\rho\left(t\right)\right)} \]
+			\item Si $g\left(t\right)g\left(\rho\left(t\right)\right)\neq0$, entonces $\frac{f}{g}\colon\mathds{T}\rightarrow\mathds{R}$ es nabla diferenciable en $t$ con \[ {\left(\frac{f}{g}\right)}^{\nabla}\left(t\right)=\frac{f^{\nabla}\left(t\right)g\left(t\right)-f\left(t\right)g^{\nabla}\left(t\right)}{g\left(t\right)g\left(\rho\left(t\right)\right)}. \]
 		\end{enumerate}
 	\end{enumerate}
 	\end{theorem}
@@ -374,7 +374,7 @@ Sea $\mathds{T}=\mathds{N}$ y \[ f\left(t\right)=\frac{t^{2}}{t-1},\quad g\left(
 \end{example}
 
 \begin{example}
-Sea $\mathds{T}=\mathds{R}$ y \[ \begin{cases}\frac{1}{t},&\text{para }t\in\mathds{R}\setminus\left\{0\right\}\\0,&\text{para }t=0.\end{cases} \] Tenemos que todos los puntos de $\mathds{T}$ son densos y los $\lim\limits_{t\to 0^{-}}f\left(t\right)$, $\lim\limits_{t\to 0^{+}}f\left(t\right)$ no son finitos. Por lo tanto, la función $f$ no es regulada.
+Sea $\mathds{T}=\mathds{R}$ y \[ \begin{cases}\frac{1}{t},&\text{para }t\in\mathds{R}\setminus\left\{0\right\},\\0,&\text{para }t=0.\end{cases} \] Tenemos que todos los puntos de $\mathds{T}$ son densos y los $\lim\limits_{t\to 0^{-}}f\left(t\right)$, $\lim\limits_{t\to 0^{+}}f\left(t\right)$ no son finitos. Por lo tanto, la función $f$ no es regulada.
 \end{example}
 \end{frame}
 
@@ -462,7 +462,7 @@ El conjunto de funciones rd-continuas $f\colon\mathds{T}\rightarrow\mathds{R}$ e
 	\begin{align*}
 	e_{p}\left(t,s\right)
 	&=\exp\left(\int_{s}^{t}\lim\limits_{h\to0}\frac{1}{h}\ln\left(1+h\left(\tau\right)\right)\mathrm{d}\tau\right)\\
-	&\stackrel{\operatorname{l}}{=}\exp\left(\lim\limits_{h\to0}\frac{1}{1+hp\left(\tau\right)}p\left(\tau\right)\mathrm{d}\tau\right)\\
+	&\stackrel{\operatorname{def}}{=}\exp\left(\lim\limits_{h\to0}\frac{1}{1+hp\left(\tau\right)}p\left(\tau\right)\mathrm{d}\tau\right)\\
 	&=\exp\left(\int_{s}^{t}p\left(\tau\right)\mathrm{d}\tau\right).
 	\end{align*}
 \end{frame}
