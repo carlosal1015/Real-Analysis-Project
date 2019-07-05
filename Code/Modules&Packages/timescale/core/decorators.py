@@ -1,4 +1,4 @@
-from timescale import Timescale as tsc
+from timescale.timescale import Timescale as tsc
 import chalk
 import emoji
 
