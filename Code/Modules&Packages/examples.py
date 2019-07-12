@@ -1,19 +1,19 @@
 from timescale import Timescale as tsc
 from sympy import (
-  Interval,
-  Rational,
-  nsimplify,
-  symbols,
-  pi,
-  sqrt,
-  S,
-  oo,
-  assumptions,
-  Q,
-  ask,
-  var,
-  sin,
-  Lambda
+	Interval,
+	Rational,
+	nsimplify,
+	symbols,
+	pi,
+	sqrt,
+	S,
+	oo,
+	assumptions,
+	Q,
+	ask,
+	var,
+	sin,
+	Lambda
  )
 from sympy.sets.fancysets import ImageSet
 

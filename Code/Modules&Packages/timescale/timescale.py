@@ -2,16 +2,34 @@
 # -*- coding: utf-8 -*-
 
 import matplotlib.pyplot as plt
-from sympy import S
 
 class Timescale_new(object):
-	def __init__(self, ts = S.EmptySet ):
+	"""
+    The base class for any kind of set.
+	"""
+	def __init__(self, ts = None, name = None):
 		self.ts = ts
+		self.name = name
+
+	def input_closed_set(self):
+		pass
+		# try:
+		# 	iterator = iter(TS9.ts)
+		# except TypeError:
+		# 	# TODO: Obtener su clausura.
+		# 	print("Desea definir esta nueva escala de tiempo.")
+		# Conjuetura de Collatz para obtener conjuntos cerrados.
+		# else:
+		# 	# TODO: En el caso cerrado.
+		# 	print("T es un conjunto cerrado.")
+
+	def __str__(self):
+		return f"¡La escala de tiempo {self.ts}, {self.name}, fue construida con éxito!"
 
 
 class Timescale(object):
-	"""
-	Objeto matemático llamado escala de tiempo.
+	"""Objeto matemático llamado escala de tiempo.
+
 	Métodos:
 		constructor(v0): fija el valor inicial.
 		value(t): calcula la altura como función de t.
@@ -21,16 +39,17 @@ class Timescale(object):
 		v0: la velocidad inicial de la bola (tiempo 0).
 		g: aceleración de la gravedad.
 
-	Uso:
-		>>> from timescale import Timescale
-		>>> intervalo = [0, 1, 2, 3, 4, 5, 6, 7]
-		>>> nombre = 'documentation example'
-		>>> t1 = Timescale(intervalo, nombre)
+	Examples:
+	========
+
+	>>> from timescale import Timescale as tsc
+	>>> intervalo = [0, 1, 2, 3, 4, 5, 6, 7]
+	>>> nombre = 'documentation example'
+	>>> t1 = tsc(intervalo, nombre)
 	"""
-	def __init__(self, ts,
-				nombre = 'sin nombre'):
-		self._ts = ts
-		self._name = nombre
+	def __init__(self, ts, nombre = 'sin nombre'):
+		self.ts = ts
+		self.name = nombre
 
 		"""
 		Los siguientes dos miembros de datos del diccionario se han utilizado para la
@@ -97,17 +116,17 @@ class Timescale(object):
 							raise Exception("Invalid timescale declaration: you cannot declare a point that is included in an interval (you cannot declare a value more than once).")
 
 	def __str__(self):
-		return "¡La escala de tiempo {}, {}, fue construida con éxito!".format(self._ts, self._name)
+		return "¡La escala de tiempo {}, {}, fue construida con éxito!".format(self.ts, self.name)
 
 
-def integers(a,b):
+def integers(a, b):
 	"""
 	Create the time scale of integers {x : a <= x <= b}
 	"""
 	return Timescale(list(range(a,b+1)),'integers from '+str(a)+' to '+str(b))
 
 
-def quantum(q,m,n):
+def quantum(q, m, n):
 	"""
 	Create the time scale of quantum numbers of form {q^k:k=m,m+1,...,n}
 	only does q^(X) where X={0,1,2,3,...} at the moment

@@ -1,2 +1,8 @@
-from derivative import *
-from integrate import *
+from .derivative import derivative
+from .integrate import integrate
+
+__all__ = [
+'derivative',
+
+'integrate'
+]
